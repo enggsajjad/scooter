@@ -2,7 +2,7 @@
 ScooterAQNet
 
 
-## Part
+## Parts
 Testing individual parts:
 
 * SDS021
@@ -15,3 +15,4 @@ Different logs
 ## esp32scooter
 Main code, integrated all
 
+## Tobi Firmware
