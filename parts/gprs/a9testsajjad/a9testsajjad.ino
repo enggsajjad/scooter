@@ -98,14 +98,13 @@ void loop()
       while ( gprsSerial.available())
       {
         rd = gprsSerial.readString();
-        if (rd == "" || rd == "\n" || rd == " " || rd == "\t" || rd == "\v" || rd == "\f" || rd == "\r") continue;
         Serial.println("-------------------");
         Serial.println("Serial " +String(rd.length()) +": " + rd );
         Serial.println("===================");
       }
       if (rd!="")
       {
-        if(nState==3)
+        /*if(nState==3)
         {
           Serial.println("Serial Resp: "+ resp + " Ind " + String(rd.indexOf(resp)));
           Serial.println("Serial Resp: CREG: 0 Ind: " + String(rd.indexOf("\0")));
@@ -115,7 +114,7 @@ void loop()
           Serial.print("Serial2: ");
           Serial.println(buf );
           Serial.println("Serial2 " +String(rd.length()) +": " + String(buf) );
-        }
+        }*/
           if(rd.indexOf("ERROR")>0){
             Serial.println("Serial Error: " );
             error=NOTOK;
@@ -153,12 +152,13 @@ void loop()
       break;
     case 2:
       Serial.println("Command AT+RST=1");
-      timerAlarmWrite(timer, 60*1000000, true);resp="CREG:"; rcvd = false;
+      timerAlarmWrite(timer, 90*1000000, true);resp="RST"; rcvd = false;
       gprsSerial.println("AT+RST=1");
       nState=3;
       rxState = 100;
       break;
     case 3:
+      delay(1000); //skip extra response of AT+RST=1, missed due to \0
       timerAlarmWrite(timer, 20*1000000, true);
       Serial.println("Command AT+GPS=1");resp="OK"; rcvd = false;
       gprsSerial.println("AT+GPS=1");
@@ -172,8 +172,8 @@ void loop()
       rxState = 100;
       break;
     case 5:
-      Serial.println("Command AT+CGATT?");resp="OK"; rcvd = false;
-      gprsSerial.println("AT+CGATT?");
+      Serial.println("Command AT+CGACT?");resp="OK"; rcvd = false;
+      gprsSerial.println("AT+CGACT?");
       nState=6;
       rxState = 100;
       break;
