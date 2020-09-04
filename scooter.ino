@@ -1,5 +1,45 @@
+//adding different sensors into the state machine code
 //first state machine based example for scooter
 
+#include "src/lib/SDS011/SDS011.h"
+//#include <SoftwareSerial.h>
+#include <HardwareSerial.h>
+#include <Adafruit_Sensor.h>
+#include <Adafruit_BME280.h>
+#include <Wire.h>
+
+
+//HardwareSerial gps(2);
+HardwareSerial a7g(1);
+/// use Serial 2 Object
+HardwareSerial SDS_SERIAL(2); // SDS011: use Serial 2 
+
+/// SDS011 TXD pin is connected at RXD of Serial2 Object
+#define SDS011_TXD  27
+/// SDS011 RXD pin is connected at TXD of Serial2 Object (no need to physically connect)
+#define SDS011_RXD  26
+
+unsigned long previousMillis_sensor = 0; 
+/// intervall of reading sensor data in ms
+#define SENSOR_INTERVAL 10000 
+
+/// Dust sensor object
+SDS011 sds; 
+/// vars to store sensor results, sensor results for dust sensor pm10
+float pm10;
+/// sensor results for dust sensor pm25
+float pm25;
+/// temperature values
+
+unsigned char rxState;
+unsigned long packet;
+unsigned long fPacket;
+
+#define nPacket  10
+bool status_sds;
+
+#define USBTX 3
+#define USBTX 1
 //A7
 #define baudrate  115200
 #define A9RX 16
@@ -18,14 +58,23 @@ int PWR_KEY_PIN = 4;
 int PWR_KEY_PIN = 33;
 int RESET_PIN = 34;
 */
+/// BME280 I2C Address 0x77 for Red, 0x76 for Purple (chinese)
+#define BME_ADDR  0x77
+/// BME280 I2C SDA pin
+#define BME_SDA 21
+/// BME280 I2C SCL pin
+#define BME_SCL 22
 
-
-#include <SoftwareSerial.h>
-#include <HardwareSerial.h>
-
-HardwareSerial gps(1);
-HardwareSerial a7g(2);
-
+/// BME280 Pressure & Humidity Sensor Object 
+Adafruit_BME280 bme; 
+/// temperature values
+float temp;
+/// humidity values
+float hum;
+/// pressure values
+float atm;
+bool use_bme280;
+unsigned char bmeAddress;
 
 #define get_a9g_init_msg  1
 #define chk_at_response   2
@@ -47,14 +96,13 @@ HardwareSerial a7g(2);
 #define close_tcp_socket  18
 #define tcp_data_seccessful 19
 #define tcp_data_failure  20
-#define close_gprs_connection 21
-
+#define gps_data_logging 21
+#define get_sds_data  22
+#define get_bme_data  23
 
 boolean command0(String cmd, String response, unsigned long timeout, boolean output);
 boolean command(String cmd, String response, unsigned long timeout, boolean output);
 
-unsigned char rxState;
-unsigned long packet;
 void setup() {
   delay(1000);
   pinMode(PWR_KEY_PIN, OUTPUT);
@@ -63,13 +111,16 @@ void setup() {
   digitalWrite(PWR_KEY_PIN, HIGH);
   
   // Note the format for setting a serial port is as follows: Serial2.begin(baud-rate, protocol, RX pin, TX pin);
-  Serial.begin(baudrate);
-  delay(500); 
-  //gps.begin(9600);
-  gps.begin(baudrate, SERIAL_8N1, GPSRX, -1);
-  delay(500); 
+  Serial.begin(baudrate,SERIAL_8N1, GPSRX, USBTX);//downloading,debugging
+  //gps.begin(baudrate, SERIAL_8N1, GPSRX, -1);
   a7g.begin(baudrate, SERIAL_8N1, A9RX, A9TX);
-  delay(500); 
+  sds.begin(&SDS_SERIAL, SDS011_RXD, SDS011_TXD);  // initialize SDS011 sensor
+  
+  bool wireStatus = Wire1.begin(BME_SDA, BME_SCL);
+  if (!wireStatus) Serial.print("Wire1 failed to init");
+
+  bmeAddress = BME_ADDR;
+  use_bme280 = bme.begin(bmeAddress, &Wire1);
   
   Serial.println("ScooterAQNET Started....");
   
@@ -83,9 +134,10 @@ void setup() {
  rxState = get_a9g_init_msg;//a7
 
 }
- boolean rsp;
+
 void loop() 
 {
+  String message= "";
   switch(rxState)
   {
     //case get_a9g_init_msg://a9g
@@ -150,7 +202,7 @@ void loop()
       }
       break;
     case chk_reg_network:
-      if (command("AT+CREG?", "CREG: 1,13", 8000, false)) {
+      if (command("AT+CREG?", "CREG: 1", 8000, false)) {
         Serial.println("NETWORK REGISTERED");
         rxState = chk_ntwrk_attached;
       }
@@ -185,18 +237,35 @@ void loop()
       if(command("AT+CIICR", "OK", 8000, false)){
         delay(6000);
         Serial.println("GPRS CONNECTED");
-        rxState = open_tcp_socket;
+        //rxState = open_tcp_socket;
+        rxState = get_sds_data;
       }
       break;
+    case get_sds_data:
+        // put your main code here, to run repeatedly:
+        status_sds = sds.read(&pm25, &pm10);
+        rxState = get_bme_data;
+      break;
+    case get_bme_data:
+      // put your main code here, to run repeatedly:
+      temp = bme.readTemperature();
+      hum = bme.readHumidity();
+      atm = bme.readPressure() / 100;
+      rxState = open_tcp_socket;
+      break;
     case open_tcp_socket:
-      if(command("AT+CIPSTART=\"TCP\",\"0.tcp.ngrok.io\",17255", "CONNECT OK", 2000, false)){
+      if(command("AT+CIPSTART=\"TCP\",\"0.tcp.ngrok.io\",18172", "CONNECT OK", 2000, true)){
         packet = 0;
+        fPacket = 0;
         Serial.println("TCP SOCKET OPENED");
         rxState = send_tcp_data;
       }
       break;
     case send_tcp_data:
-      if(command("AT+CIPSEND=138,\"{ scooterId: 'C45ZA1', pm25: 234, pm10: 110 }\"", "OK", 2000, false)){
+      message = "{ scooterId: 'C45ZA1', pm25: " + String(pm25) + ", pm10: " + String(pm10) + ", temp: " + String(temp) + ", hum: " + String(hum) + ", atm: " + String(atm) + " }";
+      //if(command("AT+CIPSEND=138,\"{ scooterId: 'C45ZA1', pm25: 234, pm10: 110 }\"", "OK", 2000, false)){
+      if(command("AT+CIPSEND=" + String(message.length()) + ",\"" + message + "\"", "OK", 2000, true)){
+        delay(3000);
         rxState = tcp_data_seccessful;
       }else
         rxState = tcp_data_failure;
@@ -204,33 +273,43 @@ void loop()
       break;
     case tcp_data_seccessful:
       Serial.println("TCP DATA SENT");
-      //if (packet == 1) 
-        rxState = close_tcp_socket;
-      //else
-      //  rxState = send_tcp_data;
+      rxState = close_tcp_socket;
       break;
     case tcp_data_failure:
+      fPacket++;
       Serial.println("TCP DATA Failure");
-      //if (packet == 1) 
-        rxState = close_tcp_socket;
-      //else
-      //  rxState = send_tcp_data;
+      rxState = close_tcp_socket;
       break;
     case close_tcp_socket:
-      delay(1000);
-      if(command("AT+CIPCLOSE", "OK", 2000, true)){
+      //delay(500);
+      //if(command("AT+CIPCLOSE", "OK", 2000, true)){
+      if(command("AT+CIPSHUT", "OK", 2000, true)){
+        delay(1000);
         Serial.println("TCP Socket Closed");
-        
-        packet=0;
         //rxState = close_gprs_connection;
-        rxState = open_tcp_socket;
+        if (packet==nPacket)
+        {
+          Serial.println("Packets:"+String(packet)+" Failed Packets:"+String(fPacket));
+          packet = 0;fPacket = 0;
+          //rxState = gps_data_logging;
+          rxState = idle_state;
+        }else
+          rxState = open_tcp_socket;
       }
       break;
-    case close_gprs_connection:
-      //if(command("AT+CIPSHUT", "OK", 4000, true)){
-       // Serial.println("GPRS Connection Closed");
-        rxState = idle_state;
-      //}
+    case gps_data_logging:
+      // check if time since last measurement is greater than sensor_interval
+      if ((unsigned long)(millis() - previousMillis_sensor) >= SENSOR_INTERVAL) 
+      {
+        previousMillis_sensor = millis();
+        
+        // read from port 0, send to port 1:
+        if (Serial.available()> 0) {
+          int inByte = Serial.read();
+          Serial.print(char(inByte+1));
+        }
+      }
+      rxState = idle_state;
       break;
     case idle_state:
       break;
