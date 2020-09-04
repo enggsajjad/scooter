@@ -1,0 +1,232 @@
+Serial Timeout: 
+Serial: ÿAT
+
++CME ERROR:58
+
+Serial RD LEN: 22
+Serial RD LEN: 22
+Serial: AT
+
+OK
+AT+RST=1
+
+^CINIT: 1, 0, 0
+
+^CINIT: 2, 32, 41891
+
++CREG: 3
+
+^STN: 37
+
+^CINIT: 4, 8192, 37
+
+^CINIT: 8, 2048, 1
+
+^CINIT: 16, 0, 1638410
+
+^CINIT: 32, 0, 0
+
++CTZV:20/09/03,05:10:42,+02
+
++CIEV: service,  1
++CIEV: roam, 0
+
++CREG: 1
+
++CREG: 0
+
+Serial RD LEN: 272
+Serial RD LEN: 272
+Serial: AT+GPS=1
+
+OK
+AT+CREG?
+
++CREG: 1,1
+
+OK
+
+Serial RD LEN: 46
+Serial RD LEN: 46
+Serial: AT+CGATT?
+
++CGATT:0
+
+OK
+AT+CGATT=1
+
++CTZV:20/09/03,05:11:45,+02
+
+OK
+
+Serial RD LEN: 78
+Serial RD LEN: 78
+Serial: AT+CSTT="internet","",""
+
+OK
+AT+CIICR
+
+OK
+
+Serial RD LEN: 48
+Serial RD LEN: 48
+Serial: AT+CIFSR
+
+10.134.105.27
+
+OK
+AT+CIPSTART="TCP","0.tcp.ngrok.io",15339
+
++CGDMODIND:1
+
+
+
+CONNECT OK
+
+OK
+
+Serial RD LEN: 115
+Serial RD LEN: 115
+Serial: AT+CIPSEND=83,"{ scooterId: 'C45ZA1', pm25: 6.00, pm10: 3.00, temp: 32.00, hum: 12.00, atm: 0.00 }"
+
+OK
+
++CIPRCV:105,127.0.0.1:51733 said { scooterId: 'C45ZA1', pm25: 6.00, pm10: 3.00, temp: 32.00, hum: 12.00, atm: 0.00 }
+
+
+AT+CIPCLOSE
+
+OK
+
+Serial RD LEN: 250
+Serial RD LEN: 250
+Serial: AT+CIPSTART="TCP","0.tcp.ngrok.io",15339
+
+CONNECT OK
+
+OK
+AT+CIPSEND=83,"{ scooterId: 'C45ZA1', pm25: 6.00, pm10: 3.00, temp: 32.00, hum: 12.00, atm: 1.00 }"
+
+OK
+
++CIPRCV:105,127.0.0.1:51737 said { scooterId: 'C45ZA1', pm25: 6.00, pm10: 3.00, temp: 32.00, hum: 12.00, atm: 1.00 }
+
+
+
+Serial RD LEN: 293
+Serial RD LEN: 293
+Serial: AT+CIPCLOSE
+
+OK
+AT+CIPSTART="TCP","0.tcp.ngrok.io",15339
+
+CONNECT OK
+
+OK
+
+Serial RD LEN: 81
+Serial RD LEN: 81
+Serial: AT+CIPSEND=83,"{ scooterId: 'C45ZA1', pm25: 6.00, pm10: 3.00, temp: 32.00, hum: 12.00, atm: 2.00 }"
+
+OK
+
++CIPRCV:105,127.0.0.1:51746 said { scooterId: 'C45ZA1', pm25: 6.00, pm10: 3.00, temp: 32.00, hum: 12.00, atm: 2.00 }
+
+
+AT+CIPCLOSE
+
+OK
+
+Serial RD LEN: 250
+Serial RD LEN: 250
+Serial: AT+CIPSTART="TCP","0.tcp.ngrok.io",15339
+
+CONNECT OK
+
+OK
+AT+CIPSEND=83,"{ scooterId: 'C45ZA1', pm25: 6.00, pm10: 3.00, temp: 32.00, hum: 12.00, atm: 3.00 }"
+
+OK
+
++CIPRCV:105,127.0.0.1:51757 said { scooterId: 'C45ZA1', pm25: 6.00, pm10: 3.00, temp: 32.00, hum: 12.00, atm: 3.00 }
+
+
+
+Serial RD LEN: 293
+Serial RD LEN: 293
+Serial: AT+CIPCLOSE
+
+OK
+AT+CIPSTART="TCP","0.tcp.ngrok.io",15339
+
+CONNECT OK
+
+OK
+
+Serial RD LEN: 81
+Serial RD LEN: 81
+Serial: AT+CIPSEND=83,"{ scooterId: 'C45ZA1', pm25: 6.00, pm10: 3.00, temp: 32.00, hum: 12.00, atm: 4.00 }"
+
+OK
+
++CIPRCV:105,127.0.0.1:51763 said { scooterId: 'C45ZA1', pm25: 6.00, pm10: 3.00, temp: 32.00, hum: 12.00, atm: 4.00 }
+
+
+AT+CIPCLOSE
+
+OK
+
+Serial RD LEN: 250
+Serial RD LEN: 250
+Serial: AT+CIPSTART="TCP","0.tcp.ngrok.io",15339
+
+CONNECT OK
+
+OK
+AT+CIPSEND=83,"{ scooterId: 'C45ZA1', pm25: 6.00, pm10: 3.00, temp: 32.00, hum: 12.00, atm: 5.00 }"
+
+OK
+
++CIPRCV:105,127.0.0.1:51768 said { scooterId: 'C45ZA1', pm25: 6.00, pm10: 3.00, temp: 32.00, hum: 12.00, atm: 5.00 }
+
+
+
+Serial RD LEN: 293
+Serial RD LEN: 293
+Serial: AT+CIPCLOSE
+
+OK
+AT+CIPSTART="TCP","0.tcp.ngrok.io",15339
+
+CONNECT OK
+
+OK
+
+Serial RD LEN: 81
+Serial RD LEN: 81
+Serial: AT+CIPSEND=83,"{ scooterId: 'C45ZA1', pm25: 6.00, pm10: 3.00, temp: 32.00, hum: 12.00, atm: 6.00 }"
+
+OK
+
++CIPRCV:105,127.0.0.1:51772 said { scooterId: 'C45ZA1', pm25: 6.00, pm10: 3.00, temp: 32.00, hum: 12.00, atm: 6.00 }
+
+
+AT+CIPCLOSE
+
+OK
+
+Serial RD LEN: 250
+Serial RD LEN: 250
+Serial: AT+CIPSTART="TCP","0.tcp.ngrok.io",15339
+
+CONNECT OK
+
+OK
+AT+CIPSEND=83,"{ scooterId: 'C45ZA1', pm25: 6.00, pm10: 3.00, temp: 32.00, hum: 12.00, atm: 7.00 }"
+
+OK
+
++CIPRCV:105,127.0.0.1:51779 said { scooterId: 'C45ZA1', pm25: 6.00, pm10: 3.00, temp: 32.00, hum: 12.00, atm: 7.00 }
+
+
+

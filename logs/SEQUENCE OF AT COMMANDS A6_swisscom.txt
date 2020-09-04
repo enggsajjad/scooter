@@ -1,0 +1,130 @@
+AT COMMANDS
+==================
+
+AT+GPS=1, on GPS.
+AT+GPS=0,off GPS
+AT+GPS? ,Query the GPS status.
+
+
+//Get current registration status
+//If there is any error, CME error code is returned
+AT+CREG?
+
+AT+CREG? Read command reports the <mode> and <stat> parameter values in the
+format:
++CREG: <mode>,<stat>
+Parameter:
+<mode>
+ 0 - disable network registration unsolicited result code (factory default)
+ 1 - enable network registration unsolicited result code
+ 2 - enable network registration unsolicited result code with network Cell identification data
+<stat>
+ 0 - not registered, ME is not currently searching a new operator to register to
+ 1 - registered, home network
+ 2 - not registered, but ME is currently searching a new operator to register to
+ 3 - registration denied
+ 4 -unknown
+ 5 - registered, roaming 
+ 
+ 
+ 	
+AT+COPS AT command forces the mobile terminal to select and register the GSM/UMTS/EPS network.
+Possible values for mode are,
+0 automatic ( field is ignored)
+
+
+AT+CGACT AT command is used to activate ot deactivate the PDP context
+Parameters:
+<state> - indicates the state of PDP context activation
+ 0 - deactivated
+ 1 - activated
+<cid> - a numeric parameter which specifies a particular PDP context
+definition (see +CGDCONT command) 
+AT+CGACT[=[<state>[,<cid>[,<cid>[,…]]]]]
+Execution command is used to activate or deactivate the specified PDPcontext(s) 
+
+
+AT+CSTT AT command sets up the apn, user name and password for the PDP context.
+
+AT+CIICR command brings up the GPRS or CSD call depending on the configuration previously set by the AT+CSTT command.
+
+AT+CIPSTART comamnds starts a TCP or UDP connection.
+
+Parameters
+- 0..7 - Connection number
+- "TCP" or "UDP"
+- Remote server IP address
+- Remote server port
+- remote domain name
+
+AT+CIPSEND AT command is used to send the data over the TCP or UDP connection
+
+
+AT+CIPMUX AT command configures the device for a single or multi IP connection
+
+
+
+
+//Check the registration status
+AT+CREG?
+//Check attach status
+AT+CGACT?
+//Attach to the network
+AT+CGATT=1
+//Wait for Attach
+WAIT=7
+//Start task ans set the APN. Check your carrier APN
+AT+CSTT="bluevia.movistar.es"
+//Bring up the wireless connection
+AT+CIICR
+//Wait for bringup
+WAIT=6
+//Get the local IP address
+AT+CIFSR
+//Start a TCP connection to remote address. Port 80 is TCP.
+AT+CIPSTART="TCP","74.124.194.252","80"
+//Set prompt of '>' when module sends data
+AT+CIPSPRT=1
+//Send the TCP data
+AT+CIPSEND
+>
+GET https://www.m2msupport.net/m2msupport/http_get_test.php HTTP/1.0
+
+
+
+
+SEQUENCE OF AT COMMANDS A6_swisscom
+
+=====================
+https://github.com/SensorsIot/A6-GSM-Module/blob/master/A6_swisscom/A6_swisscom.ino
+
+
+//1.Setup
+AT+GPS=1
+AT+CPIN?
+AT+CPIN="2580"
+AT+CPIN?
+AT+CREG?
+AT+COPS=0
+AT+CREG?
+//2.Setup
+AT+CGACT?
+AT+CGATT=1
+AT+CGATT?
+AT+CSTT="internet","",""
+AT+CIICR
+AT+CIPSTART="TCP","0.tcp.ngrok.io",19147
+AT+CIPSEND=138,"{ scooterId: 'C45ZA1', pm25: 234, pm10: 110 }"
+AT+CIPSHUT
+//3.Loop
+AT+CIPSTART="TCP","0.tcp.ngrok.io",17121
+AT+CIPSEND=138,"{ scooterId: 'C45ZA1', pm25: 234, pm10: 110 }"
+AT+CIPSHUT
+//3.Loop
+AT+CIPSTART="TCP","0.tcp.ngrok.io",17121
+AT+CIPSEND=138,"{ scooterId: 'C45ZA1', pm25: 234, pm10: 110 }"
+AT+CIPSHUT
+//3.Loop
+AT+CIPSTART="TCP","0.tcp.ngrok.io",17121
+AT+CIPSEND=138,"{ scooterId: 'C45ZA1', pm25: 234, pm10: 110 }"
+AT+CIPSHUT
