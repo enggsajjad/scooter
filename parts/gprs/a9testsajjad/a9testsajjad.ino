@@ -30,8 +30,12 @@ byte r;
 int rxState = 0;
 int nState = 0;
 
+String resp;
+byte error;
+bool rcvd;
 volatile int interruptCounter;
 bool timeoutIntrupt;
+unsigned long nSec=10;
  
 hw_timer_t * timer = NULL;
 portMUX_TYPE timerMux = portMUX_INITIALIZER_UNLOCKED;
@@ -43,10 +47,11 @@ void IRAM_ATTR onTimer() {
   portEXIT_CRITICAL_ISR(&timerMux);
 
   Serial.println("Serial Timeout: " );
-  timerAlarmDisable(timer);
+  error=TIMEOUT;
+  rxState = nState-1;//current
+  //timerAlarmDisable(timer);
 }
 
- 
 void setup() 
 {
   delay(100);
@@ -64,9 +69,9 @@ void setup()
   //digitalWrite(gprsSerial_Power_pin, HIGH);
   delay(5000);
 
-  gprsSerial.println("AT");
-  rxState = 100;
-  nState = 1;
+  //gprsSerial.println("AT");resp="OK";
+  //rxState = 100;
+  //nState = 1;
   /*gprsCommand("AT+RST=1", "+CREG: 1", "+CREG: 0", 20000, 3);
   
   if (gprsBegin() != OK) {
@@ -80,10 +85,11 @@ void setup()
   */
   timer = timerBegin(0, 80, true);
   timerAttachInterrupt(timer, &onTimer, true);
-  timerAlarmWrite(timer, 10*1000000, true);
+  timerAlarmWrite(timer, nSec*1000000, true);
   timerAlarmEnable(timer);
 }
 String rd;
+
 void loop()
 {
   switch(rxState)
@@ -92,81 +98,132 @@ void loop()
       while ( gprsSerial.available())
       {
         rd = gprsSerial.readString();
-        Serial.println("Serial: " + rd );
+        if (rd == "" || rd == "\n" || rd == " " || rd == "\t" || rd == "\v" || rd == "\f" || rd == "\r") continue;
+        Serial.println("-------------------");
+        Serial.println("Serial " +String(rd.length()) +": " + rd );
+        Serial.println("===================");
       }
       if (rd!="")
       {
-        delay(10000);
-        Serial.println("Serial RD LEN: "+ String(rd.length()) );
-        rxState = nState;
+        if(nState==3)
+        {
+          Serial.println("Serial Resp: "+ resp + " Ind " + String(rd.indexOf(resp)));
+          Serial.println("Serial Resp: CREG: 0 Ind: " + String(rd.indexOf("\0")));
+          Serial.println("Serial Resp: service Ind: " + String(rd.indexOf("RST")));
+          char buf[255];
+          rd.toCharArray(buf, 255);
+          Serial.print("Serial2: ");
+          Serial.println(buf );
+          Serial.println("Serial2 " +String(rd.length()) +": " + String(buf) );
+        }
+          if(rd.indexOf("ERROR")>0){
+            Serial.println("Serial Error: " );
+            error=NOTOK;
+            rxState = nState-1;//current
+          }
+          else if(rd.indexOf(resp)>0){
+            Serial.println("Serial Resp: "+ resp );
+            error=OK;
+            rxState = nState;
+          }
+          //else{
+          //  Serial.println("Serial Error1: " );
+          //  error=NOTOK;
+          //  rxState = nState-1;//current
+          //}
+
+        rd = "";
+        //delay(10000);
+        //rxState = nState;
       }
- 
-      
-      
+
+      break;
+    case 0:
+      Serial.println("Command AT1");resp="OK"; rcvd = false;
+      gprsSerial.println("AT");
+      rxState = 100;
+      nState = 1;
       break;
     case 1:
+      Serial.println("Command AT2");
+      resp="OK"; rcvd = false;
       gprsSerial.println("AT");
       nState=2;
       rxState = 100;
       break;
     case 2:
+      Serial.println("Command AT+RST=1");
+      timerAlarmWrite(timer, 60*1000000, true);resp="CREG:"; rcvd = false;
       gprsSerial.println("AT+RST=1");
       nState=3;
       rxState = 100;
       break;
     case 3:
+      timerAlarmWrite(timer, 20*1000000, true);
+      Serial.println("Command AT+GPS=1");resp="OK"; rcvd = false;
       gprsSerial.println("AT+GPS=1");
       nState=4;
       rxState = 100;
       break;
     case 4:
+      Serial.println("Command AT+CREG?");resp="+CREG: 1,1"; rcvd = false;
       gprsSerial.println("AT+CREG?");
       nState=5;
       rxState = 100;
       break;
     case 5:
+      Serial.println("Command AT+CGATT?");resp="OK"; rcvd = false;
       gprsSerial.println("AT+CGATT?");
       nState=6;
       rxState = 100;
       break;
     case 6:
+      Serial.println("Command AT+CGATT");resp="OK"; rcvd = false;
       gprsSerial.println("AT+CGATT=1");
       nState=7;
       rxState = 100;
       break;
     case 7:
+      Serial.println("Command AT+CSTT");resp="OK"; rcvd = false;
       gprsSerial.println("AT+CSTT=\"internet\",\"\",\"\"");
       nState=8;
       rxState = 100;
       break;
     case 8:
+      Serial.println("Command AT+CIICR");resp="OK"; rcvd = false;
       gprsSerial.println("AT+CIICR");
       nState=9;
       rxState = 100;
       break;
     case 9:
+      Serial.println("Command AT+CIFSR");resp="OK"; rcvd = false;
       gprsSerial.println("AT+CIFSR");
       nState=10;
       rxState = 100;
       break;
     case 10:
+      Serial.println("Command AT+CIPSTART");resp="CONNECT OK"; rcvd = false;
       gprsSerial.println("AT+CIPSTART=\"TCP\",\"" + host + "\"," + port+"");
       nState=11;
       rxState = 100;
       break;
     case 11:
+      Serial.println("Command AT+CIPSEND");resp="OK"; rcvd = false;
       message = "{ scooterId: 'C45ZA1', pm25: " + String(pm25) + ", pm10: " + String(pm10) + ", temp: " + String(temp) + ", hum: " + String(hum) + ", atm: " + String(atm++) + " }";
       gprsSerial.println("AT+CIPSEND=" + String(message.length()) + ",\"" + message + "\"");
       nState=12;
       rxState = 100;
       break;
     case 12:
+      Serial.println("Command AT+CIPCLOSE");resp="OK"; rcvd = false;
       gprsSerial.println("AT+CIPCLOSE");
       nState=10;
       rxState = 100;
       break;
     case 13:
-      gprsSerial.println("AT+CGATT?");
+      
+      Serial.println("Command AT+RST=1");
+      gprsSerial.println("AT+CGATT?"); rcvd = false;
       nState=6;
       rxState = 100;
       break;
