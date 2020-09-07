@@ -31,8 +31,8 @@ byte command(String cmd, String response, unsigned long timeout, boolean output)
   while(gprsSerial.available() > 0) {
     gprsSerial.read(); //clear data
   }
-  gprsSerial.println(cmd);
-
+  gprsSerial.println(cmd+"\r\n");
+  delay(100);
   unsigned long currentMillis = millis();
 
   while(currentMillis + timeout > millis()) {

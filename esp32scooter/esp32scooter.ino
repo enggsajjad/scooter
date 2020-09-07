@@ -23,28 +23,24 @@
 void setup() 
 {
   delay(100);
-  gprsSerial.begin(gprsBaud, SERIAL_8N1, gprsRX, gprsTX);
-  //gpsSerial.begin(gpsBaud, SERIAL_8N1, GPSRX, GPSTX);
-  //gprsSerial.setTimeout(20000);
-  
-  //Serial.begin(115200);    //        rxPin = 3; txPin = 1;
-  Serial.begin(gpsBaud, SERIAL_8N1, gpsRX,1);
-
-  sds.begin(&SDS_SERIAL, SDS011_RXD, SDS011_TXD);  // initialize SDS011 sensor
-  bool wireStatus = Wire1.begin(BME_SDA, BME_SCL);
-  if (!wireStatus) Serial.print("Wire1 failed to init");
-  bmeAddress = BME_ADDR;
-  use_bme280 = bme.begin(bmeAddress, &Wire1);
-  
-  Serial.println("Start");
 
   pinMode(gprsPWR, OUTPUT);
   digitalWrite(gprsPWR, HIGH);
-  delay(2000);
-  digitalWrite(gprsPWR, LOW);
   //delay(2000);
-  //digitalWrite(gprsPWR, HIGH);
-  delay(5000);
+  //digitalWrite(gprsPWR, LOW);
+  delay(1000);
+
+  gprsSerial.begin(gprsBaud, SERIAL_8N1, gprsRX, gprsTX);
+  //gpsSerial.begin(gpsBaud, SERIAL_8N1, GPSRX, GPSTX);
+  Serial.begin(gpsBaud, SERIAL_8N1, gpsRX,usbTX);//        rxPin = 3; txPin = 1;
+  Serial.println("Start");
+  
+  sds.begin(&SDS_SERIAL, SDS011_RXD, SDS011_TXD);  // initialize SDS011 sensor
+  bool wireStatus = Wire1.begin(BME_SDA, BME_SCL);
+  if (!wireStatus) Serial.println("Wire1 failed to init");
+  bmeAddress = BME_ADDR;
+  use_bme280 = bme.begin(bmeAddress, &Wire1);
+  
 
   Serial.println("Setting GPRS MODULE");
 

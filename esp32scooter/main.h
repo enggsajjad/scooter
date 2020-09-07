@@ -130,7 +130,7 @@
  *  
  *\section author Author(s)
  * - Sajjad Hussain, 
- * - Tobias, 
+ * - Tobias Röddiger, 
  *
  * The team at TECO (www.teco.edu) and at Chair for Pervasive Computing Systems (https://pcs.tm.kit.edu).
  *
@@ -191,10 +191,10 @@
 //******************************************************** constants ***************************
 
 /// firmware version, (for intermediate versions being actively worked on, append "pre" to number, indicating that it is "not yet" the specified number)
-#define FIRMWARE_VERSION "0.8.7.0 pre"
-/// Software.version Name property for Thing and Datastreams 
+#define FIRMWARE_VERSION "0.1.0.0 pre"
+/// Software.version 
 #define sw_version FIRMWARE_VERSION
-/// Hardware.Revision Date property for Thing and Datastreams
+/// Hardware.Revision 
 #define hw_date "2020-01-17T12:00:00.000Z"
 
 /// Debugging, uncomment to switch servers to release version, enable sending to madavi and luftdaten.info, and supress some debug output
@@ -230,12 +230,6 @@
   #define MY_DBGln(...)
 #endif // !MY_DEBUG
 
-/// switch for sending to FROST teco server
-#define ENABLE_SEND2FROST true 
-/// intervall of reading sensor data in ms
-#define SENSOR_INTERVAL 10000 
-/// intervall of showing statistics informations, it is multiple of SENSOR_INTERVAL i.e. 10 mean  100s
-#define STATS_INTERVAL 10 
 
 #ifdef RELEASE
   /// switch for sending to madavi api

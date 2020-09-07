@@ -56,7 +56,6 @@ void IRAM_ATTR onTimer()
     interruptCounter=0;
     Serial.println("Timeout: "+ String(currentTimeout) +"s");
   Err=TIMEOUT;
-  //rxState = nState-1;//
   rxState = current;
   timerAlarmDisable(timer);
   }

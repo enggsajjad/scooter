@@ -56,39 +56,55 @@ DHT dht(DHT_PIN, DHT22);
 #undef DHT22
 #endif 
 
-//A7G
-/// GPRS RX Pin
-#define gprsRX 16
-/// GPRS TX Pin
-#define gprsTX 17
-/// GPRS PWR Pin
-#define gprsPWR 4
-/// GPRS RST Pin
-#define gprsRST 34
-/// GPS RX Pin
-#define gpsRX 23
-/// GPS TX Pin
-#define gpsTX -1
-/// GPRS Baudrate for AT Commands
-#define gprsBaud 115200
-/// GPS TX pin Baudrate
-#define gpsBaud 9600
+/// Default Serial0 used for USB TX (Debugging)
+#define usbTX 1
+/// Default Serial0 used for USB RX (Programming) but here connected for GPS_TX
+#define usbRX 3
+
+
 /// Serial port for GPRS (AT) Commands
 #define gprsSerial Serial1
-/*
-//A9G
 
-#define baud  9600
-/// GPRS RX Pin
-#define gprsRX 14
-/// GPRS TX Pin
-#define gprsTX 12
-/// GPS RX Pin
-#define GPSRX 13
-/// GPS TX Pin
-#define GPSTX -1
-/// GPS PWR Pin
-#define gprsPWR  33;
-/// GPS RST Pin
-#define gprsRST  34;
-*/
+/// Debugging, uncomment to switch servers to use A9G Module otherwise A7
+//#define A9G 
+
+/// Setting the servers and debugging control using the A9G
+#ifndef A9G
+  //A7G
+  /// GPRS RX Pin
+  #define gprsRX 16
+  /// GPRS TX Pin
+  #define gprsTX 17
+  /// GPRS PWR Pin
+  #define gprsPWR 4
+  /// GPRS RST Pin
+  #define gprsRST 34
+  /// GPS RX Pin
+  #define gpsRX 23
+  /// GPS TX Pin
+  #define gpsTX -1
+  /// GPRS Baudrate for AT Commands
+  #define gprsBaud 115200
+  /// GPS TX pin Baudrate
+  #define gpsBaud 9600
+  
+#else
+  //A9G
+  #define baud  9600
+  /// GPRS RX Pin
+  #define gprsRX 14
+  /// GPRS TX Pin
+  #define gprsTX 12
+  /// GPS RX Pin
+  #define GPSRX 13
+  /// GPS TX Pin
+  #define GPSTX -1
+  /// GPS PWR Pin
+  #define gprsPWR  33;
+  /// GPS RST Pin
+  #define gprsRST  34;
+  /// GPRS Baudrate for AT Commands
+  #define gprsBaud 115200
+  /// GPS TX pin Baudrate
+  #define gpsBaud 9600
+#endif 
