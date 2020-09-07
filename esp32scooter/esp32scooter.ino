@@ -75,166 +75,82 @@ void loop()
       {
           if(rd.indexOf("ERROR")>0){
             Serial.println("RcvdErr" );
-            Err=NOTOK;
-            //rxState = nState-1;//current
-            rxState = current;
+            //Err=NOTOK;
+            //rxState = current;
+            rxState = 101;
           }
           else if(rd.indexOf(resp)>0){
             Serial.println("RcvdResp: "+ resp );
             Err=OK;
             rxState = nState;
           }
-          //else{
-          //  Serial.println("Serial Error1: " );
-          //  Err=NOTOK;
-          //  rxState = nState-1;//current
-          //}
 
         rd = "";
         Serial.println("RcvdAt: "+ String(interruptCounter) +"s" );
         Serial.println("===================");
         interruptCounter=0;
         timerAlarmDisable(timer);
-        //delay(10000);
-        //rxState = nState;
       }
 
       break;
     case 0:
-      Serial.println("Sending AT1");resp="OK"; 
-      //setupTimer(10);
-      setupTimer(1);currentTimeout=10;
-      gprsSerial.println("AT");
-      rxState = 100;
+      setATCommand("AT", "OK", 1, 10);
       nState = 1;
-      current = 0;
       break;
     case 1:
-      Serial.println("Sending AT2");
-      resp="OK"; 
-      //setupTimer(10);
-      setupTimer(1);currentTimeout=10;
-      gprsSerial.println("AT");
+      setATCommand("AT", "OK", 1, 10);
       nState=2;
-      current = 1;
-      rxState = 100;
       break;
     case 2:
-      //Serial.println("Sending AT+RST=1");
-      Serial.println("Sending AT3");
-      //setupTimer(60);
-      //gprsSerial.setTimeout(10000);
-      setupTimer(1);currentTimeout=60;
-      resp="OK"; //
-      //resp="RST"; //
-      //resp="+CREG: 0";
-      //gprsSerial.println("AT+RST=1");
-      gprsSerial.println("AT");
+      //setATCommand("AT+RST=1", "RST", 1, 60);
+      setATCommand("AT", "OK", 1, 60);
       nState=32;
-      current = 2;
-      rxState = 100;
       break;
     case 32:
-      Serial.println("Sending AT+GPSRD=0");
-      //gprsSerial.setTimeout(10000);
-      setupTimer(1);currentTimeout=20;
-      resp="OK"; 
-      gprsSerial.println("AT+GPSRD=0");
+      setATCommand("AT+GPSRD=0", "OK", 1, 20);
       nState=3;
-      current = 32;
-      rxState = 100;
       break;
     case 3:
-      //gprsSerial.setTimeout(1000);
-      delay(10000); //skip extra response of AT+RST=1, missed due to \0
-      //setupTimer(20);
-      
-      setupTimer(1);currentTimeout=20;
-      Serial.println("Sending AT+GPS=1");resp="OK"; 
-      gprsSerial.println("AT+GPS=1");
+      //delay(3000); //skip extra response of AT+RST=1, missed due to \0
+      setATCommand("AT+GPS=1", "OK", 1, 20);
       nState=24;//4;
-      current = 3;
-      rxState = 100;
       break;
     case 4:
-      Serial.println("Sending AT+CREG?");resp="+CREG: 1,1"; 
-      //setupTimer(20);
-      setupTimer(1);currentTimeout=20;
-      gprsSerial.println("AT+CREG?");
+      setATCommand("AT+CREG?", "+CREG: 1,1", 1, 20);
       nState=5;
-      current = 4;
-      rxState = 100;
       break;
     case 5:
-      Serial.println("Sending AT+CGACT?");resp="OK"; 
-      //setupTimer(20);
-      setupTimer(1);currentTimeout=20;
-      gprsSerial.println("AT+CGACT?");
+      setATCommand("AT+CGACT?", "OK", 1, 20);
       nState=6;
-      current = 5;
-      rxState = 100;
       break;
     case 6:
-      Serial.println("Sending AT+CGATT");resp="OK"; 
-      //setupTimer(20);
-      setupTimer(1);currentTimeout=20;
-      gprsSerial.println("AT+CGATT=1");
+      setATCommand("AT+CGATT=1", "OK", 1, 20);
       nState=7;
-      current = 6;
-      rxState = 100;
       break;
     case 7:
-      Serial.println("Sending AT+CSTT");resp="OK"; 
-      //setupTimer(20);
-      setupTimer(1);currentTimeout=20;
-      gprsSerial.println("AT+CSTT=\"internet\",\"\",\"\"");
+      setATCommand("AT+CSTT=\"internet\",\"\",\"\"", "OK", 1, 20);
       nState=8;
-      current = 7;
-      rxState = 100;
       break;
     case 8:
-      Serial.println("Sending AT+CIICR");resp="OK"; 
-      //setupTimer(20);
-      setupTimer(1);currentTimeout=20;
-      gprsSerial.println("AT+CIICR");
+      setATCommand("AT+CIICR", "OK", 1, 20);
       nState=9;
-      current = 8;
-      rxState = 100;
       break;
     case 9:
-      Serial.println("Sending AT+CIFSR");resp="OK"; 
-      //setupTimer(20);
-      setupTimer(1);currentTimeout=20;
-      gprsSerial.println("AT+CIFSR");
+      setATCommand("AT+CIFSR", "OK", 1, 20);
       nState=10;
-      current = 9;
-      rxState = 100;
       break;
     case 10:
-      Serial.println("Sending AT+CIPSTART");resp="CONNECT OK"; 
-      //setupTimer(30);
-      setupTimer(1);currentTimeout=30;
-      gprsSerial.println("AT+CIPSTART=\"TCP\",\"" + host + "\"," + port);
+      setATCommand("AT+CIPSTART=\"TCP\",\"" + host + "\"," + port, "CONNECT OK", 1, 30);
       nState=11;
-      current = 10;
-      rxState = 100;
       break;
     case 11:
-      Serial.println("Sending AT+CIPSEND");resp="OK"; 
       message = "{ scooterId: 'C45ZA1', pm25: " + String(pm25) + ", pm10: " + String(pm10) + ", temp: " + String(temp) + ", hum: " + String(hum) + ", atm: " + String(atm++) + " }";
-      //setupTimer(30);
-      setupTimer(1);currentTimeout=30;
-      gprsSerial.println("AT+CIPSEND=" + String(message.length()) + ",\"" + message + "\"");
+      setATCommand("AT+CIPSEND=" + String(message.length()) + ",\"" + message + "\"", "OK", 1, 30);
       nState=12;
-      rxState = 100;
       break;
     case 12:
-      Serial.println("Sending AT+CIPCLOSE");resp="OK"; 
-      //setupTimer(20);
-      setupTimer(1);currentTimeout=20;
-      gprsSerial.println("AT+CIPCLOSE");
+      setATCommand("AT+CIPCLOSE", "OK", 1, 20);
       nState=10;
-      rxState = 100;
       break;
       //////////
     case 13:
@@ -263,13 +179,8 @@ void loop()
       rxState = 26;
       break;
     case 26:
-      Serial.println("Sending AT+GPSRD=5");resp="OK"; 
-      //setupTimer(20);
-      setupTimer(1);currentTimeout=20;
-      gprsSerial.println("AT+GPSRD=5");
+      setATCommand("AT+GPSRD=5", "OK", 1, 20);
       nState=27;
-      current = 26;
-      rxState = 100;
       break;
     case 27:
       Serial.println("Getting data from GPS using AT");
@@ -295,13 +206,8 @@ void loop()
       rxState = 29;
       break;
     case 29:
-      Serial.println("Sending AT+GPSRD=0");resp="OK"; 
-      //setupTimer(20);
-      setupTimer(1);currentTimeout=20;
-      gprsSerial.println("AT+GPSRD=0");
+      setATCommand("AT+GPSRD=0", "OK", 1, 20);
       nState=30;
-      current = 29;
-      rxState = 100;
       break;
     case 30:
       Serial.println("Getting data from Sensors");
@@ -316,21 +222,15 @@ void loop()
       //rxState = 31;
       break;
     case 31:
+      
       break;
-  }
-  /*
-  {
-  Serial.println("------Post value to TCP------");
-  r = gprsSendTCPData();
-    
-  }*/
-/*
-  //if ( gprsSerial.available())
-    //Serial.write( gprsSerial.read());
-  if (Serial.available()){
-    byte bye=Serial.read();
-    gprsSerial.print(char(bye));
-    Serial.print(char(bye));
-  }
-*/
+    case 101://NOTOK ERROR
+      Err=NOTOK;
+      rxState = current;
+      break;
+    case 102://TIMEOUT ERROR
+      Err=TIMEOUT;
+      rxState = current;
+      break;
+    }
 }

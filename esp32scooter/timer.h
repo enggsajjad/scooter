@@ -19,9 +19,9 @@ int currentTimeout;
 /// Receive from Serial States
 extern int rxState;
 /// Error Indicating for AT Command Respnse
-extern byte Err;
+//extern byte Err;
 /// Current rxState for Serial
-extern int current;
+//extern int current;
 
 /**************************************************************************/
 /*!
@@ -55,9 +55,10 @@ void IRAM_ATTR onTimer()
   {
     interruptCounter=0;
     Serial.println("Timeout: "+ String(currentTimeout) +"s");
-  Err=TIMEOUT;
-  rxState = current;
-  timerAlarmDisable(timer);
+    //Err=TIMEOUT;
+    //rxState = current;
+    rxState = 102;
+    timerAlarmDisable(timer);
   }
   portEXIT_CRITICAL_ISR(&timerMux);
 }

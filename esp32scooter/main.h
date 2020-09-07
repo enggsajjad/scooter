@@ -281,3 +281,15 @@ int current;
 String resp;
 /// Error Indicating for AT Command Respnse
 byte Err;
+
+
+void setATCommand(String cmd, String rsp, int triggerTime, int triggerCount)
+{
+  Serial.println("Sending "+cmd);
+  resp=rsp; 
+  setupTimer(triggerTime);
+  currentTimeout=triggerCount;
+  gprsSerial.println(cmd);
+  current = rxState;
+  rxState = 100;
+}
