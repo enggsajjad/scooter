@@ -1,0 +1,108 @@
+\hypertarget{classmy_auto_connect}{}\section{my\+Auto\+Connect Class Reference}
+\label{classmy_auto_connect}\index{myAutoConnect@{myAutoConnect}}
+
+
+\mbox{\hyperlink{classmy_auto_connect}{my\+Auto\+Connect}} Class inherited from Auto\+Connect  
+
+
+
+
+{\ttfamily \#include $<$my\+Auto\+Connect.\+h$>$}
+
+Inheritance diagram for my\+Auto\+Connect\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmy_auto_connect}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmy_auto_connect_af01e87d4cd7f2dd7c3ee54f459e7c137}{my\+Auto\+Connect}} (Web\+Server\+Class \&web\+Server)
+\item 
+wl\+\_\+status\+\_\+t \mbox{\hyperlink{classmy_auto_connect_aa1aaa515c6e27f9fe1073db1122561ca}{\+\_\+wait\+For\+Connect}} (unsigned long timeout)
+\item 
+bool \mbox{\hyperlink{classmy_auto_connect_aeb57ccef1c16394c297a2ea2fd143f52}{begin}} (void)
+\item 
+bool \mbox{\hyperlink{classmy_auto_connect_a1e452b4042120cda55722dc3bf220a77}{begin}} (const char $\ast$ssid, const char $\ast$passphrase, unsigned long timeout)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{classmy_auto_connect}{my\+Auto\+Connect}} Class inherited from Auto\+Connect 
+
+Definition at line 63 of file my\+Auto\+Connect.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmy_auto_connect_af01e87d4cd7f2dd7c3ee54f459e7c137}\label{classmy_auto_connect_af01e87d4cd7f2dd7c3ee54f459e7c137}} 
+\index{myAutoConnect@{myAutoConnect}!myAutoConnect@{myAutoConnect}}
+\index{myAutoConnect@{myAutoConnect}!myAutoConnect@{myAutoConnect}}
+\subsubsection{\texorpdfstring{myAutoConnect()}{myAutoConnect()}}
+{\footnotesize\ttfamily my\+Auto\+Connect\+::my\+Auto\+Connect (\begin{DoxyParamCaption}\item[{Web\+Server\+Class \&}]{web\+Server }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\hyperlink{classmy_auto_connect}{my\+Auto\+Connect}} default constructor. This entry activates Web\+Server internally and the web server is allocated internal. 
+
+Definition at line 71 of file my\+Auto\+Connect.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmy_auto_connect_aa1aaa515c6e27f9fe1073db1122561ca}\label{classmy_auto_connect_aa1aaa515c6e27f9fe1073db1122561ca}} 
+\index{myAutoConnect@{myAutoConnect}!\_waitForConnect@{\_waitForConnect}}
+\index{\_waitForConnect@{\_waitForConnect}!myAutoConnect@{myAutoConnect}}
+\subsubsection{\texorpdfstring{\_waitForConnect()}{\_waitForConnect()}}
+{\footnotesize\ttfamily wl\+\_\+status\+\_\+t my\+Auto\+Connect\+::\+\_\+wait\+For\+Connect (\begin{DoxyParamCaption}\item[{unsigned long}]{timeout }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Wait for establishment of the connection until the specified time expires. 
+\begin{DoxyParams}{Parameters}
+{\em timeout} & Expiration time by millisecond unit. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+wl\+\_\+status\+\_\+t 
+\end{DoxyReturn}
+
+
+Definition at line 78 of file my\+Auto\+Connect.\+h.
+
+\mbox{\Hypertarget{classmy_auto_connect_aeb57ccef1c16394c297a2ea2fd143f52}\label{classmy_auto_connect_aeb57ccef1c16394c297a2ea2fd143f52}} 
+\index{myAutoConnect@{myAutoConnect}!begin@{begin}}
+\index{begin@{begin}!myAutoConnect@{myAutoConnect}}
+\subsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool my\+Auto\+Connect\+::begin (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Starts establishing Wi\+Fi connection without S\+S\+ID and password. 
+
+Definition at line 104 of file my\+Auto\+Connect.\+h.
+
+\mbox{\Hypertarget{classmy_auto_connect_a1e452b4042120cda55722dc3bf220a77}\label{classmy_auto_connect_a1e452b4042120cda55722dc3bf220a77}} 
+\index{myAutoConnect@{myAutoConnect}!begin@{begin}}
+\index{begin@{begin}!myAutoConnect@{myAutoConnect}}
+\subsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool my\+Auto\+Connect\+::begin (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ssid,  }\item[{const char $\ast$}]{passphrase,  }\item[{unsigned long}]{timeout }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Starts establishing Wi\+Fi connection. Before establishing, start the Web server and D\+NS server for the captive portal. Then begins connection establishment in W\+I\+F\+I\+\_\+\+S\+TA mode. If connection can not established with the specified S\+S\+ID and password, switch to W\+I\+F\+I\+\_\+\+A\+P\+\_\+\+S\+TA mode and activate Soft\+AP. 
+\begin{DoxyParams}{Parameters}
+{\em ssid} & S\+S\+ID to be connected. \\
+\hline
+{\em passphrase} & Password for connection. \\
+\hline
+{\em timeout} & A time out value in milliseconds for waiting connection. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Connection established, Auto\+Connect service started with W\+I\+F\+I\+\_\+\+S\+TA mode. 
+
+false Could not connected, Captive portal started with W\+I\+F\+I\+\_\+\+A\+P\+\_\+\+S\+TA mode. 
+\end{DoxyReturn}
+
+
+Definition at line 123 of file my\+Auto\+Connect.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+esp32-\/stationary/\mbox{\hyperlink{my_auto_connect_8h}{my\+Auto\+Connect.\+h}}\end{DoxyCompactItemize}

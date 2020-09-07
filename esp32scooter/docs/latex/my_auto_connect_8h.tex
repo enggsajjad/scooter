@@ -1,0 +1,66 @@
+\hypertarget{my_auto_connect_8h}{}\section{esp32-\/stationary/my\+Auto\+Connect.h File Reference}
+\label{my_auto_connect_8h}\index{esp32-\/stationary/myAutoConnect.h@{esp32-\/stationary/myAutoConnect.h}}
+
+
+Inherits the Auto\+Connect class and overrides few functions.  
+
+
+{\ttfamily \#include \char`\"{}display.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$Auto\+Connect.\+h$>$}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classmy_auto_connect}{my\+Auto\+Connect}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classmy_auto_connect}{my\+Auto\+Connect}} Class inherited from Auto\+Connect \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{my_auto_connect_8h_aeb1a0199d34a44c8d37bc8c366a1eccf}\label{my_auto_connect_8h_aeb1a0199d34a44c8d37bc8c366a1eccf}} 
+\#define \mbox{\hyperlink{my_auto_connect_8h_aeb1a0199d34a44c8d37bc8c366a1eccf}{A\+C\+\_\+\+D\+E\+B\+UG}}
+\begin{DoxyCompactList}\small\item\em enable debug output. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my_auto_connect_8h_a621f7534c11ca3ed064df74db88adbe9}\label{my_auto_connect_8h_a621f7534c11ca3ed064df74db88adbe9}} 
+\#define \mbox{\hyperlink{my_auto_connect_8h_a621f7534c11ca3ed064df74db88adbe9}{A\+C\+\_\+\+D\+E\+B\+U\+G\+\_\+\+P\+O\+RT}}~Serial
+\begin{DoxyCompactList}\small\item\em Debug output destination can be defined externally with A\+C\+\_\+\+D\+E\+B\+U\+G\+\_\+\+P\+O\+RT. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my_auto_connect_8h_a6457491905e867b69dcb0a77b0a069f9}\label{my_auto_connect_8h_a6457491905e867b69dcb0a77b0a069f9}} 
+\#define \mbox{\hyperlink{my_auto_connect_8h_a6457491905e867b69dcb0a77b0a069f9}{A\+C\+\_\+\+D\+B\+G\+\_\+\+D\+U\+MB}}(...)~do \{A\+C\+\_\+\+D\+E\+B\+U\+G\+\_\+\+P\+O\+R\+T.\+printf( \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+ );\} while (0)
+\begin{DoxyCompactList}\small\item\em Debug output destination can be defined externally with A\+C\+\_\+\+D\+E\+B\+U\+G\+\_\+\+P\+O\+RT. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my_auto_connect_8h_a1d9ab114fc74078065bc8e794e94e8b0}\label{my_auto_connect_8h_a1d9ab114fc74078065bc8e794e94e8b0}} 
+\#define \mbox{\hyperlink{my_auto_connect_8h_a1d9ab114fc74078065bc8e794e94e8b0}{A\+C\+\_\+\+D\+BG}}(...)~do \{A\+C\+\_\+\+D\+E\+B\+U\+G\+\_\+\+P\+O\+R\+T.\+print(\char`\"{}\mbox{[}AC\mbox{]} \char`\"{}); A\+C\+\_\+\+D\+E\+B\+U\+G\+\_\+\+P\+O\+R\+T.\+printf( \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+ );\} while (0)
+\begin{DoxyCompactList}\small\item\em Debug output destination can be defined externally with A\+C\+\_\+\+D\+E\+B\+U\+G\+\_\+\+P\+O\+RT. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my_auto_connect_8h_ab8e5b92436ed19ff04454974ca9b5140}\label{my_auto_connect_8h_ab8e5b92436ed19ff04454974ca9b5140}} 
+\#define \mbox{\hyperlink{my_auto_connect_8h_ab8e5b92436ed19ff04454974ca9b5140}{W\+I\+F\+I\+\_\+\+R\+E\+B\+O\+O\+T\+\_\+\+T\+I\+M\+E\+O\+UT}}~150000
+\begin{DoxyCompactList}\small\item\em Timeout to search Wi\+Fi already configured. (150000ms=2.\+5min) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my_auto_connect_8h_a20cb4dd6eb5cffca5f0511d93d84599d}\label{my_auto_connect_8h_a20cb4dd6eb5cffca5f0511d93d84599d}} 
+\#define \mbox{\hyperlink{my_auto_connect_8h_a20cb4dd6eb5cffca5f0511d93d84599d}{S\+H\+O\+W\+\_\+\+W\+A\+I\+T\+I\+N\+G\+\_\+\+D\+O\+T\+S\+\_\+\+W\+I\+FI}}~300
+\begin{DoxyCompactList}\small\item\em The interval to show dots while waiting for the searching Wifi (in ms) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my_auto_connect_8h_a70a763a4968b6367c8d3c2ff7aa8a25a}\label{my_auto_connect_8h_a70a763a4968b6367c8d3c2ff7aa8a25a}} 
+\#define \mbox{\hyperlink{my_auto_connect_8h_a70a763a4968b6367c8d3c2ff7aa8a25a}{S\+H\+O\+W\+\_\+\+W\+A\+I\+T\+I\+N\+G\+\_\+\+D\+O\+T\+S\+\_\+\+AP}}~500
+\begin{DoxyCompactList}\small\item\em The interval to show dots while waiting for the access point (in ms) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my_auto_connect_8h_aaba24da06a6518ece5c17ddc6f952e22}\label{my_auto_connect_8h_aaba24da06a6518ece5c17ddc6f952e22}} 
+\#define \mbox{\hyperlink{my_auto_connect_8h_aaba24da06a6518ece5c17ddc6f952e22}{S\+H\+O\+W\+\_\+\+Q\+R\+\_\+\+I\+N\+T\+E\+R\+V\+AL}}~10000
+\begin{DoxyCompactList}\small\item\em The interval to show QR or AP waiting screen (in ms) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{my_auto_connect_8h_aebb9279b6ac68e870eb73247f246f5c6}\label{my_auto_connect_8h_aebb9279b6ac68e870eb73247f246f5c6}} 
+U8\+G2\+\_\+\+S\+S\+D1306\+\_\+128\+X64\+\_\+\+N\+O\+N\+A\+M\+E\+\_\+\+F\+\_\+\+H\+W\+\_\+\+I2C \mbox{\hyperlink{my_auto_connect_8h_aebb9279b6ac68e870eb73247f246f5c6}{u8g2}}
+\begin{DoxyCompactList}\small\item\em Externally defined O\+L\+ED Display object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my_auto_connect_8h_aba85831da27e5ade146c3b158b850220}\label{my_auto_connect_8h_aba85831da27e5ade146c3b158b850220}} 
+unsigned char \mbox{\hyperlink{my_auto_connect_8h_aba85831da27e5ade146c3b158b850220}{cntr}}
+\begin{DoxyCompactList}\small\item\em counter to count 500ms \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my_auto_connect_8h_a6ce689b93ca03523ef06cf93473494dc}\label{my_auto_connect_8h_a6ce689b93ca03523ef06cf93473494dc}} 
+boolean \mbox{\hyperlink{my_auto_connect_8h_a6ce689b93ca03523ef06cf93473494dc}{show\+\_\+\+QR}}
+\begin{DoxyCompactList}\small\item\em show QR or Text for AP \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{my_auto_connect_8h_a86027ad9c9159f02624d136fb63364fe}\label{my_auto_connect_8h_a86027ad9c9159f02624d136fb63364fe}} 
+unsigned long \mbox{\hyperlink{my_auto_connect_8h_a86027ad9c9159f02624d136fb63364fe}{previous\+Millis}}
+\begin{DoxyCompactList}\small\item\em Just calculate 500ms interval while waiting the AP is configure to connect a Wi\+Fi. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Inherits the Auto\+Connect class and overrides few functions. 
+
+This is the files that contains the functions inherited from Auto\+Connect Class which needs some modfications to add O\+L\+ED display code. These functions are then over ridden here. Basically, when there is no wifi connected, it shows a message on serial port and on oled display that is searching for a Wifi. Similarly, when no wifi is connected in sub period of time, it opens an access-\/point and shows another message with default S\+S\+ID and password.
+
+\begin{DoxyDate}{Date}
+19.\+08.\+2019 
+\end{DoxyDate}

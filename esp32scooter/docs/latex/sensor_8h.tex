@@ -1,0 +1,123 @@
+\hypertarget{sensor_8h}{}\section{C\+:/\+Users/\+Sajjad/\+Desktop/backup/esp32scooter/sensor.h File Reference}
+\label{sensor_8h}\index{C:/Users/Sajjad/Desktop/backup/esp32scooter/sensor.h@{C:/Users/Sajjad/Desktop/backup/esp32scooter/sensor.h}}
+
+
+variable and definitions for sensors  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{sensor_8h_a661d236dd49f3aef3a2cf46cf6a1405e}\label{sensor_8h_a661d236dd49f3aef3a2cf46cf6a1405e}} 
+\#define \mbox{\hyperlink{sensor_8h_a661d236dd49f3aef3a2cf46cf6a1405e}{D\+H\+T\+\_\+\+P\+IN}}~21
+\begin{DoxyCompactList}\small\item\em D\+H\+T22 sensor communication pin. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{sensor_8h_a9f6149e98e70e1d5be5f0f33921cb7d7}\label{sensor_8h_a9f6149e98e70e1d5be5f0f33921cb7d7}} 
+\#define \mbox{\hyperlink{sensor_8h_a9f6149e98e70e1d5be5f0f33921cb7d7}{B\+M\+E\+\_\+\+A\+D\+DR}}~0x77
+\begin{DoxyCompactList}\small\item\em B\+M\+E280 I2C Address 0x77 for Red, 0x76 for Purple (chinese) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{sensor_8h_ad9e594e426bce833af06dea308dbbf9a}\label{sensor_8h_ad9e594e426bce833af06dea308dbbf9a}} 
+\#define \mbox{\hyperlink{sensor_8h_ad9e594e426bce833af06dea308dbbf9a}{B\+M\+E\+\_\+\+S\+DA}}~21
+\begin{DoxyCompactList}\small\item\em B\+M\+E280 I2C S\+DA pin. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{sensor_8h_a5db75d8e5f3deda546603b949c520446}\label{sensor_8h_a5db75d8e5f3deda546603b949c520446}} 
+\#define \mbox{\hyperlink{sensor_8h_a5db75d8e5f3deda546603b949c520446}{B\+M\+E\+\_\+\+S\+CL}}~22
+\begin{DoxyCompactList}\small\item\em B\+M\+E280 I2C S\+CL pin. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{sensor_8h_a7130f8006502cdaa31094baa3f4dd3fa}\label{sensor_8h_a7130f8006502cdaa31094baa3f4dd3fa}} 
+\#define \mbox{\hyperlink{sensor_8h_a7130f8006502cdaa31094baa3f4dd3fa}{S\+D\+S011\+\_\+\+T\+XD}}~27
+\begin{DoxyCompactList}\small\item\em S\+D\+S011 T\+XD pin is connected at R\+XD of Serial2 Object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{sensor_8h_ad2b404eb4de525cef31b8413f5d14b13}\label{sensor_8h_ad2b404eb4de525cef31b8413f5d14b13}} 
+\#define \mbox{\hyperlink{sensor_8h_ad2b404eb4de525cef31b8413f5d14b13}{S\+D\+S011\+\_\+\+R\+XD}}~26
+\begin{DoxyCompactList}\small\item\em S\+D\+S011 R\+XD pin is connected at T\+XD of Serial2 Object (no need to physically connect) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{sensor_8h_ace67731836adaa94431a11f2f3afb49a}{gprs\+RX}}~16
+\begin{DoxyCompactList}\small\item\em conflicts of same defining by dht lib and esp32\+\_\+thingsapi lib \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{sensor_8h_a5ab75e95ce2325b3ac18daff066d985d}\label{sensor_8h_a5ab75e95ce2325b3ac18daff066d985d}} 
+\#define \mbox{\hyperlink{sensor_8h_a5ab75e95ce2325b3ac18daff066d985d}{gprs\+TX}}~17
+\begin{DoxyCompactList}\small\item\em G\+P\+RS TX Pin. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{sensor_8h_a1e69be52013b297b059ae19db0b250c0}\label{sensor_8h_a1e69be52013b297b059ae19db0b250c0}} 
+\#define \mbox{\hyperlink{sensor_8h_a1e69be52013b297b059ae19db0b250c0}{gprs\+P\+WR}}~4
+\begin{DoxyCompactList}\small\item\em G\+P\+RS P\+WR Pin. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{sensor_8h_a2c31d1c293a323099296e12f60bdd606}\label{sensor_8h_a2c31d1c293a323099296e12f60bdd606}} 
+\#define \mbox{\hyperlink{sensor_8h_a2c31d1c293a323099296e12f60bdd606}{gprs\+R\+ST}}~34
+\begin{DoxyCompactList}\small\item\em G\+P\+RS R\+ST Pin. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{sensor_8h_a54cd714ce172e08013354f7d6c56d135}\label{sensor_8h_a54cd714ce172e08013354f7d6c56d135}} 
+\#define \mbox{\hyperlink{sensor_8h_a54cd714ce172e08013354f7d6c56d135}{gps\+RX}}~23
+\begin{DoxyCompactList}\small\item\em G\+PS RX Pin. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{sensor_8h_ab42918d6ca01f71bd8dd82e1240c0fd5}\label{sensor_8h_ab42918d6ca01f71bd8dd82e1240c0fd5}} 
+\#define \mbox{\hyperlink{sensor_8h_ab42918d6ca01f71bd8dd82e1240c0fd5}{gps\+TX}}~-\/1
+\begin{DoxyCompactList}\small\item\em G\+PS TX Pin. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{sensor_8h_affb5b2e36a3f2b27012766130e120e4e}\label{sensor_8h_affb5b2e36a3f2b27012766130e120e4e}} 
+\#define \mbox{\hyperlink{sensor_8h_affb5b2e36a3f2b27012766130e120e4e}{gprs\+Baud}}~115200
+\begin{DoxyCompactList}\small\item\em G\+P\+RS Baudrate for AT Commands. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{sensor_8h_a24b68309719bdffdf37f202dee16d11d}\label{sensor_8h_a24b68309719bdffdf37f202dee16d11d}} 
+\#define \mbox{\hyperlink{sensor_8h_a24b68309719bdffdf37f202dee16d11d}{gps\+Baud}}~9600
+\begin{DoxyCompactList}\small\item\em G\+PS TX pin Baudrate. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{sensor_8h_ad1ff4ed5ee1b081019eb2c34846ca92c}\label{sensor_8h_ad1ff4ed5ee1b081019eb2c34846ca92c}} 
+\#define \mbox{\hyperlink{sensor_8h_ad1ff4ed5ee1b081019eb2c34846ca92c}{gprs\+Serial}}~Serial1
+\begin{DoxyCompactList}\small\item\em Serial port for G\+P\+RS (AT) Commands. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{sensor_8h_a8f7824c0f2a3aa7e9bac94eac190fa7e}\label{sensor_8h_a8f7824c0f2a3aa7e9bac94eac190fa7e}} 
+Hardware\+Serial \mbox{\hyperlink{sensor_8h_a8f7824c0f2a3aa7e9bac94eac190fa7e}{S\+D\+S\+\_\+\+S\+E\+R\+I\+AL}} (2)
+\begin{DoxyCompactList}\small\item\em use Serial 2 Object \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{sensor_8h_a81137dc3df575cf0e1b5eca255bca279}\label{sensor_8h_a81137dc3df575cf0e1b5eca255bca279}} 
+D\+HT \mbox{\hyperlink{sensor_8h_a81137dc3df575cf0e1b5eca255bca279}{dht}} (\mbox{\hyperlink{sensor_8h_a661d236dd49f3aef3a2cf46cf6a1405e}{D\+H\+T\+\_\+\+P\+IN}}, D\+H\+T22)
+\begin{DoxyCompactList}\small\item\em D\+H\+T22 Temperature \& Humidity Sensor Object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{sensor_8h_a2871708605796e3f6cfa9cd9328daff3}\label{sensor_8h_a2871708605796e3f6cfa9cd9328daff3}} 
+Adafruit\+\_\+\+B\+M\+E280 \mbox{\hyperlink{sensor_8h_a2871708605796e3f6cfa9cd9328daff3}{bme}}
+\begin{DoxyCompactList}\small\item\em B\+M\+E280 Pressure \& Humidity Sensor Object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{sensor_8h_a24d61a35b72d7299eb6b5f48e71a571b}\label{sensor_8h_a24d61a35b72d7299eb6b5f48e71a571b}} 
+float \mbox{\hyperlink{sensor_8h_a24d61a35b72d7299eb6b5f48e71a571b}{temp}}
+\begin{DoxyCompactList}\small\item\em temperature values \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{sensor_8h_a38adb4de3d9d0391675c323d13503af7}\label{sensor_8h_a38adb4de3d9d0391675c323d13503af7}} 
+float \mbox{\hyperlink{sensor_8h_a38adb4de3d9d0391675c323d13503af7}{hum}}
+\begin{DoxyCompactList}\small\item\em humidity values \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{sensor_8h_a7d031eabfc5343396f4e4a58c99f8230}\label{sensor_8h_a7d031eabfc5343396f4e4a58c99f8230}} 
+float \mbox{\hyperlink{sensor_8h_a7d031eabfc5343396f4e4a58c99f8230}{atm}}
+\begin{DoxyCompactList}\small\item\em pressure values \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{sensor_8h_a268d9b1e5e404ee689ae7bf1ca226942}\label{sensor_8h_a268d9b1e5e404ee689ae7bf1ca226942}} 
+bool \mbox{\hyperlink{sensor_8h_a268d9b1e5e404ee689ae7bf1ca226942}{use\+\_\+bme280}}
+\begin{DoxyCompactList}\small\item\em status of bme sensor begin \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{sensor_8h_ad9a078f7f5a00549c6d662079e98f9af}\label{sensor_8h_ad9a078f7f5a00549c6d662079e98f9af}} 
+unsigned char \mbox{\hyperlink{sensor_8h_ad9a078f7f5a00549c6d662079e98f9af}{bme\+Address}}
+\begin{DoxyCompactList}\small\item\em i2c address of bme sensor begin \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{sensor_8h_ac4a52bac518b8678882cf3be09d1148b}\label{sensor_8h_ac4a52bac518b8678882cf3be09d1148b}} 
+S\+D\+S011 \mbox{\hyperlink{sensor_8h_ac4a52bac518b8678882cf3be09d1148b}{sds}}
+\begin{DoxyCompactList}\small\item\em Dust sensor object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{sensor_8h_a4f4d9c9083a56baa7390e6c2b94f853d}\label{sensor_8h_a4f4d9c9083a56baa7390e6c2b94f853d}} 
+float \mbox{\hyperlink{sensor_8h_a4f4d9c9083a56baa7390e6c2b94f853d}{pm10}}
+\begin{DoxyCompactList}\small\item\em vars to store sensor results, sensor results for dust sensor pm10 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{sensor_8h_a9cc80dc9c5ed579f2b36bfa188649c73}\label{sensor_8h_a9cc80dc9c5ed579f2b36bfa188649c73}} 
+float \mbox{\hyperlink{sensor_8h_a9cc80dc9c5ed579f2b36bfa188649c73}{pm25}}
+\begin{DoxyCompactList}\small\item\em sensor results for dust sensor pm25 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{sensor_8h_a69871c89658a6c6b7f03611f7d7ed3ca}\label{sensor_8h_a69871c89658a6c6b7f03611f7d7ed3ca}} 
+bool \mbox{\hyperlink{sensor_8h_a69871c89658a6c6b7f03611f7d7ed3ca}{status\+\_\+sds}}
+\begin{DoxyCompactList}\small\item\em status of sds sensor begin \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+variable and definitions for sensors 
+
+This is the files that contains the variables, pins definitions and functions for sensors to be connected.
+
+\begin{DoxyDate}{Date}
+07.\+09.\+2020 
+\end{DoxyDate}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{sensor_8h_ace67731836adaa94431a11f2f3afb49a}\label{sensor_8h_ace67731836adaa94431a11f2f3afb49a}} 
+\index{sensor.h@{sensor.h}!gprsRX@{gprsRX}}
+\index{gprsRX@{gprsRX}!sensor.h@{sensor.h}}
+\subsubsection{\texorpdfstring{gprsRX}{gprsRX}}
+{\footnotesize\ttfamily \#define gprs\+RX~16}
+
+
+
+conflicts of same defining by dht lib and esp32\+\_\+thingsapi lib 
+
+G\+P\+RS RX Pin 
+
+Definition at line 61 of file sensor.\+h.
+

@@ -1,0 +1,104 @@
+\hypertarget{display_8h}{}\section{esp32-\/stationary/display.h File Reference}
+\label{display_8h}\index{esp32-\/stationary/display.h@{esp32-\/stationary/display.h}}
+
+
+Create logs images \& QR.  
+
+
+{\ttfamily \#include $<$U8g2lib.\+h$>$}\newline
+{\ttfamily \#include $<$U8x8lib.\+h$>$}\newline
+{\ttfamily \#include $<$qrcode.\+h$>$}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{display_8h_adfc00fe7af415beaf0ab3c63287e2e38}\label{display_8h_adfc00fe7af415beaf0ab3c63287e2e38}} 
+\#define \mbox{\hyperlink{display_8h_adfc00fe7af415beaf0ab3c63287e2e38}{\+\_\+\+Q\+R\+\_\+double\+Size}}
+\begin{DoxyCompactList}\small\item\em define for double sized pixel QR code \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{display_8h_ab0a3dbc58bc436364c310ab07e084042}\label{display_8h_ab0a3dbc58bc436364c310ab07e084042}} 
+void \mbox{\hyperlink{display_8h_ab0a3dbc58bc436364c310ab07e084042}{set\+Pixels\+High}} ()
+\begin{DoxyCompactList}\small\item\em Highlight the O\+L\+ED pixels. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{display_8h_a90b8ab37ab4c4d93c0612f5979220f73}{display\+Q\+R\+Code}} (unsigned int xinit, unsigned int yinit)
+\begin{DoxyCompactList}\small\item\em Display the created QR code at given x,y coordinate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{display_8h_af7a8a9120f1d9d90783dd6761f1a1f56}{generate\+Q\+R\+Code}} (unsigned int xinit, unsigned int yinit, const char $\ast$txt)
+\begin{DoxyCompactList}\small\item\em Generate the QR code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{display_8h_a9812ccec9a75ce4053ae536a7a23d36d}\label{display_8h_a9812ccec9a75ce4053ae536a7a23d36d}} 
+const int \mbox{\hyperlink{display_8h_a9812ccec9a75ce4053ae536a7a23d36d}{Q\+Rcode\+\_\+\+Version}} = 3
+\begin{DoxyCompactList}\small\item\em version 3 code with double sized code and starting at y0 = 2 is good \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{display_8h_aa513020a03a6d30dd8f8809c952a40d7}\label{display_8h_aa513020a03a6d30dd8f8809c952a40d7}} 
+const int \mbox{\hyperlink{display_8h_aa513020a03a6d30dd8f8809c952a40d7}{Q\+Rcode\+\_\+\+E\+CC}} = 0
+\begin{DoxyCompactList}\small\item\em version 3 with E\+C\+C\+\_\+\+L\+OW gives 53 \char`\"{}bytes\char`\"{}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{display_8h_a7dbca79a8947bbade5fff48395c91940}\label{display_8h_a7dbca79a8947bbade5fff48395c91940}} 
+const uint8\+\_\+t P\+R\+O\+G\+M\+EM \mbox{\hyperlink{display_8h_a7dbca79a8947bbade5fff48395c91940}{teco}} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em T\+E\+CO Icon bits of size 64x128. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{display_8h_a90f337b111dcfc6f8ff751f5b6a876ee}\label{display_8h_a90f337b111dcfc6f8ff751f5b6a876ee}} 
+const uint8\+\_\+t P\+R\+O\+G\+M\+EM \mbox{\hyperlink{display_8h_a90f337b111dcfc6f8ff751f5b6a876ee}{kit}} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em K\+IT Icon bits of size 64x128. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{display_8h_aa479f9979a3402e6e6759a95b04dd5b7}\label{display_8h_aa479f9979a3402e6e6759a95b04dd5b7}} 
+Q\+R\+Code \mbox{\hyperlink{display_8h_aa479f9979a3402e6e6759a95b04dd5b7}{qrcode}}
+\begin{DoxyCompactList}\small\item\em Create the QR code variable. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{display_8h_aebb9279b6ac68e870eb73247f246f5c6}\label{display_8h_aebb9279b6ac68e870eb73247f246f5c6}} 
+U8\+G2\+\_\+\+S\+S\+D1306\+\_\+128\+X64\+\_\+\+N\+O\+N\+A\+M\+E\+\_\+\+F\+\_\+\+H\+W\+\_\+\+I2C \mbox{\hyperlink{display_8h_aebb9279b6ac68e870eb73247f246f5c6}{u8g2}}
+\begin{DoxyCompactList}\small\item\em U8\+G2\+\_\+\+S\+S\+D1306\+\_\+128\+X64\+\_\+\+N\+O\+N\+A\+M\+E\+\_\+\+F\+\_\+\+H\+W\+\_\+\+I2C u8g2(U8\+G2\+\_\+\+R0, /$\ast$ reset=$\ast$/ 16, /$\ast$ clock=$\ast$/ 15, /$\ast$ data=$\ast$/ 4);. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Create logs images \& QR. 
+
+This file is used to create I\+C\+ON images and creating Q\+R-\/code for O\+L\+ED display of size 64x128.
+
+\begin{DoxyDate}{Date}
+3.\+1.\+2020 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{display_8h_a90b8ab37ab4c4d93c0612f5979220f73}\label{display_8h_a90b8ab37ab4c4d93c0612f5979220f73}} 
+\index{display.h@{display.h}!displayQRCode@{displayQRCode}}
+\index{displayQRCode@{displayQRCode}!display.h@{display.h}}
+\subsubsection{\texorpdfstring{displayQRCode()}{displayQRCode()}}
+{\footnotesize\ttfamily void display\+Q\+R\+Code (\begin{DoxyParamCaption}\item[{unsigned int}]{xinit,  }\item[{unsigned int}]{yinit }\end{DoxyParamCaption})}
+
+
+
+Display the created QR code at given x,y coordinate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xinit} & int value for x coordinate \\
+\hline
+{\em yinit} & int value for y coordinate \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 235 of file display.\+h.
+
+\mbox{\Hypertarget{display_8h_af7a8a9120f1d9d90783dd6761f1a1f56}\label{display_8h_af7a8a9120f1d9d90783dd6761f1a1f56}} 
+\index{display.h@{display.h}!generateQRCode@{generateQRCode}}
+\index{generateQRCode@{generateQRCode}!display.h@{display.h}}
+\subsubsection{\texorpdfstring{generateQRCode()}{generateQRCode()}}
+{\footnotesize\ttfamily void generate\+Q\+R\+Code (\begin{DoxyParamCaption}\item[{unsigned int}]{xinit,  }\item[{unsigned int}]{yinit,  }\item[{const char $\ast$}]{txt }\end{DoxyParamCaption})}
+
+
+
+Generate the QR code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xinit} & int value for x coordinate \\
+\hline
+{\em yinit} & int value for y coordinate \\
+\hline
+{\em txt} & String value for generating the QR Code \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 289 of file display.\+h.
+

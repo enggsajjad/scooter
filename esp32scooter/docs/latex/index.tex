@@ -1,0 +1,193 @@
+\hypertarget{index_intro}{}\section{Introduction}\label{index_intro}
+S\+M\+A\+R\+T\+A\+Q\+N\+ET project is aimed at development of a close-\/meshed network of local fine-\/dust data, which can be fed and used well by general public. Further details can be checked at\+: \href{http://www.smartaq.net}{\texttt{ http\+://www.\+smartaq.\+net}}.~\newline
+ This script uses a E\+S\+P32 Board, a S\+D\+S011 particulate matter sensor and a B\+M\+E280 sensor or a D\+H\+T22 sensor. It used A9G G\+P\+R\+S/\+G\+PS Module to setup data communication with a server. The Fig-\/1 shows the main board having different sensors connected together. The E\+S\+P32 is also refered to as crowdsensor. Following is the details for differnt features and steps to start\+:~\newline
+
+\begin{DoxyItemize}
+\item Install the arduino, board and required libraies as explained in ...
+\item Connect the hardware as explained in ....
+\item Configure the constants in the code as explained in .....
+\item Compile and upload the cdes as explained in \mbox{\hyperlink{index_upload}{Firmware Uploading}} and ....
+\item Configure the S\+IM and G\+P\+RS and other parameters as explained in ....
+\item If everything is installed and configured perfectly, there should be no error i.\+e., E0 as explained in ....
+\item If there is any errors please look into error or known bug section as explained in ...
+\item For detailed debugging uncomment R\+E\+L\+E\+A\+SE constant. Some quick trick will also save the time as shown in .... 
+\end{DoxyItemize}\hypertarget{index_sdso11}{}\subsection{S\+D\+S011 Dust Sensor Usage}\label{index_sdso11}
+
+\begin{DoxyItemize}
+\item Hardware Pins\+: it uses transmit \mbox{\hyperlink{sensor_8h_a7130f8006502cdaa31094baa3f4dd3fa}{S\+D\+S011\+\_\+\+T\+XD}} (13) and recieve \mbox{\hyperlink{sensor_8h_ad2b404eb4de525cef31b8413f5d14b13}{S\+D\+S011\+\_\+\+R\+XD}} (17) pins
+\item S\+E\+R\+I\+AL Port\+: it uses the Hardware\+Serial port 2 for \mbox{\hyperlink{sensor_8h_a8f7824c0f2a3aa7e9bac94eac190fa7e}{S\+D\+S\+\_\+\+S\+E\+R\+I\+AL}} 
+\end{DoxyItemize}\hypertarget{index_bme280}{}\subsection{B\+M\+E280 Sensor Usage}\label{index_bme280}
+
+\begin{DoxyItemize}
+\item Hardware Pins\+: it uses S\+DA \mbox{\hyperlink{sensor_8h_ad9e594e426bce833af06dea308dbbf9a}{B\+M\+E\+\_\+\+S\+DA}} (21) and S\+CL \mbox{\hyperlink{sensor_8h_a5db75d8e5f3deda546603b949c520446}{B\+M\+E\+\_\+\+S\+CL}} (22) pins
+\item I2C Port\+: to avoid any mismatch it uses Wire1 (default is Wire0) in bme.\+begin(\+B\+M\+E\+\_\+\+A\+D\+D\+R, \&\+Wire1)
+\item I2C address\+: \mbox{\hyperlink{sensor_8h_a9f6149e98e70e1d5be5f0f33921cb7d7}{B\+M\+E\+\_\+\+A\+D\+DR}} as 0x77 for Red, 0x76 for Purple (chinese)
+\end{DoxyItemize}\hypertarget{index_flowchart}{}\subsection{Flow\+Charts}\label{index_flowchart}
+The project work-\/flow can be see in the T\+O\+DO\hypertarget{index_const}{}\subsection{Important Constants}\label{index_const}
+Have a look at the following constants to configure them accordingly. These constants needs to be configured before the firmware is uploaded.
+\begin{DoxyItemize}
+\item in the file \mbox{\hyperlink{sensor_8h}{sensor.\+h}}
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{sensor_8h_a661d236dd49f3aef3a2cf46cf6a1405e}{D\+H\+T\+\_\+\+P\+IN}} 21, set D\+H\+T22 sensor communication pin
+\item \mbox{\hyperlink{sensor_8h_a9f6149e98e70e1d5be5f0f33921cb7d7}{B\+M\+E\+\_\+\+A\+D\+DR}} 0x77, set B\+M\+E280 I2C Address 0x77 for Red, 0x76 for Purple
+\item \mbox{\hyperlink{sensor_8h_ad9e594e426bce833af06dea308dbbf9a}{B\+M\+E\+\_\+\+S\+DA}}, set B\+M\+E280 I2C S\+DA pin
+\item \mbox{\hyperlink{sensor_8h_a5db75d8e5f3deda546603b949c520446}{B\+M\+E\+\_\+\+S\+CL}}, set B\+M\+E280 I2C S\+CL pin
+\item \mbox{\hyperlink{sensor_8h_a7130f8006502cdaa31094baa3f4dd3fa}{S\+D\+S011\+\_\+\+T\+XD}}, set S\+D\+S011 T\+XD pin is connected at R\+XD of Serial2 Object
+\item \mbox{\hyperlink{sensor_8h_ad2b404eb4de525cef31b8413f5d14b13}{S\+D\+S011\+\_\+\+R\+XD}}, set S\+D\+S011 R\+XD pin is connected at T\+XD of Serial2 Object (no need to physically connect)
+\end{DoxyItemize}
+\item in the file \mbox{\hyperlink{main_8h}{main.\+h}}
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{main_8h_aa14dc39d52ab121ceb570f1a265385e0}{F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+V\+E\+R\+S\+I\+ON}} controls the hard-\/coded firmware version of the code
+\item \mbox{\hyperlink{main_8h_af06baee05280c189592215d5ea08e7ef}{sw\+\_\+version}} describes the software version of the Thing\textquotesingle{}s software properties
+\item \mbox{\hyperlink{main_8h_acbd8a4cec684c263a6cc312c70d45ef3}{hw\+\_\+date}} describes the hardware revision timestamp of the Thing\textquotesingle{}s hardware properties
+\item \mbox{\hyperlink{main_8h_acbb11c1e34784cf1e3147029f942bfd6}{B\+A\+S\+E\+\_\+\+U\+RL}} H\+T\+TP Server Address
+\item R\+E\+L\+E\+A\+SE controls the debugging prints and \mbox{\hyperlink{main_8h_a7e7232f278193dd8684f973ee70ef3f5}{M\+Y\+\_\+\+D\+E\+B\+UG}}
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{index_prereq}{}\section{Pre-\/requisites}\label{index_prereq}
+
+\begin{DoxyEnumerate}
+\item Arrange the required \mbox{\hyperlink{index_hw_sec}{Hardware}} and carry out the \mbox{\hyperlink{index_wiring}{Wirings}}.
+\item Install the the \mbox{\hyperlink{index_arduinoide}{Arduino I\+DE}}
+\item Install the \mbox{\hyperlink{index_boardlib}{E\+S\+P32 Arduino core}}
+\item Install the recommended \mbox{\hyperlink{index_lib}{Required Libraries}}
+\end{DoxyEnumerate}\hypertarget{index_hw_sec}{}\section{Hardware}\label{index_hw_sec}
+It consists of E\+S\+P32 microcontrollers, which is \char`\"{}\+Hel\+Tec Wi\+Fi Kit 32\char`\"{} -\/---$>$ \href{https://heltec.org/project/wifi-kit-32/}{\texttt{ https\+://heltec.\+org/project/wifi-\/kit-\/32/}} Following board, hardware and libraries are used to develop this project.\hypertarget{index_peri}{}\subsection{Peripherals}\label{index_peri}
+
+\begin{DoxyEnumerate}
+\item O\+L\+ED Built-\/in O\+L\+ED Display -\/---$>$ \href{https://heltec.org/project/wifi-kit-32/}{\texttt{ https\+://heltec.\+org/project/wifi-\/kit-\/32/}}
+\item S\+D\+S011 Sensor -\/---$>$ \href{https://learn.watterott.com/sensors/sds011/}{\texttt{ https\+://learn.\+watterott.\+com/sensors/sds011/}}
+\item B\+M\+E280 Sensor for Humidity and Temperature -\/---$>$ \href{https://www.ebay.de/itm/3-3V-Bosch-BME280-Barometer-Luftdruck-Luftfeuchte-Sensor-Modul-BMP280-SPI-I2C-/263548911232}{\texttt{ https\+://www.\+ebay.\+de/itm/3-\/3\+V-\/\+Bosch-\/\+B\+M\+E280-\/\+Barometer-\/\+Luftdruck-\/\+Luftfeuchte-\/\+Sensor-\/\+Modul-\/\+B\+M\+P280-\/\+S\+P\+I-\/\+I2\+C-\//263548911232}} or \href{https://eckstein-shop.de/SparkFun-Barometric-Pressure-Sensor-Breakout-MPL115A1?curr=EUR&gclid=Cj0KCQjww7HsBRDkARIsAARsIT6QsuuszbyaQ4r1DLuYTOT5pgwMfpIhRTtwQKAA2vtHkuHGrBZa9JQaAo-gEALw_wcB}{\texttt{ https\+://eckstein-\/shop.\+de/\+Spark\+Fun-\/\+Barometric-\/\+Pressure-\/\+Sensor-\/\+Breakout-\/\+M\+P\+L115\+A1?curr=\+E\+U\+R\&gclid=\+Cj0\+K\+C\+Qjww7\+Hs\+B\+R\+Dk\+A\+R\+Is\+A\+A\+Rs\+I\+T6\+Qsuuszbya\+Q4r1\+D\+Lu\+Y\+T\+O\+T5pgw\+Mfp\+Ih\+R\+Ttw\+Q\+K\+A\+A2vt\+Hku\+H\+Gr\+B\+Za9\+J\+Qa\+Ao-\/g\+E\+A\+Lw\+\_\+wcB}}
+\item D\+H\+T22 Sensor for Temperature and Humidity -\/---$>$ \href{https://www.sparkfun.com/products/10167}{\texttt{ https\+://www.\+sparkfun.\+com/products/10167}}
+\end{DoxyEnumerate}\hypertarget{index_arduinoide}{}\subsection{Arduino I\+DE}\label{index_arduinoide}
+The Arduino I\+DE Version 1.\+8 or later is needed. Please install from the official Arduino I\+DE download page. This step is not required if you already have the most recent version.\hypertarget{index_dialout}{}\subsubsection{Pyserial}\label{index_dialout}
+If you use linux, you have to install the python pyserial package and add the current user to the dialout group\+: 
+\begin{DoxyPre}{\ttfamily 
+ sudo apt install python-pip
+ pip install pyserial
+ sudo /usr/sbin/usermod -a -G dialout <MY\_USER\_NAME>
+ }\end{DoxyPre}
+\hypertarget{index_boardlib}{}\subsubsection{E\+S\+P32 Arduino core}\label{index_boardlib}
+Also, to apply Auto\+Connect to E\+S\+P32, the arduino-\/esp32 core provided by Espressif is needed. Stable 1.\+0.\+3 or required and the latest release is recommended. Install third-\/party platform using the Boards Manager of Arduino I\+DE (for instructions see here\+: \href{https://github.com/espressif/arduino-esp32/blob/master/docs/arduino-ide/boards_manager.md}{\texttt{ https\+://github.\+com/espressif/arduino-\/esp32/blob/master/docs/arduino-\/ide/boards\+\_\+manager.\+md}}). You can add multiple U\+R\+Ls into Additional Board Manager U\+R\+Ls field, separating them with commas. Package U\+RL is \href{https://dl.espressif.com/dl/package_esp32_index.json}{\texttt{ https\+://dl.\+espressif.\+com/dl/package\+\_\+esp32\+\_\+index.\+json}} for E\+S\+P32.\hypertarget{index_lib}{}\subsubsection{Required Libraries}\label{index_lib}
+Following are the commonly used libraries, and should be added in the Arduino I\+DE, before the compiling.
+\begin{DoxyEnumerate}
+\item F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+V\+E\+R\+S\+I\+ON 0.\+1.\+0.\+0 onwards
+\begin{DoxyItemize}
+\item E\+S\+P32 Board by Espressif Systems v1.\+0.\+3 (\href{https://github.com/espressif/arduino-esp32}{\texttt{ https\+://github.\+com/espressif/arduino-\/esp32}})
+\item Adafruit Unified Sensor by Adafruit v1.\+0.\+3 (\href{https://github.com/adafruit/Adafruit_Sensor}{\texttt{ https\+://github.\+com/adafruit/\+Adafruit\+\_\+\+Sensor}})
+\item Adafruit B\+M\+E280 Library by Adafruit v1.\+0.\+8 (\href{https://github.com/adafruit/Adafruit_BME280_Library}{\texttt{ https\+://github.\+com/adafruit/\+Adafruit\+\_\+\+B\+M\+E280\+\_\+\+Library}})
+\item D\+HT sensor library by Adafruit v1.\+3.\+4 (\href{https://github.com/adafruit/DHT-sensor-library}{\texttt{ https\+://github.\+com/adafruit/\+D\+H\+T-\/sensor-\/library}})
+\item eztime by Rop Gonggrijp v0.\+7.\+10 (\href{https://github.com/ropg/ezTime}{\texttt{ https\+://github.\+com/ropg/ez\+Time}})
+\item name=S\+D\+S011 sensor Library by R. Zschiegner v0.\+0.\+6 (\href{https://github.com/ricki-z/SDS011}{\texttt{ https\+://github.\+com/ricki-\/z/\+S\+D\+S011}}). This library is kept in src/lib/\+S\+D\+S011 folder. Even the library is updated on the github. But when tried to installed from library manager it is not installed properly for esp32.
+\end{DoxyItemize}
+\end{DoxyEnumerate}\hypertarget{index_upload}{}\subsection{Firmware Uploading}\label{index_upload}
+Following steps are recommended to upload the firmware before handing over the new crowd-\/sensor node.
+\begin{DoxyEnumerate}
+\item To erase flash completely before delivering the product\+: \char`\"{}\+C\+:\textbackslash{}\+Users\textbackslash{}\+Sajjad\textbackslash{}\+Documents\textbackslash{}\+Arduino\+Data\textbackslash{}packages\textbackslash{}esp32\textbackslash{}tools\textbackslash{}esptool\+\_\+py$>$esptool.\+py -\/-\/chip esp32 erase\+\_\+flash\char`\"{} from the command terminal.
+\item Upload the firmware using the Ardiuno I\+DE
+\end{DoxyEnumerate}\hypertarget{index_wiring}{}\section{Wirings}\label{index_wiring}
+
+\begin{DoxyEnumerate}
+\item G\+P\+R\+S/\+G\+PS Module~\newline
+ There might be two different modules A7 or A9G. The wiring that just require pin definitions, as\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{sensor_8h_ace67731836adaa94431a11f2f3afb49a}{gprs\+RX}}, The G\+P\+RS Serial Receive pin
+\item \mbox{\hyperlink{sensor_8h_a5ab75e95ce2325b3ac18daff066d985d}{gprs\+TX}}, The G\+P\+RS Serial Transmit pin
+\item \mbox{\hyperlink{sensor_8h_a54cd714ce172e08013354f7d6c56d135}{gps\+RX}}, The G\+PS Serial Receive pin
+\item \mbox{\hyperlink{sensor_8h_ab42918d6ca01f71bd8dd82e1240c0fd5}{gps\+TX}}, The G\+PS Serial Transmit pin
+\item \mbox{\hyperlink{sensor_8h_a1e69be52013b297b059ae19db0b250c0}{gprs\+P\+WR}}, The G\+P\+RS P\+W\+R\+\_\+\+K\+EY pin
+\item \mbox{\hyperlink{sensor_8h_a2c31d1c293a323099296e12f60bdd606}{gprs\+R\+ST}}, The G\+P\+RS Reset pin
+\end{DoxyItemize}
+\item S\+D\+S011 Dust Sensor~\newline
+ One has to\+:
+\begin{DoxyItemize}
+\item connect T\+XD of Dust Sensor S\+D\+S011 to Pin 13 of E\+S\+P32 (E\+S\+P-\/\+RX)
+\item connect 5V of Dust Sensor S\+D\+S011 to Pin 5V of E\+S\+P32
+\item connect G\+ND of Dust Sensor S\+D\+S011 to Pin G\+ND of E\+S\+P32
+\end{DoxyItemize}
+\item B\+M\+E280 Sensor for Humidity and Temperature~\newline
+
+\begin{DoxyItemize}
+\item connect S\+CK of B\+M\+E280 sensor to Pin 22 of E\+S\+P32 (E\+S\+P-\/\+S\+CL)
+\item connect S\+DA of B\+M\+E280 sensor to Pin 21 of E\+S\+P32 (E\+S\+P-\/\+S\+DA)
+\item connect V\+CC of B\+M\+E280 sensor to 3V3 of E\+S\+P32
+\item connect G\+ND of B\+M\+E280 sensor to G\+ND of E\+S\+P32
+\item the I2C address for different B\+M\+E280 (purple/red) can be configure in \mbox{\hyperlink{sensor_8h}{sensor.\+h}} using \mbox{\hyperlink{sensor_8h_a9f6149e98e70e1d5be5f0f33921cb7d7}{B\+M\+E\+\_\+\+A\+D\+DR}} constant
+\end{DoxyItemize}
+\item D\+H\+T22 Sensor for Temperature and Humidity (if B\+M\+E280 is not used)~\newline
+ Look at the sensor from the front (grid shows in your direction), put the pins facing down, start counting the pins from left (pin1) to right (pin4). pin 3 is not connected.~\newline
+ One has to\+:
+\begin{DoxyItemize}
+\item Connect pin 1 of D\+H\+T22 sensor (on the left) to 3V3 of E\+S\+P32
+\item Connect pin 2 of D\+H\+T22 sensor to Pin 21 of E\+S\+P32 (data)
+\item Connect pin 4 of D\+H\+T22 sensor (on the right) to G\+ND of E\+S\+P32
+\item Connect a resistor in range 4.\+7k to 10k from pin 2 (data) to pin 1 (power) of the sensor
+\end{DoxyItemize}
+\end{DoxyEnumerate}\hypertarget{index_knownbugs}{}\section{Known Bugs}\label{index_knownbugs}
+There are following bugs and discrepensies that needs to be take care off.
+\begin{DoxyEnumerate}
+\item xxx
+\item yyyy
+\end{DoxyEnumerate}\hypertarget{index_changelog}{}\section{Change Log}\label{index_changelog}
+\hypertarget{index_changelog2}{}\subsection{F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N 0.\+1.\+0.\+0 onwards}\label{index_changelog2}
+
+\begin{DoxyItemize}
+\item \mbox{[}0.\+1.\+0.\+0\mbox{]} Sep. 7, 2020
+\begin{DoxyItemize}
+\item First State Machine and integration of whole sensors
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{index_author}{}\section{Author(s)}\label{index_author}
+
+\begin{DoxyItemize}
+\item Sajjad Hussain,
+\item Tobias,
+\end{DoxyItemize}
+
+The team at T\+E\+CO (www.\+teco.\+edu) and at Chair for Pervasive Computing Systems (\href{https://pcs.tm.kit.edu}{\texttt{ https\+://pcs.\+tm.\+kit.\+edu}}).\hypertarget{index_license}{}\section{License}\label{index_license}
+This code belongs to T\+E\+CO www.\+teco.\+edu and must be reffered when used. B\+SD license, all text here must be included in any redistribution. \hypertarget{index_ack}{}\subsection{Acknowledgments}\label{index_ack}
+The following libraries were used\+:~\newline
+
+\begin{DoxyItemize}
+\item Espressif Systems\+: Licenses and Copyright 2015-\/2016 Espressif Systems (Shanghai) P\+TE L\+TD
+\item Adafruit B\+M\+E280 is licensed under Adafruit. \href{https://adafruit.com/}{\texttt{ https\+://adafruit.\+com/}}
+\item D\+HT sensor is licensed under Adafruit. \href{https://adafruit.com/}{\texttt{ https\+://adafruit.\+com/}}
+\item ez\+Time is licensed under the M\+IT License. \href{https://github.com/ropg/ezTime}{\texttt{ https\+://github.\+com/ropg/ez\+Time}}
+\item S\+D\+S011 sensor Library is licensed under the M\+IT License. (\href{https://github.com/ricki-z/SDS011}{\texttt{ https\+://github.\+com/ricki-\/z/\+S\+D\+S011}})
+\end{DoxyItemize}\hypertarget{index_mit}{}\subsection{M\+I\+T License}\label{index_mit}
+\begin{DoxyVerb}   Copyright (c) 2017-2019 Hieromon Ikasamo
+
+   Permission is hereby granted, free of charge, to any person obtaining a copy
+   of this software and associated documentation files (the "Software"), to deal
+   in the Software without restriction, including without limitation the rights
+   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+   copies of the Software, and to permit persons to whom the Software is
+   furnished to do so, subject to the following conditions:
+
+   The above copyright notice and this permission notice shall be included in all
+   copies or substantial portions of the Software.
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+   SOFTWARE.
+\end{DoxyVerb}
+\hypertarget{index_EspressifLic}{}\subsection{Espressif Systems License}\label{index_EspressifLic}
+\begin{DoxyVerb}   Copyright 2015-2016 Espressif Systems (Shanghai) PTE LTD
+
+   Licensed under the Apache License, Version 2.0 (the "License");    
+   you may not use this file except in compliance with the License.    
+   You may obtain a copy of the License at    
+   http://www.apache.org/licenses/LICENSE-2.0    
+   Unless required by applicable law or agreed to in writing, software    
+   distributed under the License is distributed on an "AS IS" BASIS,    
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.    
+   See the License for the specific language governing permissions and    
+   limitations under the License.
+\end{DoxyVerb}
+
+
+\begin{DoxyDate}{Date}
+07.\+09.\+2020 
+\end{DoxyDate}

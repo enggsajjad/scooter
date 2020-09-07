@@ -1,0 +1,105 @@
+\hypertarget{send__data_8h}{}\section{esp32-\/stationary/send\+\_\+data.h File Reference}
+\label{send__data_8h}\index{esp32-\/stationary/send\_data.h@{esp32-\/stationary/send\_data.h}}
+
+
+function to send json data to an A\+PI  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{send__data_8h_a36d8ac04841bab395f99e6173201dd0d}{send\+Data}} (const char $\ast$data\+\_\+json, char destination\mbox{[}$\,$\mbox{]}, String pin)
+\begin{DoxyCompactList}\small\item\em Send J\+S\+ON data to A\+PI. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+String \mbox{\hyperlink{send__data_8h_a8687b46efcc1aac7c80814a74bac954b}{esp32\+\_\+chipid}}
+\begin{DoxyCompactList}\small\item\em Externally define variable for Chip ID. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{send__data_8h_a268d9b1e5e404ee689ae7bf1ca226942}{use\+\_\+bme280}}
+\begin{DoxyCompactList}\small\item\em Externally define variable to check if using bme280. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{send__data_8h_a0b8e8b6e49d8992ea37dc70d6cd105bb}{use\+\_\+dht22}}
+\begin{DoxyCompactList}\small\item\em Externally define variable to check if using dht22. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+function to send json data to an A\+PI 
+
+This is the files that contains the functions to send json data to an A\+PI.
+
+\begin{DoxyDate}{Date}
+19.\+08.\+2019 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{send__data_8h_a36d8ac04841bab395f99e6173201dd0d}\label{send__data_8h_a36d8ac04841bab395f99e6173201dd0d}} 
+\index{send\_data.h@{send\_data.h}!sendData@{sendData}}
+\index{sendData@{sendData}!send\_data.h@{send\_data.h}}
+\subsubsection{\texorpdfstring{sendData()}{sendData()}}
+{\footnotesize\ttfamily void send\+Data (\begin{DoxyParamCaption}\item[{const char $\ast$}]{data\+\_\+json,  }\item[{char}]{destination\mbox{[}$\,$\mbox{]},  }\item[{String}]{pin }\end{DoxyParamCaption})}
+
+
+
+Send J\+S\+ON data to A\+PI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\+\_\+json} & the J\+S\+ON Message to be sent \\
+\hline
+{\em destination} & the destination A\+PI madavi or luftdaten \\
+\hline
+{\em pin} & the pin-\/code values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 29 of file send\+\_\+data.\+h.
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{send__data_8h_a8687b46efcc1aac7c80814a74bac954b}\label{send__data_8h_a8687b46efcc1aac7c80814a74bac954b}} 
+\index{send\_data.h@{send\_data.h}!esp32\_chipid@{esp32\_chipid}}
+\index{esp32\_chipid@{esp32\_chipid}!send\_data.h@{send\_data.h}}
+\subsubsection{\texorpdfstring{esp32\_chipid}{esp32\_chipid}}
+{\footnotesize\ttfamily String esp32\+\_\+chipid}
+
+
+
+Externally define variable for Chip ID. 
+
+Externally define variable for Chip ID. 
+
+Definition at line 1231 of file main.\+h.
+
+\mbox{\Hypertarget{send__data_8h_a268d9b1e5e404ee689ae7bf1ca226942}\label{send__data_8h_a268d9b1e5e404ee689ae7bf1ca226942}} 
+\index{send\_data.h@{send\_data.h}!use\_bme280@{use\_bme280}}
+\index{use\_bme280@{use\_bme280}!send\_data.h@{send\_data.h}}
+\subsubsection{\texorpdfstring{use\_bme280}{use\_bme280}}
+{\footnotesize\ttfamily bool use\+\_\+bme280}
+
+
+
+Externally define variable to check if using bme280. 
+
+Externally define variable to check if using bme280. 
+
+Definition at line 1151 of file main.\+h.
+
+\mbox{\Hypertarget{send__data_8h_a0b8e8b6e49d8992ea37dc70d6cd105bb}\label{send__data_8h_a0b8e8b6e49d8992ea37dc70d6cd105bb}} 
+\index{send\_data.h@{send\_data.h}!use\_dht22@{use\_dht22}}
+\index{use\_dht22@{use\_dht22}!send\_data.h@{send\_data.h}}
+\subsubsection{\texorpdfstring{use\_dht22}{use\_dht22}}
+{\footnotesize\ttfamily bool use\+\_\+dht22}
+
+
+
+Externally define variable to check if using dht22. 
+
+Externally define variable to check if using dht22. 
+
+Definition at line 1153 of file main.\+h.
+

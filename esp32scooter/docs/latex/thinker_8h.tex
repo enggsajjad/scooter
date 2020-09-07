@@ -1,0 +1,65 @@
+\hypertarget{thinker_8h}{}\section{C\+:/\+Users/\+Sajjad/\+Desktop/backup/esp32scooter/thinker.h File Reference}
+\label{thinker_8h}\index{C:/Users/Sajjad/Desktop/backup/esp32scooter/thinker.h@{C:/Users/Sajjad/Desktop/backup/esp32scooter/thinker.h}}
+
+
+variable and function definitions for timings  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{thinker_8h_aba51915c87d64af47fb1cc59348961c9}\label{thinker_8h_aba51915c87d64af47fb1cc59348961c9}} 
+\#define \mbox{\hyperlink{thinker_8h_aba51915c87d64af47fb1cc59348961c9}{OK}}~1
+\begin{DoxyCompactList}\small\item\em OK response for AT Command. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{thinker_8h_a02812505694442b6f833040489d550d6}\label{thinker_8h_a02812505694442b6f833040489d550d6}} 
+\#define \mbox{\hyperlink{thinker_8h_a02812505694442b6f833040489d550d6}{N\+O\+T\+OK}}~2
+\begin{DoxyCompactList}\small\item\em Other than OK response for AT Command. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{thinker_8h_a45ba202b05caf39795aeca91b0ae547e}\label{thinker_8h_a45ba202b05caf39795aeca91b0ae547e}} 
+\#define \mbox{\hyperlink{thinker_8h_a45ba202b05caf39795aeca91b0ae547e}{T\+I\+M\+E\+O\+UT}}~3
+\begin{DoxyCompactList}\small\item\em Timeout for no response for AT Command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+byte \mbox{\hyperlink{thinker_8h_a38c9fec5f62aa11de338bf2273e3b430}{command}} (String cmd, String response, unsigned long timeout, boolean output)
+\begin{DoxyCompactList}\small\item\em Routine to send AT Command and output the status. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+variable and function definitions for timings 
+
+This is the files that contains the variables, macros, pins definitions and functions for timing related routines.
+
+\begin{DoxyDate}{Date}
+07.\+09.\+2020 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{thinker_8h_a38c9fec5f62aa11de338bf2273e3b430}\label{thinker_8h_a38c9fec5f62aa11de338bf2273e3b430}} 
+\index{thinker.h@{thinker.h}!command@{command}}
+\index{command@{command}!thinker.h@{thinker.h}}
+\subsubsection{\texorpdfstring{command()}{command()}}
+{\footnotesize\ttfamily byte command (\begin{DoxyParamCaption}\item[{String}]{cmd,  }\item[{String}]{response,  }\item[{unsigned long}]{timeout,  }\item[{boolean}]{output }\end{DoxyParamCaption})}
+
+
+
+Routine to send AT Command and output the status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & the AT Command to be sent \\
+\hline
+{\em response} & the response to be expected \\
+\hline
+{\em timeout} & the timeout to wait for cmd command \\
+\hline
+{\em output} & the boolean whether to show output \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+byte 
+\end{DoxyReturn}
+
+
+Definition at line 29 of file thinker.\+h.
+

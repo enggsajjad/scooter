@@ -1,0 +1,128 @@
+\hypertarget{main_8h}{}\section{C\+:/\+Users/\+Sajjad/\+Desktop/backup/esp32scooter/main.h File Reference}
+\label{main_8h}\index{C:/Users/Sajjad/Desktop/backup/esp32scooter/main.h@{C:/Users/Sajjad/Desktop/backup/esp32scooter/main.h}}
+
+
+This the main page for the S\+M\+A\+R\+T\+A\+Q\+N\+ET which is the core of the project.  
+
+
+{\ttfamily \#include \char`\"{}src/lib/\+S\+D\+S011/\+S\+D\+S011.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$Hardware\+Serial.\+h$>$}\newline
+{\ttfamily \#include $<$Adafruit\+\_\+\+Sensor.\+h$>$}\newline
+{\ttfamily \#include $<$Adafruit\+\_\+\+B\+M\+E280.\+h$>$}\newline
+{\ttfamily \#include $<$D\+H\+T.\+h$>$}\newline
+{\ttfamily \#include $<$Wire.\+h$>$}\newline
+{\ttfamily \#include $<$ez\+Time.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}sensor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}timer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}thinker.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$String.\+h$>$}\newline
+{\ttfamily \#include $<$Tiny\+G\+P\+S++.\+h$>$}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8h_aa14dc39d52ab121ceb570f1a265385e0}\label{main_8h_aa14dc39d52ab121ceb570f1a265385e0}} 
+\#define \mbox{\hyperlink{main_8h_aa14dc39d52ab121ceb570f1a265385e0}{F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+V\+E\+R\+S\+I\+ON}}~\char`\"{}0.\+8.\+7.\+0 pre\char`\"{}
+\begin{DoxyCompactList}\small\item\em firmware version, (for intermediate versions being actively worked on, append \char`\"{}pre\char`\"{} to number, indicating that it is \char`\"{}not yet\char`\"{} the specified number) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8h_af06baee05280c189592215d5ea08e7ef}\label{main_8h_af06baee05280c189592215d5ea08e7ef}} 
+\#define \mbox{\hyperlink{main_8h_af06baee05280c189592215d5ea08e7ef}{sw\+\_\+version}}~\mbox{\hyperlink{main_8h_aa14dc39d52ab121ceb570f1a265385e0}{F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+V\+E\+R\+S\+I\+ON}}
+\begin{DoxyCompactList}\small\item\em Software.\+version Name property for Thing and Datastreams. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8h_acbd8a4cec684c263a6cc312c70d45ef3}\label{main_8h_acbd8a4cec684c263a6cc312c70d45ef3}} 
+\#define \mbox{\hyperlink{main_8h_acbd8a4cec684c263a6cc312c70d45ef3}{hw\+\_\+date}}~\char`\"{}2020-\/01-\/17\+T12\+:00\+:00.\+000\+Z\char`\"{}
+\begin{DoxyCompactList}\small\item\em Hardware.\+Revision Date property for Thing and Datastreams. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{main_8h_acbb11c1e34784cf1e3147029f942bfd6}{B\+A\+S\+E\+\_\+\+U\+RL}}~\char`\"{}http\+://193.\+196.\+38.\+108\+:8080/F\+R\+O\+ST-\/Server/v1.\+0\char`\"{}
+\begin{DoxyCompactList}\small\item\em Debugging, uncomment to switch servers to release version, enable sending to madavi and luftdaten.\+info, and supress some debug output. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8h_a7e7232f278193dd8684f973ee70ef3f5}\label{main_8h_a7e7232f278193dd8684f973ee70ef3f5}} 
+\#define \mbox{\hyperlink{main_8h_a7e7232f278193dd8684f973ee70ef3f5}{M\+Y\+\_\+\+D\+E\+B\+UG}}
+\begin{DoxyCompactList}\small\item\em Define M\+Y\+D\+E\+B\+UG for controlling debugging. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8h_a5e9ff2a0401c64386c0b7277b07063cf}\label{main_8h_a5e9ff2a0401c64386c0b7277b07063cf}} 
+\#define \mbox{\hyperlink{main_8h_a5e9ff2a0401c64386c0b7277b07063cf}{M\+Y\+\_\+\+D\+BG}}(...)~do \{Serial.\+print( \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+ );\} while (0)
+\begin{DoxyCompactList}\small\item\em Define M\+Y\+\_\+\+D\+E\+B() for controlling serial.\+print debugging. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8h_aeeb61519219a4061ee127e34907eddeb}\label{main_8h_aeeb61519219a4061ee127e34907eddeb}} 
+\#define \mbox{\hyperlink{main_8h_aeeb61519219a4061ee127e34907eddeb}{M\+Y\+\_\+\+D\+B\+Gln}}(...)~do \{Serial.\+println( \+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+ );\} while (0)
+\begin{DoxyCompactList}\small\item\em Define M\+Y\+\_\+\+D\+E\+Bln() for controlling serial.\+println debugging. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8h_af58473239b566ebd1187b4cc8c71e97d}\label{main_8h_af58473239b566ebd1187b4cc8c71e97d}} 
+\#define \mbox{\hyperlink{main_8h_af58473239b566ebd1187b4cc8c71e97d}{E\+N\+A\+B\+L\+E\+\_\+\+S\+E\+N\+D2\+F\+R\+O\+ST}}~true
+\begin{DoxyCompactList}\small\item\em switch for sending to F\+R\+O\+ST teco server \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8h_a71a7a65f7dd7e8f3ea14942213cd8217}\label{main_8h_a71a7a65f7dd7e8f3ea14942213cd8217}} 
+\#define \mbox{\hyperlink{main_8h_a71a7a65f7dd7e8f3ea14942213cd8217}{S\+E\+N\+S\+O\+R\+\_\+\+I\+N\+T\+E\+R\+V\+AL}}~10000
+\begin{DoxyCompactList}\small\item\em intervall of reading sensor data in ms \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8h_aef6021251fa63b1e73a98864b809904e}\label{main_8h_aef6021251fa63b1e73a98864b809904e}} 
+\#define \mbox{\hyperlink{main_8h_aef6021251fa63b1e73a98864b809904e}{S\+T\+A\+T\+S\+\_\+\+I\+N\+T\+E\+R\+V\+AL}}~10
+\begin{DoxyCompactList}\small\item\em intervall of showing statistics informations, it is multiple of S\+E\+N\+S\+O\+R\+\_\+\+I\+N\+T\+E\+R\+V\+AL i.\+e. 10 mean 100s \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8h_a18d121e3e45bfea386799ad36fb70b5f}\label{main_8h_a18d121e3e45bfea386799ad36fb70b5f}} 
+\#define \mbox{\hyperlink{main_8h_a18d121e3e45bfea386799ad36fb70b5f}{E\+N\+A\+B\+L\+E\+\_\+\+S\+E\+N\+D2\+M\+A\+D\+A\+VI}}~false
+\begin{DoxyCompactList}\small\item\em switch for sending to madavi api \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8h_ace6bf58c74189bcd567c1135baaa9505}\label{main_8h_ace6bf58c74189bcd567c1135baaa9505}} 
+\#define \mbox{\hyperlink{main_8h_ace6bf58c74189bcd567c1135baaa9505}{E\+N\+A\+B\+L\+E\+\_\+\+S\+E\+N\+D2\+L\+U\+F\+T\+D\+A\+T\+EN}}~false
+\begin{DoxyCompactList}\small\item\em switch for sending to luftdaten api \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8h_accb5407984fc896f8fad5e10d829d18b}\label{main_8h_accb5407984fc896f8fad5e10d829d18b}} 
+Tiny\+G\+P\+S\+Plus \mbox{\hyperlink{main_8h_accb5407984fc896f8fad5e10d829d18b}{tiny}}
+\begin{DoxyCompactList}\small\item\em G\+PS Decoder for N\+M\+EA Formate. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8h_a7e615c2d5d1d187a684c6f4c167d6914}\label{main_8h_a7e615c2d5d1d187a684c6f4c167d6914}} 
+String \mbox{\hyperlink{main_8h_a7e615c2d5d1d187a684c6f4c167d6914}{rd}}
+\begin{DoxyCompactList}\small\item\em Read messages for G\+P\+RS reciever, Response for AT Commands. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8h_a2836db0f8ae4563c70935b5e514bdc21}\label{main_8h_a2836db0f8ae4563c70935b5e514bdc21}} 
+String \mbox{\hyperlink{main_8h_a2836db0f8ae4563c70935b5e514bdc21}{message}} = \char`\"{}\char`\"{}
+\begin{DoxyCompactList}\small\item\em messages to be sent to T\+CP \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8h_a2502b12b30261ef4dea2ff97a6b78cab}\label{main_8h_a2502b12b30261ef4dea2ff97a6b78cab}} 
+String \mbox{\hyperlink{main_8h_a2502b12b30261ef4dea2ff97a6b78cab}{host}} = \char`\"{}2.tcp.\+ngrok.\+io\char`\"{}
+\begin{DoxyCompactList}\small\item\em T\+CP H\+O\+ST. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8h_af03c7fe858ccb7621fe44125757ef74a}\label{main_8h_af03c7fe858ccb7621fe44125757ef74a}} 
+String \mbox{\hyperlink{main_8h_af03c7fe858ccb7621fe44125757ef74a}{port}} = \char`\"{}13083\char`\"{}
+\begin{DoxyCompactList}\small\item\em T\+CP Port. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8h_ae565389ea28efe15a3ebee41f3ceae5a}\label{main_8h_ae565389ea28efe15a3ebee41f3ceae5a}} 
+int \mbox{\hyperlink{main_8h_ae565389ea28efe15a3ebee41f3ceae5a}{rx\+State}}
+\begin{DoxyCompactList}\small\item\em Receive from Serial States. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8h_aaf0f71eb22109b58224c762415cf9fbb}\label{main_8h_aaf0f71eb22109b58224c762415cf9fbb}} 
+int \mbox{\hyperlink{main_8h_aaf0f71eb22109b58224c762415cf9fbb}{n\+State}}
+\begin{DoxyCompactList}\small\item\em Receive from Serial Next States. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8h_ab04e2d55ea4a544f3575812582af7b51}{current}}
+\begin{DoxyCompactList}\small\item\em Receive from Serial Current States. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8h_abd077709da742a5b06a38d3542c805b8}\label{main_8h_abd077709da742a5b06a38d3542c805b8}} 
+String \mbox{\hyperlink{main_8h_abd077709da742a5b06a38d3542c805b8}{resp}}
+\begin{DoxyCompactList}\small\item\em Response for AT Commands. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8h_a97904ae3388ebd6bb18b65a3a4b1f699}\label{main_8h_a97904ae3388ebd6bb18b65a3a4b1f699}} 
+byte \mbox{\hyperlink{main_8h_a97904ae3388ebd6bb18b65a3a4b1f699}{Err}}
+\begin{DoxyCompactList}\small\item\em Error Indicating for AT Command Respnse. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This the main page for the S\+M\+A\+R\+T\+A\+Q\+N\+ET which is the core of the project. 
+
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{main_8h_acbb11c1e34784cf1e3147029f942bfd6}\label{main_8h_acbb11c1e34784cf1e3147029f942bfd6}} 
+\index{main.h@{main.h}!BASE\_URL@{BASE\_URL}}
+\index{BASE\_URL@{BASE\_URL}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{BASE\_URL}{BASE\_URL}}
+{\footnotesize\ttfamily \#define B\+A\+S\+E\+\_\+\+U\+RL~\char`\"{}http\+://193.\+196.\+38.\+108\+:8080/F\+R\+O\+ST-\/Server/v1.\+0\char`\"{}}
+
+
+
+Debugging, uncomment to switch servers to release version, enable sending to madavi and luftdaten.\+info, and supress some debug output. 
+
+Non-\/\+Release Version\+: Frost Server Base address used in Frost\+\_\+\+Server.\+cpp 
+
+Definition at line 207 of file main.\+h.
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{main_8h_ab04e2d55ea4a544f3575812582af7b51}\label{main_8h_ab04e2d55ea4a544f3575812582af7b51}} 
+\index{main.h@{main.h}!current@{current}}
+\index{current@{current}!main.h@{main.h}}
+\subsubsection{\texorpdfstring{current}{current}}
+{\footnotesize\ttfamily int current}
+
+
+
+Receive from Serial Current States. 
+
+Current rx\+State for Serial. 
+
+Definition at line 285 of file main.\+h.
+

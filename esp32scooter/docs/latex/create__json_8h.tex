@@ -1,0 +1,157 @@
+\hypertarget{create__json_8h}{}\section{esp32-\/stationary/create\+\_\+json.h File Reference}
+\label{create__json_8h}\index{esp32-\/stationary/create\_json.h@{esp32-\/stationary/create\_json.h}}
+
+
+Create J\+S\+ON string out of given values.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+String \mbox{\hyperlink{create__json_8h_a228d39e3bffd6da29f60c52ecbdd3e8e}{json\+\_\+madavi}} (bool \mbox{\hyperlink{main_8h_a48bba4089cfca5de5189167f78b37a32}{status\+\_\+sds}}, float \mbox{\hyperlink{main_8h_a4f4d9c9083a56baa7390e6c2b94f853d}{pm10}}, float \mbox{\hyperlink{main_8h_a9cc80dc9c5ed579f2b36bfa188649c73}{pm25}}, float \mbox{\hyperlink{main_8h_a24d61a35b72d7299eb6b5f48e71a571b}{temp}}, float \mbox{\hyperlink{main_8h_a38adb4de3d9d0391675c323d13503af7}{hum}}, float \mbox{\hyperlink{main_8h_a7d031eabfc5343396f4e4a58c99f8230}{atm}})
+\begin{DoxyCompactList}\small\item\em create a json string \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{create__json_8h_a922c41966ac4c3bca5e7fb38d3e62176}{json\+\_\+sds}} (bool \mbox{\hyperlink{main_8h_a48bba4089cfca5de5189167f78b37a32}{status\+\_\+sds}}, float \mbox{\hyperlink{main_8h_a4f4d9c9083a56baa7390e6c2b94f853d}{pm10}}, float \mbox{\hyperlink{main_8h_a9cc80dc9c5ed579f2b36bfa188649c73}{pm25}})
+\begin{DoxyCompactList}\small\item\em create a json string for S\+DS values \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{create__json_8h_aa87d821dad1409cff38a689a84848afc}{json\+\_\+\+R\+HT}} (float \mbox{\hyperlink{main_8h_a24d61a35b72d7299eb6b5f48e71a571b}{temp}}, float \mbox{\hyperlink{main_8h_a38adb4de3d9d0391675c323d13503af7}{hum}}, float \mbox{\hyperlink{main_8h_a7d031eabfc5343396f4e4a58c99f8230}{atm}})
+\begin{DoxyCompactList}\small\item\em create a json string for temperature \& Humidity \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{create__json_8h_a268d9b1e5e404ee689ae7bf1ca226942}{use\+\_\+bme280}}
+\begin{DoxyCompactList}\small\item\em Externally define variable to check if using bme280. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{create__json_8h_a0b8e8b6e49d8992ea37dc70d6cd105bb}{use\+\_\+dht22}}
+\begin{DoxyCompactList}\small\item\em Externally define variable to check if using dht22. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{create__json_8h_ab1d2a71062488a1b8d2f9129682a42b9}\label{create__json_8h_ab1d2a71062488a1b8d2f9129682a42b9}} 
+const String \mbox{\hyperlink{create__json_8h_ab1d2a71062488a1b8d2f9129682a42b9}{S\+O\+F\+T\+W\+A\+R\+E\+\_\+\+V\+E\+R\+S\+I\+ON}} = \char`\"{}esp32-\/crowdsensor-\/v\char`\"{}+String(\mbox{\hyperlink{main_8h_aa14dc39d52ab121ceb570f1a265385e0}{F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+V\+E\+R\+S\+I\+ON}})
+\begin{DoxyCompactList}\small\item\em Software version of the crowdsensor for json messages. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{create__json_8h_a1550024e10b32c2bd4d48470f12d776f}\label{create__json_8h_a1550024e10b32c2bd4d48470f12d776f}} 
+const int \mbox{\hyperlink{create__json_8h_a1550024e10b32c2bd4d48470f12d776f}{buffer\+Length}} = 1024
+\begin{DoxyCompactList}\small\item\em The J\+S\+ON Buffer length. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Create J\+S\+ON string out of given values. 
+
+This file is used to create J\+S\+ON messages for different sensors, according to their destination and send to differnt servers.
+
+\begin{DoxyDate}{Date}
+19.\+08.\+2019 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{create__json_8h_a228d39e3bffd6da29f60c52ecbdd3e8e}\label{create__json_8h_a228d39e3bffd6da29f60c52ecbdd3e8e}} 
+\index{create\_json.h@{create\_json.h}!json\_madavi@{json\_madavi}}
+\index{json\_madavi@{json\_madavi}!create\_json.h@{create\_json.h}}
+\subsubsection{\texorpdfstring{json\_madavi()}{json\_madavi()}}
+{\footnotesize\ttfamily String json\+\_\+madavi (\begin{DoxyParamCaption}\item[{bool}]{status\+\_\+sds,  }\item[{float}]{pm10,  }\item[{float}]{pm25,  }\item[{float}]{temp,  }\item[{float}]{hum,  }\item[{float}]{atm }\end{DoxyParamCaption})}
+
+
+
+create a json string 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status\+\_\+sds} & S\+DS sensor status \\
+\hline
+{\em pm10} & sensor\textquotesingle{}s pm10 float value \\
+\hline
+{\em pm25} & sensor\textquotesingle{}s pm25 float value \\
+\hline
+{\em temp} & temperature float value \\
+\hline
+{\em hum} & humidity float value \\
+\hline
+{\em atm} & pressure float value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+output String response 
+\end{DoxyReturn}
+
+
+Definition at line 32 of file create\+\_\+json.\+h.
+
+\mbox{\Hypertarget{create__json_8h_aa87d821dad1409cff38a689a84848afc}\label{create__json_8h_aa87d821dad1409cff38a689a84848afc}} 
+\index{create\_json.h@{create\_json.h}!json\_RHT@{json\_RHT}}
+\index{json\_RHT@{json\_RHT}!create\_json.h@{create\_json.h}}
+\subsubsection{\texorpdfstring{json\_RHT()}{json\_RHT()}}
+{\footnotesize\ttfamily String json\+\_\+\+R\+HT (\begin{DoxyParamCaption}\item[{float}]{temp,  }\item[{float}]{hum,  }\item[{float}]{atm }\end{DoxyParamCaption})}
+
+
+
+create a json string for temperature \& Humidity 
+
+
+\begin{DoxyParams}{Parameters}
+{\em temp} & temperature value \\
+\hline
+{\em hum} & humidity value \\
+\hline
+{\em atm} & pressure value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+J\+S\+ON String 
+\end{DoxyReturn}
+
+
+Definition at line 131 of file create\+\_\+json.\+h.
+
+\mbox{\Hypertarget{create__json_8h_a922c41966ac4c3bca5e7fb38d3e62176}\label{create__json_8h_a922c41966ac4c3bca5e7fb38d3e62176}} 
+\index{create\_json.h@{create\_json.h}!json\_sds@{json\_sds}}
+\index{json\_sds@{json\_sds}!create\_json.h@{create\_json.h}}
+\subsubsection{\texorpdfstring{json\_sds()}{json\_sds()}}
+{\footnotesize\ttfamily String json\+\_\+sds (\begin{DoxyParamCaption}\item[{bool}]{status\+\_\+sds,  }\item[{float}]{pm10,  }\item[{float}]{pm25 }\end{DoxyParamCaption})}
+
+
+
+create a json string for S\+DS values 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status\+\_\+sds} & S\+DS sensor status \\
+\hline
+{\em pm10} & pm10 float value \\
+\hline
+{\em pm25} & pm25 float value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+output String response 
+\end{DoxyReturn}
+
+
+Definition at line 92 of file create\+\_\+json.\+h.
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{create__json_8h_a268d9b1e5e404ee689ae7bf1ca226942}\label{create__json_8h_a268d9b1e5e404ee689ae7bf1ca226942}} 
+\index{create\_json.h@{create\_json.h}!use\_bme280@{use\_bme280}}
+\index{use\_bme280@{use\_bme280}!create\_json.h@{create\_json.h}}
+\subsubsection{\texorpdfstring{use\_bme280}{use\_bme280}}
+{\footnotesize\ttfamily bool use\+\_\+bme280}
+
+
+
+Externally define variable to check if using bme280. 
+
+Externally define variable to check if using bme280. 
+
+Definition at line 1151 of file main.\+h.
+
+\mbox{\Hypertarget{create__json_8h_a0b8e8b6e49d8992ea37dc70d6cd105bb}\label{create__json_8h_a0b8e8b6e49d8992ea37dc70d6cd105bb}} 
+\index{create\_json.h@{create\_json.h}!use\_dht22@{use\_dht22}}
+\index{use\_dht22@{use\_dht22}!create\_json.h@{create\_json.h}}
+\subsubsection{\texorpdfstring{use\_dht22}{use\_dht22}}
+{\footnotesize\ttfamily bool use\+\_\+dht22}
+
+
+
+Externally define variable to check if using dht22. 
+
+Externally define variable to check if using dht22. 
+
+Definition at line 1153 of file main.\+h.
+

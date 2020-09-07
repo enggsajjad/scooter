@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['sds',['sds',['../sensor_8h.html#ac4a52bac518b8678882cf3be09d1148b',1,'sensor.h']]],
+  ['sds011_5fserial',['SDS011_Serial',['../main_8h.html#ac0c97362dcfdb40676d7f1b48843aa73',1,'main.h']]],
+  ['sdsdataurl',['sdsDataUrl',['../main_8h.html#a7ad52d86bbef24d12b0f207d4df1f170',1,'main.h']]],
+  ['sdsdesc',['sdsDesc',['../main_8h.html#a4828be53dd8d92fdbdab439ec2abbccf',1,'main.h']]],
+  ['sdsenc',['sdsEnc',['../main_8h.html#a236bab6d7bb30ee4f0d494691b559e4b',1,'main.h']]],
+  ['sdsid',['sdsId',['../main_8h.html#a5ce356dd02dea0a0bc3ca6bf6955f6ce',1,'main.h']]],
+  ['sdsiotid',['sdsIotId',['../main_8h.html#a7563b3b31074e29ad9385133b4de6f17',1,'main.h']]],
+  ['sdsjson',['sdsJson',['../main_8h.html#aeea9509f498c668fdc208d112af60104',1,'main.h']]],
+  ['sdsmandomain',['sdsManDomain',['../main_8h.html#a5acbdf9b341bf3b2035e44a50a911dc6',1,'main.h']]],
+  ['sdsmeta',['sdsMeta',['../main_8h.html#a77935fdf2a43574301e79fefc8eeaa63',1,'main.h']]],
+  ['sdsname',['sdsName',['../main_8h.html#aceffc4e5c1f31245989062498d58c5b4',1,'main.h']]],
+  ['sdsserial',['sdsSerial',['../main_8h.html#a824142a5d4120861ade084b4d39a2d67',1,'main.h']]],
+  ['sdsshortname',['sdsShortName',['../main_8h.html#a8899f9516e513c9c6292242a05b77702',1,'main.h']]],
+  ['send2luftdateninterval',['send2luftdatenInterval',['../timer__definitions_8h.html#a95cd186ee12cbd4cd834a1854db30120',1,'timer_definitions.h']]],
+  ['send2madaviinterval',['send2madaviInterval',['../timer__definitions_8h.html#a22e91d23e8be4db28e902032fcabea61',1,'timer_definitions.h']]],
+  ['sensorinterval',['sensorInterval',['../timer__definitions_8h.html#a78d8670c7d9b2405b78d4d451b315f9f',1,'timer_definitions.h']]],
+  ['server',['Server',['../main_8h.html#ab4f15e5e4298004d97fe1734ee796f5e',1,'main.h']]],
+  ['show_5fqr',['show_QR',['../my_auto_connect_8h.html#a6ce689b93ca03523ef06cf93473494dc',1,'myAutoConnect.h']]],
+  ['software_5fversion',['SOFTWARE_VERSION',['../create__json_8h.html#ab1d2a71062488a1b8d2f9129682a42b9',1,'create_json.h']]],
+  ['state',['state',['../main_8h.html#ab12828525693568ae9c217805bea1ef9',1,'main.h']]],
+  ['status_5fsds',['status_sds',['../main_8h.html#a48bba4089cfca5de5189167f78b37a32',1,'main.h']]]
+];

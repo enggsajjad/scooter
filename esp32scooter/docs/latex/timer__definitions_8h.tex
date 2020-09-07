@@ -1,0 +1,63 @@
+\hypertarget{timer__definitions_8h}{}\section{esp32-\/stationary/timer\+\_\+definitions.h File Reference}
+\label{timer__definitions_8h}\index{esp32-\/stationary/timer\_definitions.h@{esp32-\/stationary/timer\_definitions.h}}
+
+
+variable and function definitions for timings  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void I\+R\+A\+M\+\_\+\+A\+T\+TR \mbox{\hyperlink{timer__definitions_8h_aeb36d30620b2d08c6d267015771abf65}{reset\+Module}} ()
+\begin{DoxyCompactList}\small\item\em I\+SR functions called for Reset E\+S\+P32. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{timer__definitions_8h_a76bc0a7db1e7b525a8564174240fd93c}\label{timer__definitions_8h_a76bc0a7db1e7b525a8564174240fd93c}} 
+unsigned long \mbox{\hyperlink{timer__definitions_8h_a76bc0a7db1e7b525a8564174240fd93c}{previous\+Millis\+\_\+sensor}} = 0
+\begin{DoxyCompactList}\small\item\em will store the last time the event (in loop) was triggered for sending sensor values to Frost\+Manager \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{timer__definitions_8h_a2740fe7e1d5e609878b6c6348c78c97e}\label{timer__definitions_8h_a2740fe7e1d5e609878b6c6348c78c97e}} 
+unsigned long \mbox{\hyperlink{timer__definitions_8h_a2740fe7e1d5e609878b6c6348c78c97e}{previous\+Millis\+\_\+send2madavi}} = 0
+\begin{DoxyCompactList}\small\item\em will store the last time the event (in loop) was triggered sending sensor values to madavi \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{timer__definitions_8h_a766f70fd244dfc2b331536707e143a58}\label{timer__definitions_8h_a766f70fd244dfc2b331536707e143a58}} 
+unsigned long \mbox{\hyperlink{timer__definitions_8h_a766f70fd244dfc2b331536707e143a58}{previous\+Millis\+\_\+send2luftdaten}} = 0
+\begin{DoxyCompactList}\small\item\em will store the last time the event (in loop) was triggered sending sensor values to luftdaten \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{timer__definitions_8h_a78d8670c7d9b2405b78d4d451b315f9f}\label{timer__definitions_8h_a78d8670c7d9b2405b78d4d451b315f9f}} 
+bool \mbox{\hyperlink{timer__definitions_8h_a78d8670c7d9b2405b78d4d451b315f9f}{sensor\+Interval}}
+\begin{DoxyCompactList}\small\item\em time interval to send values to Frostmanager \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{timer__definitions_8h_a22e91d23e8be4db28e902032fcabea61}\label{timer__definitions_8h_a22e91d23e8be4db28e902032fcabea61}} 
+bool \mbox{\hyperlink{timer__definitions_8h_a22e91d23e8be4db28e902032fcabea61}{send2madavi\+Interval}}
+\begin{DoxyCompactList}\small\item\em time interval to send values to M\+A\+D\+A\+VI \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{timer__definitions_8h_a95cd186ee12cbd4cd834a1854db30120}\label{timer__definitions_8h_a95cd186ee12cbd4cd834a1854db30120}} 
+bool \mbox{\hyperlink{timer__definitions_8h_a95cd186ee12cbd4cd834a1854db30120}{send2luftdaten\+Interval}}
+\begin{DoxyCompactList}\small\item\em time interval to send values to L\+U\+F\+T\+D\+A\+T\+EN \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+variable and function definitions for timings 
+
+This is the files that contains the variables, macros, pins definitions and functions for timing related routines.
+
+\begin{DoxyDate}{Date}
+19.\+08.\+2019 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{timer__definitions_8h_aeb36d30620b2d08c6d267015771abf65}\label{timer__definitions_8h_aeb36d30620b2d08c6d267015771abf65}} 
+\index{timer\_definitions.h@{timer\_definitions.h}!resetModule@{resetModule}}
+\index{resetModule@{resetModule}!timer\_definitions.h@{timer\_definitions.h}}
+\subsubsection{\texorpdfstring{resetModule()}{resetModule()}}
+{\footnotesize\ttfamily void I\+R\+A\+M\+\_\+\+A\+T\+TR reset\+Module (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+I\+SR functions called for Reset E\+S\+P32. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 30 of file timer\+\_\+definitions.\+h.
+

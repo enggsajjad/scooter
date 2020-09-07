@@ -1,0 +1,167 @@
+\begin{theindex}
+
+  \item {\_waitForConnect}
+    \subitem {myAutoConnect}, \hyperpage{30}
+
+  \indexspace
+
+  \item {BASE\_URL}
+    \subitem {main.h}, \hyperpage{53}
+  \item {begin}
+    \subitem {myAutoConnect}, \hyperpage{30}
+
+  \indexspace
+
+  \item {create\_json.h}
+    \subitem {json\_madavi}, \hyperpage{34}
+    \subitem {json\_RHT}, \hyperpage{34}
+    \subitem {json\_sds}, \hyperpage{35}
+    \subitem {use\_bme280}, \hyperpage{35}
+    \subitem {use\_dht22}, \hyperpage{35}
+  \item {createEntities}
+    \subitem {main.h}, \hyperpage{53}
+  \item {createEntity}
+    \subitem {main.h}, \hyperpage{53}
+  \item {createOrPatchEntities}
+    \subitem {main.h}, \hyperpage{54}
+  \item {createOrUpdateEntities}
+    \subitem {main.h}, \hyperpage{54}
+
+  \indexspace
+
+  \item {display.h}
+    \subitem {displayQRCode}, \hyperpage{37}
+    \subitem {generateQRCode}, \hyperpage{37}
+  \item {displayQRCode}
+    \subitem {display.h}, \hyperpage{37}
+
+  \indexspace
+
+  \item {esp32-\/stationary.ino}
+    \subitem {loop}, \hyperpage{38}
+    \subitem {setup}, \hyperpage{38}
+  \item {esp32-\/stationary/create\_json.h}, \hyperpage{33}
+  \item {esp32-\/stationary/display.h}, \hyperpage{36}
+  \item {esp32-\/stationary/esp32-\/stationary.ino}, \hyperpage{37}
+  \item {esp32-\/stationary/main.h}, \hyperpage{39}
+  \item {esp32-\/stationary/myAutoConnect.h}, \hyperpage{59}
+  \item {esp32-\/stationary/nvs\_storage.h}, \hyperpage{60}
+  \item {esp32-\/stationary/send\_data.h}, \hyperpage{63}
+  \item {esp32-\/stationary/sensor.h}, \hyperpage{64}
+  \item {esp32-\/stationary/timer\_definitions.h}, \hyperpage{65}
+  \item {esp32\_chipid}
+    \subitem {main.h}, \hyperpage{58}
+    \subitem {send\_data.h}, \hyperpage{64}
+
+  \indexspace
+
+  \item {generateQRCode}
+    \subitem {display.h}, \hyperpage{37}
+  \item {get\_integer}
+    \subitem {nvs\_storage.h}, \hyperpage{61}
+  \item {get\_value}
+    \subitem {nvs\_storage.h}, \hyperpage{61}
+  \item {getEntity}
+    \subitem {main.h}, \hyperpage{55}
+  \item {getEntityResponse}
+    \subitem {main.h}, \hyperpage{55}
+
+  \indexspace
+
+  \item {http\_error}
+    \subitem {main.h}, \hyperpage{58}
+
+  \indexspace
+
+  \item {json\_madavi}
+    \subitem {create\_json.h}, \hyperpage{34}
+  \item {json\_RHT}
+    \subitem {create\_json.h}, \hyperpage{34}
+  \item {json\_sds}
+    \subitem {create\_json.h}, \hyperpage{35}
+
+  \indexspace
+
+  \item {license\_type}
+    \subitem {main.h}, \hyperpage{58}
+  \item {loop}
+    \subitem {esp32-\/stationary.ino}, \hyperpage{38}
+
+  \indexspace
+
+  \item {main.h}
+    \subitem {BASE\_URL}, \hyperpage{53}
+    \subitem {createEntities}, \hyperpage{53}
+    \subitem {createEntity}, \hyperpage{53}
+    \subitem {createOrPatchEntities}, \hyperpage{54}
+    \subitem {createOrUpdateEntities}, \hyperpage{54}
+    \subitem {esp32\_chipid}, \hyperpage{58}
+    \subitem {getEntity}, \hyperpage{55}
+    \subitem {getEntityResponse}, \hyperpage{55}
+    \subitem {http\_error}, \hyperpage{58}
+    \subitem {license\_type}, \hyperpage{58}
+    \subitem {patchEntity}, \hyperpage{55}
+    \subitem {postObservation}, \hyperpage{57}
+    \subitem {toHEXSHA}, \hyperpage{57}
+    \subitem {use\_bme280}, \hyperpage{58}
+    \subitem {use\_dht22}, \hyperpage{59}
+  \item {myAutoConnect}, \hyperpage{29}
+    \subitem {\_waitForConnect}, \hyperpage{30}
+    \subitem {begin}, \hyperpage{30}
+    \subitem {myAutoConnect}, \hyperpage{29}
+
+  \indexspace
+
+  \item {nvs\_storage.h}
+    \subitem {get\_integer}, \hyperpage{61}
+    \subitem {get\_value}, \hyperpage{61}
+    \subitem {set\_integer}, \hyperpage{62}
+    \subitem {set\_value}, \hyperpage{62}
+
+  \indexspace
+
+  \item {patchEntity}
+    \subitem {main.h}, \hyperpage{55}
+  \item {postObservation}
+    \subitem {main.h}, \hyperpage{57}
+
+  \indexspace
+
+  \item {resetModule}
+    \subitem {timer\_definitions.h}, \hyperpage{66}
+
+  \indexspace
+
+  \item {send\_data.h}
+    \subitem {esp32\_chipid}, \hyperpage{64}
+    \subitem {sendData}, \hyperpage{63}
+    \subitem {use\_bme280}, \hyperpage{64}
+    \subitem {use\_dht22}, \hyperpage{64}
+  \item {sendData}
+    \subitem {send\_data.h}, \hyperpage{63}
+  \item {set\_integer}
+    \subitem {nvs\_storage.h}, \hyperpage{62}
+  \item {set\_value}
+    \subitem {nvs\_storage.h}, \hyperpage{62}
+  \item {setup}
+    \subitem {esp32-\/stationary.ino}, \hyperpage{38}
+
+  \indexspace
+
+  \item {timer\_definitions.h}
+    \subitem {resetModule}, \hyperpage{66}
+  \item {toHEXSHA}
+    \subitem {main.h}, \hyperpage{57}
+
+  \indexspace
+
+  \item {use\_bme280}
+    \subitem {create\_json.h}, \hyperpage{35}
+    \subitem {main.h}, \hyperpage{58}
+    \subitem {send\_data.h}, \hyperpage{64}
+  \item {use\_dht22}
+    \subitem {create\_json.h}, \hyperpage{35}
+    \subitem {main.h}, \hyperpage{59}
+    \subitem {send\_data.h}, \hyperpage{64}
+
+\end{theindex}

@@ -96,7 +96,7 @@ void SDS011::wakeup() {
 	sds_data->flush();
 }
 
-//#ifndef ESP32
+#ifndef ESP32
 void SDS011::begin(uint8_t pin_rx, uint8_t pin_tx) {
 	_pin_rx = pin_rx;
 	_pin_tx = pin_tx;
@@ -107,7 +107,7 @@ void SDS011::begin(uint8_t pin_rx, uint8_t pin_tx) {
 
 	sds_data = softSerial;
 }
-//#endif
+#endif
 
 void SDS011::begin(HardwareSerial* serial) {
 	serial->begin(9600);
@@ -119,9 +119,9 @@ void SDS011::begin(HardwareSerial* serial, int8_t rxPin, int8_t txPin) {
 	sds_data = serial;
 }
 
-//#ifndef ESP32
+#ifndef ESP32
 void SDS011::begin(SoftwareSerial* serial) {
 	serial->begin(9600);
 	sds_data = serial;
 }
-//#endif
+#endif

@@ -1,0 +1,120 @@
+\hypertarget{timer_8h}{}\section{C\+:/\+Users/\+Sajjad/\+Desktop/backup/esp32scooter/timer.h File Reference}
+\label{timer_8h}\index{C:/Users/Sajjad/Desktop/backup/esp32scooter/timer.h@{C:/Users/Sajjad/Desktop/backup/esp32scooter/timer.h}}
+
+
+variable and function definitions for timings  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void I\+R\+A\+M\+\_\+\+A\+T\+TR \mbox{\hyperlink{timer_8h_aeb36d30620b2d08c6d267015771abf65}{reset\+Module}} ()
+\begin{DoxyCompactList}\small\item\em I\+SR functions called for Reset E\+S\+P32. \end{DoxyCompactList}\item 
+void I\+R\+A\+M\+\_\+\+A\+T\+TR \mbox{\hyperlink{timer_8h_ada06ab1c4bbd307a9fea75726c8894f1}{on\+Timer}} ()
+\begin{DoxyCompactList}\small\item\em I\+SR functions called Timer Elapsed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{timer_8h_aa200ac08feffa4ebd4445ebd838263fd}{setup\+Timer}} (unsigned long n\+Sec)
+\begin{DoxyCompactList}\small\item\em Setting up the Hardware Timer (1Sec) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{timer_8h_a97222eeccb5b18e1fc532806c1efcb34}\label{timer_8h_a97222eeccb5b18e1fc532806c1efcb34}} 
+hw\+\_\+timer\+\_\+t $\ast$ \mbox{\hyperlink{timer_8h_a97222eeccb5b18e1fc532806c1efcb34}{timer}} = N\+U\+LL
+\begin{DoxyCompactList}\small\item\em Hardware Timer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{timer_8h_adedb0f4641b7b425776dbacb23a96576}\label{timer_8h_adedb0f4641b7b425776dbacb23a96576}} 
+port\+M\+U\+X\+\_\+\+T\+Y\+PE \mbox{\hyperlink{timer_8h_adedb0f4641b7b425776dbacb23a96576}{timer\+Mux}} = port\+M\+U\+X\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\+R\+\_\+\+U\+N\+L\+O\+C\+K\+ED
+\begin{DoxyCompactList}\small\item\em Hardware timer mux initializer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{timer_8h_a3d4a5553b22adc91ba6507e49cfb11ea}\label{timer_8h_a3d4a5553b22adc91ba6507e49cfb11ea}} 
+int \mbox{\hyperlink{timer_8h_a3d4a5553b22adc91ba6507e49cfb11ea}{interrupt\+Counter}}
+\begin{DoxyCompactList}\small\item\em Interrupt Counter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{timer_8h_a1a7e213b54eb0adb5b3db8d296426d97}\label{timer_8h_a1a7e213b54eb0adb5b3db8d296426d97}} 
+int \mbox{\hyperlink{timer_8h_a1a7e213b54eb0adb5b3db8d296426d97}{current\+Timeout}}
+\begin{DoxyCompactList}\small\item\em Current Interrupt Counter in Sec. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{timer_8h_ae565389ea28efe15a3ebee41f3ceae5a}\label{timer_8h_ae565389ea28efe15a3ebee41f3ceae5a}} 
+int \mbox{\hyperlink{timer_8h_ae565389ea28efe15a3ebee41f3ceae5a}{rx\+State}}
+\begin{DoxyCompactList}\small\item\em Receive from Serial States. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{timer_8h_a97904ae3388ebd6bb18b65a3a4b1f699}\label{timer_8h_a97904ae3388ebd6bb18b65a3a4b1f699}} 
+byte \mbox{\hyperlink{timer_8h_a97904ae3388ebd6bb18b65a3a4b1f699}{Err}}
+\begin{DoxyCompactList}\small\item\em Error Indicating for AT Command Respnse. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{timer_8h_ab04e2d55ea4a544f3575812582af7b51}{current}}
+\begin{DoxyCompactList}\small\item\em Current rx\+State for Serial. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+variable and function definitions for timings 
+
+This is the files that contains the variables, macros, pins definitions and functions for timing related routines.
+
+\begin{DoxyDate}{Date}
+07.\+09.\+2020 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{timer_8h_ada06ab1c4bbd307a9fea75726c8894f1}\label{timer_8h_ada06ab1c4bbd307a9fea75726c8894f1}} 
+\index{timer.h@{timer.h}!onTimer@{onTimer}}
+\index{onTimer@{onTimer}!timer.h@{timer.h}}
+\subsubsection{\texorpdfstring{onTimer()}{onTimer()}}
+{\footnotesize\ttfamily void I\+R\+A\+M\+\_\+\+A\+T\+TR on\+Timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+I\+SR functions called Timer Elapsed. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 49 of file timer.\+h.
+
+\mbox{\Hypertarget{timer_8h_aeb36d30620b2d08c6d267015771abf65}\label{timer_8h_aeb36d30620b2d08c6d267015771abf65}} 
+\index{timer.h@{timer.h}!resetModule@{resetModule}}
+\index{resetModule@{resetModule}!timer.h@{timer.h}}
+\subsubsection{\texorpdfstring{resetModule()}{resetModule()}}
+{\footnotesize\ttfamily void I\+R\+A\+M\+\_\+\+A\+T\+TR reset\+Module (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+I\+SR functions called for Reset E\+S\+P32. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 34 of file timer.\+h.
+
+\mbox{\Hypertarget{timer_8h_aa200ac08feffa4ebd4445ebd838263fd}\label{timer_8h_aa200ac08feffa4ebd4445ebd838263fd}} 
+\index{timer.h@{timer.h}!setupTimer@{setupTimer}}
+\index{setupTimer@{setupTimer}!timer.h@{timer.h}}
+\subsubsection{\texorpdfstring{setupTimer()}{setupTimer()}}
+{\footnotesize\ttfamily void setup\+Timer (\begin{DoxyParamCaption}\item[{unsigned long}]{n\+Sec }\end{DoxyParamCaption})}
+
+
+
+Setting up the Hardware Timer (1Sec) 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 73 of file timer.\+h.
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{timer_8h_ab04e2d55ea4a544f3575812582af7b51}\label{timer_8h_ab04e2d55ea4a544f3575812582af7b51}} 
+\index{timer.h@{timer.h}!current@{current}}
+\index{current@{current}!timer.h@{timer.h}}
+\subsubsection{\texorpdfstring{current}{current}}
+{\footnotesize\ttfamily int current}
+
+
+
+Current rx\+State for Serial. 
+
+Current rx\+State for Serial. 
+
+Definition at line 285 of file main.\+h.
+
