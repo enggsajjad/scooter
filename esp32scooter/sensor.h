@@ -63,7 +63,7 @@ DHT dht(DHT_PIN, DHT22);
 
 
 /// Serial port for GPRS (AT) Commands
-#define gprsSerial Serial1
+#define gsmSerial Serial1
 
 /// Debugging, uncomment to switch servers to use A9G Module otherwise A7
 //#define A9G 

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SMARTAQNET-SCOOTER: C:/Users/Sajjad/Desktop/backup/esp32scooter/main.h File Reference</title>
+<title>SMARTAQNET-SCOOTER: H:/github/scooter/esp32scooter/main.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -117,16 +117,16 @@ $(document).ready(function(){initNavTree('main_8h.html','');});
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:aa14dc39d52ab121ceb570f1a265385e0"><td class="memItemLeft" align="right" valign="top"><a id="aa14dc39d52ab121ceb570f1a265385e0"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#aa14dc39d52ab121ceb570f1a265385e0">FIRMWARE_VERSION</a>&#160;&#160;&#160;&quot;0.8.7.0 pre&quot;</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#aa14dc39d52ab121ceb570f1a265385e0">FIRMWARE_VERSION</a>&#160;&#160;&#160;&quot;0.1.0.0 pre&quot;</td></tr>
 <tr class="memdesc:aa14dc39d52ab121ceb570f1a265385e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">firmware version, (for intermediate versions being actively worked on, append "pre" to number, indicating that it is "not yet" the specified number) <br /></td></tr>
 <tr class="separator:aa14dc39d52ab121ceb570f1a265385e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af06baee05280c189592215d5ea08e7ef"><td class="memItemLeft" align="right" valign="top"><a id="af06baee05280c189592215d5ea08e7ef"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#af06baee05280c189592215d5ea08e7ef">sw_version</a>&#160;&#160;&#160;<a class="el" href="main_8h.html#aa14dc39d52ab121ceb570f1a265385e0">FIRMWARE_VERSION</a></td></tr>
-<tr class="memdesc:af06baee05280c189592215d5ea08e7ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Software.version Name property for Thing and Datastreams. <br /></td></tr>
+<tr class="memdesc:af06baee05280c189592215d5ea08e7ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Software.version. <br /></td></tr>
 <tr class="separator:af06baee05280c189592215d5ea08e7ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acbd8a4cec684c263a6cc312c70d45ef3"><td class="memItemLeft" align="right" valign="top"><a id="acbd8a4cec684c263a6cc312c70d45ef3"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#acbd8a4cec684c263a6cc312c70d45ef3">hw_date</a>&#160;&#160;&#160;&quot;2020-01-17T12:00:00.000Z&quot;</td></tr>
-<tr class="memdesc:acbd8a4cec684c263a6cc312c70d45ef3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hardware.Revision Date property for Thing and Datastreams. <br /></td></tr>
+<tr class="memdesc:acbd8a4cec684c263a6cc312c70d45ef3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hardware.Revision. <br /></td></tr>
 <tr class="separator:acbd8a4cec684c263a6cc312c70d45ef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acbb11c1e34784cf1e3147029f942bfd6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#acbb11c1e34784cf1e3147029f942bfd6">BASE_URL</a>&#160;&#160;&#160;&quot;http://193.196.38.108:8080/FROST-Server/v1.0&quot;</td></tr>
 <tr class="memdesc:acbb11c1e34784cf1e3147029f942bfd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debugging, uncomment to switch servers to release version, enable sending to madavi and luftdaten.info, and supress some debug output.  <a href="#acbb11c1e34784cf1e3147029f942bfd6">More...</a><br /></td></tr>
@@ -143,18 +143,6 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#aeeb61519219a4061ee127e34907eddeb">MY_DBGln</a>(...)&#160;&#160;&#160;do {Serial.println( __VA_ARGS__ );} while (0)</td></tr>
 <tr class="memdesc:aeeb61519219a4061ee127e34907eddeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define MY_DEBln() for controlling serial.println debugging. <br /></td></tr>
 <tr class="separator:aeeb61519219a4061ee127e34907eddeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af58473239b566ebd1187b4cc8c71e97d"><td class="memItemLeft" align="right" valign="top"><a id="af58473239b566ebd1187b4cc8c71e97d"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#af58473239b566ebd1187b4cc8c71e97d">ENABLE_SEND2FROST</a>&#160;&#160;&#160;true</td></tr>
-<tr class="memdesc:af58473239b566ebd1187b4cc8c71e97d"><td class="mdescLeft">&#160;</td><td class="mdescRight">switch for sending to FROST teco server <br /></td></tr>
-<tr class="separator:af58473239b566ebd1187b4cc8c71e97d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71a7a65f7dd7e8f3ea14942213cd8217"><td class="memItemLeft" align="right" valign="top"><a id="a71a7a65f7dd7e8f3ea14942213cd8217"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#a71a7a65f7dd7e8f3ea14942213cd8217">SENSOR_INTERVAL</a>&#160;&#160;&#160;10000</td></tr>
-<tr class="memdesc:a71a7a65f7dd7e8f3ea14942213cd8217"><td class="mdescLeft">&#160;</td><td class="mdescRight">intervall of reading sensor data in ms <br /></td></tr>
-<tr class="separator:a71a7a65f7dd7e8f3ea14942213cd8217"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef6021251fa63b1e73a98864b809904e"><td class="memItemLeft" align="right" valign="top"><a id="aef6021251fa63b1e73a98864b809904e"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#aef6021251fa63b1e73a98864b809904e">STATS_INTERVAL</a>&#160;&#160;&#160;10</td></tr>
-<tr class="memdesc:aef6021251fa63b1e73a98864b809904e"><td class="mdescLeft">&#160;</td><td class="mdescRight">intervall of showing statistics informations, it is multiple of SENSOR_INTERVAL i.e. 10 mean 100s <br /></td></tr>
-<tr class="separator:aef6021251fa63b1e73a98864b809904e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18d121e3e45bfea386799ad36fb70b5f"><td class="memItemLeft" align="right" valign="top"><a id="a18d121e3e45bfea386799ad36fb70b5f"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#a18d121e3e45bfea386799ad36fb70b5f">ENABLE_SEND2MADAVI</a>&#160;&#160;&#160;false</td></tr>
 <tr class="memdesc:a18d121e3e45bfea386799ad36fb70b5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">switch for sending to madavi api <br /></td></tr>
@@ -179,32 +167,37 @@ String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ma
 <tr class="memdesc:a2836db0f8ae4563c70935b5e514bdc21"><td class="mdescLeft">&#160;</td><td class="mdescRight">messages to be sent to TCP <br /></td></tr>
 <tr class="separator:a2836db0f8ae4563c70935b5e514bdc21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2502b12b30261ef4dea2ff97a6b78cab"><td class="memItemLeft" align="right" valign="top"><a id="a2502b12b30261ef4dea2ff97a6b78cab"></a>
-String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#a2502b12b30261ef4dea2ff97a6b78cab">host</a> = &quot;2.tcp.ngrok.io&quot;</td></tr>
+String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#a2502b12b30261ef4dea2ff97a6b78cab">host</a> = &quot;0.tcp.ngrok.io&quot;</td></tr>
 <tr class="memdesc:a2502b12b30261ef4dea2ff97a6b78cab"><td class="mdescLeft">&#160;</td><td class="mdescRight">TCP HOST. <br /></td></tr>
 <tr class="separator:a2502b12b30261ef4dea2ff97a6b78cab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af03c7fe858ccb7621fe44125757ef74a"><td class="memItemLeft" align="right" valign="top"><a id="af03c7fe858ccb7621fe44125757ef74a"></a>
-String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#af03c7fe858ccb7621fe44125757ef74a">port</a> = &quot;13083&quot;</td></tr>
+String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#af03c7fe858ccb7621fe44125757ef74a">port</a> = &quot;12554&quot;</td></tr>
 <tr class="memdesc:af03c7fe858ccb7621fe44125757ef74a"><td class="mdescLeft">&#160;</td><td class="mdescRight">TCP Port. <br /></td></tr>
 <tr class="separator:af03c7fe858ccb7621fe44125757ef74a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae565389ea28efe15a3ebee41f3ceae5a"><td class="memItemLeft" align="right" valign="top"><a id="ae565389ea28efe15a3ebee41f3ceae5a"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#ae565389ea28efe15a3ebee41f3ceae5a">rxState</a></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#ae565389ea28efe15a3ebee41f3ceae5a">rxState</a> = -1</td></tr>
 <tr class="memdesc:ae565389ea28efe15a3ebee41f3ceae5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive from Serial States. <br /></td></tr>
 <tr class="separator:ae565389ea28efe15a3ebee41f3ceae5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf0f71eb22109b58224c762415cf9fbb"><td class="memItemLeft" align="right" valign="top"><a id="aaf0f71eb22109b58224c762415cf9fbb"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#aaf0f71eb22109b58224c762415cf9fbb">nState</a></td></tr>
 <tr class="memdesc:aaf0f71eb22109b58224c762415cf9fbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive from Serial Next States. <br /></td></tr>
 <tr class="separator:aaf0f71eb22109b58224c762415cf9fbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab04e2d55ea4a544f3575812582af7b51"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#ab04e2d55ea4a544f3575812582af7b51">current</a></td></tr>
-<tr class="memdesc:ab04e2d55ea4a544f3575812582af7b51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive from Serial Current States.  <a href="#ab04e2d55ea4a544f3575812582af7b51">More...</a><br /></td></tr>
+<tr class="memitem:ab04e2d55ea4a544f3575812582af7b51"><td class="memItemLeft" align="right" valign="top"><a id="ab04e2d55ea4a544f3575812582af7b51"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#ab04e2d55ea4a544f3575812582af7b51">current</a></td></tr>
+<tr class="memdesc:ab04e2d55ea4a544f3575812582af7b51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive from Serial Current States. <br /></td></tr>
 <tr class="separator:ab04e2d55ea4a544f3575812582af7b51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd077709da742a5b06a38d3542c805b8"><td class="memItemLeft" align="right" valign="top"><a id="abd077709da742a5b06a38d3542c805b8"></a>
-String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#abd077709da742a5b06a38d3542c805b8">resp</a></td></tr>
-<tr class="memdesc:abd077709da742a5b06a38d3542c805b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Response for AT Commands. <br /></td></tr>
-<tr class="separator:abd077709da742a5b06a38d3542c805b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97904ae3388ebd6bb18b65a3a4b1f699"><td class="memItemLeft" align="right" valign="top"><a id="a97904ae3388ebd6bb18b65a3a4b1f699"></a>
 byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#a97904ae3388ebd6bb18b65a3a4b1f699">Err</a></td></tr>
 <tr class="memdesc:a97904ae3388ebd6bb18b65a3a4b1f699"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error Indicating for AT Command Respnse. <br /></td></tr>
 <tr class="separator:a97904ae3388ebd6bb18b65a3a4b1f699"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a617de34b6fe254a4d2c04e2a064267ee"><td class="memItemLeft" align="right" valign="top"><a id="a617de34b6fe254a4d2c04e2a064267ee"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#a617de34b6fe254a4d2c04e2a064267ee">resp</a></td></tr>
+<tr class="memdesc:a617de34b6fe254a4d2c04e2a064267ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">the temporary response for AT+CIPSTATUS? Command <br /></td></tr>
+<tr class="separator:a617de34b6fe254a4d2c04e2a064267ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a7d3c70fed7a874e9adb06f490ca54d"><td class="memItemLeft" align="right" valign="top"><a id="a1a7d3c70fed7a874e9adb06f490ca54d"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8h.html#a1a7d3c70fed7a874e9adb06f490ca54d">cntr</a></td></tr>
+<tr class="memdesc:a1a7d3c70fed7a874e9adb06f490ca54d"><td class="mdescLeft">&#160;</td><td class="mdescRight">counter to count total number of transmitted TCP packets <br /></td></tr>
+<tr class="separator:a1a7d3c70fed7a874e9adb06f490ca54d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This the main page for the SMARTAQNET which is the core of the project. </p>
@@ -230,32 +223,12 @@ byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main
 
 </div>
 </div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="ab04e2d55ea4a544f3575812582af7b51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab04e2d55ea4a544f3575812582af7b51">&#9670;&nbsp;</a></span>current</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int current</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Receive from Serial Current States. </p>
-<p>Current rxState for Serial. </p>
-
-<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00285">285</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_e6bb53534ac0e427887cf7a94c0c004e.html">C:</a></li><li class="navelem"><a class="el" href="dir_8ceffd4ee35c3518d4e8bdc7e638efe8.html">Users</a></li><li class="navelem"><a class="el" href="dir_c4b574d5290bdb70e197cca38f2a249f.html">Sajjad</a></li><li class="navelem"><a class="el" href="dir_044ca20a0cac3cffe505c8e16f4cf96b.html">Desktop</a></li><li class="navelem"><a class="el" href="dir_6a5f758b58f8e281389a5c2dcaa54c9f.html">backup</a></li><li class="navelem"><a class="el" href="dir_02f43a4e76064b061d4ba014dce77ad8.html">esp32scooter</a></li><li class="navelem"><a class="el" href="main_8h.html">main.h</a></li>
+    <li class="navelem"><a class="el" href="dir_aa394cd1d9abb8ffe941d9aaafca8d03.html">github</a></li><li class="navelem"><a class="el" href="dir_ce60a7238496951bf3fd67b7a39d4174.html">scooter</a></li><li class="navelem"><a class="el" href="dir_3d7d9e17b9098d5cd21ffee249b0dff5.html">esp32scooter</a></li><li class="navelem"><a class="el" href="main_8h.html">main.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.15 </li>

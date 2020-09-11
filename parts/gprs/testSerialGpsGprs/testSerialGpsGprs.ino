@@ -1,6 +1,6 @@
 //A7
-#define gpsbaud  115200
-#define gprsbaud  9600
+#define gpsbaud  9600
+#define gprsbaud  115200
 #define A9RX 16
 #define A9TX 17
 #define GPSRX 23
@@ -29,28 +29,74 @@ TinyGPSPlus tiny;
 
 //SoftwareSerial gps(GPSRX, -1); // RX, TX
 
+void waitForGSMBecomeReady()
+{
+  for( int i=0; i<15; i++)
+  {
+    char buffer[3];
+    char index = 0;
+
+    a7g.flush();
+    delay(1000);
+    Serial.print('.');
+    a7g.print("AT\r");
+    a7g.flush();
+    delay(100);
+
+    while( a7g.available())
+    {
+      char c = a7g.read();
+
+      if ( c == '\r' || c == '\n' )
+      {
+        if ( buffer[0] == 'O' && buffer[1] == 'K' && index == 2 )
+        {
+          Serial.print('\n');
+          return;
+        }
+
+        index = 0;
+      }
+      else
+      if( index < 3 )
+      {
+        buffer[index++] = c;
+      }
+    }
+  }
+  
+}
+
 unsigned char rxState;
+void rest(void)
+{
+  Serial.println("Reseting....");
+  digitalWrite(RESET_PIN, LOW);
+  delay(2000);
+  digitalWrite(RESET_PIN, HIGH);
+  delay(100);
+}
 void setup() {
   delay(1000);
   pinMode(PWR_KEY_PIN, OUTPUT);
   pinMode(RESET_PIN, OUTPUT);
-  //digitalWrite(RESET_PIN, HIGH);
+  digitalWrite(RESET_PIN, HIGH);
   digitalWrite(PWR_KEY_PIN, HIGH);
-  //delay(3000);
-  //digitalWrite(PWR_KEY_PIN, LOW);
-
+  rest();
   
   // Note the format for setting a serial port is as follows: Serial2.begin(baud-rate, protocol, RX pin, TX pin);
-  Serial.begin(gprsbaud);
+  Serial.begin(gpsbaud);
   delay(100); 
   //gps.begin(9600);
-  gps.begin(gprsbaud, SERIAL_8N1, GPSRX, -1);
+  gps.begin(gpsbaud, SERIAL_8N1, GPSRX, -1);
   delay(500); 
-  a7g.begin(gpsbaud, SERIAL_8N1, A9RX, A9TX);
+  a7g.begin(gprsbaud, SERIAL_8N1, A9RX, A9TX);
   delay(500); 
-  
+  waitForGSMBecomeReady();
   Serial.println("Debugging GPS and GPRS Serial");
-  
+
+
+
 }
  
 void loop() 
@@ -98,6 +144,7 @@ void loop()
   if (Serial.available())
   {
     a7g.print(char(Serial.read()));
+  //rest();
   }
 
 }

@@ -268,28 +268,19 @@ String rd;
 /// messages to be sent to TCP
 String message= "";
 /// TCP HOST
-String host = "2.tcp.ngrok.io";
+String host = "0.tcp.ngrok.io";
 /// TCP Port
-String port = "13083";
+String port = "12554";
 /// Receive from Serial States
-int rxState;
+int rxState = -1;
 /// Receive from Serial Next States
 int nState;
 /// Receive from Serial Current States
 int current;
-/// Response for AT Commands
-String resp;
 /// Error Indicating for AT Command Respnse
 byte Err;
 
-
-void setATCommand(String cmd, String rsp, int triggerTime, int triggerCount)
-{
-  Serial.println("Sending "+cmd);
-  resp=rsp; 
-  setupTimer(triggerTime);
-  currentTimeout=triggerCount;
-  gprsSerial.println(cmd);
-  current = rxState;
-  rxState = 100;
-}
+/// the temporary response for AT+CIPSTATUS? Command 
+char resp;
+/// counter to count total number of transmitted TCP packets
+int cntr;

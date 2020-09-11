@@ -1,5 +1,5 @@
-\hypertarget{sensor_8h}{}\section{C\+:/\+Users/\+Sajjad/\+Desktop/backup/esp32scooter/sensor.h File Reference}
-\label{sensor_8h}\index{C:/Users/Sajjad/Desktop/backup/esp32scooter/sensor.h@{C:/Users/Sajjad/Desktop/backup/esp32scooter/sensor.h}}
+\hypertarget{sensor_8h}{}\section{H\+:/github/scooter/esp32scooter/sensor.h File Reference}
+\label{sensor_8h}\index{H:/github/scooter/esp32scooter/sensor.h@{H:/github/scooter/esp32scooter/sensor.h}}
 
 
 variable and definitions for sensors  
@@ -26,8 +26,16 @@ variable and definitions for sensors
 \mbox{\Hypertarget{sensor_8h_ad2b404eb4de525cef31b8413f5d14b13}\label{sensor_8h_ad2b404eb4de525cef31b8413f5d14b13}} 
 \#define \mbox{\hyperlink{sensor_8h_ad2b404eb4de525cef31b8413f5d14b13}{S\+D\+S011\+\_\+\+R\+XD}}~26
 \begin{DoxyCompactList}\small\item\em S\+D\+S011 R\+XD pin is connected at T\+XD of Serial2 Object (no need to physically connect) \end{DoxyCompactList}\item 
-\#define \mbox{\hyperlink{sensor_8h_ace67731836adaa94431a11f2f3afb49a}{gprs\+RX}}~16
+\#define \mbox{\hyperlink{sensor_8h_a3ff50e0df1eb36370b1c70fdad58f948}{usb\+TX}}~1
 \begin{DoxyCompactList}\small\item\em conflicts of same defining by dht lib and esp32\+\_\+thingsapi lib \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{sensor_8h_ab5ca3c42e645e58d84bc9205e457594b}\label{sensor_8h_ab5ca3c42e645e58d84bc9205e457594b}} 
+\#define \mbox{\hyperlink{sensor_8h_ab5ca3c42e645e58d84bc9205e457594b}{usb\+RX}}~3
+\begin{DoxyCompactList}\small\item\em Default Serial0 used for U\+SB RX (Programming) but here connected for G\+P\+S\+\_\+\+TX. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{sensor_8h_a6a2a8946d59fdd8eeb57528a571eeb46}\label{sensor_8h_a6a2a8946d59fdd8eeb57528a571eeb46}} 
+\#define \mbox{\hyperlink{sensor_8h_a6a2a8946d59fdd8eeb57528a571eeb46}{gsm\+Serial}}~Serial1
+\begin{DoxyCompactList}\small\item\em Serial port for G\+P\+RS (AT) Commands. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{sensor_8h_ace67731836adaa94431a11f2f3afb49a}{gprs\+RX}}~16
+\begin{DoxyCompactList}\small\item\em Debugging, uncomment to switch servers to use A9G Module otherwise A7. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{sensor_8h_a5ab75e95ce2325b3ac18daff066d985d}\label{sensor_8h_a5ab75e95ce2325b3ac18daff066d985d}} 
 \#define \mbox{\hyperlink{sensor_8h_a5ab75e95ce2325b3ac18daff066d985d}{gprs\+TX}}~17
 \begin{DoxyCompactList}\small\item\em G\+P\+RS TX Pin. \end{DoxyCompactList}\item 
@@ -48,10 +56,7 @@ variable and definitions for sensors
 \begin{DoxyCompactList}\small\item\em G\+P\+RS Baudrate for AT Commands. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{sensor_8h_a24b68309719bdffdf37f202dee16d11d}\label{sensor_8h_a24b68309719bdffdf37f202dee16d11d}} 
 \#define \mbox{\hyperlink{sensor_8h_a24b68309719bdffdf37f202dee16d11d}{gps\+Baud}}~9600
-\begin{DoxyCompactList}\small\item\em G\+PS TX pin Baudrate. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{sensor_8h_ad1ff4ed5ee1b081019eb2c34846ca92c}\label{sensor_8h_ad1ff4ed5ee1b081019eb2c34846ca92c}} 
-\#define \mbox{\hyperlink{sensor_8h_ad1ff4ed5ee1b081019eb2c34846ca92c}{gprs\+Serial}}~Serial1
-\begin{DoxyCompactList}\small\item\em Serial port for G\+P\+RS (AT) Commands. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em G\+PS TX pin Baudrate. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -115,9 +120,23 @@ This is the files that contains the variables, pins definitions and functions fo
 
 
 
+Debugging, uncomment to switch servers to use A9G Module otherwise A7. 
+
+Setting the servers and debugging control using the A9G G\+P\+RS RX Pin 
+
+Definition at line 75 of file sensor.\+h.
+
+\mbox{\Hypertarget{sensor_8h_a3ff50e0df1eb36370b1c70fdad58f948}\label{sensor_8h_a3ff50e0df1eb36370b1c70fdad58f948}} 
+\index{sensor.h@{sensor.h}!usbTX@{usbTX}}
+\index{usbTX@{usbTX}!sensor.h@{sensor.h}}
+\subsubsection{\texorpdfstring{usbTX}{usbTX}}
+{\footnotesize\ttfamily \#define usb\+TX~1}
+
+
+
 conflicts of same defining by dht lib and esp32\+\_\+thingsapi lib 
 
-G\+P\+RS RX Pin 
+Default Serial0 used for U\+SB TX (Debugging) 
 
-Definition at line 61 of file sensor.\+h.
+Definition at line 60 of file sensor.\+h.
 

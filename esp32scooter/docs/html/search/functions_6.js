@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['handleconfig',['handleConfig',['../main_8h.html#a26b99cccf6c7e87054577b293e709733',1,'main.h']]],
-  ['handledummy',['handleDummy',['../main_8h.html#af8a025eb9635063f1b8c74904e2984e6',1,'main.h']]],
-  ['handledummyresult',['handleDummyResult',['../main_8h.html#adf3bfae0fe6a4992264f5b8f0d44432f',1,'main.h']]],
-  ['handleroot',['handleRoot',['../main_8h.html#ad9a1e86fe8a8ccdeddbd435307dc8b9c',1,'main.h']]]
+  ['sds_5fserial',['SDS_SERIAL',['../sensor_8h.html#a8f7824c0f2a3aa7e9bac94eac190fa7e',1,'sensor.h']]],
+  ['setup',['setup',['../esp32scooter_8ino.html#a4fc01d736fe50cf5b977f755b675f11d',1,'esp32scooter.ino']]],
+  ['setuptimer',['setupTimer',['../timer_8h.html#aa200ac08feffa4ebd4445ebd838263fd',1,'timer.h']]]
 ];

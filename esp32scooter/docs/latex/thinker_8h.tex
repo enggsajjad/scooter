@@ -1,5 +1,5 @@
-\hypertarget{thinker_8h}{}\section{C\+:/\+Users/\+Sajjad/\+Desktop/backup/esp32scooter/thinker.h File Reference}
-\label{thinker_8h}\index{C:/Users/Sajjad/Desktop/backup/esp32scooter/thinker.h@{C:/Users/Sajjad/Desktop/backup/esp32scooter/thinker.h}}
+\hypertarget{thinker_8h}{}\section{H\+:/github/scooter/esp32scooter/thinker.h File Reference}
+\label{thinker_8h}\index{H:/github/scooter/esp32scooter/thinker.h@{H:/github/scooter/esp32scooter/thinker.h}}
 
 
 variable and function definitions for timings  
@@ -14,13 +14,28 @@ variable and function definitions for timings
 \mbox{\Hypertarget{thinker_8h_a02812505694442b6f833040489d550d6}\label{thinker_8h_a02812505694442b6f833040489d550d6}} 
 \#define \mbox{\hyperlink{thinker_8h_a02812505694442b6f833040489d550d6}{N\+O\+T\+OK}}~2
 \begin{DoxyCompactList}\small\item\em Other than OK response for AT Command. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{thinker_8h_a45ba202b05caf39795aeca91b0ae547e}\label{thinker_8h_a45ba202b05caf39795aeca91b0ae547e}} 
-\#define \mbox{\hyperlink{thinker_8h_a45ba202b05caf39795aeca91b0ae547e}{T\+I\+M\+E\+O\+UT}}~3
-\begin{DoxyCompactList}\small\item\em Timeout for no response for AT Command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\Hypertarget{thinker_8h_a93b87e9b5d5d76664805716de03a1640}\label{thinker_8h_a93b87e9b5d5d76664805716de03a1640}} 
+\#define \mbox{\hyperlink{thinker_8h_a93b87e9b5d5d76664805716de03a1640}{T\+I\+M\+ED}}~3
+\begin{DoxyCompactList}\small\item\em Timeout for no response for AT Command. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{thinker_8h_a735563036dced0b7d6cc98f97ea4978b}\label{thinker_8h_a735563036dced0b7d6cc98f97ea4978b}} 
+\#define \mbox{\hyperlink{thinker_8h_a735563036dced0b7d6cc98f97ea4978b}{E\+RR}}~4
+\begin{DoxyCompactList}\small\item\em Error for no response for AT Command. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 byte \mbox{\hyperlink{thinker_8h_a38c9fec5f62aa11de338bf2273e3b430}{command}} (String cmd, String response, unsigned long timeout, boolean output)
+\begin{DoxyCompactList}\small\item\em Routine to send AT Command and output the status. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thinker_8h_abd019bda7d6cda64587035e29cf40299}{gsm\+Wait\+For\+Ready}} ()
+\begin{DoxyCompactList}\small\item\em Routine to send AT Command and wait for OK. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{thinker_8h_ab29c2b2afd741ca6f2bdd0d068d34b3a}{gsm\+Read}} ()
+\begin{DoxyCompactList}\small\item\em Routine to read G\+SM data. \end{DoxyCompactList}\item 
+byte \mbox{\hyperlink{thinker_8h_a8fa925a4e44d7185145a05255b877b45}{gsm\+Wait\+For}} (String response1, String response2, int timeout)
+\begin{DoxyCompactList}\small\item\em Routine to wait for AT Command response. \end{DoxyCompactList}\item 
+byte \mbox{\hyperlink{thinker_8h_a107d0299865981f9c3a4101eb6b9f7a3}{gsm\+Command}} (String cmd, String response1, String response2, int timeout, int repetitions)
+\begin{DoxyCompactList}\small\item\em Routine to send AT Command and output the status. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{thinker_8h_ad409c04ad3a7c0160668849fbe99b465}{gsm\+Wait\+For\+Response}} (int timeout)
+\begin{DoxyCompactList}\small\item\em Routine to wait for command response in string, basically for A\+T+\+C\+I\+P\+S\+T\+A\+T\+US? \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{thinker_8h_a2044e5bbfdb53bf824b6ee06c6ce5cc3}{gsm\+Check\+Status}} (String cmd, int timeout)
 \begin{DoxyCompactList}\small\item\em Routine to send AT Command and output the status. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -61,5 +76,141 @@ byte
 \end{DoxyReturn}
 
 
-Definition at line 29 of file thinker.\+h.
+Definition at line 31 of file thinker.\+h.
+
+\mbox{\Hypertarget{thinker_8h_a2044e5bbfdb53bf824b6ee06c6ce5cc3}\label{thinker_8h_a2044e5bbfdb53bf824b6ee06c6ce5cc3}} 
+\index{thinker.h@{thinker.h}!gsmCheckStatus@{gsmCheckStatus}}
+\index{gsmCheckStatus@{gsmCheckStatus}!thinker.h@{thinker.h}}
+\subsubsection{\texorpdfstring{gsmCheckStatus()}{gsmCheckStatus()}}
+{\footnotesize\ttfamily char gsm\+Check\+Status (\begin{DoxyParamCaption}\item[{String}]{cmd,  }\item[{int}]{timeout }\end{DoxyParamCaption})}
+
+
+
+Routine to send AT Command and output the status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & the AT Command to be sent \\
+\hline
+{\em timeout} & the timeout to wait for cmd command \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char the errors number to indicate different responses 
+\end{DoxyReturn}
+
+
+Definition at line 260 of file thinker.\+h.
+
+\mbox{\Hypertarget{thinker_8h_a107d0299865981f9c3a4101eb6b9f7a3}\label{thinker_8h_a107d0299865981f9c3a4101eb6b9f7a3}} 
+\index{thinker.h@{thinker.h}!gsmCommand@{gsmCommand}}
+\index{gsmCommand@{gsmCommand}!thinker.h@{thinker.h}}
+\subsubsection{\texorpdfstring{gsmCommand()}{gsmCommand()}}
+{\footnotesize\ttfamily byte gsm\+Command (\begin{DoxyParamCaption}\item[{String}]{cmd,  }\item[{String}]{response1,  }\item[{String}]{response2,  }\item[{int}]{timeout,  }\item[{int}]{repetitions }\end{DoxyParamCaption})}
+
+
+
+Routine to send AT Command and output the status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & the AT Command to be sent \\
+\hline
+{\em response1} & the response to be expected \\
+\hline
+{\em response2} & the 2nd response to be expected \\
+\hline
+{\em timeout} & the timeout to wait for cmd command \\
+\hline
+{\em repetitions} & the counts to repeat the said command if timeout \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+byte the errors 
+\end{DoxyReturn}
+
+
+Definition at line 187 of file thinker.\+h.
+
+\mbox{\Hypertarget{thinker_8h_ab29c2b2afd741ca6f2bdd0d068d34b3a}\label{thinker_8h_ab29c2b2afd741ca6f2bdd0d068d34b3a}} 
+\index{thinker.h@{thinker.h}!gsmRead@{gsmRead}}
+\index{gsmRead@{gsmRead}!thinker.h@{thinker.h}}
+\subsubsection{\texorpdfstring{gsmRead()}{gsmRead()}}
+{\footnotesize\ttfamily String gsm\+Read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Routine to read G\+SM data. 
+
+\begin{DoxyReturn}{Returns}
+String 
+\end{DoxyReturn}
+
+
+Definition at line 118 of file thinker.\+h.
+
+\mbox{\Hypertarget{thinker_8h_a8fa925a4e44d7185145a05255b877b45}\label{thinker_8h_a8fa925a4e44d7185145a05255b877b45}} 
+\index{thinker.h@{thinker.h}!gsmWaitFor@{gsmWaitFor}}
+\index{gsmWaitFor@{gsmWaitFor}!thinker.h@{thinker.h}}
+\subsubsection{\texorpdfstring{gsmWaitFor()}{gsmWaitFor()}}
+{\footnotesize\ttfamily byte gsm\+Wait\+For (\begin{DoxyParamCaption}\item[{String}]{response1,  }\item[{String}]{response2,  }\item[{int}]{timeout }\end{DoxyParamCaption})}
+
+
+
+Routine to wait for AT Command response. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em response1} & the response to be expected \\
+\hline
+{\em response2} & the 2nd response to be expected \char`\"{}yy\char`\"{} if not needed \\
+\hline
+{\em timeout} & the timeout to wait for cmd command \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+byte error code 
+\end{DoxyReturn}
+
+
+Definition at line 139 of file thinker.\+h.
+
+\mbox{\Hypertarget{thinker_8h_abd019bda7d6cda64587035e29cf40299}\label{thinker_8h_abd019bda7d6cda64587035e29cf40299}} 
+\index{thinker.h@{thinker.h}!gsmWaitForReady@{gsmWaitForReady}}
+\index{gsmWaitForReady@{gsmWaitForReady}!thinker.h@{thinker.h}}
+\subsubsection{\texorpdfstring{gsmWaitForReady()}{gsmWaitForReady()}}
+{\footnotesize\ttfamily void gsm\+Wait\+For\+Ready (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Routine to send AT Command and wait for OK. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line 73 of file thinker.\+h.
+
+\mbox{\Hypertarget{thinker_8h_ad409c04ad3a7c0160668849fbe99b465}\label{thinker_8h_ad409c04ad3a7c0160668849fbe99b465}} 
+\index{thinker.h@{thinker.h}!gsmWaitForResponse@{gsmWaitForResponse}}
+\index{gsmWaitForResponse@{gsmWaitForResponse}!thinker.h@{thinker.h}}
+\subsubsection{\texorpdfstring{gsmWaitForResponse()}{gsmWaitForResponse()}}
+{\footnotesize\ttfamily String gsm\+Wait\+For\+Response (\begin{DoxyParamCaption}\item[{int}]{timeout }\end{DoxyParamCaption})}
+
+
+
+Routine to wait for command response in string, basically for A\+T+\+C\+I\+P\+S\+T\+A\+T\+US? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em timeout} & the timeout to wait for cmd command \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String indicating the commands response 
+\end{DoxyReturn}
+
+
+Definition at line 214 of file thinker.\+h.
 

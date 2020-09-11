@@ -13,7 +13,9 @@
 /// Other than OK response for AT Command
 #define NOTOK 2
 /// Timeout for no response for AT Command
-#define TIMEOUT 3
+#define TIMED 3
+/// Error for no response for AT Command
+#define ERR 4
 
 /**************************************************************************/
 /*!
@@ -28,30 +30,252 @@
 
 byte command(String cmd, String response, unsigned long timeout, boolean output) 
 {
-  while(gprsSerial.available() > 0) {
-    gprsSerial.read(); //clear data
+  while(gsmSerial.available() > 0) {
+    gsmSerial.read(); //clear data
   }
-  gprsSerial.println(cmd+"\r\n");
+  gsmSerial.println(cmd+"\r\n");
   delay(100);
   unsigned long currentMillis = millis();
 
-  while(currentMillis + timeout > millis()) {
-    String result = gprsSerial.readString();
+  while(currentMillis + timeout > millis()) 
+  {
+    String result = gsmSerial.readString();
     if (result == "" || result == "\n" || result == " " || result == "\t" || result == "\v" || result == "\f" || result == "\r") continue;
 
-    if (output) {
-      Serial.println("Received Data: ");
-      Serial.println(result);
+    if (output) 
+    {
+      MY_DBGln("Received Data: ");
+      MY_DBGln(result);
     }
     
 
-    if (result.indexOf(response) > 0) {
-      Serial.println("Command Executed: " + cmd + " - " + response);
+    if (result.indexOf(response) > 0) 
+    {
+      MY_DBGln("Command Executed: " + cmd + " - " + response);
       return OK;
     }
   }
 
-  Serial.println("Command Failed: " + cmd);
+  MY_DBGln("Command Failed: " + cmd);
 
   return NOTOK;
+}
+
+
+
+/**************************************************************************/
+/*!
+    @brief  Routine to send AT Command and wait for OK
+    @returns void
+*/
+/**************************************************************************/
+
+void gsmWaitForReady()
+{
+  for( int i=0; i<25; i++)
+  {
+    char buffer[3];
+    char index = 0;
+
+    gsmSerial.flush();
+    delay(1000);
+    MY_DBG('.');
+    gsmSerial.print("AT\r");
+    gsmSerial.flush();
+    delay(100);
+
+    while( gsmSerial.available())
+    {
+      char c = gsmSerial.read();
+
+      if ( c == '\r' || c == '\n' )
+      {
+        if ( buffer[0] == 'O' && buffer[1] == 'K' && index == 2 )
+        {
+          MY_DBG('\n');
+          return;
+        }
+
+        index = 0;
+      }
+      else
+      if( index < 3 )
+      {
+        buffer[index++] = c;
+      }
+    }
+  }
+  
+}
+
+/**************************************************************************/
+/*!
+    @brief  Routine to read GSM data
+    @returns String 
+*/
+/**************************************************************************/
+
+String gsmRead() 
+{
+  String reply = "";
+  if (gsmSerial.available())  
+  {
+    reply = gsmSerial.readString();
+  }
+  return reply;
+}
+
+
+/**************************************************************************/
+/*!
+    @brief  Routine to wait for AT Command response
+    @param response1 the response to be expected
+    @param response2 the 2nd response to be expected "yy" if not needed
+    @param timeout the timeout to wait for cmd command
+    @returns byte error code
+*/
+/**************************************************************************/
+
+byte gsmWaitFor(String response1, String response2, int timeout) 
+{
+  unsigned long entry = millis();
+
+  while(gsmSerial.available() > 0) 
+  {
+    gsmSerial.read(); //clear data
+  }
+  
+  String reply = gsmRead();
+  byte retVal = 99;
+  do 
+  {
+    reply = gsmRead();
+    if (reply != "") 
+    {
+      MY_DBG("Get @");
+      MY_DBG((millis() - entry));
+      MY_DBG("ms ");
+      MY_DBG(reply);
+    }
+  } while ((reply.indexOf(response1) + reply.indexOf(response2) == -2) && millis() - entry < timeout );
+  if ((millis() - entry) >= timeout) 
+  {
+    retVal = TIMED;
+  } else 
+  {
+    if (reply.indexOf(response1) + reply.indexOf(response2) > -2) retVal = OK;
+    else if (reply.indexOf("ERROR") > -1) retVal = ERR;
+    else retVal = NOTOK;
+  }
+
+  return retVal;
+}
+
+
+/**************************************************************************/
+/*!
+    @brief  Routine to send AT Command and output the status
+    @param cmd the AT Command to be sent
+    @param response1 the response to be expected
+    @param response2 the 2nd response to be expected
+    @param timeout the timeout to wait for cmd command
+    @param repetitions the counts to repeat the said command if timeout
+    @returns byte the errors
+*/
+/**************************************************************************/
+
+byte gsmCommand(String cmd, String response1, String response2, int timeout, int repetitions) {
+  byte returnValue = NOTOK;
+  byte count = 0;
+  while (count < repetitions && returnValue != OK) 
+  {
+    gsmSerial.print(cmd+"\r\n");
+    MY_DBG("Cmd: ");
+    MY_DBGln(cmd);
+    if (gsmWaitFor(response1, response2, timeout) == OK) 
+    {
+      returnValue = OK;
+    } 
+    else 
+      returnValue = NOTOK;
+    count++;
+  }
+  return returnValue;
+}
+
+/**************************************************************************/
+/*!
+    @brief  Routine to wait for command response in string, basically for AT+CIPSTATUS?
+    @param timeout the timeout to wait for cmd command
+    @returns String indicating the commands response
+*/
+/**************************************************************************/
+
+String gsmWaitForResponse( int timeout) 
+{
+  unsigned long entry = millis();
+  String retVal = "";
+  
+  while(gsmSerial.available() > 0) 
+  {
+    gsmSerial.read(); //clear data
+  }
+  
+  String reply = gsmRead();
+
+  do 
+  {
+    reply = gsmRead();
+    if (reply != "") 
+    {
+      MY_DBG("Get @");
+      MY_DBG((millis() - entry));
+      MY_DBG("ms ");
+      MY_DBG(reply);
+    }
+  } while ((reply.indexOf("OK") + reply.indexOf("yy") == -2) && millis() - entry < timeout );
+  if ((millis() - entry) >= timeout) 
+  {
+    retVal = "TIMED";
+  } else 
+  {
+    int st=reply.indexOf("0,")+2;
+    int en=reply.indexOf("\r\n",st)-2;
+    retVal = reply.substring(st,en);
+    //MY_DBGln("Start: "+String(st)+" End: "+String(en)+" Res: "+String(retVal));
+  }
+
+  return retVal;
+}
+
+/**************************************************************************/
+/*!
+    @brief  Routine to send AT Command and output the status
+    @param cmd the AT Command to be sent
+    @param timeout the timeout to wait for cmd command
+    @returns char the errors number to indicate different responses
+*/
+/**************************************************************************/
+
+char gsmCheckStatus(String cmd, int timeout) 
+{
+  String rv = "NOTOK";
+  gsmSerial.print(cmd+"\r\n");
+  MY_DBG("Cmd: ");
+  MY_DBGln(cmd);
+   
+  rv = gsmWaitForResponse(timeout);
+  //MY_DBGln("Res: "+String(rv)+" len: "+String(rv.length()));
+  if (rv == "IP INITIAL")
+    return 1;
+  else if (rv == "IP START")
+    return 2;
+  else if (rv == "IP GPRSACT")
+    return 3;
+  else if (rv == "CONNECT OK")
+    return 4;
+  else if (rv == "TCP/UDP CONNECTING")
+    return 4;
+  else if (rv == "IP CLOSE")
+    return 5;
 }

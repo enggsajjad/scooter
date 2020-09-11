@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SMARTAQNET-SCOOTER: C:/Users/Sajjad/Desktop/backup/esp32scooter/sensor.h File Reference</title>
+<title>SMARTAQNET-SCOOTER: H:/github/scooter/esp32scooter/sensor.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -129,8 +129,19 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensor_8h.html#ad2b404eb4de525cef31b8413f5d14b13">SDS011_RXD</a>&#160;&#160;&#160;26</td></tr>
 <tr class="memdesc:ad2b404eb4de525cef31b8413f5d14b13"><td class="mdescLeft">&#160;</td><td class="mdescRight">SDS011 RXD pin is connected at TXD of Serial2 Object (no need to physically connect) <br /></td></tr>
 <tr class="separator:ad2b404eb4de525cef31b8413f5d14b13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ff50e0df1eb36370b1c70fdad58f948"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensor_8h.html#a3ff50e0df1eb36370b1c70fdad58f948">usbTX</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:a3ff50e0df1eb36370b1c70fdad58f948"><td class="mdescLeft">&#160;</td><td class="mdescRight">conflicts of same defining by dht lib and esp32_thingsapi lib  <a href="#a3ff50e0df1eb36370b1c70fdad58f948">More...</a><br /></td></tr>
+<tr class="separator:a3ff50e0df1eb36370b1c70fdad58f948"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5ca3c42e645e58d84bc9205e457594b"><td class="memItemLeft" align="right" valign="top"><a id="ab5ca3c42e645e58d84bc9205e457594b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensor_8h.html#ab5ca3c42e645e58d84bc9205e457594b">usbRX</a>&#160;&#160;&#160;3</td></tr>
+<tr class="memdesc:ab5ca3c42e645e58d84bc9205e457594b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Serial0 used for USB RX (Programming) but here connected for GPS_TX. <br /></td></tr>
+<tr class="separator:ab5ca3c42e645e58d84bc9205e457594b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a2a8946d59fdd8eeb57528a571eeb46"><td class="memItemLeft" align="right" valign="top"><a id="a6a2a8946d59fdd8eeb57528a571eeb46"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensor_8h.html#a6a2a8946d59fdd8eeb57528a571eeb46">gsmSerial</a>&#160;&#160;&#160;Serial1</td></tr>
+<tr class="memdesc:a6a2a8946d59fdd8eeb57528a571eeb46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serial port for GPRS (AT) Commands. <br /></td></tr>
+<tr class="separator:a6a2a8946d59fdd8eeb57528a571eeb46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace67731836adaa94431a11f2f3afb49a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensor_8h.html#ace67731836adaa94431a11f2f3afb49a">gprsRX</a>&#160;&#160;&#160;16</td></tr>
-<tr class="memdesc:ace67731836adaa94431a11f2f3afb49a"><td class="mdescLeft">&#160;</td><td class="mdescRight">conflicts of same defining by dht lib and esp32_thingsapi lib  <a href="#ace67731836adaa94431a11f2f3afb49a">More...</a><br /></td></tr>
+<tr class="memdesc:ace67731836adaa94431a11f2f3afb49a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debugging, uncomment to switch servers to use A9G Module otherwise A7.  <a href="#ace67731836adaa94431a11f2f3afb49a">More...</a><br /></td></tr>
 <tr class="separator:ace67731836adaa94431a11f2f3afb49a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ab75e95ce2325b3ac18daff066d985d"><td class="memItemLeft" align="right" valign="top"><a id="a5ab75e95ce2325b3ac18daff066d985d"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensor_8h.html#a5ab75e95ce2325b3ac18daff066d985d">gprsTX</a>&#160;&#160;&#160;17</td></tr>
@@ -160,10 +171,6 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensor_8h.html#a24b68309719bdffdf37f202dee16d11d">gpsBaud</a>&#160;&#160;&#160;9600</td></tr>
 <tr class="memdesc:a24b68309719bdffdf37f202dee16d11d"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPS TX pin Baudrate. <br /></td></tr>
 <tr class="separator:a24b68309719bdffdf37f202dee16d11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1ff4ed5ee1b081019eb2c34846ca92c"><td class="memItemLeft" align="right" valign="top"><a id="ad1ff4ed5ee1b081019eb2c34846ca92c"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sensor_8h.html#ad1ff4ed5ee1b081019eb2c34846ca92c">gprsSerial</a>&#160;&#160;&#160;Serial1</td></tr>
-<tr class="memdesc:ad1ff4ed5ee1b081019eb2c34846ca92c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serial port for GPRS (AT) Commands. <br /></td></tr>
-<tr class="separator:ad1ff4ed5ee1b081019eb2c34846ca92c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -238,10 +245,29 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sens
       </table>
 </div><div class="memdoc">
 
-<p>conflicts of same defining by dht lib and esp32_thingsapi lib </p>
-<p>GPRS RX Pin </p>
+<p>Debugging, uncomment to switch servers to use A9G Module otherwise A7. </p>
+<p>Setting the servers and debugging control using the A9G GPRS RX Pin </p>
 
-<p class="definition">Definition at line <a class="el" href="sensor_8h_source.html#l00061">61</a> of file <a class="el" href="sensor_8h_source.html">sensor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sensor_8h_source.html#l00075">75</a> of file <a class="el" href="sensor_8h_source.html">sensor.h</a>.</p>
+
+</div>
+</div>
+<a id="a3ff50e0df1eb36370b1c70fdad58f948"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ff50e0df1eb36370b1c70fdad58f948">&#9670;&nbsp;</a></span>usbTX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define usbTX&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>conflicts of same defining by dht lib and esp32_thingsapi lib </p>
+<p>Default Serial0 used for USB TX (Debugging) </p>
+
+<p class="definition">Definition at line <a class="el" href="sensor_8h_source.html#l00060">60</a> of file <a class="el" href="sensor_8h_source.html">sensor.h</a>.</p>
 
 </div>
 </div>
@@ -250,7 +276,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sens
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_e6bb53534ac0e427887cf7a94c0c004e.html">C:</a></li><li class="navelem"><a class="el" href="dir_8ceffd4ee35c3518d4e8bdc7e638efe8.html">Users</a></li><li class="navelem"><a class="el" href="dir_c4b574d5290bdb70e197cca38f2a249f.html">Sajjad</a></li><li class="navelem"><a class="el" href="dir_044ca20a0cac3cffe505c8e16f4cf96b.html">Desktop</a></li><li class="navelem"><a class="el" href="dir_6a5f758b58f8e281389a5c2dcaa54c9f.html">backup</a></li><li class="navelem"><a class="el" href="dir_02f43a4e76064b061d4ba014dce77ad8.html">esp32scooter</a></li><li class="navelem"><a class="el" href="sensor_8h.html">sensor.h</a></li>
+    <li class="navelem"><a class="el" href="dir_aa394cd1d9abb8ffe941d9aaafca8d03.html">github</a></li><li class="navelem"><a class="el" href="dir_ce60a7238496951bf3fd67b7a39d4174.html">scooter</a></li><li class="navelem"><a class="el" href="dir_3d7d9e17b9098d5cd21ffee249b0dff5.html">esp32scooter</a></li><li class="navelem"><a class="el" href="sensor_8h.html">sensor.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.15 </li>

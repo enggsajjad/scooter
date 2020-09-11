@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SMARTAQNET-SCOOTER: C:/Users/Sajjad/Desktop/backup/esp32scooter/thinker.h File Reference</title>
+<title>SMARTAQNET-SCOOTER: H:/github/scooter/esp32scooter/thinker.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -112,16 +112,38 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="thinker_8h.html#a02812505694442b6f833040489d550d6">NOTOK</a>&#160;&#160;&#160;2</td></tr>
 <tr class="memdesc:a02812505694442b6f833040489d550d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Other than OK response for AT Command. <br /></td></tr>
 <tr class="separator:a02812505694442b6f833040489d550d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45ba202b05caf39795aeca91b0ae547e"><td class="memItemLeft" align="right" valign="top"><a id="a45ba202b05caf39795aeca91b0ae547e"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="thinker_8h.html#a45ba202b05caf39795aeca91b0ae547e">TIMEOUT</a>&#160;&#160;&#160;3</td></tr>
-<tr class="memdesc:a45ba202b05caf39795aeca91b0ae547e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timeout for no response for AT Command. <br /></td></tr>
-<tr class="separator:a45ba202b05caf39795aeca91b0ae547e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93b87e9b5d5d76664805716de03a1640"><td class="memItemLeft" align="right" valign="top"><a id="a93b87e9b5d5d76664805716de03a1640"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="thinker_8h.html#a93b87e9b5d5d76664805716de03a1640">TIMED</a>&#160;&#160;&#160;3</td></tr>
+<tr class="memdesc:a93b87e9b5d5d76664805716de03a1640"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timeout for no response for AT Command. <br /></td></tr>
+<tr class="separator:a93b87e9b5d5d76664805716de03a1640"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a735563036dced0b7d6cc98f97ea4978b"><td class="memItemLeft" align="right" valign="top"><a id="a735563036dced0b7d6cc98f97ea4978b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="thinker_8h.html#a735563036dced0b7d6cc98f97ea4978b">ERR</a>&#160;&#160;&#160;4</td></tr>
+<tr class="memdesc:a735563036dced0b7d6cc98f97ea4978b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error for no response for AT Command. <br /></td></tr>
+<tr class="separator:a735563036dced0b7d6cc98f97ea4978b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a38c9fec5f62aa11de338bf2273e3b430"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="thinker_8h.html#a38c9fec5f62aa11de338bf2273e3b430">command</a> (String cmd, String response, unsigned long timeout, boolean output)</td></tr>
 <tr class="memdesc:a38c9fec5f62aa11de338bf2273e3b430"><td class="mdescLeft">&#160;</td><td class="mdescRight">Routine to send AT Command and output the status.  <a href="#a38c9fec5f62aa11de338bf2273e3b430">More...</a><br /></td></tr>
 <tr class="separator:a38c9fec5f62aa11de338bf2273e3b430"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd019bda7d6cda64587035e29cf40299"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="thinker_8h.html#abd019bda7d6cda64587035e29cf40299">gsmWaitForReady</a> ()</td></tr>
+<tr class="memdesc:abd019bda7d6cda64587035e29cf40299"><td class="mdescLeft">&#160;</td><td class="mdescRight">Routine to send AT Command and wait for OK.  <a href="#abd019bda7d6cda64587035e29cf40299">More...</a><br /></td></tr>
+<tr class="separator:abd019bda7d6cda64587035e29cf40299"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab29c2b2afd741ca6f2bdd0d068d34b3a"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="thinker_8h.html#ab29c2b2afd741ca6f2bdd0d068d34b3a">gsmRead</a> ()</td></tr>
+<tr class="memdesc:ab29c2b2afd741ca6f2bdd0d068d34b3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Routine to read GSM data.  <a href="#ab29c2b2afd741ca6f2bdd0d068d34b3a">More...</a><br /></td></tr>
+<tr class="separator:ab29c2b2afd741ca6f2bdd0d068d34b3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fa925a4e44d7185145a05255b877b45"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="thinker_8h.html#a8fa925a4e44d7185145a05255b877b45">gsmWaitFor</a> (String response1, String response2, int timeout)</td></tr>
+<tr class="memdesc:a8fa925a4e44d7185145a05255b877b45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Routine to wait for AT Command response.  <a href="#a8fa925a4e44d7185145a05255b877b45">More...</a><br /></td></tr>
+<tr class="separator:a8fa925a4e44d7185145a05255b877b45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a107d0299865981f9c3a4101eb6b9f7a3"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="thinker_8h.html#a107d0299865981f9c3a4101eb6b9f7a3">gsmCommand</a> (String cmd, String response1, String response2, int timeout, int repetitions)</td></tr>
+<tr class="memdesc:a107d0299865981f9c3a4101eb6b9f7a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Routine to send AT Command and output the status.  <a href="#a107d0299865981f9c3a4101eb6b9f7a3">More...</a><br /></td></tr>
+<tr class="separator:a107d0299865981f9c3a4101eb6b9f7a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad409c04ad3a7c0160668849fbe99b465"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="thinker_8h.html#ad409c04ad3a7c0160668849fbe99b465">gsmWaitForResponse</a> (int timeout)</td></tr>
+<tr class="memdesc:ad409c04ad3a7c0160668849fbe99b465"><td class="mdescLeft">&#160;</td><td class="mdescRight">Routine to wait for command response in string, basically for AT+CIPSTATUS?  <a href="#ad409c04ad3a7c0160668849fbe99b465">More...</a><br /></td></tr>
+<tr class="separator:ad409c04ad3a7c0160668849fbe99b465"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2044e5bbfdb53bf824b6ee06c6ce5cc3"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="thinker_8h.html#a2044e5bbfdb53bf824b6ee06c6ce5cc3">gsmCheckStatus</a> (String cmd, int timeout)</td></tr>
+<tr class="memdesc:a2044e5bbfdb53bf824b6ee06c6ce5cc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Routine to send AT Command and output the status.  <a href="#a2044e5bbfdb53bf824b6ee06c6ce5cc3">More...</a><br /></td></tr>
+<tr class="separator:a2044e5bbfdb53bf824b6ee06c6ce5cc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>variable and function definitions for timings </p>
@@ -180,7 +202,228 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>byte </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="thinker_8h_source.html#l00029">29</a> of file <a class="el" href="thinker_8h_source.html">thinker.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="thinker_8h_source.html#l00031">31</a> of file <a class="el" href="thinker_8h_source.html">thinker.h</a>.</p>
+
+</div>
+</div>
+<a id="a2044e5bbfdb53bf824b6ee06c6ce5cc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2044e5bbfdb53bf824b6ee06c6ce5cc3">&#9670;&nbsp;</a></span>gsmCheckStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char gsmCheckStatus </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>cmd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>timeout</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Routine to send AT Command and output the status. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cmd</td><td>the AT Command to be sent </td></tr>
+    <tr><td class="paramname">timeout</td><td>the timeout to wait for cmd command </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>char the errors number to indicate different responses </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="thinker_8h_source.html#l00260">260</a> of file <a class="el" href="thinker_8h_source.html">thinker.h</a>.</p>
+
+</div>
+</div>
+<a id="a107d0299865981f9c3a4101eb6b9f7a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a107d0299865981f9c3a4101eb6b9f7a3">&#9670;&nbsp;</a></span>gsmCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte gsmCommand </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>cmd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>response1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>response2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>timeout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>repetitions</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Routine to send AT Command and output the status. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cmd</td><td>the AT Command to be sent </td></tr>
+    <tr><td class="paramname">response1</td><td>the response to be expected </td></tr>
+    <tr><td class="paramname">response2</td><td>the 2nd response to be expected </td></tr>
+    <tr><td class="paramname">timeout</td><td>the timeout to wait for cmd command </td></tr>
+    <tr><td class="paramname">repetitions</td><td>the counts to repeat the said command if timeout </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>byte the errors </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="thinker_8h_source.html#l00187">187</a> of file <a class="el" href="thinker_8h_source.html">thinker.h</a>.</p>
+
+</div>
+</div>
+<a id="ab29c2b2afd741ca6f2bdd0d068d34b3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab29c2b2afd741ca6f2bdd0d068d34b3a">&#9670;&nbsp;</a></span>gsmRead()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String gsmRead </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Routine to read GSM data. </p>
+<dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="thinker_8h_source.html#l00118">118</a> of file <a class="el" href="thinker_8h_source.html">thinker.h</a>.</p>
+
+</div>
+</div>
+<a id="a8fa925a4e44d7185145a05255b877b45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fa925a4e44d7185145a05255b877b45">&#9670;&nbsp;</a></span>gsmWaitFor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte gsmWaitFor </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>response1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>response2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>timeout</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Routine to wait for AT Command response. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">response1</td><td>the response to be expected </td></tr>
+    <tr><td class="paramname">response2</td><td>the 2nd response to be expected "yy" if not needed </td></tr>
+    <tr><td class="paramname">timeout</td><td>the timeout to wait for cmd command </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>byte error code </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="thinker_8h_source.html#l00139">139</a> of file <a class="el" href="thinker_8h_source.html">thinker.h</a>.</p>
+
+</div>
+</div>
+<a id="abd019bda7d6cda64587035e29cf40299"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd019bda7d6cda64587035e29cf40299">&#9670;&nbsp;</a></span>gsmWaitForReady()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gsmWaitForReady </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Routine to send AT Command and wait for OK. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="thinker_8h_source.html#l00073">73</a> of file <a class="el" href="thinker_8h_source.html">thinker.h</a>.</p>
+
+</div>
+</div>
+<a id="ad409c04ad3a7c0160668849fbe99b465"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad409c04ad3a7c0160668849fbe99b465">&#9670;&nbsp;</a></span>gsmWaitForResponse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String gsmWaitForResponse </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>timeout</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Routine to wait for command response in string, basically for AT+CIPSTATUS? </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeout</td><td>the timeout to wait for cmd command </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>String indicating the commands response </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="thinker_8h_source.html#l00214">214</a> of file <a class="el" href="thinker_8h_source.html">thinker.h</a>.</p>
 
 </div>
 </div>
@@ -189,7 +432,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_e6bb53534ac0e427887cf7a94c0c004e.html">C:</a></li><li class="navelem"><a class="el" href="dir_8ceffd4ee35c3518d4e8bdc7e638efe8.html">Users</a></li><li class="navelem"><a class="el" href="dir_c4b574d5290bdb70e197cca38f2a249f.html">Sajjad</a></li><li class="navelem"><a class="el" href="dir_044ca20a0cac3cffe505c8e16f4cf96b.html">Desktop</a></li><li class="navelem"><a class="el" href="dir_6a5f758b58f8e281389a5c2dcaa54c9f.html">backup</a></li><li class="navelem"><a class="el" href="dir_02f43a4e76064b061d4ba014dce77ad8.html">esp32scooter</a></li><li class="navelem"><a class="el" href="thinker_8h.html">thinker.h</a></li>
+    <li class="navelem"><a class="el" href="dir_aa394cd1d9abb8ffe941d9aaafca8d03.html">github</a></li><li class="navelem"><a class="el" href="dir_ce60a7238496951bf3fd67b7a39d4174.html">scooter</a></li><li class="navelem"><a class="el" href="dir_3d7d9e17b9098d5cd21ffee249b0dff5.html">esp32scooter</a></li><li class="navelem"><a class="el" href="thinker_8h.html">thinker.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.15 </li>

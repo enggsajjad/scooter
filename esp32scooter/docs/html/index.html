@@ -137,8 +137,8 @@ Important Constants</h2>
 </li>
 <li>in the file <a class="el" href="main_8h.html" title="This the main page for the SMARTAQNET which is the core of the project.">main.h</a><ul>
 <li><a class="el" href="main_8h.html#aa14dc39d52ab121ceb570f1a265385e0" title="firmware version, (for intermediate versions being actively worked on, append &quot;pre&quot; to number,...">FIRMWARE_VERSION</a> controls the hard-coded firmware version of the code</li>
-<li><a class="el" href="main_8h.html#af06baee05280c189592215d5ea08e7ef" title="Software.version Name property for Thing and Datastreams.">sw_version</a> describes the software version of the Thing's software properties</li>
-<li><a class="el" href="main_8h.html#acbd8a4cec684c263a6cc312c70d45ef3" title="Hardware.Revision Date property for Thing and Datastreams.">hw_date</a> describes the hardware revision timestamp of the Thing's hardware properties</li>
+<li><a class="el" href="main_8h.html#af06baee05280c189592215d5ea08e7ef" title="Software.version.">sw_version</a> describes the software version of the Thing's software properties</li>
+<li><a class="el" href="main_8h.html#acbd8a4cec684c263a6cc312c70d45ef3" title="Hardware.Revision.">hw_date</a> describes the hardware revision timestamp of the Thing's hardware properties</li>
 <li><a class="el" href="main_8h.html#acbb11c1e34784cf1e3147029f942bfd6" title="Debugging, uncomment to switch servers to release version, enable sending to madavi and luftdaten....">BASE_URL</a> HTTP Server Address</li>
 <li>RELEASE controls the debugging prints and <a class="el" href="main_8h.html#a7e7232f278193dd8684f973ee70ef3f5" title="Define MYDEBUG for controlling debugging.">MY_DEBUG</a></li>
 </ul>
@@ -199,7 +199,7 @@ Wirings</h1>
 <ol type="1">
 <li>GPRS/GPS Module<br />
  There might be two different modules A7 or A9G. The wiring that just require pin definitions, as:<ul>
-<li><a class="el" href="sensor_8h.html#ace67731836adaa94431a11f2f3afb49a" title="conflicts of same defining by dht lib and esp32_thingsapi lib">gprsRX</a>, The GPRS Serial Receive pin</li>
+<li><a class="el" href="sensor_8h.html#ace67731836adaa94431a11f2f3afb49a" title="Debugging, uncomment to switch servers to use A9G Module otherwise A7.">gprsRX</a>, The GPRS Serial Receive pin</li>
 <li><a class="el" href="sensor_8h.html#a5ab75e95ce2325b3ac18daff066d985d" title="GPRS TX Pin.">gprsTX</a>, The GPRS Serial Transmit pin</li>
 <li><a class="el" href="sensor_8h.html#a54cd714ce172e08013354f7d6c56d135" title="GPS RX Pin.">gpsRX</a>, The GPS Serial Receive pin</li>
 <li><a class="el" href="sensor_8h.html#ab42918d6ca01f71bd8dd82e1240c0fd5" title="GPS TX Pin.">gpsTX</a>, The GPS Serial Transmit pin</li>
@@ -253,7 +253,7 @@ FIRMWARE_VERSION 0.1.0.0 onwards</h2>
 Author(s)</h1>
 <ul>
 <li>Sajjad Hussain,</li>
-<li>Tobias,</li>
+<li>Tobias Röddiger,</li>
 </ul>
 <p>The team at TECO (www.teco.edu) and at Chair for Pervasive Computing Systems (<a href="https://pcs.tm.kit.edu">https://pcs.tm.kit.edu</a>).</p>
 <h1><a class="anchor" id="license"></a>

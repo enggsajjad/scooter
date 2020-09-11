@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SMARTAQNET-SCOOTER: C:/Users/Sajjad/Desktop/backup/esp32scooter/timer.h File Reference</title>
+<title>SMARTAQNET-SCOOTER: H:/github/scooter/esp32scooter/timer.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -105,7 +105,7 @@ $(document).ready(function(){initNavTree('timer_8h.html','');});
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aeb36d30620b2d08c6d267015771abf65"><td class="memItemLeft" align="right" valign="top">void IRAM_ATTR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer_8h.html#aeb36d30620b2d08c6d267015771abf65">resetModule</a> ()</td></tr>
-<tr class="memdesc:aeb36d30620b2d08c6d267015771abf65"><td class="mdescLeft">&#160;</td><td class="mdescRight">ISR functions called for Reset ESP32.  <a href="#aeb36d30620b2d08c6d267015771abf65">More...</a><br /></td></tr>
+<tr class="memdesc:aeb36d30620b2d08c6d267015771abf65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error Indicating for AT Command Respnse.  <a href="#aeb36d30620b2d08c6d267015771abf65">More...</a><br /></td></tr>
 <tr class="separator:aeb36d30620b2d08c6d267015771abf65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada06ab1c4bbd307a9fea75726c8894f1"><td class="memItemLeft" align="right" valign="top">void IRAM_ATTR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer_8h.html#ada06ab1c4bbd307a9fea75726c8894f1">onTimer</a> ()</td></tr>
 <tr class="memdesc:ada06ab1c4bbd307a9fea75726c8894f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">ISR functions called Timer Elapsed.  <a href="#ada06ab1c4bbd307a9fea75726c8894f1">More...</a><br /></td></tr>
@@ -136,13 +136,6 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer_8h.html#ae565389ea28efe15a3ebee41f3ceae5a">rxState</a></td></tr>
 <tr class="memdesc:ae565389ea28efe15a3ebee41f3ceae5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive from Serial States. <br /></td></tr>
 <tr class="separator:ae565389ea28efe15a3ebee41f3ceae5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97904ae3388ebd6bb18b65a3a4b1f699"><td class="memItemLeft" align="right" valign="top"><a id="a97904ae3388ebd6bb18b65a3a4b1f699"></a>
-byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer_8h.html#a97904ae3388ebd6bb18b65a3a4b1f699">Err</a></td></tr>
-<tr class="memdesc:a97904ae3388ebd6bb18b65a3a4b1f699"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error Indicating for AT Command Respnse. <br /></td></tr>
-<tr class="separator:a97904ae3388ebd6bb18b65a3a4b1f699"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab04e2d55ea4a544f3575812582af7b51"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer_8h.html#ab04e2d55ea4a544f3575812582af7b51">current</a></td></tr>
-<tr class="memdesc:ab04e2d55ea4a544f3575812582af7b51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current rxState for Serial.  <a href="#ab04e2d55ea4a544f3575812582af7b51">More...</a><br /></td></tr>
-<tr class="separator:ab04e2d55ea4a544f3575812582af7b51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>variable and function definitions for timings </p>
@@ -188,8 +181,9 @@ byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="time
       </table>
 </div><div class="memdoc">
 
-<p>ISR functions called for Reset ESP32. </p>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+<p>Error Indicating for AT Command Respnse. </p>
+<p>Current rxState for Serial</p>
+<p>ISR functions called for Reset ESP32 </p><dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="timer_8h_source.html#l00034">34</a> of file <a class="el" href="timer_8h_source.html">timer.h</a>.</p>
 
@@ -218,32 +212,12 @@ byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="time
 
 </div>
 </div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="ab04e2d55ea4a544f3575812582af7b51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab04e2d55ea4a544f3575812582af7b51">&#9670;&nbsp;</a></span>current</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int current</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Current rxState for Serial. </p>
-<p>Current rxState for Serial. </p>
-
-<p class="definition">Definition at line <a class="el" href="main_8h_source.html#l00285">285</a> of file <a class="el" href="main_8h_source.html">main.h</a>.</p>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_e6bb53534ac0e427887cf7a94c0c004e.html">C:</a></li><li class="navelem"><a class="el" href="dir_8ceffd4ee35c3518d4e8bdc7e638efe8.html">Users</a></li><li class="navelem"><a class="el" href="dir_c4b574d5290bdb70e197cca38f2a249f.html">Sajjad</a></li><li class="navelem"><a class="el" href="dir_044ca20a0cac3cffe505c8e16f4cf96b.html">Desktop</a></li><li class="navelem"><a class="el" href="dir_6a5f758b58f8e281389a5c2dcaa54c9f.html">backup</a></li><li class="navelem"><a class="el" href="dir_02f43a4e76064b061d4ba014dce77ad8.html">esp32scooter</a></li><li class="navelem"><a class="el" href="timer_8h.html">timer.h</a></li>
+    <li class="navelem"><a class="el" href="dir_aa394cd1d9abb8ffe941d9aaafca8d03.html">github</a></li><li class="navelem"><a class="el" href="dir_ce60a7238496951bf3fd67b7a39d4174.html">scooter</a></li><li class="navelem"><a class="el" href="dir_3d7d9e17b9098d5cd21ffee249b0dff5.html">esp32scooter</a></li><li class="navelem"><a class="el" href="timer_8h.html">timer.h</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.15 </li>
