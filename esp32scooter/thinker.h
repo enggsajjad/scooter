@@ -239,10 +239,10 @@ String gsmWaitForResponse( int timeout)
     retVal = "TIMED";
   } else 
   {
-    int st=reply.indexOf("0,")+2;
-    int en=reply.indexOf("\r\n",st)-2;
+    int st=reply.indexOf("STATE:")+6;
+    int en=reply.indexOf("\r\n",st)-1;
     retVal = reply.substring(st,en);
-    //MY_DBGln("Start: "+String(st)+" End: "+String(en)+" Res: "+String(retVal));
+    MY_DBGln("Start: "+String(st)+" End: "+String(en)+" Res: "+String(retVal));
   }
 
   return retVal;
@@ -266,16 +266,16 @@ char gsmCheckStatus(String cmd, int timeout)
    
   rv = gsmWaitForResponse(timeout);
   //MY_DBGln("Res: "+String(rv)+" len: "+String(rv.length()));
-  if (rv == "IP INITIAL")
+  if (rv == "IP INITIAL")//"IP INITIAL")
     return 1;
-  else if (rv == "IP START")
+  else if (rv == "START")//"IP START")
     return 2;
-  else if (rv == "IP GPRSACT")
+  else if (rv == "GPRSACT")//"IP GPRSACT")
     return 3;
-  else if (rv == "CONNECT OK")
+  else if (rv == "CONNECT OK")//"CONNECT OK")
     return 4;
-  else if (rv == "TCP/UDP CONNECTING")
+  else if (rv == "TCP/UDP CONNECTING")//"TCP/UDP CONNECTING")
     return 4;
-  else if (rv == "IP CLOSE")
+  else if (rv == "CLOSED")//"IP CLOSE")
     return 5;
 }

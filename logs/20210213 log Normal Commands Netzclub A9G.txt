@@ -1,0 +1,31 @@
+AT+CREG? // Query the registration status of the network
+AT+CREG=1 // =1 is to query the network status, the module power up default is 1
+AT+CGATT=1 //attached network, this command is mandatory if internet access is needed
+AT+CGDCONT=1, "IP", "CMNET" //set PDP parameters
+AT+CGACT=1,1 //activate PDP, after correct activation you will be able to access the internet
+
+AT+CSQ // Query signal strength The first parameter is the signal strength value
+
+AT+CIPSTART="TCP", "122.114.122.174",46875 //connect to TCP server
+CONNECT OK //This is the Anxin transmittable cloud server, please change the port yourself
+OK
+AT+LOCATION=X //X=1 is the address of the base station, X=2 is the address of the GPS
+AT+LOCATION = 2 //get the GPS address information, provided that the GPS can see the satellite before it can return, otherwise it will return GPS NOT FIX NOW
+
+AT+GPS=1 //Enable GPS function
+AT+GPS=0,turn off GPS
+AT+GPS?,query the status of GPS
+AT+GPSRD=N //N seconds to output a NEMA message from the AT serial port
+
+
+Translated with www.DeepL.com/Translator (free version)
+
+AT+CGATT AT command is used to attach or detach the device to packet domain service.
+AT+CREG AT command gives information about the registration status and access technology of the serving cell.
+AT+CSQ AT command returns the signal strength of the device.
+AT+CGDCONT AT commands sets the PDP context parameters such as PDP type (IP, IPV6, PPP, X.25 etc), APN, data compression, header compression etc.
+AT+CGACT AT command is used to activate ot deactivate the PDP context.
+AT+CIPSTART comamnds starts a TCP or UDP connection.
+AT+CSTT AT command sets up the apn, user name and password for the PDP context.
+AT+CIICR command brings up the GPRS or CSD call depending on the configuration previously set by the AT+CSTT command.
+AT+CIFSR command returns the local IP address. It is imperative the the PDP context must have been activated before to get the IP address.

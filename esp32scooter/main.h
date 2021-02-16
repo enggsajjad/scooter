@@ -270,7 +270,7 @@ String message= "";
 /// TCP HOST
 String host = "0.tcp.ngrok.io";
 /// TCP Port
-String port = "12554";
+String port = "12973";
 /// Receive from Serial States
 int rxState = -1;
 /// Receive from Serial Next States
@@ -284,3 +284,56 @@ byte Err;
 char resp;
 /// counter to count total number of transmitted TCP packets
 int cntr;
+
+
+
+void displayInfo()
+{
+  Serial.print(F("Location: ")); 
+  if (tiny.location.isValid())
+  {
+    Serial.print(tiny.location.lat(), 6);
+    Serial.print(F(","));
+    Serial.print(tiny.location.lng(), 6);
+  }
+  else
+  {
+    Serial.print(F("INVALID"));
+  }
+
+  Serial.print(F("  Date/Time: "));
+  if (tiny.date.isValid())
+  {
+    Serial.print(tiny.date.month());
+    Serial.print(F("/"));
+    Serial.print(tiny.date.day());
+    Serial.print(F("/"));
+    Serial.print(tiny.date.year());
+  }
+  else
+  {
+    Serial.print(F("INVALID"));
+  }
+
+  Serial.print(F(" "));
+  if (tiny.time.isValid())
+  {
+    if (tiny.time.hour() < 10) Serial.print(F("0"));
+    Serial.print(tiny.time.hour());
+    Serial.print(F(":"));
+    if (tiny.time.minute() < 10) Serial.print(F("0"));
+    Serial.print(tiny.time.minute());
+    Serial.print(F(":"));
+    if (tiny.time.second() < 10) Serial.print(F("0"));
+    Serial.print(tiny.time.second());
+    Serial.print(F("."));
+    if (tiny.time.centisecond() < 10) Serial.print(F("0"));
+    Serial.print(tiny.time.centisecond());
+  }
+  else
+  {
+    Serial.print(F("INVALID"));
+  }
+
+  Serial.println();
+}

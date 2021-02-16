@@ -1,0 +1,44 @@
+AT
+
+OK
+AT+RST
+
+OK
+
+^STN: 38
+
+^CINIT: 4, 8192, 38
+AT
+
+OK
+AT+GPS=1
+
+OK
+AT+CGATT=1
+
+OK
+AT+CSTT="internet.telekom","telekom","telekom"
+
+OK
+AT+CIICR 
+
++CME ERROR:50
+
+
+
+AT+COPS=?
+
++COPS: (2,"T-MobileD","T-MobileD","26201"),(3,"Vodafone.de","Vodafone.de","26202"),(3,"E-Plus","E-Plus","26203")
+
+OK
+AT+COPS?
+
++COPS: 1,2,"26201"
+
+OK
+AT+CSTT="internet.t-mobile","t-mobile","tm"
+
+OK
+AT+CIICR
+
++CME ERROR:50

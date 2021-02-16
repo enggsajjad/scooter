@@ -1,0 +1,504 @@
+
+=====================================================
+A9G
+=====================================================
+AT
+
+OK
+AT+CGATT=1
+
++CTZV:21/02/12,14:29:17,+01
+
+OK
+AT+CGACT?
+
++CGACT: 0,0
+
+OK
+AT+CGACT=1
+
+OK
+AT+CGACT?
+
++CGACT: 0,0
+
+OK
+AT+CREG?
+
++CREG: 1,1
+
+OK
+
+AT+CSTT="pinternet.interkom.de","",""
+
+OK
+AT+CIICR
+
+OK
+AT+CIPSTATUS?
+
+
++CIPSTATUS:0,IP GPRSACT  
+1,IP INITIAL  
+2,IP INITIAL  
+3,IP INITIAL  
+4,IP INITIAL  
+5,IP INITIAL  
+6,IP INITIAL  
+7,IP INITIAL  
+
+
+OK
+AT+CGDCONT?
+
++CGDCONT:1,,"pinternet.interkom.de",,0,0
+
+OK
+AT+CIPSTART="TCP","0.tcp.ngrok.io",12279
+
+CONNECT OK
+
+OK
+
+=====================================================
+A9G
+=====================================================
+
+
+AT
+
+OK
+AT+GPS=1
+
+OK
+AT+COPS=0
+
+COMMAND NO RESPONSE!
+
+AT+CGATT=1
+
++CGATT:1
+
+OK
+AT+CGACT?
+
++CGACT: 0,0
+
+OK
+AT+CGACT=1
+
+OK
+AT+CGACT?
+
++CGACT: 0,0
+
+OK
+AT+CGACT=1,1
+
+OK
+AT+CGACT?
+
++CGACT: 1, 1
+
+OK
+AT+CREG?
+
++CREG: 1,5
+
+OK
+AT+CSTT="pinternet.interkom.de","",""
+
+OK
+AT+CIICR
+
+OK
+AT+CIPSTART="TCP","0.tcp.ngrok.io",12279
+
++CME ERROR: 50
+
+
+=========
+AGAIN A9g
+==============
+
+AT+CGACT?
+
++CGACT: 0,0
+
+OK
+AT+CGDCONT=1,"IP","pinternet.interkom.de"
+
+OK
+AT+CGDCONT?
+
++CGDCONT:1,"IP","pinternet.interkom.de","0.0.0.0",0,0
+
+OK
+AT+CGATT=1
+
++CGATT:1
+
+OK
+AT+CGACT?
+
++CGACT: 0,0
+
+OK
+AT+CGACT=1
+
+OK
+AT+CGACT?
+
++CGACT: 1, 1
+
+OK
+AT+CSTT="pinternet.interkom.de","",""
+
+OK
+AT+CIICR
+
+OK
+AT+CREG?
+
++CREG: 1,5
+
+OK
+AT+CIPSTATUS?
++CIPSTATUS:
+STATE:IP GPRSACT 
+
+OK
+AT+CIPSTART="TCP","0.tcp.ngrok.io",12279
+
++CME ERROR: 50
+
+
+================
+Another A9G
+================
+AT+RST=1
+
+OK
+Init...
+
++CIEV: "Charging",99%
+
+
++CREG: 2
+
+^STN: 37
++CTZV:21/02/13,01:22:45,+01
+
++CREG: 1
+
+A9/A9G
+V02.02.20190915R
+Ai_Thinker_Co._Ltd.
+READY
+AT+CGDCONT?
+
+OK
+AT+CGATT=1
+
++CGATT:1
+
+OK
+AT+CGACT?
+
++CGACT: 0,0
+
+OK
+AT+CGACT=1,2
+
+OK
+AT+CGACT?
+
++CGACT: 2, 1
+
+OK
+AT+CSTT="pinternet.interkom.de","",""
+
+OK
+AT+CIICR
+
+OK
+AT+CIPSTART=2, "TCP","0.tcp.ngrok.io",12279
+
++CME ERROR: 50
+AT+CIPSHUT
+
+SHUT OK
+
+OK
+AT+CGDCONT=2,"IP","pinternet.interkom.de"
+
++CME ERROR: 3
+AT+RST=1
+
+OK
+Init...
+
++CIEV: "Charging",99%
+
+
++CREG: 2
+
+^STN: 37
++CTZV:21/02/13,01:24:42,+01
+
++CREG: 1
+
+A9/A9G
+V02.02.20190915R
+Ai_Thinker_Co._Ltd.
+READY
+AT+CGACT?
+
++CGACT: 0,0
+
+OK
+AT+CGDCONT=2,"IP","pinternet.interkom.de"
+
+OK
+AT+CGDCONT?
+
++CGDCONT:2,"IP","pinternet.interkom.de","0.0.0.0",0,0
+
+OK
+AT+CGATT=1
+
++CGATT:1
+
+OK
+AT+CGACT=1,2
+
+OK
+at+cgpaddr=2
+
++CGPADDR: 2,"10.148.205.129"
+
+OK
+AT+CSTT="pinternet.interkom.de","",""
+
+OK
+AT+CIICR
+
+OK
+AT+CIPSTART=2, "TCP","0.tcp.ngrok.io",12279
+
++CME ERROR: 50
+AT+CIPSTART="TCP","0.tcp.ngrok.io",12279
+
++CME ERROR: 50
+AT+CIPSTART="TCP","0.tcp.ngrok.io","12279"
+
++CME ERROR: 50
+
+============
+A9(G) Seccessful TCP
+============
+Init...
+
++CIEV: "Charging",100%
+
+
++CREG: 2
+
+^STN: 37
++CTZV:21/02/13,02:51:53,+01
+
++CREG: 1
+
+A9/A9G
+V02.02.20190915R
+Ai_Thinker_Co._Ltd.
+READY
++CIEV: "Complete the Charge",100%
+
+AT
+
+OK
+AT+CGATT=1
+
++CGATT:1
+
+OK
+AT+CGDCONT=1,"IP","pinternet.interkom.de"
+
+OK
+AT+CGACT=1,1
+
+OK
+AT+CIPSTART="TCP","0.tcp.ngrok.io",12279
+CONNECT OK
+
+OK
+
++CIPRCV,39:SSH-2.0-OpenSSH_7.4p1 Debian-10+deb9u6
+
+CLOSED
+
+OK
+AT+CIPSTART="TCP","0.tcp.ngrok.io",12973
+CONNECT OK
+
+OK
+AT+CIPSEND=138,"{ scooterId: 'C45ZA1', pm25: 234, pm10: 110 }"
+
+OK
+
+
+
+
+
+============
+A9(G) Seccessful TCP Another Example
+============
+AT+RST=1
+
+OK
+Init...
+
++CIEV: "Charging",99%
+
+
++CREG: 2
+
+^STN: 37
++CTZV:21/02/14,07:26:44,+01
+
++CREG: 1
+
+A9/A9G
+V02.02.20190915R
+Ai_Thinker_Co._Ltd.
+READY
+AT
+
+OK
+AT+CREG?
+
++CREG: 1,1
+
+OK
+AT+CIPSTATUS?
++CIPSTATUS:
+STATE:IP INITIAL 
+
+OK
+AT+CGDCONT?
+
+OK
+AT+CGACT?
+
++CGACT: 0,0
+
+OK
+AT+CGATT=1
+
++CGATT:1
+
+OK
+AT+CGDCONT=1,"IP","pinternet.interkom.de"
+
+OK
+
+AT+CGDCONT?
+
++CGDCONT:1,"IP","pinternet.interkom.de","0.0.0.0",0,0
+
+OK
+
+AT+CIPSTATUS?
++CIPSTATUS:
+STATE:IP INITIAL 
+
+OK
+AT+CGACT=1,1
+
+OK
+AT+CGACT?
+
++CGACT: 1, 1
+
+OK
+AT+CIPSTART="TCP","0.tcp.ngrok.io",12973
+CONNECT OK
+
+OK
+AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CONNECT OK 
+
+OK
+AT+CIPSEND=138,"{ scooterId: 'C45ZA1', pm25: 234, pm10: 110 }"
+
+OK
+
++CIPRCV,160:127.0.0.1:56186 said { scooterId: 'C45ZA1', pm25: 234, pm10: 110 }
+
+AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CONNECT OK 
+
+OK
+AT+CIPCLOSE
+
+OK
+AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+AT+CIPSHUT
+
+SHUT OK
+
+OK
+AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+
+
+
+
+AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+AT+CIPSEND
+
+> GET https://api.thingspeak.com/update?api_key=YUPIEMEN5UBISRAM&field1=23&field2=33
+
+OK
+
++CIPRCV,1:4
+CLOSED
+
+OK
+AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+AT+CIPSEND
+
+> GET https://api.thingspeak.com/update?api_key=YUPIEMEN5UBISRAM&field1=43&field2=43
+
+OK
+
++CIPRCV,1:5
+CLOSED
+
+OK
+AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK

@@ -1,0 +1,149 @@
+Start
+SMARTAQNET Scooter is Reseting...
+Waiting for GSM become ready...
+.
+GSM is Ready.
+Cmd: AT+GPSRD=0
+Get @1006ms AT+GPSRD=0
+
+OK
+Cmd: AT+GPS=1
+Get @1005ms AT+GPS=1
+
+OK
+Cmd: AT+CREG?
+Get @1007ms AT+CREG?
+
++CREG: 1,1
+
+OK
+Cmd: AT+CGACT?
+Get @1007ms AT+CGACT?
+
++CGACT: 0,0
+
+OK
+Cmd: AT+CGATT=1
+Get @1009ms AT+CGATT=1
+
++CGATT:1
+
+OK
+Cmd: AT+CGDCONT?
+Get @1007ms AT+CGDCONT?
+
+OK
+Cmd: AT+CGDCONT=1,"IP","pinternet.interkom.de"
+Get @1026ms AT+CGDCONT=1,"IP","pinternet.interkom.de"
+
+OK
+Cmd: AT+CGACT=1,1
+Get @1635ms AT+CGACT=1,1
+
+OK
+Cmd: AT+CGACT?
+Get @1007ms AT+CGACT?
+
++CGACT: 1, 1
+
+OK
+Cmd: AT+CIPSTATUS?
+Get @1009ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:IP INITIAL 
+
+OK
+Start: 34 End: 44 Res: IP INITIAL
+Status: INITIAL
+Cmd: AT+CIPSTART="TCP","0.tcp.ngrok.io",12973
+Get @1939ms AT+CIPSTART="TCP","0.tcp.ngrok.io",12973
+CONNECT OK
+
+OK
+Cmd: AT+CIPSTATUS?
+Get @1009ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CONNECT OK 
+
+OK
+Start: 34 End: 44 Res: CONNECT OK
+Status: CONNECT
+Getting data from Sensors
+Cmd: AT+CIPSEND=85,"{ scooterId: 'C45ZA1', pm25: 33.20, pm10: 34.90, temp: 23.08, hum: 37.40, atm: 0.00 }"
+Get @1827ms AT+CIPSEND=85,"{ scooterId: 'C45ZA1', pm25: 33.20, pm10: 34.90, temp: 23.08, hum: 37.40, atm: 0.00 }"
+
+OK
+
++CIPRCV,107:127.0.0.1:62233 said { scooterId: 'C45ZA1', pm25: 33.20, pm10: 34.90, temp: 23.08, hum: 37.40, atm: 0.00 }
+
+Cmd: AT+CIPCLOSE
+Get @1013ms AT+CIPCLOSE
+
+OK
+Cmd: AT+CIPSTATUS?
+Get @1008ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSHUT
+Get @1005ms AT+CIPSHUT
+
+SHUT OK
+
+OK
+Getting data from GPS-TX Pin
+$GNGGA,000002.029,4900.5143,N,00825.4662,E,0,0,,102.1,M,47.9,M,,*5B
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000002.029,V,4900.5143,N,00825.4662,E,0.000,0.00,060180,,,N*59
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+Getting data from GPS-TX Pin done
+Cmd: AT+GPSRD=5
+Get @1006ms AT+GPSRD=5
+
+OK
+
+Getting data from GPS using AT Cmd
+$GNGGA,000009.029,4900.5143,N,00825.4662,E,0,0,,102.1,M,47.9,M,,*50
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000009.029,V,4900.5143,N,00825.4662,E,0.000,0.00,060180,,,N*52
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors: Tests
+Message: { scooterId: 'C45ZA1', pm25: 30.00, pm10: 35.80, temp: 23.17, hum: 37.28, atm: 1011.00 }
+Cmd: AT+GPSRD=0
+Get @1005ms AT+GPSRD=0
+
+OK
+Cmd: AT+GPS=1
+Get @1005ms AT+GPS=1
+
+OK
+Cmd: AT+CREG?
+Get @1008ms AT+CREG?
+
++CREG: 1,5
+
+OK
+Cmd: AT+CGACT?
+Get @1007ms AT+CGACT?
+
++CGACT: 1, 1
+
+OK
+Cmd: AT+CGATT=1
+Get @1007ms AT+CGATT=1
+
++CGATT:1
+
+OK
+Cmd: AT+CGDCONT?

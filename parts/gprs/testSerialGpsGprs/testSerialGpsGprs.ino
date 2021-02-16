@@ -1,3 +1,6 @@
+// NMEA Converter from : http://freenmea.net/decoder
+
+/*
 //A7
 #define gpsbaud  9600
 #define gprsbaud  115200
@@ -7,23 +10,24 @@
 #define GPSTX -1
 int PWR_KEY_PIN = 4;
 int RESET_PIN = 34;
+*/
 
-/*
 //A9G
-#define baud  9600
+#define gpsbaud  9600
+#define gprsbaud  115200
 #define A9RX 14
 #define A9TX 12
 #define GPSRX 13
 #define GPSTX -1
 int PWR_KEY_PIN = 33;
 int RESET_PIN = 34;
-*/
+
 #include <TinyGPS++.h>
 #include <SoftwareSerial.h>
 #include <HardwareSerial.h>
 
 HardwareSerial gps(1);
-HardwareSerial a7g(2);
+HardwareSerial gsmSerial(2);
 // The TinyGPS++ object
 TinyGPSPlus tiny;
 
@@ -36,16 +40,16 @@ void waitForGSMBecomeReady()
     char buffer[3];
     char index = 0;
 
-    a7g.flush();
+    gsmSerial.flush();
     delay(1000);
     Serial.print('.');
-    a7g.print("AT\r");
-    a7g.flush();
+    gsmSerial.print("AT\r");
+    gsmSerial.flush();
     delay(100);
 
-    while( a7g.available())
+    while( gsmSerial.available())
     {
-      char c = a7g.read();
+      char c = gsmSerial.read();
 
       if ( c == '\r' || c == '\n' )
       {
@@ -76,24 +80,27 @@ void rest(void)
   digitalWrite(RESET_PIN, HIGH);
   delay(100);
 }
-void setup() {
-  delay(1000);
+void setup() 
+{
+  delay(100);
+  
+  // Note the format for setting a serial port is as follows: Serial2.begin(baud-rate, protocol, RX pin, TX pin);
+  Serial.begin(gpsbaud);
+  //gps.begin(9600);
+  gps.begin(gpsbaud, SERIAL_8N1, GPSRX, -1);
+  gsmSerial.begin(gprsbaud, SERIAL_8N1, A9RX, A9TX);
+  Serial.println("Hello Loop Testing....");
+  
   pinMode(PWR_KEY_PIN, OUTPUT);
   pinMode(RESET_PIN, OUTPUT);
   digitalWrite(RESET_PIN, HIGH);
   digitalWrite(PWR_KEY_PIN, HIGH);
-  rest();
+  //rest();
   
-  // Note the format for setting a serial port is as follows: Serial2.begin(baud-rate, protocol, RX pin, TX pin);
-  Serial.begin(gpsbaud);
-  delay(100); 
-  //gps.begin(9600);
-  gps.begin(gpsbaud, SERIAL_8N1, GPSRX, -1);
-  delay(500); 
-  a7g.begin(gprsbaud, SERIAL_8N1, A9RX, A9TX);
-  delay(500); 
+  gsmSerial.flush();
   waitForGSMBecomeReady();
   Serial.println("Debugging GPS and GPRS Serial");
+  gsmSerial.println("AT+GPS=1");
 
 
 
@@ -103,12 +110,12 @@ void loop()
 {
   /*
    // working with both gps and gprs, getting also from GPS
-  if (a7g.available()) {
-    Serial.print(char(a7g.read()));
+  if (gsmSerial.available()) {
+    Serial.print(char(gsmSerial.read()));
   }
   if (Serial.available())
   {
-    a7g.print(char(Serial.read()));
+    gsmSerial.print(char(Serial.read()));
   }
     while ( gps.available()) {
     //Serial.print(char(gps.read()));
@@ -122,29 +129,31 @@ void loop()
   }
   */
 
-/* 
+
   // working with both gps and gprs, getting also from GPS but without decoding
-  if (a7g.available()) {
-    Serial.print(char(a7g.read()));
+  if (gsmSerial.available()) {
+    Serial.print(char(gsmSerial.read()));
   }
   if (Serial.available())
   {
-    a7g.print(char(Serial.read()));
+    gsmSerial.print(char(Serial.read()));
   }
 
    if ( gps.available()) {
     Serial.print(char(gps.read()));
   }
-*/
 
-  // working with both gprs only
-  if (a7g.available()) {
-    Serial.print(char(a7g.read()));
+
+
+ /*  
+  // working with gprs only
+  if (gsmSerial.available()) {
+    Serial.print(char(gsmSerial.read()));
   }
   if (Serial.available())
   {
-    a7g.print(char(Serial.read()));
+    gsmSerial.print(char(Serial.read()));
   //rest();
   }
-
+  */  
 }

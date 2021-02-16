@@ -11,8 +11,14 @@
 
 
 #include "main.h"
+#include <SoftwareSerial.h>
 
-
+#define TOTAL_RECORDS 10
+SoftwareSerial gpsSerial(gpsRX, -1);
+byte r;
+String result,msg;
+bool running = true;
+const char* msg1;
 /**************************************************************************/
 /*!
     @brief  initialization of peripherals attached to ESP32 board
@@ -24,14 +30,17 @@ void setup()
 {
   delay(100);
 
-  pinMode(gprsPWR, OUTPUT);
-  digitalWrite(gprsPWR, HIGH);
-
   gsmSerial.begin(gprsBaud, SERIAL_8N1, gprsRX, gprsTX);
   //gpsSerial.begin(gpsBaud, SERIAL_8N1, GPSRX, GPSTX);
   Serial.begin(gpsBaud, SERIAL_8N1, gpsRX,usbTX);//        rxPin = 3; txPin = 1;
+  gpsSerial.begin(gpsBaud);
   Serial.println("Start");
   
+  pinMode(gprsPWR, OUTPUT);
+  pinMode(gprsRST, OUTPUT);
+  digitalWrite(gprsPWR, HIGH);
+  digitalWrite(gprsRST, HIGH);
+
   sds.begin(&SDS_SERIAL, SDS011_RXD, SDS011_TXD);  // initialize SDS011 sensor
   bool wireStatus = Wire1.begin(BME_SDA, BME_SCL);
   if (!wireStatus) Serial.println("Wire1 failed to init");
@@ -41,8 +50,9 @@ void setup()
 
   Serial.println("SMARTAQNET Scooter is Reseting...");
 
-  gsmSerial.println("AT+RST=1");
-  delay(5000);
+  //gsmSerial.println("AT+RST=1");//Check the initial like AT or AT+RST=1
+  //delay(5000);
+  gsmSerial.println("AT");
   Serial.println("Waiting for GSM become ready...");
   gsmWaitForReady();
   Serial.println("GSM is Ready.");
@@ -79,7 +89,28 @@ void loop()
       break;
     case 4:
       gsmCommand("AT+CGATT=1", "OK", "yy", 2000, 1);
-      delay(7000);
+      delay(1000);
+      rxState = 9;
+      break;
+    case 9:
+      r = gsmCommand("AT+CGDCONT?", "pinternet.interkom.de", "yy", 2000, 1);
+      delay(1000);
+      if (r == OK) rxState = 7;
+      else rxState = 6;
+      break;
+    case 6:
+      gsmCommand("AT+CGDCONT=1,\"IP\",\"pinternet.interkom.de\"", "OK", "yy", 2000, 1);
+      delay(1000);
+      rxState = 7;
+      break;
+    case 7:
+      gsmCommand("AT+CGACT=1,1", "OK", "yy", 2000, 1);
+      delay(1000);
+      rxState = 8;
+      break;
+    case 8:
+      gsmCommand("AT+CGACT?", "OK", "yy", 2000, 1);
+      delay(1000);
       rxState = 5;
       break;
     case 5:
@@ -105,25 +136,12 @@ void loop()
           break;
         case 5:
           Serial.println("Status: CLOSE");
-          rxState = 50;
+          rxState = 10;
           break;
       }
       delay(1500);
       break;
     case 10:
-      gsmCommand("AT+CSTT=\"internet\",\"\",\"\"", "OK", "yy", 2000, 1);
-      rxState=5;
-      break;
-    case 20:
-      gsmCommand("AT+CIICR", "OK", "yy", 5000, 1);
-      delay(6000);
-      rxState=5;
-      break;
-    case 30:
-      gsmCommand("AT+CIFSR", "OK", "yy", 2000, 1);
-      rxState=31;
-      break;
-    case 31:
       gsmCommand("AT+CIPSTART=\"TCP\",\"" + host + "\"," + port, "CONNECT OK", "yy", 4000, 1);
       rxState=5;
       break;
@@ -142,7 +160,7 @@ void loop()
       gsmCommand("AT+CIPSEND=" + String(message.length()) + ",\"" + message + "\"", "OK", "yy", 10000, 1);
       delay(6000);
       cntr++;
-      if(cntr==10)
+      if(cntr==TOTAL_RECORDS)
       {
         rxState=42;
         cntr = 0;
@@ -152,73 +170,121 @@ void loop()
       break;
     case 42:
       gsmCommand("AT+CIPCLOSE", "OK", "yy", 6000, 1);
-      rxState=5;
+      rxState=43;
+      break;
+    case 43:
+      resp = gsmCheckStatus("AT+CIPSTATUS?",10500);
+
+      switch(resp)
+      {
+        case 5:
+          Serial.println("Status: CLOSE");
+          rxState = 50;
+          break;
+      }
+      delay(1500);
       break;
     case 50:
       gsmCommand("AT+CIPSHUT", "OK", "yy", 6000, 1);
       rxState=51;
       break;
     case 51:
-      resp = gsmCheckStatus("AT+CIPSTATUS?",10500);
-
-      switch(resp)
-      {
-        case 1://"IP INITIAL":
-          Serial.println("Status: INITIAL");
-          rxState = 124;
-          break;
-      }
       delay(1500);
+      rxState=124;      
       break;
       //////////
 
     case 124:
       MY_DBGln("Getting data from GPS-TX Pin");
-      //while ( gpsSerial.available())
-      if ( Serial.available())
-      {
-        //rd = gpsSerial.readString();
-        //Serial.println("..-------------------");
-        //Serial.println("Rcvd(Len): " +String(rd.length()) +"\n" + rd );
-        //Serial.println("..-------------------");
-        tiny.encode(Serial.read());//tiny.encode(gpsSerial.read());
-        //if (tiny.location.isUpdated()){
-          MY_DBG("Latitude1= "); 
-          MY_DBG(tiny.location.lat(), 6);
-          MY_DBG(" Longitude1= "); 
-          MY_DBGln(tiny.location.lng(), 6);
-        //}
-        rxState = 125;
+      while(running){
+        if ( Serial.available()) {
+          result = Serial.readStringUntil('\r');
+          //Serial.println(result);
+          switch(cntr)
+          {
+            case 0:
+              if (result.indexOf("$GNGGA") > 0) 
+              {
+                cntr = 1;
+                msg = result.substring(result.indexOf("$GNGGA"));
+              }
+              break;
+            case 1:
+              msg = msg + result;
+              if (result.indexOf("$GNVTG") > 0) 
+              {
+                cntr = 0;
+                Serial.println(msg);
+                running = false;
+
+                /*msg1 = msg.c_str();
+                Serial.println("..-------------------");
+                Serial.println(msg1);
+                Serial.println("..-------------------");
+                while (*msg1)
+                if(tiny.encode(*msg1++))
+                  displayInfo();*/
+
+                rxState = 125;
+              }
+              break;
+          }
+        
+        }
       }
       break;
     case 125:
+      running = true;
       MY_DBGln("Getting data from GPS-TX Pin done");
+      delay(1000);
       rxState = 126;
       break;
     case 126:
       gsmCommand("AT+GPSRD=5", "OK", "yy", 2000, 1);
+      delay(1000);
       rxState=127;
       break;
     case 127:
       MY_DBGln("Getting data from GPS using AT Cmd");
-      rxState = 128;
-      if ( gsmSerial.available())
-      {
-        //rd = gpsSerial.readString();
-        //Serial.println("..-------------------");
-        //Serial.println("Rcvd(Len): " +String(rd.length()) +"\n" + rd );
-        //Serial.println("..-------------------");
-        tiny.encode(gsmSerial.read());
-        //if (tiny.location.isUpdated()){
-          MY_DBG("Latitude2= "); 
-          MY_DBG(tiny.location.lat(), 6);
-          MY_DBG(" Longitude2= "); 
-          MY_DBGln(tiny.location.lng(), 6);
-        //}
-        //rxState = 128;
+      while(running){
+        if ( gsmSerial.available()) {
+          result = gsmSerial.readStringUntil('\r');
+          //Serial.println(result);
+          switch(cntr)
+          {
+            case 0:
+              if (result.indexOf("$GNGGA") > 0) 
+              {
+                cntr = 1;
+                msg = result.substring(result.indexOf("$GNGGA"));
+              }
+              break;
+            case 1:
+              msg = msg + result;
+              if (result.indexOf("$GNVTG") > 0) 
+              {
+                cntr = 0;
+                Serial.println(msg);
+                running = false;
+
+                /*msg1 = msg.c_str();
+                Serial.println("..-------------------");
+                Serial.println(msg1);
+                Serial.println("..-------------------");
+                while (*msg1)
+                if(tiny.encode(*msg1++))
+                  displayInfo();*/
+
+                rxState = 128;
+              }
+              break;
+          }
+        
+        }
       }
       break;
     case 128:
+      running = true;
       MY_DBGln("Getting data from GPS using AT done");
       rxState = 129;
       break;

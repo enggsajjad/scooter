@@ -66,7 +66,7 @@ DHT dht(DHT_PIN, DHT22);
 #define gsmSerial Serial1
 
 /// Debugging, uncomment to switch servers to use A9G Module otherwise A7
-//#define A9G 
+#define A9G 
 
 /// Setting the servers and debugging control using the A9G
 #ifndef A9G
@@ -90,19 +90,19 @@ DHT dht(DHT_PIN, DHT22);
   
 #else
   //A9G
-  #define baud  9600
+  #define sbaud  9600
   /// GPRS RX Pin
   #define gprsRX 14
   /// GPRS TX Pin
   #define gprsTX 12
   /// GPS RX Pin
-  #define GPSRX 13
+  #define gpsRX 13
   /// GPS TX Pin
-  #define GPSTX -1
+  #define gpsTX -1
   /// GPS PWR Pin
-  #define gprsPWR  33;
+  #define gprsPWR  33
   /// GPS RST Pin
-  #define gprsRST  34;
+  #define gprsRST  34
   /// GPRS Baudrate for AT Commands
   #define gprsBaud 115200
   /// GPS TX pin Baudrate

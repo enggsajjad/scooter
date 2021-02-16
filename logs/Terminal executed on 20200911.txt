@@ -1,0 +1,408 @@
+Start
+SMARTAQNET Scooter is Reseting...
+Waiting for GSM become ready...
+.
+GSM is Ready.
+Cmd: AT+GPSRD=0
+Get @1057ms AT+GPSRD=0
+
+OK
+Cmd: AT+GPS=1
+Get @1055ms AT+GPS=1
+
+OK
+Cmd: AT+CREG?
+Get @1056ms AT+CREG?
+
++CREG: 1,1
+
+OK
+Cmd: AT+CGACT?
+Get @1056ms AT+CGACT?
+
++CGACT: 0,0
+
+OK
+Cmd: AT+CGATT=1
+Get @1056ms AT+CGATT=1
+
+OK
+Cmd: AT+CIPSTATUS?
+Get @1070ms AT+CIPSTATUS?
+
+
++CIPSTATUS:0,IP INITIAL  
+1,IP INITIAL  
+2,IP INITIAL  
+3,IP INITIAL  
+4,IP INITIAL  
+5,IP INITIAL  
+6,IP INITIAL  
+7,IP INITIAL  
+
+
+OK
+Status: INITIAL
+Cmd: AT+CSTT="internet","",""
+Get @1057ms AT+CSTT="internet","",""
+
+OK
+Cmd: AT+CIPSTATUS?
+Get @1068ms AT+CIPSTATUS?
+
+
++CIPSTATUS:0,IP START  
+1,IP INITIAL  
+2,IP INITIAL  
+3,IP INITIAL  
+4,IP INITIAL  
+5,IP INITIAL  
+6,IP INITIAL  
+7,IP INITIAL  
+
+
+OK
+Status: START
+Cmd: AT+CIICR
+Get @1667ms AT+CIICR
+
+OK
+Cmd: AT+CIPSTATUS?
+Get @1068ms AT+CIPSTATUS?
+
+
++CIPSTATUS:0,IP GPRSACT  
+1,IP INITIAL  
+2,IP INITIAL  
+3,IP INITIAL  
+4,IP INITIAL  
+5,IP INITIAL  
+6,IP INITIAL  
+7,IP INITIAL  
+
+
+OK
+Status: GPRSACT
+Cmd: AT+CIFSR
+Get @1057ms AT+CIFSR
+
+10.136.121.27
+
+OK
+Cmd: AT+CIPSTART="TCP","0.tcp.ngrok.io",12554
+Get @1058ms AT+CIPSTART="TCP","0.tcp.ngrok.io",12554
+Get @3454ms 
++CGDMODIND:1
+
+
+
+CONNECT OK
+
+OK
+Cmd: AT+CIPSTATUS?
+Get @1071ms AT+CIPSTATUS?
+
+
++CIPSTATUS:0,CONNECT OK  
+1,IP INITIAL  
+2,IP INITIAL  
+3,IP INITIAL  
+4,IP INITIAL  
+5,IP INITIAL  
+6,IP INITIAL  
+7,IP INITIAL  
+
+
+OK
+Status: CONNECT
+Getting data from Sensors
+Cmd: AT+CIPSEND=83,"{ scooterId: 'C45ZA1', pm25: 2.60, pm10: 3.60, temp: 27.48, hum: 49.23, atm: 0.00 }"
+Get @1993ms AT+CIPSEND=83,"{ scooterId: 'C45ZA1', pm25: 2.60, pm10: 3.60, temp: 27.48, hum: 49.23, atm: 0.00 }"
+
+OK
+
++CIPRCV:105,127.0.0.1:63107 said { scooterId: 'C45ZA1', pm25: 2.60, pm10: 3.60, temp: 27.48, hum: 49.23, atm: 0.00 }
+
+
+Cmd: AT+CIPSTATUS?
+Get @1068ms AT+CIPSTATUS?
+
+
++CIPSTATUS:0,CONNECT OK  
+1,IP INITIAL  
+2,IP INITIAL  
+3,IP INITIAL  
+4,IP INITIAL  
+5,IP INITIAL  
+6,IP INITIAL  
+7,IP INITIAL  
+
+
+OK
+Status: CONNECT
+Getting data from Sensors
+Cmd: AT+CIPSEND=83,"{ scooterId: 'C45ZA1', pm25: 3.40, pm10: 4.30, temp: 27.48, hum: 49.21, atm: 1.00 }"
+Get @2034ms AT+CIPSEND=83,"{ scooterId: 'C45ZA1', pm25: 3.40, pm10: 4.30, temp: 27.48, hum: 49.21, atm: 1.00 }"
+
+OK
+
++CIPRCV:105,127.0.0.1:63107 said { scooterId: 'C45ZA1', pm25: 3.40, pm10: 4.30, temp: 27.48, hum: 49.21, atm: 1.00 }
+
+
+Cmd: AT+CIPSTATUS?
+Get @1068ms AT+CIPSTATUS?
+
+
++CIPSTATUS:0,CONNECT OK  
+1,IP INITIAL  
+2,IP INITIAL  
+3,IP INITIAL  
+4,IP INITIAL  
+5,IP INITIAL  
+6,IP INITIAL  
+7,IP INITIAL  
+
+
+OK
+Status: CONNECT
+Getting data from Sensors
+Cmd: AT+CIPSEND=83,"{ scooterId: 'C45ZA1', pm25: 3.50, pm10: 5.90, temp: 27.48, hum: 49.22, atm: 2.00 }"
+Get @2040ms AT+CIPSEND=83,"{ scooterId: 'C45ZA1', pm25: 3.50, pm10: 5.90, temp: 27.48, hum: 49.22, atm: 2.00 }"
+
+OK
+
++CIPRCV:105,127.0.0.1:63107 said { scooterId: 'C45ZA1', pm25: 3.50, pm10: 5.90, temp: 27.48, hum: 49.22, atm: 2.00 }
+
+
+Cmd: AT+CIPSTATUS?
+Get @1068ms AT+CIPSTATUS?
+
+
++CIPSTATUS:0,CONNECT OK  
+1,IP INITIAL  
+2,IP INITIAL  
+3,IP INITIAL  
+4,IP INITIAL  
+5,IP INITIAL  
+6,IP INITIAL  
+7,IP INITIAL  
+
+
+OK
+Status: CONNECT
+Getting data from Sensors
+Cmd: AT+CIPSEND=83,"{ scooterId: 'C45ZA1', pm25: 3.50, pm10: 5.50, temp: 27.49, hum: 49.22, atm: 3.00 }"
+Get @2063ms AT+CIPSEND=83,"{ scooterId: 'C45ZA1', pm25: 3.50, pm10: 5.50, temp: 27.49, hum: 49.22, atm: 3.00 }"
+
+OK
+
++CIPRCV:105,127.0.0.1:63107 said { scooterId: 'C45ZA1', pm25: 3.50, pm10: 5.50, temp: 27.49, hum: 49.22, atm: 3.00 }
+
+
+Cmd: AT+CIPSTATUS?
+Get @1068ms AT+CIPSTATUS?
+
+
++CIPSTATUS:0,CONNECT OK  
+1,IP INITIAL  
+2,IP INITIAL  
+3,IP INITIAL  
+4,IP INITIAL  
+5,IP INITIAL  
+6,IP INITIAL  
+7,IP INITIAL  
+
+
+OK
+Status: CONNECT
+Getting data from Sensors
+Cmd: AT+CIPSEND=83,"{ scooterId: 'C45ZA1', pm25: 3.50, pm10: 5.40, temp: 27.49, hum: 49.21, atm: 4.00 }"
+Get @2075ms AT+CIPSEND=83,"{ scooterId: 'C45ZA1', pm25: 3.50, pm10: 5.40, temp: 27.49, hum: 49.21, atm: 4.00 }"
+
+OK
+
++CIPRCV:105,127.0.0.1:63107 said { scooterId: 'C45ZA1', pm25: 3.50, pm10: 5.40, temp: 27.49, hum: 49.21, atm: 4.00 }
+
+
+Cmd: AT+CIPSTATUS?
+Get @1068ms AT+CIPSTATUS?
+
+
++CIPSTATUS:0,CONNECT OK  
+1,IP INITIAL  
+2,IP INITIAL  
+3,IP INITIAL  
+4,IP INITIAL  
+5,IP INITIAL  
+6,IP INITIAL  
+7,IP INITIAL  
+
+
+OK
+Status: CONNECT
+Getting data from Sensors
+Cmd: AT+CIPSEND=83,"{ scooterId: 'C45ZA1', pm25: 2.80, pm10: 4.90, temp: 27.49, hum: 49.20, atm: 5.00 }"
+Get @2030ms AT+CIPSEND=83,"{ scooterId: 'C45ZA1', pm25: 2.80, pm10: 4.90, temp: 27.49, hum: 49.20, atm: 5.00 }"
+
+OK
+
++CIPRCV:105,127.0.0.1:63107 said { scooterId: 'C45ZA1', pm25: 2.80, pm10: 4.90, temp: 27.49, hum: 49.20, atm: 5.00 }
+
+
+Cmd: AT+CIPSTATUS?
+Get @1068ms AT+CIPSTATUS?
+
+
++CIPSTATUS:0,CONNECT OK  
+1,IP INITIAL  
+2,IP INITIAL  
+3,IP INITIAL  
+4,IP INITIAL  
+5,IP INITIAL  
+6,IP INITIAL  
+7,IP INITIAL  
+
+
+OK
+Status: CONNECT
+Getting data from Sensors
+Cmd: AT+CIPSEND=83,"{ scooterId: 'C45ZA1', pm25: 2.60, pm10: 5.10, temp: 27.50, hum: 49.21, atm: 6.00 }"
+Get @2048ms AT+CIPSEND=83,"{ scooterId: 'C45ZA1', pm25: 2.60, pm10: 5.10, temp: 27.50, hum: 49.21, atm: 6.00 }"
+
+OK
+
++CIPRCV:105,127.0.0.1:63107 said { scooterId: 'C45ZA1', pm25: 2.60, pm10: 5.10, temp: 27.50, hum: 49.21, atm: 6.00 }
+
+
+Cmd: AT+CIPSTATUS?
+Get @1068ms AT+CIPSTATUS?
+
+
++CIPSTATUS:0,CONNECT OK  
+1,IP INITIAL  
+2,IP INITIAL  
+3,IP INITIAL  
+4,IP INITIAL  
+5,IP INITIAL  
+6,IP INITIAL  
+7,IP INITIAL  
+
+
+OK
+Status: CONNECT
+Getting data from Sensors
+Cmd: AT+CIPSEND=83,"{ scooterId: 'C45ZA1', pm25: 2.60, pm10: 5.10, temp: 27.50, hum: 49.20, atm: 7.00 }"
+Get @2166ms AT+CIPSEND=83,"{ scooterId: 'C45ZA1', pm25: 2.60, pm10: 5.10, temp: 27.50, hum: 49.20, atm: 7.00 }"
+
+OK
+
++CIPRCV:105,127.0.0.1:63107 said { scooterId: 'C45ZA1', pm25: 2.60, pm10: 5.10, temp: 27.50, hum: 49.20, atm: 7.00 }
+
+
+Cmd: AT+CIPSTATUS?
+Get @1068ms AT+CIPSTATUS?
+
+
++CIPSTATUS:0,CONNECT OK  
+1,IP INITIAL  
+2,IP INITIAL  
+3,IP INITIAL  
+4,IP INITIAL  
+5,IP INITIAL  
+6,IP INITIAL  
+7,IP INITIAL  
+
+
+OK
+Status: CONNECT
+Getting data from Sensors
+Cmd: AT+CIPSEND=83,"{ scooterId: 'C45ZA1', pm25: 2.40, pm10: 3.50, temp: 27.51, hum: 49.20, atm: 8.00 }"
+Get @2064ms AT+CIPSEND=83,"{ scooterId: 'C45ZA1', pm25: 2.40, pm10: 3.50, temp: 27.51, hum: 49.20, atm: 8.00 }"
+
+OK
+
++CIPRCV:105,127.0.0.1:63107 said { scooterId: 'C45ZA1', pm25: 2.40, pm10: 3.50, temp: 27.51, hum: 49.20, atm: 8.00 }
+
+
+Cmd: AT+CIPSTATUS?
+Get @1068ms AT+CIPSTATUS?
+
+
++CIPSTATUS:0,CONNECT OK  
+1,IP INITIAL  
+2,IP INITIAL  
+3,IP INITIAL  
+4,IP INITIAL  
+5,IP INITIAL  
+6,IP INITIAL  
+7,IP INITIAL  
+
+
+OK
+Status: CONNECT
+Getting data from Sensors
+Cmd: AT+CIPSEND=83,"{ scooterId: 'C45ZA1', pm25: 2.60, pm10: 3.90, temp: 27.51, hum: 49.18, atm: 9.00 }"
+Get @1999ms AT+CIPSEND=83,"{ scooterId: 'C45ZA1', pm25: 2.60, pm10: 3.90, temp: 27.51, hum: 49.18, atm: 9.00 }"
+
+OK
+
++CIPRCV:105,127.0.0.1:63107 said { scooterId: 'C45ZA1', pm25: 2.60, pm10: 3.90, temp: 27.51, hum: 49.18, atm: 9.00 }
+
+
+Cmd: AT+CIPCLOSE
+Get @1058ms AT+CIPCLOSE
+
+OK
+Cmd: AT+CIPSTATUS?
+Get @1070ms AT+CIPSTATUS?
+
+
++CIPSTATUS:0,IP CLOSE  
+1,IP INITIAL  
+2,IP INITIAL  
+3,IP INITIAL  
+4,IP INITIAL  
+5,IP INITIAL  
+6,IP INITIAL  
+7,IP INITIAL  
+
+
+OK
+Status: CLOSE
+Cmd: AT+CIPSHUT
+Get @1502ms AT+CIPSHUT
+
+OK
+Cmd: AT+CIPSTATUS?
+Get @1069ms AT+CIPSTATUS?
+
+
++CIPSTATUS:0,IP INITIAL  
+1,IP INITIAL  
+2,IP INITIAL  
+3,IP INITIAL  
+4,IP INITIAL  
+5,IP INITIAL  
+6,IP INITIAL  
+7,IP INITIAL  
+
+
+OK
+Status: INITIAL
+Getting data from GPS-TX Pin
+Latitude1= 0.000000 Longitude1= 0.000000
+Getting data from GPS-TX Pin done
+Cmd: AT+GPSRD=5
+Get @1059ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Get @1056ms AT+GPSRD=0
+
+OK
+Getting data from Sensors: Tests
+Message: { scooterId: 'C45ZA1', pm25: 2.60, pm10: 3.90, temp: 27.53, hum: 49.16, atm: 1002.96 }
+
+

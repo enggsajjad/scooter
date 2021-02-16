@@ -1,0 +1,30 @@
+AT
+
+OK
+AT+GPS=1
+
+OK
+AT+COPS=0
+
+OK
+AT+CGATT=1
+
++CTZV:21/02/11,03:10:47,+01
+
+OK
+AT+CSTT="pinternet.interkom.de","",""
+
+OK
+AT+CIICR 
+
+OK
+AT+CIPSTART="TCP","0.tcp.ngrok.io",12032
+
+CONNECT OK
+
+OK
+AT+CIPSEND=138,"{ scooterId: 'C45ZA1', pm25: 234, pm10: 110 }"
+
+OK
+
++CIPRCV:160,127.0.0.1:49915 said { scooterId: 'C45ZA1', pm25: 234, pm10: 110 }
