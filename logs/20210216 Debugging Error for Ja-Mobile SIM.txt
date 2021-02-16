@@ -1,0 +1,262 @@
+
+AT+RST=1
+
+OK
+Init...
+
++CIEV: "Charging",100%
+
+
++CREG: 2
+AT+GPS=1
+
+OK
+AT+CREG?
+
++CREG: 1,3
+
+OK
+AT+CREG=1
+
+OK
+AT+CGATT=1
+
++CREG: 2
+
+
++CME ERROR: 50
+
++CREG: 3
+
+AT+CGATT=1
+
++CGATT:1
+
+OK
+^STN: 38
+AT+CGATT=1
+
++CGATT:1
+
+OK
+AT+GPS=1
+
+OK
+AT+CREG=1
+
+OK
+AT+CGACT?
+
++CGACT: 0,0
+
+OK
+AT+CGDCONT?
+
+OK
+AT+CGDCONT=2,"IP","internet.telekom"
+
+OK
+AT+CGACT=2,1
+
++CME ERROR: 53
+AT+CGACT=1,2
+
++CME ERROR: 148
+AT+CGACT?
+
++CGACT: 0,0
+
+OK
+AT+CGDCONT?
+
++CGDCONT:2,"IP","internet.telekom","0.0.0.0",0,0
+
+OK
+AT+CGDCONT=0,"IP","internet.telekom"
+
++CME ERROR: 53
+AT+CGACT=?
+
++CGACT: (0,1)
+
+OK
+AT+CGACT=1
+
++CME ERROR: 148
+AT+CGACT=0
+
+OK
+AT+CGACT=1
+
++CME ERROR: 148
+AT+CGACT=2
+
++CME ERROR: 53
+AT+CGACT=3
+
++CME ERROR: 53
+AT+CGACT=1
+
++CME ERROR: 148
+AT+COPS=0
+
+COMMAND NO RESPONSE!
+
++CREG: 2
+
+
++CREG: 3
+
+AT+COPS=?
+
++COPS: (3,"E-Plus","E-Plus","26203"),(3,"Vodafone.de","Vodafone.de","26202")
+
+OK
+AT+CGACT=1,1
+
++CME ERROR: 148
+AT+COPS=26202
+
++CME ERROR: 53
+AT+COPS="26202"
+
++CME ERROR: 53
+AT+COPS=2
+
++CREG: 0
+
+
+OK
+AT+COPS=1
+
++CME ERROR: 53
+AT+COPS=3
+
++CME ERROR: 53
+AT+CIID
+
++CME ERROR: 58
+AT+CIID?
+
++CME ERROR: 58
+AT+CCID?
+
++CME ERROR: 53
+AT
+
+OK
+AT+CCID
+
++CCID: 89490240001838819865
+
+OK
++CIEV: "Complete the Charge",100%
+
+ATD*99***1 # 
+
++CME ERROR: 58
+ATD*99***1#
+
+CONNECT
+D‘‘À+ÒŒ\ÅŒpSaÌàHello Loop Testing....
+received....
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
++CREG: 2
+
+AT
+
+OK
+ATD*99***1#
+
+CONNECT
+AT
+
+OK
+AT
+
+OK
+AT
+
+OK
+AT
+
+OK
+AT
+
+OK
+AT+CREG?
+
++CREG: 1,0
+
+OK
+AT+CREG=1
+
+OK
+AT+CREG?
+
++CREG: 1,0
+
+OK
+AT+GPS=1
+
+OK
+AT+CREG=1
+
+OK
+AT+CREG?
+
++CREG: 1,0
+
+OK
+AT+COPS=0
+
++CME ERROR: 3
+AT+COPS=0
+
++CME ERROR: 3
+AT+CGACT?
+
++CGACT: 0,0
+
+OK
+AT+CGATT=1
+
+COMMAND NO RESPONSE!
+AT+CGATT=1
+
++CGATT:1
+
+OK
+AT+CGACT?
+
++CGACT: 0,0
+
+OK
+AT+CGDCONT=1,"IP","internet.telekom"
+
+OK
+AT+CGDCONT?
+
++CGDCONT:1,"IP","internet.telekom","0.0.0.0",0,0
+
+OK
+AT+CGACT=1,1
+
++CME ERROR: 148
+^STN: 38
+AT+CGACT=1,1
+
++CME ERROR: 148
