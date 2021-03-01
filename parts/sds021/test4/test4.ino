@@ -78,10 +78,8 @@ void setup() {
   // put your setup code here, to run once:
     MY_DBG("[Setup] SDS_SERIAL... ");
     
-  //sds.begin(&SDS_SERIAL, SDS011_RXD, SDS011_TXD);  // initialize SDS011 sensor
-  //sds.begin(&SDS_SERIAL);  // initialize SDS011 sensor
-  //sds.begin((unsigned char)26,(unsigned char) 27);
-  sds.begin(&SDS_SERIAL,SDS011_RXD,SDS011_TXD);
+  //sds.begin(&SDS_SERIAL,SDS011_RXD,SDS011_TXD);
+  sds.begin((unsigned char)26,(unsigned char) 27);
 }
 
 void loop() {
