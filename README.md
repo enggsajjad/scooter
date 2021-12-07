@@ -19,21 +19,18 @@ Main code, integrated all
 ## Test
 Tests for individual components for different PCBs
 
-PCB#	EASY EDA Project	LAYOUT	Description	Code
-
-PCB#0	escooter_sajjad-rev2	PCB_PNR_9	Small PCB	scattered
-
-PCB#1	escooter_sajjad-rev3	PCB_PNR_11	PCB with charging, have some pins problem	testPCBRev0
-
-PCB#2	escooter_sajjad-rev4	PCB_PNR_12	PCB with re-layout 	testPCBRev1
-
-PCB#3	escooter_sajjad-rev5	PCB_PNR_13	PCB with further layout as per TI recommendations	testPCBRev2
-
-PCB#4	escooter_sajjad-rev6	PCB_PNR_14	PCB with TPS61023	testPCBRev2
 				
-Attempt | #1 | #2 | #3 | #4 | #5 | #6 | #7 | #8 | #9 | #10 | #11
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-Seconds | 301 | 283 | 290 | 286 | 289 | 285 | 287 | 287 | 272 | 276 | 269
+PCB# | EASY EDA Project | LAYOUT | Code | Description 
+--- | --- | --- | --- |--- 
+PCB#0 | escooter_sajjad-rev2 | PCB_PNR_9 | scattered | Small PCB 
+--- | --- | --- | --- |--- 
+PCB#1 | escooter_sajjad-rev3 | PCB_PNR_11 | testPCBRev0 | PCB with charging, have some pins problem	
+--- | --- | --- | --- |--- 
+PCB#2 | escooter_sajjad-rev4 | PCB_PNR_12 | testPCBRev1 | PCB with re-layout 
+--- | --- | --- | --- |--- 
+PCB#3 | escooter_sajjad-rev5 | PCB_PNR_13 | testPCBRev2 | PCB with further layout as per TI recommendations
+--- | --- | --- | --- |--- 
+PCB#4 | escooter_sajjad-rev6 | PCB_PNR_14 | testPCBRev2 | PCB with TPS61023
 
 
 ## Tobi Firmware
