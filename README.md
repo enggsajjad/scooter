@@ -23,7 +23,7 @@ Tests for individual components for different PCBs
 PCB# | EASY EDA Project | LAYOUT | Code | Description 
 --- | --- | --- | --- |--- 
 PCB#0 | escooter_sajjad-rev2 | PCB_PNR_9 | scattered | Small PCB 
-
+--- | --- | --- | --- |--- 
 PCB#1 | escooter_sajjad-rev3 | PCB_PNR_11 | testPCBRev0 | PCB with charging, have some pins problem	
 
 PCB#2 | escooter_sajjad-rev4 | PCB_PNR_12 | testPCBRev1 | PCB with re-layout 
