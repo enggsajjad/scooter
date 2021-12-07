@@ -9,9 +9,9 @@
 HardwareSerial SDS_SERIAL(2); // SDS011: use Serial 2 
 
 /// SDS011 TXD pin is connected at RXD of Serial2 Object
-#define SDS011_TXD  27
+#define SDS011_TXD  13
 /// SDS011 RXD pin is connected at TXD of Serial2 Object (no need to physically connect)
-#define SDS011_RXD  26
+#define SDS011_RXD  16
 
 
 /// Dust sensor object
@@ -73,13 +73,13 @@ bool status_sds;
 void setup() {
   delay(2000);
     // make serial monitor printing available
-  Serial.begin(9600);
+  Serial.begin(115200);
   
   // put your setup code here, to run once:
     MY_DBG("[Setup] SDS_SERIAL... ");
     
-  //sds.begin(&SDS_SERIAL,SDS011_RXD,SDS011_TXD);
-  sds.begin((unsigned char)26,(unsigned char) 27);
+  sds.begin(&SDS_SERIAL,SDS011_TXD,SDS011_RXD);
+  //sds.begin((unsigned char)26,(unsigned char) 27);
 }
 
 void loop() {
