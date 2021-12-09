@@ -18,7 +18,7 @@
 #define ERR 4
 /// Define the AiThinker Initialization End Detection String
 String initString = "READY";
-
+String initString1 = "Charge";
 /**************************************************************************/
 /*!
     @brief  Routine to read GSM data
@@ -189,6 +189,8 @@ char gsmCheckStatus(String cmd, int timeout)
     return 4;
   else if (rv == "CLOSED")//"IP CLOSE")
     return 5;
+  else if (rv == "PROCESSING")//"IP PROCESSING")
+    return 6;
 }
 
 
@@ -286,8 +288,8 @@ bool gsmCheckInitialization()
     for (i = 0; i < 10; i++)
     {
         String msg3 = String("");
-        msg3 = gsmSimpleRead( 1000, true);
-        if (msg3.indexOf(initString) >= 0)
+        msg3 = gsmSimpleRead( 3000, true);
+        if ((msg3.indexOf(initString) >= 0) or (msg3.indexOf(initString1) >= 0))
         //if (msg3.indexOf("READY") >= 0)
         {
             usbSerial.println("A9/A9G Module READY.");

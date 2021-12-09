@@ -12,8 +12,8 @@ Testing individual parts:
 ## logs
 Different logs
 
-## esp32scooter recent code
-Main code, integrated all
+## esp32scooter 
+Main code, integrated all, that is recent code
 
 
 ## Test

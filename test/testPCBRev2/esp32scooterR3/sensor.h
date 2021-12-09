@@ -20,7 +20,8 @@
 #define BME_SCL 18//22
 
 /// BME280 Pressure & Humidity Sensor Object 
-Adafruit_BME280 bme; 
+#define SEALEVELPRESSURE_HPA (1013.25)
+//Adafruit_BME280 bme; 
 
 /// temperature values
 float temp;

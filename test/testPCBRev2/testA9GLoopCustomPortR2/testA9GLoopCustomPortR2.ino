@@ -14,13 +14,14 @@ unsigned long previousMillis = 0;
 int i=0;
 #define gprsPWR  26
 //SoftwareSerial gpsSerial(12,13);
+char resetCntr;
 void setup()
 {
   delay(100);
-  Serial.begin(115200,SERIAL_8N1,3,1);
+  Serial.begin(115200,SERIAL_8N1,3,1);//9600 will not work as GPRS TX/RS works at 115200
   //Serial.begin(115200,SERIAL_8N1,2,15);//PCB2 USB-SERIAL Port at SDS Header begin(baud,recv, trans)
   //Serial.begin(115200,SERIAL_8N1,5,21);//PCB2 USB-SERIAL Port at GPIO Header
-  Serial.println("Hello Loop Testing....");
+
   gsmSerial.begin(115200,SERIAL_8N1, 27,14);//PCB2 A9G GPRS 
   gpsSerial.begin(9600,SERIAL_8N1, 13,12);//PCB2 A9G GPS DIRECT
   //gpsSerial.begin(9600);//pcb2 gps
@@ -35,14 +36,18 @@ void setup()
   digitalWrite(LED2, 1);
   digitalWrite(LED3, 0);
   //just after reseting, pull down the pwr key
-
+  Serial.println("Hello Loop Testing....");
   
   delay(100);
   digitalWrite(gprsPWR, LOW);
   delay(3000);
   digitalWrite(gprsPWR, HIGH);
-  
-
+  Serial.println("gprsPWR....");
+  Serial.println(resetCntr);
+  Serial.println(resetCntr,DEC);
+  resetCntr++;
+  Serial.println(resetCntr);
+  Serial.println(resetCntr,DEC);
 }
 
 void loop()

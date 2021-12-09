@@ -18,6 +18,9 @@
 
 unsigned long previousMillis = 0; 
 int i=0;
+
+  bool wireStatus = Wire1.begin(BME_SDA, BME_SCL);
+  Adafruit_BME680 bme(&Wire1);
 /**************************************************************************/
 /*!
     @brief  initialization of peripherals attached to ESP32 board
@@ -32,9 +35,10 @@ void setup()
   pinMode(LED1, OUTPUT);
   pinMode(LED2, OUTPUT);
   pinMode(LED3, OUTPUT);
-  
+  pinMode(gprsPWR, OUTPUT);
+  digitalWrite(gprsPWR, HIGH);
+  rgbSetColor(noColor);
 
-   
   gsmSerial.begin(gprsBaud, SERIAL_8N1, recv_from_gprs, trans_to_gprs);
   //gpsSerial.begin(gpsBaud, SERIAL_8N1, recv_from_gps, trans_to_gps);
   //Serial.begin(gpsBaud, SERIAL_8N1, recv_from_gps,trans_to_usb);//        rxPin = 3; txPin = 1;
@@ -57,8 +61,12 @@ void setup()
   /*digitalWrite(gprsPWR, LOW);
   delay(3000);
   digitalWrite(gprsPWR, HIGH);
-  delay(5000);*/
-  delay(8000);
+  delay(5000);
+  delay(8000);*/
+  delay(1000);
+  digitalWrite(gprsPWR, LOW);
+  delay(3000);
+  digitalWrite(gprsPWR, HIGH);
   
   ModuleState=gsmCheckInitialization();
   if(ModuleState==false)//if it's off, turn on it.
@@ -81,14 +89,24 @@ void setup()
   }
     
   sds.begin(&SDS_SERIAL, recv_from_sds, trans_to_sds);  // initialize SDS011 sensor
-  bool wireStatus = Wire1.begin(BME_SDA, BME_SCL);
-  if (!wireStatus) usbSerial.println("Wire1 failed to init");
-  bmeAddress = BME_ADDR;
-  use_bme280 = bme.begin(bmeAddress, &Wire1);
 
+  bmeAddress = BME_ADDR;
+
+  if (!bme.begin(bmeAddress, true)) {
+    Serial.println("Could not find a valid BME680 sensor, check wiring!");
+    while (1);
+  }
+  
+  // Set up oversampling and filter initialization
+  bme.setTemperatureOversampling(BME680_OS_8X);
+  bme.setHumidityOversampling(BME680_OS_2X);
+  bme.setPressureOversampling(BME680_OS_4X);
+  bme.setIIRFilterSize(BME680_FILTER_SIZE_3);
+  bme.setGasHeater(320, 150); // 320*C for 150 ms
+  
   rxState = set_gprsd_off;
   
-  rgbSetColor(noColor);
+  
   delay(1000);
   rgbSetColor(bColor);
   delay(1000);
@@ -182,12 +200,16 @@ void loop()
           usbSerial.println("Status: CLOSE");
           rxState = set_cipstart;
           break;
+        case 6:
+          usbSerial.println("Status: PROCESSING");
+          rxState = set_gpsrd_read;
+          break;
       }
       delay(1500);
       break;
     case set_cipstart:
       #ifdef THINGSPEAK
-        r = gsmCommand("AT+CIPSTART=\"TCP\",\"api.thingspeak.com\",80", "CONNECT OK", "yy", 4000, 1);//for thinkspeak
+        r = gsmCommand("AT+CIPSTART=\"TCP\",\"api.thingspeak.com\",80", "CONNECT OK", "yy", 8000, 1);//for thinkspeak
       #else
         //r = gsmCommand("AT+CIPSTART=\"TCP\",\"" + host + "\"," + port, "CONNECT OK", "yy", 4000, 1);//for ngrok TCP tunneling
       #endif
@@ -262,18 +284,26 @@ void loop()
     case sensor_data:
       MY_DBGln("Getting data from Sensors");
       status_sds = sds.read(&pm25, &pm10);
-      pm25 = random(20, 25);//debugging
-      pm10 = random(30, 35);//debugging
+      //debugging
+      //pm25 = random(20, 25);//debugging
+      //pm10 = random(30, 35);//debugging
       //status_sds = sds.dataQueryCmd(&pm10, &pm25 );
       // put your main code here, to run repeatedly:
-      temp = random(2, 10);//debugging//bme.readTemperature();
-      hum = random(10, 20);//debugging//bme.readHumidity();
-      atm = cntr1;//bme.readPressure() / 100;
+      if (! bme.performReading()) {
+        Serial.println("Failed to perform reading :(");
+      }
+      temp = bme.temperature;
+      hum = bme.humidity;
+      atm = bme.pressure / 100.0;
+      //debugging
+      //temp = random(2, 10);
+      //hum = random(10, 20);
+      //atm = cntr1;//bme.readPressure() / 100;
       #ifdef THINGSPEAK
         //channel: eScooter
-        //message = "GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=" + String(temp) +"&field2="+String(hum) +"&field3="+String(atm) +"&field4="+String(pm25) +"&field5="+String(pm10) +"&field6="+String(loc);//for thinkspeak
+        message = "GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=" + String(temp) +"&field2="+String(hum) +"&field3="+String(atm) +"&field4="+String(pm25) +"&field5="+String(pm10) +"&field6="+String(loc);//for thinkspeak
         //channel: eScooter2 
-        message = "GET https://api.thingspeak.com/update?api_key=TJ85HJBF1XTV1GH7&field1=" + String(temp) +"&field2="+String(hum) +"&field3="+String(atm) +"&field4="+String(pm25) +"&field5="+String(pm10) +"&field6="+String(loc);//for thinkspeak
+        //message = "GET https://api.thingspeak.com/update?api_key=TJ85HJBF1XTV1GH7&field1=" + String(temp) +"&field2="+String(hum) +"&field3="+String(atm) +"&field4="+String(pm25) +"&field5="+String(pm10) +"&field6="+String(loc);//for thinkspeak
       #else
         message = "{ Id: \'A1\', pm25: " + String(pm25) + ", pm10: " + String(pm10) + ", temp: " + String(temp) + ", hum: " + String(hum) + ", atm: " + String(atm++) + " , loc: " + loc + " }";//for ngrok TCP tunneling
       #endif
@@ -290,7 +320,7 @@ void loop()
       #else
         //r = gsmCommand("AT+CIPSEND=" + String(message.length()) + ",\"" + message + "\"", "OK", "yy", 10000, 1);//for ngrok TCP tunneling
       #endif      
-      
+      rgbSetColor(bColor);
 
       delay(6000);
       if (r == OK)
@@ -307,7 +337,10 @@ void loop()
           rxState = chk_cipstatus;
       }
       else
+      {
         rxState = error_state;
+      }
+      rgbSetColor(noColor);
       break;
       
     case set_cipclose:
@@ -338,7 +371,7 @@ void loop()
     case error_state:
       rgbSetColor(rColor);
       MY_DBG("Error No.");
-      MY_DBGln(resetCntr);
+      MY_DBGln(resetCntr+48);
       resetCntr++;
       if (resetCntr < 2)
       {

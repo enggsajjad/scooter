@@ -250,6 +250,8 @@
 #include <HardwareSerial.h>
 #include <Adafruit_Sensor.h>
 #include <Adafruit_BME280.h>
+#include "Adafruit_BME680.h"
+
 #include <DHT.h>
 #include <Wire.h>
 //#include <time.h>
@@ -327,7 +329,7 @@ String loc;
 bool running = true;
 const char* msg1;
 bool ModuleState=false;
-char resetCntr;
+unsigned char resetCntr;
 bool led=false;
 void displayInfo()
 {
