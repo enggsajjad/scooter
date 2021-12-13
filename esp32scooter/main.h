@@ -271,30 +271,34 @@
 #define bColor 6
 #define noColor 7
 
-#define set_gprsd_off 0
-#define set_gps_on 1
-#define chk_creg 2
-#define chk_cgact 3
-#define set_cgatt_on 4
-#define chk_cgdcont 9
-#define set_cgdcont_on 6
-#define set_cgact_on 7
-#define chk_cgact_again 8
-#define chk_cipstatus 5
-#define set_gpsrd_read 40
-#define set_cipstart 10
-#define read_gps_msg 127
-#define read_gps_done 128
-#define set_gpsrd_off 129
-#define sensor_data 126
-#define set_cipsend 41
-#define set_cipclose 42
-#define chk_cipstatus_again 43
-#define set_cipshut 50
-#define dummy_state 51
-#define error_state 52
-#define hang_state 53
 
+#define chk_sim_cpin 1
+#define set_network 2
+#define chk_network_register 3
+#define set_gps 4
+#define attach_ps 5
+#define check_context 6
+#define set_context 7
+#define select_context 8
+#define show_context 9
+#define chk_cip_status 10
+#define set_cipstart 11
+#define set_gpsrd_read 12
+#define read_gps_msg 13
+#define read_gps_done 14
+#define set_gpsrd_off 15
+#define sensor_data 16
+#define set_cipsend 17
+#define set_cipsend_complete 18
+#define chk_cipstatus_again 19
+#define set_cipclose 20
+#define set_cipshut 21
+#define dummy_state 22
+#define timeout_state 23
+#define error_state 24
+#define hang_state 25
+#define bme_setting_error 26
+#define bme_reading_error 27
 /// GPS Decoder for NMEA Formate
 TinyGPSPlus tiny;
 
