@@ -56,30 +56,28 @@ void setup()
 
   //delay(1000);
   //digitalWrite(gprsPWR, LOW);
-  delay(500);
+  delay(2000);
   digitalWrite(gprsPWR, HIGH);
   Serial.println("...");
 
-  if (sendATcommand3((char*)message.c_str(), "+CREG: 2", "ERROR", 120000) == 1)
-  {
-    Serial.println("Init Ready Incomplete!");
-    Serial.println("Check PWR and RESET of the A9G or SIM Serivices");
-  }
-  else
+  char r1 = sendATcommand3( "+CREG: 2", "ERROR", 60000);
+  char r2 = sendATcommand3( "READY", "ERROR", 60000);
+  if ( (r1==0) and (r2 ==0))
   {
     Serial.println("Init Timeout!");
     Serial.println("Check PWR and RESET of the A9G");
   }
-
-  if (sendATcommand3((char*)message.c_str(), "READY", "ERROR", 120000) == 1)
+  else
+  if ( (r1==1) and (r2 ==1))
   {
     Serial.println("Init Ready Done!");
   }
   else
   {
-    Serial.println("Init Timeout!");
-    Serial.println("Check PWR and RESET of the A9G");
+    Serial.println("Init Error!");
+    Serial.println("Check PWR and RESET of the A9G or SIM Serivices");
   }
+    power_on();
   /*
   ModuleState=gsmCheckInitialization();
   if(ModuleState==false)//if it's off, turn on it.
@@ -125,14 +123,14 @@ void setup()
   rgbSetColor(gColor);
   /////////////
 
-    power_on();
+
     
-    delay(3000);
+    //delay(3000);
     
     //sets the PIN code
     //snprintf(aux_str, sizeof(aux_str), "AT+CPIN=%s", pin);
     //sendATcommand(aux_str, "OK", 2000);
-    sendATcommand("AT+CPIN?", "OK", 2000);
+    sendATcommand2("AT+CPIN?", "READY", "SIM", 2000);
     
     delay(3000);
     
@@ -176,6 +174,73 @@ void setup()
     @returns void
 */
 /**************************************************************************/
+void loop(){
+    
+ 
+    // Selects Single-connection mode
+    if (sendATcommand2("AT+CIPMUX=0", "OK", "ERROR", 2000) == 1)
+    {
+        // Waits for status IP INITIAL
+        while(sendATcommand2("AT+CIPSTATUS", "INITIAL", "CLOSED", 2000)  == 0 );
+        delay(5000);
+        
+                    Serial.println("Opening TCP");
+
+                    //snprintf(aux_str, sizeof(aux_str), "AT+CIPSTART=\"TCP\",\"%s\",%d", IP_address, 80);
+                    message = "AT+CIPSTART=\"TCP\",\"api.thingspeak.com\",80";
+                    // Opens a TCP socket
+                    //if (sendATcommand2(aux_str, "CONNECT OK", "CONNECT FAIL", 30000) == 1)
+                    if (sendATcommand2((char*)message.c_str(), "CONNECT OK", "CONNECT FAIL", 30000) == 1)
+                    {
+                        Serial.println("Connected");
+                        pm25 = random(20, 25);//debugging
+                        pm10 = random(30, 35);//debugging
+                        temp = random(2, 10);
+                        hum = random(10, 20);
+                        atm = random(13, 20);//bme.readPressure() / 100;
+                        loc = "Test Locations";
+                        message = "GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=" + String(temp) +"&field2="+String(hum) +"&field3="+String(atm) +"&field4="+String(pm25) +"&field5="+String(pm10) +"&field6="+String(loc);//for thinkspeak
+                        //message.toCharArray(ip_data, 200);
+    
+                        // Sends some data to the TCP socket
+                        //sprintf(aux_str,"AT+CIPSEND=%d", strlen(ip_data));
+
+                        char aux_str[10];
+                        aux_str[0] = 26;
+
+                        //if (sendATcommand2(aux_str, ">", "ERROR", 10000) == 1)    
+                        if (sendATcommand2("AT+CIPSEND", ">", "ERROR", 10000) == 1)    
+                        {
+                            Serial.println("Sending...");
+                            //gsmSerial.println(message);
+                            sendATcommand2((char*)message.c_str(), "ERROR", "ERROR", 500); //== 0)
+                            //sendATcommand2(ip_data, "+CIPRCV", "ERROR", 10000);
+                           if( sendATcommand2(aux_str, "CLOSED", "ERROR", 10000) == 1)
+                           {
+                            Serial.println("Sent!");
+                            
+                            }
+
+                        }
+                        
+                        // Closes the socket
+                        Serial.println("Closing...");
+                        sendATcommand2("AT+CIPCLOSE", "CLOSE", "ERROR", 10000);
+                    }
+                    else
+                    {
+                        Serial.println("Error opening the connection");
+                    }  
+
+    }
+    else
+    {
+        Serial.println("Error setting the single connection");
+    }
+    Serial.println("Shutting...");
+    sendATcommand2("AT+CIPSHUT", "OK", "ERROR", 10000);
+    delay(1000);
+}
 
 void loop2()
 {
@@ -497,80 +562,13 @@ void loopSerial(void)
     digitalWrite(LED3, (ii>>2)&1);
   }
 }
-void loop(){
-    
- 
-    // Selects Single-connection mode
-    if (sendATcommand2("AT+CIPMUX=0", "OK", "ERROR", 2000) == 1)
-    {
-        // Waits for status IP INITIAL
-        while(sendATcommand("AT+CIPSTATUS", "INITIAL", 2000)  == 0 );
-        delay(5000);
-        
-                    Serial.println("Opening TCP");
-
-                    //snprintf(aux_str, sizeof(aux_str), "AT+CIPSTART=\"TCP\",\"%s\",%d", IP_address, 80);
-                    message = "AT+CIPSTART=\"TCP\",\"api.thingspeak.com\",80";
-                    // Opens a TCP socket
-                    //if (sendATcommand2(aux_str, "CONNECT OK", "CONNECT FAIL", 30000) == 1)
-                    if (sendATcommand2((char*)message.c_str(), "CONNECT OK", "CONNECT FAIL", 30000) == 1)
-                    {
-                        Serial.println("Connected");
-                        pm25 = random(20, 25);//debugging
-                        pm10 = random(30, 35);//debugging
-                        temp = random(2, 10);
-                        hum = random(10, 20);
-                        atm = random(13, 20);//bme.readPressure() / 100;
-                        loc = "Test Locations";
-                        message = "GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=" + String(temp) +"&field2="+String(hum) +"&field3="+String(atm) +"&field4="+String(pm25) +"&field5="+String(pm10) +"&field6="+String(loc);//for thinkspeak
-                        //message.toCharArray(ip_data, 200);
-    
-                        // Sends some data to the TCP socket
-                        //sprintf(aux_str,"AT+CIPSEND=%d", strlen(ip_data));
-
-                        char aux_str[10];
-                        aux_str[0] = 26;
-
-                        //if (sendATcommand2(aux_str, ">", "ERROR", 10000) == 1)    
-                        if (sendATcommand2("AT+CIPSEND", ">", "ERROR", 10000) == 1)    
-                        {
-                            Serial.println("Sending...");
-                            //gsmSerial.println(message);
-                            sendATcommand2((char*)message.c_str(), "ERROR", "ERROR", 500); //== 0)
-                            //sendATcommand2(ip_data, "+CIPRCV", "ERROR", 10000);
-                           if( sendATcommand2(aux_str, "CLOSED", "ERROR", 10000) == 1)
-                           {
-                            Serial.println("Sent!");
-                            
-                            }
-
-                        }
-                        
-                        // Closes the socket
-                        Serial.println("Closing...");
-                        sendATcommand2("AT+CIPCLOSE", "CLOSE", "ERROR", 10000);
-                    }
-                    else
-                    {
-                        Serial.println("Error opening the connection");
-                    }  
-
-    }
-    else
-    {
-        Serial.println("Error setting the single connection");
-    }
-    Serial.println("Shutting...");
-    sendATcommand2("AT+CIPSHUT", "OK", "ERROR", 10000);
-    delay(1000);
-}
 
 void power_on(){
 
     uint8_t answer=0;
     
     // checks if the module is started
-    answer = sendATcommand("AT", "OK", 2000);
+    answer = sendATcommand2("AT", "OK", "ERROR", 1000);
     if (answer == 0)
     {
         // power on pulse
@@ -580,52 +578,10 @@ void power_on(){
     
         // waits for an answer from the module
         while(answer == 0){     // Send AT every two seconds and wait for the answer
-            answer = sendATcommand("AT", "OK", 2000);    
+            answer = sendATcommand2("AT", "OK", "ERROR", 1000);    
         }
     }
     
-}
-
-int8_t sendATcommand(char* ATcommand, char* expected_answer, unsigned int timeout){
-
-    uint8_t answer=0;
-    int  x=0;
-    char resp[300];
-    unsigned long previous;
-
-    memset(resp, '\0',300);    // Initialize the string
-
-    delay(100);
-
-    while( gsmSerial.available() > 0) gsmSerial.read();    // Clean the input buffer
-
-    gsmSerial.println(ATcommand);    // Send the AT command 
-
-
-        x = 0;
-    previous = millis();
-
-    // this loop waits for the answer
-    do{
-        if(gsmSerial.available() != 0){    
-            // if there are data in the UART input buffer, reads it and checks for the asnwer
-            resp[x] = gsmSerial.read();
-            //Serial.print(resp[x]);
-            x++;
-            // check if the desired answer  is in the resp of the module
-            if (strstr(resp, expected_answer) != NULL)    
-            {
-                answer = 1;
-            }
-        }
-    }
-
-    // Waits for the asnwer with time out
-    while((answer == 0) && ((millis() - previous) < timeout));    
-    Serial.println("Resp:");
-    Serial.println(resp);
-    Serial.println("----");
-        return answer;
 }
 
 int8_t sendATcommand2(char* ATcommand, char* expected_answer1, 
@@ -670,10 +626,11 @@ int8_t sendATcommand2(char* ATcommand, char* expected_answer1,
     Serial.println("Resp:");
     Serial.println(resp);
     Serial.println("----");
+
     return answer;
 }
 
-int8_t sendATcommand3(char* ATcommand, char* expected_answer1, 
+int8_t sendATcommand3( char* expected_answer1, 
         char* expected_answer2, unsigned int timeout){
 
     uint8_t answer=0;
