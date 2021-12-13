@@ -54,7 +54,7 @@ void IRAM_ATTR onTimer()
   if (interruptCounter==currentTimeout)
   {
     interruptCounter=0;
-    Serial.println("Timeout: "+ String(currentTimeout) +"s");
+    usbSerial.println("Timeout: "+ String(currentTimeout) +"s");
     //Err=TIMEOUT;
     //rxState = current;
     rxState = 102;

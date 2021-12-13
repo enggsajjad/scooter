@@ -14,7 +14,7 @@ unsigned long previousMillis = 0;
 int i=0;
 #define gprsPWR  26
 //SoftwareSerial gpsSerial(12,13);
-char resetCntr;
+
 void setup()
 {
   delay(100);
@@ -30,7 +30,8 @@ void setup()
   pinMode(LED2, OUTPUT);
   pinMode(LED3, OUTPUT);
   pinMode(gprsPWR, OUTPUT);
-  digitalWrite(gprsPWR, HIGH);
+  //digitalWrite(gprsPWR, HIGH);
+  digitalWrite(gprsPWR, LOW);
   delay(1000);
   digitalWrite(LED1, 1);
   digitalWrite(LED2, 1);
@@ -38,16 +39,12 @@ void setup()
   //just after reseting, pull down the pwr key
   Serial.println("Hello Loop Testing....");
   
-  delay(100);
-  digitalWrite(gprsPWR, LOW);
+  //delay(100);
+  //digitalWrite(gprsPWR, LOW);
   delay(3000);
   digitalWrite(gprsPWR, HIGH);
   Serial.println("gprsPWR....");
-  Serial.println(resetCntr);
-  Serial.println(resetCntr,DEC);
-  resetCntr++;
-  Serial.println(resetCntr);
-  Serial.println(resetCntr,DEC);
+
 }
 
 void loop()

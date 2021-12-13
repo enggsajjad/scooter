@@ -63,7 +63,7 @@ byte gsmWaitFor(String response1, String response2, int timeout)
     reply = gsmRead();
     if (reply != "") 
     {
-      MY_DBG("Get @");
+      MY_DBG("Res: @");
       MY_DBG((millis() - entry));
       MY_DBG("ms ");
       MY_DBG(reply);
@@ -139,7 +139,7 @@ String gsmWaitForResponse( int timeout)
     reply = gsmRead();
     if (reply != "") 
     {
-      MY_DBG("Get @");
+      MY_DBG("Status @");
       MY_DBG((millis() - entry));
       MY_DBG("ms ");
       MY_DBG(reply);
@@ -247,7 +247,7 @@ String gsmSimpleRead( const int timeout, boolean debug)
     }
     if (debug)
     {
-        MY_DBGln(response);
+        MY_DBG(response);
     }
     return response;
 }
@@ -267,7 +267,7 @@ bool gsmCheckATCommunication()
         msg3 = gsmSimpleSendAndRead("AT", 1000, true);
         if (msg3.indexOf("OK") >= 0)
         {
-            usbSerial.println("A9/A9G Module AT working.");
+            usbSerial.println("*****A9/A9G Module AT working.");
             state=true;
             return state;
         }
@@ -285,14 +285,14 @@ bool gsmCheckInitialization()
 {
     int i = 0;
     bool state=false;
-    for (i = 0; i < 10; i++)
+    for (i = 0; i < 100; i++)
     {
         String msg3 = String("");
-        msg3 = gsmSimpleRead( 3000, true);
-        if ((msg3.indexOf(initString) >= 0) or (msg3.indexOf(initString1) >= 0))
-        //if (msg3.indexOf("READY") >= 0)
+        msg3 = gsmSimpleRead( 10000, true);
+        //if ((msg3.indexOf(initString) >= 0) or (msg3.indexOf(initString1) >= 0))
+        if ((msg3.indexOf(initString) >= 0) )
         {
-            usbSerial.println("A9/A9G Module READY.");
+            usbSerial.println("*****A9/A9G Module READY.");
             state=true;
             return state;
         }

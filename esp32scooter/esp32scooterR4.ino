@@ -17,10 +17,11 @@
 #define TOTAL_RECORDS 10000//10
 
 unsigned long previousMillis = 0; 
-int i=0;
+int ii=0;
 
-  bool wireStatus = Wire1.begin(BME_SDA, BME_SCL);
-  Adafruit_BME680 bme(&Wire1);
+bool wireStatus = Wire1.begin(BME_SDA, BME_SCL);
+Adafruit_BME680 bme(&Wire1);
+
 /**************************************************************************/
 /*!
     @brief  initialization of peripherals attached to ESP32 board
@@ -31,53 +32,43 @@ int i=0;
 void setup() 
 {
   delay(100);
+
+  Serial.begin(usbBaud, SERIAL_8N1, recv_from_usb,trans_to_usb);
+  gsmSerial.begin(gprsBaud, SERIAL_8N1, recv_from_gprs, trans_to_gprs);
+  gpsSerial.begin(gpsBaud);
+
+  /*while (!Serial)
+  {
+      ; // wait for serial port to connect
+  }*/
   // initialize digital pin LED as an output.
   pinMode(LED1, OUTPUT);
   pinMode(LED2, OUTPUT);
   pinMode(LED3, OUTPUT);
   pinMode(gprsPWR, OUTPUT);
   //digitalWrite(gprsPWR, HIGH);
+  
   digitalWrite(gprsPWR, LOW);
+  delay(1000);
   rgbSetColor(noColor);
-
-  gsmSerial.begin(gprsBaud, SERIAL_8N1, recv_from_gprs, trans_to_gprs);
-  //gpsSerial.begin(gpsBaud, SERIAL_8N1, recv_from_gps, trans_to_gps);
-  //Serial.begin(gpsBaud, SERIAL_8N1, recv_from_gps,trans_to_usb);//        rxPin = 3; txPin = 1;
   
-  gpsSerial.begin(gpsBaud);
-  
-  /*pinMode(gprsPWR, OUTPUT);
-  pinMode(gprsRST, OUTPUT);
-  //pinMode(gprsLPWR, OUTPUT);
-  //digitalWrite(gprsRST, LOW);
-  //digitalWrite(gprsLPWR, HIGH);
-  digitalWrite(gprsPWR, HIGH);*/
+  Serial.print("Start");
 
-  usbSerial.begin(usbBaud, SERIAL_8N1, recv_from_usb,trans_to_usb);
-  while (!usbSerial)
-  {
-      ; // wait for serial port to connect
-  }
-  usbSerial.println("Start");
-  /*digitalWrite(gprsPWR, LOW);
-  delay(3000);
-  digitalWrite(gprsPWR, HIGH);
-  delay(5000);
-  delay(8000);*/
   //delay(1000);
   //digitalWrite(gprsPWR, LOW);
   delay(3000);
   digitalWrite(gprsPWR, HIGH);
+  Serial.println("...");
   
   ModuleState=gsmCheckInitialization();
   if(ModuleState==false)//if it's off, turn on it.
   {
-    usbSerial.println("Err: Now turnning the A9/A9G READY.");
+    Serial.println("Err: Now turnning the A9/A9G READY.");
     digitalWrite(gprsPWR, LOW);
     delay(3000);
     digitalWrite(gprsPWR, HIGH);
     ModuleState=gsmCheckInitialization();
-    usbSerial.println("Err: A9G not initialized, reset again!");
+    Serial.println("Err: A9G not initialized, reset again!");
     rgbSetColor(rColor);
     while(1);
   }
@@ -85,12 +76,7 @@ void setup()
   ModuleState=gsmCheckATCommunication();
   if(ModuleState==false)//if it's off, turn on it.
   {
-    /*digitalWrite(gprsPWR, LOW);
-    delay(3000);
-    digitalWrite(gprsPWR, HIGH);
-    delay(5000);
-    */
-    //usbSerial.println("Now turnning the A9/A9G on.");
+    //Serial.println("Now turnning the A9/A9G on.");
   }
     
   sds.begin(&SDS_SERIAL, recv_from_sds, trans_to_sds);  // initialize SDS011 sensor
@@ -99,7 +85,7 @@ void setup()
 
   if (!bme.begin(bmeAddress, true)) {
     Serial.println("Could not find a valid BME680 sensor, check wiring!");
-    while (1);
+    //while (1);
   }
   
   // Set up oversampling and filter initialization
@@ -116,6 +102,50 @@ void setup()
   rgbSetColor(bColor);
   delay(1000);
   rgbSetColor(gColor);
+  /////////////
+
+    power_on();
+    
+    delay(3000);
+    
+    //sets the PIN code
+    //snprintf(aux_str, sizeof(aux_str), "AT+CPIN=%s", pin);
+    //sendATcommand(aux_str, "OK", 2000);
+    sendATcommand("AT+CPIN?", "OK", 2000);
+    
+    delay(3000);
+    
+    Serial.println("Connecting to the network...");
+
+    if( sendATcommand2("AT+CREG?", "+CREG: 1,1", "+CREG: 0,5", 10000)== 1 )
+    {
+      Serial.println("Network Registered!");
+      if( sendATcommand2("AT+CGATT=1", "+CGATT:1", "OK", 60000)== 1 )
+      {
+        Serial.println("CGATT donoe!");
+        if( sendATcommand2("AT+CGDCONT?", "OK", "ERROR", 2000)== 1 )
+        {
+          Serial.println("CGDCONT? donoe!");
+          if( sendATcommand2("AT+CGDCONT=1,\"IP\",\"pinternet.interkom.de\"", "OK", "ERROR", 8000)== 1 )
+          {
+            Serial.println("CGDCONT=1 donoe!");
+            if( sendATcommand2("AT+CGDCONT?", "\"pinternet.interkom.de\"", "OK", 2000)== 1 )
+            {
+              Serial.println("CGDCONT? donoe!");
+              if( sendATcommand2("AT+CGACT=1,1", "OK", "ERROR", 60000)== 1 )
+              {
+                Serial.println("AT+CGACT=1,1 donoe!");
+              }
+            }
+          }
+        }
+      }
+    }
+
+    
+    
+    
+      
 
 }
 
@@ -126,7 +156,7 @@ void setup()
 */
 /**************************************************************************/
 
-void loop()
+void loop2()
 {
   switch(rxState)
   {
@@ -186,27 +216,27 @@ void loop()
       switch(resp)
       {
         case 1:
-          usbSerial.println("Status: INITIAL");
+          Serial.println("Status: INITIAL");
           rxState = set_cipstart;
           break;
         case 2:
-          usbSerial.println("Status: START");
+          Serial.println("Status: START");
           rxState = 20;
           break;
         case 3:
-          usbSerial.println("Status: GPRSACT");
+          Serial.println("Status: GPRSACT");
           rxState = 30;
           break;
         case 4:
-          usbSerial.println("Status: CONNECT");
+          Serial.println("Status: CONNECT");
           rxState = set_gpsrd_read;
           break;
         case 5:
-          usbSerial.println("Status: CLOSE");
+          Serial.println("Status: CLOSE");
           rxState = set_cipstart;
           break;
         case 6:
-          usbSerial.println("Status: PROCESSING");
+          Serial.println("Status: PROCESSING");
           rxState = set_gpsrd_read;
           break;
       }
@@ -234,7 +264,7 @@ void loop()
       while(running){
         if ( gsmSerial.available()) {
           result = gsmSerial.readStringUntil('\r');
-          //usbSerial.println(result);
+          //Serial.println(result);
           switch(cntr)
           {
             case 0:
@@ -249,24 +279,24 @@ void loop()
               if (result.indexOf("$GNVTG") > 0) 
               {
                 cntr = 0;
-                usbSerial.println("-----------");
-                usbSerial.println(msg);
-                usbSerial.println("-----------");
+                Serial.println("-----------");
+                Serial.println(msg);
+                Serial.println("-----------");
                 running = false;
                 //Converting to readables
                 /*msg1 = msg.c_str();
-                usbSerial.println("..-------------------");
-                usbSerial.println(msg1);
-                usbSerial.println("..-------------------");
+                Serial.println("..-------------------");
+                Serial.println(msg1);
+                Serial.println("..-------------------");
                 while (*msg1)
                 if(tiny.encode(*msg1++))
                   displayInfo();*/
                 //getting location string
                 loc = msg.substring(msg.indexOf("GNGGA")-1, msg.indexOf(",*")+4);
                 msg = "";
-                //usbSerial.println("-----------");
-                //usbSerial.println(loc);
-                //usbSerial.println("-----------");
+                //Serial.println("-----------");
+                //Serial.println(loc);
+                //Serial.println("-----------");
                 rxState = read_gps_done;   
               }
               break;
@@ -313,7 +343,7 @@ void loop()
       #else
         message = "{ Id: \'A1\', pm25: " + String(pm25) + ", pm10: " + String(pm10) + ", temp: " + String(temp) + ", hum: " + String(hum) + ", atm: " + String(atm++) + " , loc: " + loc + " }";//for ngrok TCP tunneling
       #endif
-      //usbSerial.println("Message: "+message);
+      //Serial.println("Message: "+message);
       rxState = set_cipsend;
       break;
     case set_cipsend:
@@ -323,7 +353,7 @@ void loop()
         gsmSerial.println(message);
         delay(100);
         gsmSerial.write(26);
-        usbSerial.print("\r\n");
+        Serial.print("\r\n");
         //r = gsmCommand("\r\n", "OK", "yy", 20000, 1);
         r = gsmCommand("\r\n", "CLOSED", "yy", 20000, 1);
         
@@ -363,7 +393,7 @@ void loop()
       switch(resp)
       {
         case 5:
-          usbSerial.println("Status: CLOSE");
+          Serial.println("Status: CLOSE");
           rxState = set_cipshut;
           break;
       }
@@ -399,7 +429,7 @@ void loop()
       //rgbSetColor(resetCntr++);
       //delay(1000);
       //if (resetCntr == 8) resetCntr = 0;
-      loop1();
+      loopSerial();
       break;
     case 20:
       break;
@@ -416,30 +446,209 @@ void loop()
 /**************************************************************************/
 void loop1()
 {
+  loopSerial();
+}
 
-  if (usbSerial.available())
+void loopSerial(void)
+{
+
+  if (Serial.available())
   {
-    gsmSerial.write(usbSerial.read());
+    gsmSerial.write(Serial.read());
   }
   if (gsmSerial.available())
   {
-    usbSerial.write(gsmSerial.read());
+    Serial.write(gsmSerial.read());
   }
   //Uncomment the following if you want to get the A9G GPS direct data
   /*if (gpsSerial.available())
   {
-    usbSerial.write(gpsSerial.read());
+    Serial.write(gpsSerial.read());
   }*/
 
   unsigned long currentMillis = millis();
   if (currentMillis - previousMillis >= 2000) {
     previousMillis = currentMillis;
-    i++;
-    if (i==8) i =0;
-    digitalWrite(LED1, i&1);
-    digitalWrite(LED2, (i>>1)&1);
-    digitalWrite(LED3, (i>>2)&1);
+    ii++;
+    if (ii==8) ii =0;
+    digitalWrite(LED1, ii&1);
+    digitalWrite(LED2, (ii>>1)&1);
+    digitalWrite(LED3, (ii>>2)&1);
   }
-
-
 }
+void loop(){
+    
+ 
+    // Selects Single-connection mode
+    if (sendATcommand2("AT+CIPMUX=0", "OK", "ERROR", 1000) == 1)
+    {
+        // Waits for status IP INITIAL
+        while(sendATcommand("AT+CIPSTATUS", "INITIAL", 1000)  == 0 );
+        delay(5000);
+        
+                    Serial.println("Opening TCP");
+
+                    //snprintf(aux_str, sizeof(aux_str), "AT+CIPSTART=\"TCP\",\"%s\",%d", IP_address, 80);
+                    message = "AT+CIPSTART=\"TCP\",\"api.thingspeak.com\",80";
+                    // Opens a TCP socket
+                    //if (sendATcommand2(aux_str, "CONNECT OK", "CONNECT FAIL", 30000) == 1)
+                    if (sendATcommand2((char*)message.c_str(), "CONNECT OK", "CONNECT FAIL", 30000) == 1)
+                    {
+                        Serial.println("Connected");
+                        pm25 = random(20, 25);//debugging
+                        pm10 = random(30, 35);//debugging
+                        temp = random(2, 10);
+                        hum = random(10, 20);
+                        atm = random(13, 20);//bme.readPressure() / 100;
+                        loc = "Test Locations";
+                        message = "GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=" + String(temp) +"&field2="+String(hum) +"&field3="+String(atm) +"&field4="+String(pm25) +"&field5="+String(pm10) +"&field6="+String(loc);//for thinkspeak
+                        //message.toCharArray(ip_data, 200);
+    
+                        // Sends some data to the TCP socket
+                        //sprintf(aux_str,"AT+CIPSEND=%d", strlen(ip_data));
+
+                        char aux_str[10];
+                        aux_str[0] = 26;
+
+                        //if (sendATcommand2(aux_str, ">", "ERROR", 10000) == 1)    
+                        if (sendATcommand2("AT+CIPSEND", ">", "ERROR", 10000) == 1)    
+                        {
+                            Serial.println("Sending...");
+                            //gsmSerial.println(message);
+                            sendATcommand2((char*)message.c_str(), "ERROR", "ERROR", 500); //== 0)
+                            //sendATcommand2(ip_data, "+CIPRCV", "ERROR", 10000);
+                           if( sendATcommand2(aux_str, "CLOSED", "ERROR", 10000) == 1)
+                           {
+                            Serial.println("Sent!");
+                            
+                            }
+
+                        }
+                        
+                        // Closes the socket
+                        Serial.println("Closing...");
+                        sendATcommand2("AT+CIPCLOSE", "CLOSE", "ERROR", 10000);
+                    }
+                    else
+                    {
+                        Serial.println("Error opening the connection");
+                    }  
+
+    }
+    else
+    {
+        Serial.println("Error setting the single connection");
+    }
+    Serial.println("Shutting...");
+    sendATcommand2("AT+CIPSHUT", "OK", "ERROR", 10000);
+    delay(1000);
+}
+
+void power_on(){
+
+    uint8_t answer=0;
+    
+    // checks if the module is started
+    answer = sendATcommand("AT", "OK", 2000);
+    if (answer == 0)
+    {
+        // power on pulse
+        digitalWrite(gprsPWR,LOW);
+        delay(3000);
+        digitalWrite(gprsPWR,HIGH);
+    
+        // waits for an answer from the module
+        while(answer == 0){     // Send AT every two seconds and wait for the answer
+            answer = sendATcommand("AT", "OK", 2000);    
+        }
+    }
+    
+}
+
+int8_t sendATcommand(char* ATcommand, char* expected_answer, unsigned int timeout){
+
+    uint8_t answer=0;
+    int  x=0;
+    char resp[300];
+    unsigned long previous;
+
+    memset(resp, '\0',300);    // Initialize the string
+
+    delay(100);
+
+    while( gsmSerial.available() > 0) gsmSerial.read();    // Clean the input buffer
+
+    gsmSerial.println(ATcommand);    // Send the AT command 
+
+
+        x = 0;
+    previous = millis();
+
+    // this loop waits for the answer
+    do{
+        if(gsmSerial.available() != 0){    
+            // if there are data in the UART input buffer, reads it and checks for the asnwer
+            resp[x] = gsmSerial.read();
+            //Serial.print(resp[x]);
+            x++;
+            // check if the desired answer  is in the resp of the module
+            if (strstr(resp, expected_answer) != NULL)    
+            {
+                answer = 1;
+            }
+        }
+    }
+
+    // Waits for the asnwer with time out
+    while((answer == 0) && ((millis() - previous) < timeout));    
+    Serial.println("Resp:");
+    Serial.println(resp);
+    Serial.println("----");
+        return answer;
+}
+
+int8_t sendATcommand2(char* ATcommand, char* expected_answer1, 
+        char* expected_answer2, unsigned int timeout){
+
+    uint8_t answer=0;
+    int  x=0;
+    char resp[300];
+    unsigned long previous;
+
+    memset(resp, '\0', 300);    // Initialize the string
+
+    delay(100);
+
+    while( gsmSerial.available() > 0) gsmSerial.read();    // Clean the input buffer
+
+    gsmSerial.println(ATcommand);    // Send the AT command 
+
+    x = 0;
+    previous = millis();
+
+    // this loop waits for the answer
+    do{
+        // if there are data in the UART input buffer, reads it and checks for the asnwer
+        if(gsmSerial.available() != 0){    
+            resp[x] = gsmSerial.read();
+            x++;
+            // check if the desired answer 1  is in the resp of the module
+            if (strstr(resp, expected_answer1) != NULL)    
+            {
+                answer = 1;
+            }
+            // check if the desired answer 2 is in the resp of the module
+            else if (strstr(resp, expected_answer2) != NULL)    
+            {
+                answer = 2;
+            }
+        }
+    }
+    // Waits for the asnwer with time out
+    while((answer == 0) && ((millis() - previous) < timeout));    
+    Serial.println("Resp:");
+    Serial.println(resp);
+    Serial.println("----");
+    return answer;
+}
+    

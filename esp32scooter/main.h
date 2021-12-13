@@ -219,14 +219,14 @@
 #endif 
 
 #ifdef MY_DEBUG
-  ///Define MY_DEB() for controlling serial.print debugging
-  #define MY_DBG(...) do {Serial.print( __VA_ARGS__ );} while (0)
-  ///Define MY_DEBln() for controlling serial.println debugging
-  #define MY_DBGln(...) do {Serial.println( __VA_ARGS__ );} while (0)
+  ///Define MY_DEB() for controlling usbSerial.print debugging
+  #define MY_DBG(...) do {usbSerial.print( __VA_ARGS__ );} while (0)
+  ///Define MY_DEBln() for controlling usbSerial.println debugging
+  #define MY_DBGln(...) do {usbSerial.println( __VA_ARGS__ );} while (0)
 #else
-  ///UnDefine MY_DEB() for controlling serial.print debugging
+  ///UnDefine MY_DEB() for controlling usbSerial.print debugging
   #define MY_DBG(...)
-  ///UnDefine MY_DEBln() for controlling serial.println debugging
+  ///UnDefine MY_DEBln() for controlling usbSerial.println debugging
   #define MY_DBGln(...)
 #endif // !MY_DEBUG
 
@@ -243,12 +243,15 @@
   #define ENABLE_SEND2LUFTDATEN false
 #endif
 
+
 //******************************************************** includes ***************************
 
 #include "src/lib/SDS011/SDS011.h"
 #include <HardwareSerial.h>
 #include <Adafruit_Sensor.h>
 #include <Adafruit_BME280.h>
+#include "Adafruit_BME680.h"
+
 #include <DHT.h>
 #include <Wire.h>
 //#include <time.h>
@@ -259,6 +262,38 @@
 #include <String.h>
 #include <TinyGPS++.h>
 
+#define rgbColor 0
+#define rgColor 1
+#define rbColor 2
+#define rColor 3
+#define gbColor 4
+#define gColor 5
+#define bColor 6
+#define noColor 7
+
+#define set_gprsd_off 0
+#define set_gps_on 1
+#define chk_creg 2
+#define chk_cgact 3
+#define set_cgatt_on 4
+#define chk_cgdcont 9
+#define set_cgdcont_on 6
+#define set_cgact_on 7
+#define chk_cgact_again 8
+#define chk_cipstatus 5
+#define set_gpsrd_read 40
+#define set_cipstart 10
+#define read_gps_msg 127
+#define read_gps_done 128
+#define set_gpsrd_off 129
+#define sensor_data 126
+#define set_cipsend 41
+#define set_cipclose 42
+#define chk_cipstatus_again 43
+#define set_cipshut 50
+#define dummy_state 51
+#define error_state 52
+#define hang_state 53
 
 /// GPS Decoder for NMEA Formate
 TinyGPSPlus tiny;
@@ -270,7 +305,7 @@ String message= "";
 /// TCP HOST
 String host = "0.tcp.ngrok.io";
 /// TCP Port
-String port = "12973";
+String port = "19731";
 /// Receive from Serial States
 int rxState = -1;
 /// Receive from Serial Next States
@@ -284,56 +319,97 @@ byte Err;
 char resp;
 /// counter to count total number of transmitted TCP packets
 int cntr;
+/// counter to count total number of transmitted TCP packets
+int cntr1;
 
-
-
+byte r;
+String result,msg;
+/// Location Message
+String loc;
+bool running = true;
+const char* msg1;
+bool ModuleState=false;
+unsigned char resetCntr;
+bool led=false;
 void displayInfo()
 {
-  Serial.print(F("Location: ")); 
+  usbSerial.print(F("Location: ")); 
   if (tiny.location.isValid())
   {
-    Serial.print(tiny.location.lat(), 6);
-    Serial.print(F(","));
-    Serial.print(tiny.location.lng(), 6);
+    usbSerial.print(tiny.location.lat(), 6);
+    usbSerial.print(F(","));
+    usbSerial.print(tiny.location.lng(), 6);
   }
   else
   {
-    Serial.print(F("INVALID"));
+    usbSerial.print(F("INVALID"));
   }
 
-  Serial.print(F("  Date/Time: "));
+  usbSerial.print(F("  Date/Time: "));
   if (tiny.date.isValid())
   {
-    Serial.print(tiny.date.month());
-    Serial.print(F("/"));
-    Serial.print(tiny.date.day());
-    Serial.print(F("/"));
-    Serial.print(tiny.date.year());
+    usbSerial.print(tiny.date.month());
+    usbSerial.print(F("/"));
+    usbSerial.print(tiny.date.day());
+    usbSerial.print(F("/"));
+    usbSerial.print(tiny.date.year());
   }
   else
   {
-    Serial.print(F("INVALID"));
+    usbSerial.print(F("INVALID"));
   }
 
-  Serial.print(F(" "));
+  usbSerial.print(F(" "));
   if (tiny.time.isValid())
   {
-    if (tiny.time.hour() < 10) Serial.print(F("0"));
-    Serial.print(tiny.time.hour());
-    Serial.print(F(":"));
-    if (tiny.time.minute() < 10) Serial.print(F("0"));
-    Serial.print(tiny.time.minute());
-    Serial.print(F(":"));
-    if (tiny.time.second() < 10) Serial.print(F("0"));
-    Serial.print(tiny.time.second());
-    Serial.print(F("."));
-    if (tiny.time.centisecond() < 10) Serial.print(F("0"));
-    Serial.print(tiny.time.centisecond());
+    if (tiny.time.hour() < 10) usbSerial.print(F("0"));
+    usbSerial.print(tiny.time.hour());
+    usbSerial.print(F(":"));
+    if (tiny.time.minute() < 10) usbSerial.print(F("0"));
+    usbSerial.print(tiny.time.minute());
+    usbSerial.print(F(":"));
+    if (tiny.time.second() < 10) usbSerial.print(F("0"));
+    usbSerial.print(tiny.time.second());
+    usbSerial.print(F("."));
+    if (tiny.time.centisecond() < 10) usbSerial.print(F("0"));
+    usbSerial.print(tiny.time.centisecond());
   }
   else
   {
-    Serial.print(F("INVALID"));
+    usbSerial.print(F("INVALID"));
   }
 
-  Serial.println();
+  usbSerial.println();
+}
+
+
+void rgbSetColor(int color)
+{
+  switch(color)
+  {
+    case rgbColor:
+      digitalWrite(LED1, 0); digitalWrite(LED2, 0); digitalWrite(LED3, 0);
+      break;
+    case rgColor:
+      digitalWrite(LED1, 0); digitalWrite(LED2, 0); digitalWrite(LED3, 1);
+      break;
+    case rbColor:
+      digitalWrite(LED1, 0); digitalWrite(LED2, 1); digitalWrite(LED3, 0);
+      break;
+    case rColor:
+      digitalWrite(LED1, 0); digitalWrite(LED2, 1); digitalWrite(LED3, 1);
+      break;
+    case gbColor:
+      digitalWrite(LED1, 1); digitalWrite(LED2, 0); digitalWrite(LED3, 0);
+      break;
+    case gColor:
+      digitalWrite(LED1, 1); digitalWrite(LED2, 0); digitalWrite(LED3, 1);
+      break;
+    case bColor:
+      digitalWrite(LED1, 1); digitalWrite(LED2, 1); digitalWrite(LED3, 0);
+      break;
+    case noColor:
+      digitalWrite(LED1, 1); digitalWrite(LED2, 1); digitalWrite(LED3, 1);
+      break;
+  }
 }
