@@ -56,10 +56,31 @@ void setup()
 
   //delay(1000);
   //digitalWrite(gprsPWR, LOW);
-  delay(3000);
+  delay(500);
   digitalWrite(gprsPWR, HIGH);
   Serial.println("...");
-  
+
+  if (sendATcommand3((char*)message.c_str(), "+CREG: 2", "ERROR", 120000) == 1)
+  {
+    Serial.println("Init Ready Incomplete!");
+    Serial.println("Check PWR and RESET of the A9G or SIM Serivices");
+  }
+  else
+  {
+    Serial.println("Init Timeout!");
+    Serial.println("Check PWR and RESET of the A9G");
+  }
+
+  if (sendATcommand3((char*)message.c_str(), "READY", "ERROR", 120000) == 1)
+  {
+    Serial.println("Init Ready Done!");
+  }
+  else
+  {
+    Serial.println("Init Timeout!");
+    Serial.println("Check PWR and RESET of the A9G");
+  }
+  /*
   ModuleState=gsmCheckInitialization();
   if(ModuleState==false)//if it's off, turn on it.
   {
@@ -78,7 +99,7 @@ void setup()
   {
     //Serial.println("Now turnning the A9/A9G on.");
   }
-    
+  */
   sds.begin(&SDS_SERIAL, recv_from_sds, trans_to_sds);  // initialize SDS011 sensor
 
   bmeAddress = BME_ADDR;
@@ -117,19 +138,19 @@ void setup()
     
     Serial.println("Connecting to the network...");
 
-    if( sendATcommand2("AT+CREG?", "+CREG: 1,1", "+CREG: 0,5", 10000)== 1 )
+    if( sendATcommand2("AT+CREG?", "+CREG: 1,1", "+CREG: 0,5", 60000)== 1 )
     {
       Serial.println("Network Registered!");
       if( sendATcommand2("AT+CGATT=1", "+CGATT:1", "OK", 60000)== 1 )
       {
         Serial.println("CGATT donoe!");
-        if( sendATcommand2("AT+CGDCONT?", "OK", "ERROR", 2000)== 1 )
+        if( sendATcommand2("AT+CGDCONT?", "OK", "ERROR", 5000)== 1 )
         {
           Serial.println("CGDCONT? donoe!");
           if( sendATcommand2("AT+CGDCONT=1,\"IP\",\"pinternet.interkom.de\"", "OK", "ERROR", 8000)== 1 )
           {
             Serial.println("CGDCONT=1 donoe!");
-            if( sendATcommand2("AT+CGDCONT?", "\"pinternet.interkom.de\"", "OK", 2000)== 1 )
+            if( sendATcommand2("AT+CGDCONT?", "\"pinternet.interkom.de\"", "OK", 5000)== 1 )
             {
               Serial.println("CGDCONT? donoe!");
               if( sendATcommand2("AT+CGACT=1,1", "OK", "ERROR", 60000)== 1 )
@@ -480,10 +501,10 @@ void loop(){
     
  
     // Selects Single-connection mode
-    if (sendATcommand2("AT+CIPMUX=0", "OK", "ERROR", 1000) == 1)
+    if (sendATcommand2("AT+CIPMUX=0", "OK", "ERROR", 2000) == 1)
     {
         // Waits for status IP INITIAL
-        while(sendATcommand("AT+CIPSTATUS", "INITIAL", 1000)  == 0 );
+        while(sendATcommand("AT+CIPSTATUS", "INITIAL", 2000)  == 0 );
         delay(5000);
         
                     Serial.println("Opening TCP");
@@ -651,4 +672,48 @@ int8_t sendATcommand2(char* ATcommand, char* expected_answer1,
     Serial.println("----");
     return answer;
 }
-    
+
+int8_t sendATcommand3(char* ATcommand, char* expected_answer1, 
+        char* expected_answer2, unsigned int timeout){
+
+    uint8_t answer=0;
+    int  x=0;
+    char resp[300];
+    unsigned long previous;
+
+    memset(resp, '\0', 300);    // Initialize the string
+
+    delay(100);
+
+    while( gsmSerial.available() > 0) gsmSerial.read();    // Clean the input buffer
+
+    //gsmSerial.println(ATcommand);    // Send the AT command 
+
+    x = 0;
+    previous = millis();
+
+    // this loop waits for the answer
+    do{
+        // if there are data in the UART input buffer, reads it and checks for the asnwer
+        if(gsmSerial.available() != 0){    
+            resp[x] = gsmSerial.read();
+            x++;
+            // check if the desired answer 1  is in the resp of the module
+            if (strstr(resp, expected_answer1) != NULL)    
+            {
+                answer = 1;
+            }
+            // check if the desired answer 2 is in the resp of the module
+            else if (strstr(resp, expected_answer2) != NULL)    
+            {
+                answer = 2;
+            }
+        }
+    }
+    // Waits for the asnwer with time out
+    while((answer == 0) && ((millis() - previous) < timeout));    
+    Serial.println("Resp:");
+    Serial.println(resp);
+    Serial.println("----");
+    return answer;
+}   
