@@ -9,6 +9,7 @@
  * \date 07.09.2020
  */
 
+//uncomment the following if not using thingspeak
 #define THINGSPEAK 
 
 
@@ -18,8 +19,6 @@
 
 
 
-bool wireStatus = Wire1.begin(BME_SDA, BME_SCL);
-Adafruit_BME680 bme(&Wire1);
 
 /**************************************************************************/
 /*!
@@ -125,14 +124,9 @@ void loop()
         Serial.println("Msg: SIM PIN is ready!");
         rxState = set_network;
       }else if (r == 2)
-      {
-        //Serial.println("Msg: SIM PIN is locked!");
-        rxState = error_state;
-      }else
-      {
-        //Serial.println("Msg: SIM PIN Timeout!");
-        rxState = timeout_state;
-      }
+       rxState = error_state;
+      else
+       rxState = timeout_state;
       break;
     case set_network:
       r = sendATCommand("AT+CREG=1", "OK", "ERROR", 60000);
@@ -141,14 +135,9 @@ void loop()
         Serial.println("Msg: Netwoek Set!");
         rxState = chk_network_register;
       }else if (r == 2)
-      {
-        //Serial.println("Msg: Network Setting Error!");
         rxState = error_state;
-      }else
-      {
-        //Serial.println("Msg: Netwrok Setting Timeout!");
+      else
         rxState = timeout_state;
-      }
       break;
     case chk_network_register:
       r = sendATCommand("AT+CREG?", "+CREG: 1,1", "+CREG: 0,5", 2000);
@@ -157,14 +146,9 @@ void loop()
         Serial.println("Msg: Network Registered!");
         rxState = set_gps;
       }else if (r == 2)
-      {
-        //Serial.println("Msg: Network Register Error!");
         rxState = error_state;
-      }else
-      {
-        //Serial.println("Msg: Netwrok Register Timeout!");
+      else
         rxState = timeout_state;
-      }
       break;
     case set_gps:
       r = sendATCommand("AT+GPS=1", "OK", "ERROR", 2000);
@@ -173,14 +157,9 @@ void loop()
         Serial.println("Msg: GPS Set!");
         rxState = attach_ps;
       }else if (r == 2)
-      {
-        //Serial.println("Msg: GPS Set Error!");
         rxState = error_state;
-      }else
-      {
-        //Serial.println("Msg: GPS Set Timeout!");
+      else
         rxState = timeout_state;
-      }
       break;
     case attach_ps:
       r = sendATCommand("AT+CGATT=1", "OK", "ERROR", 20000);
@@ -189,14 +168,9 @@ void loop()
         Serial.println("Msg: PS Attached!");
         rxState = check_context;
       }else if (r == 2)
-      {
-        //Serial.println("Msg: PS Attach Error!");
         rxState = error_state;
-      }else
-      {
-        //Serial.println("Msg: PS Attach Timeout!");
+      else
         rxState = timeout_state;
-      }
       break;
     case check_context:
       r = sendATCommand("AT+CGDCONT?", "pinternet.interkom.de", "OK", 20000);
@@ -209,10 +183,7 @@ void loop()
         Serial.println("Msg: Context Set!");
         rxState = set_context;
       }else
-      {
-        //Serial.println("Msg: Context Set Timeout!");
         rxState = timeout_state;
-      }
       break;
     case set_context:
       r = sendATCommand("AT+CGDCONT=1,\"IP\",\"pinternet.interkom.de\"", "OK", "ERROR", 20000);
@@ -221,14 +192,9 @@ void loop()
         Serial.println("Msg: Context Changed!");
         rxState = select_context;
       }else if (r == 2)
-      {
-        //Serial.println("Msg: Context Change Error!");
         rxState = error_state;
-      }else
-      {
-        //Serial.println("Msg: Context Change Timeout!");
+      else
         rxState = timeout_state;
-      }
       break;
     case select_context:
       r = sendATCommand("AT+CGACT=1,1", "OK", "ERROR", 20000);
@@ -237,14 +203,9 @@ void loop()
         Serial.println("Msg: Context Selected!");
         rxState = show_context;
       }else if (r == 2)
-      {
-        //Serial.println("Msg: Context Select Error!");
         rxState = error_state;
-      }else
-      {
-        //Serial.println("Msg: Context Select Timeout!");
+      else
         rxState = timeout_state;
-      }
       break;
     case show_context:
       r = sendATCommand("AT+CGACT?", "+CGACT: 1, 1", "ERROR", 20000);
@@ -253,14 +214,9 @@ void loop()
         Serial.println("Msg: Context is Correct!");
         rxState = chk_cip_status;
       }else if (r == 2)
-      {
-        //Serial.println("Msg: Context Shown Error!");
         rxState = error_state;
-      }else
-      {
-        //Serial.println("Msg: Context Shown Timeout!");
+      else
         rxState = timeout_state;
-      }
       break;
     case chk_cip_status:
       r = sendATCommand("AT+CIPSTATUS", "INITIAL", "CLOSED", 2000);
@@ -273,10 +229,7 @@ void loop()
         Serial.println("Msg: Status CLOSED!");
         rxState = set_cipstart;
       }else
-      {
-        //Serial.println("Msg: Status Timeout!");
         rxState = timeout_state;
-      }
       break;
     case set_cipstart:
       #ifdef THINGSPEAK
@@ -293,14 +246,10 @@ void loop()
       }else if (r == 2)
       {
         Serial.println("Msg: Connection in Process!");
-        //rxState = set_cipclose;
         delay(10000);//Try again after some time
         rxState = set_cipstart;
       }else
-      {
-        //Serial.println("Msg: Connection Timeout!");
         rxState = timeout_state;
-      }
       break;
     case set_gpsrd_read:
       //r = sendATCommand("AT+GPSRD=2", "OK", "ERROR", 2000);// Will also work
@@ -310,14 +259,9 @@ void loop()
         Serial.println("Msg: GPS Read Set!");
         rxState = read_gps_msg;
       }else if (r == 2)
-      {
-        //Serial.println("Msg: GPS Read Set Error!");
         rxState = error_state;
-      }else
-      {
-        //Serial.println("Msg: GPS Read Set Timeout!");
+      else
         rxState = timeout_state;
-      }
       break;
     case read_gps_msg:
       MY_DBGln("Msg: Getting data from GPS using AT Cmd");
@@ -335,14 +279,9 @@ void loop()
         Serial.println("Msg: GPS Read Off!");
         rxState = sensor_data;
       }else if (r == 2)
-      {
-        //Serial.println("Msg: GPS Read Off Error!");
         rxState = error_state;
-      }else
-      {
-        //Serial.println("Msg: GPS Read Off Timeout!");
+      else
         rxState = timeout_state;
-      }
       break;
     case sensor_data:
       MY_DBGln("Msg: Getting data from Sensors");
@@ -378,8 +317,8 @@ void loop()
       break;
     case set_cipsend:
       #ifdef THINGSPEAK
-        aux_str[0] = 26;
-        aux_str[1] = '\n';
+        cntrlChar[0] = 26;
+        cntrlChar[1] = '\n';
         r = sendATCommand("AT+CIPSEND", ">", "ERROR", 10000);
         delay(200);
       #else
@@ -390,20 +329,15 @@ void loop()
         Serial.println("Msg: Send Started!");
         rxState = set_cipsend_complete;
       }else if (r == 2)
-      {
-        //Serial.println("Msg: Send Start Error!");
         rxState = error_state;
-      }else
-      {
-        //Serial.println("Msg: Send Start Timeout!");
+      else
         rxState = timeout_state;
-      }
       break;
     case set_cipsend_complete:
       #ifdef THINGSPEAK
         r = sendATCommand((char*)message.c_str(), "ERROR", "ERROR", 2000);
         delay(300);
-        r = sendATCommand(aux_str, "CLOSED", "ERROR", 10000);
+        r = sendATCommand(cntrlChar, "CLOSED", "ERROR", 10000);
       #else
 
       #endif 
@@ -420,17 +354,11 @@ void loop()
         else
           rxState = chk_cipstatus_again;
       }else if (r == 2)
-      {
-        //Serial.println("Msg: Send Complete Error!");
         rxState = error_state;
-      }else
-      {
-        //Serial.println("Msg: Send Complete Timeout!");
+      else
         rxState = timeout_state;
-      }
       //delay(3000);//with this from 0,3,6 improved to 0,2,4,6,8
-      //delay(5000);//with this from  0,2,4,6,8 improved to 0,1,2,3,4,5,6,8
-      delay(5000);//
+      delay(5000);//with this from  0,2,4,6,8 improved to 0,1,2,3,4,5,6,8
       break;
     case chk_cipstatus_again:
       r = sendATCommand("AT+CIPSTATUS", "CONNECT", "CLOSED", 2000);
@@ -443,13 +371,9 @@ void loop()
       {
         //Serial.println("Msg: Status CLOSED!");
         rxState = set_cipstart;
-        //delay(5000);//with this from  0,2,4,6,8 improved to 0,1,2,3,4,5,6,8
-        delay(5000);//
+        delay(5000);//with this from  0,2,4,6,8 improved to 0,1,2,3,4,5,6,8
       }else
-      {
-        //Serial.println("Msg: Status Timeout!");
         rxState = timeout_state;
-      }
       break;
     case set_cipclose:
       r = sendATCommand("AT+CIPCLOSE", "OK", "ERROR", 20000);
@@ -458,14 +382,9 @@ void loop()
         Serial.println("Msg: Connection Closed!");
         rxState = set_cipshut;
       }else if (r == 2)
-      {
-        //Serial.println("Msg: Connection Close Error!");
         rxState = error_state;
-      }else
-      {
-        //Serial.println("Msg: Connection Close Timeout!");
+      else
         rxState = timeout_state;
-      }
       break;
     case set_cipshut:
       r = sendATCommand("AT+CIPSHUT", "OK", "ERROR", 20000);
@@ -474,14 +393,9 @@ void loop()
         Serial.println("Msg: Connection Shut!");
         rxState = dummy_state;
       }else if (r == 2)
-      {
-        //Serial.println("Msg: Connection Shut Error!");
         rxState = error_state;
-      }else
-      {
-        //Serial.println("Msg: Connection Shut Timeout!");
+      else
         rxState = timeout_state;
-      }
       break;
     case dummy_state:
       delay(1500);
@@ -528,136 +442,4 @@ void loop()
 void loop1()
 {
   loopSerial();
-}
-
-void showError(void)
-{
-  switch(last)
-  {
-    case init_errors:
-      Serial.println("Msg: Init Error!");
-      Serial.println("Msg: Check PWR and RESET of the A9G or SIM Serivices");
-      break;
-    case bme_setting_error:
-      Serial.println("Msg: Could not find a valid BME680 sensor, check wiring!");
-      break;
-    case chk_sim_cpin:
-      Serial.println("Msg: SIM PIN is locked!");
-      break;
-    case set_network:
-      Serial.println("Msg: Network Setting Error!");
-      break;
-    case chk_network_register:
-      Serial.println("Msg: Network Register Error!");
-      break;
-    case set_gps:
-      Serial.println("Msg: GPS Set Error!");
-      break;
-    case attach_ps:
-      Serial.println("Msg: PS Attach Error!");
-      break;
-    case check_context:
-      break;
-    case set_context:
-      Serial.println("Msg: Context Change Error!");
-      break;
-    case select_context:
-      Serial.println("Msg: Context Select Error!");
-      break;
-    case show_context:
-      Serial.println("Msg: Context Shown Error!");
-      break;
-    case chk_cip_status:
-      break;
-    case set_cipstart:
-      break;
-    case set_gpsrd_read:
-      Serial.println("Msg: GPS Read Error!");
-      break;
-    case set_gpsrd_off:
-      Serial.println("Msg: GPS Off Error!");
-      break;
-    case set_cipsend:
-      Serial.println("Msg: Send Start Error!");
-      break;
-    case set_cipsend_complete:
-      Serial.println("Msg: Send Complete Error!");
-      break;
-    case chk_cipstatus_again:
-      Serial.println("Msg: Status CLOSED!");
-      break;
-    case set_cipclose:
-      Serial.println("Msg: Connection Close Error!");
-      break;
-    case set_cipshut:
-      Serial.println("Msg: Connection Shut Error!");
-      break;
-  }
-}
-
-void showTimeout(void)
-{
-  switch(last)
-  {
-    case init_errors:
-      Serial.println("Msg: Init Timeout!");
-        Serial.println("Msg: Check PWR and RESET of the A9G");
-      break;
-    case chk_sim_cpin:
-      Serial.println("Msg: SIM PIN Timeout!");
-      break;
-    case set_network:
-      Serial.println("Msg: Netwrok Setting Timeout!");
-      break;
-    case chk_network_register:
-      Serial.println("Msg: Netwrok Register Timeout!");
-      break;
-    case set_gps:
-      Serial.println("Msg: GPS Set Timeout!");
-      break;
-    case attach_ps:
-      Serial.println("Msg: PS Attach Timeout!");
-      break;
-    case check_context:
-      Serial.println("Msg: Context Set Timeout!");
-      break;
-    case set_context:
-      Serial.println("Msg: Context Change Timeout!");
-      break;
-    case select_context:
-      Serial.println("Msg: Context Select Timeout!");
-      break;
-    case show_context:
-      Serial.println("Msg: Context Shown Timeout!");
-      break;
-    case chk_cip_status:
-      Serial.println("Msg: Status Timeout!");
-      break;
-    case set_cipstart:
-      Serial.println("Msg: Connection Timeout!");
-      break;
-    case set_gpsrd_read:
-      Serial.println("Msg: GPS Read Timeout!");
-      break;
-    case set_gpsrd_off:
-      Serial.println("Msg: GPS Off Timeout!");
-      break;
-    case set_cipsend:
-      Serial.println("Msg: Send Start Timeout!");
-      break;
-    case set_cipsend_complete:
-      Serial.println("Msg: Send Complete Timeout!");
-      break;
-    case chk_cipstatus_again:
-      Serial.println("Msg: Status Timeout!");
-      break;
-    case set_cipclose:
-      Serial.println("Msg: Connection Close Timeout!");
-      break;
-    case set_cipshut:
-      Serial.println("Msg: Connection Shut Timeout!");
-      break;
-  //  case :
-  //    break;
-  }
 }
