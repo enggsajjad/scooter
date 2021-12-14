@@ -549,7 +549,7 @@ void gpsReadMessages(void)
           }
           break;
         case 1:
-          msg = msg + "\n" + result;
+          msg = msg  + result;
           if (result.indexOf("$GNVTG") > 0) 
           {
             cntr = 0;

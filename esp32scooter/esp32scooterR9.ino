@@ -54,14 +54,15 @@ void setup()
   digitalWrite(gprsPWR, HIGH);
   Serial.println("...");
 
-  char r1 = readATResponse( "+CREG: 2", "ERROR", 60000);
-  char r2 = readATResponse( "READY", "ERROR", 60000);
+  char r1 = readATResponse( "+CREG: 2", "ERROR", 30000);
+  char r2 = readATResponse( "READY", "ERROR", 30000);
   if ( (r1==0) and (r2 ==0))
   {
     Serial.println("Init Timeout!");
     Serial.println("Check PWR and RESET of the A9G");
-    last = init_errors;
-    rxState = timeout_state;
+    //last = init_errors;
+    //rxState = timeout_state;
+    resetModule();
   }
   else
   if ( (r1==1) and (r2 ==1))
@@ -293,7 +294,7 @@ void loop()
       {
         Serial.println("Msg: Connection in Process!");
         //rxState = set_cipclose;
-        delay(1000);//Try again after some time
+        delay(10000);//Try again after some time
         rxState = set_cipstart;
       }else
       {
@@ -302,6 +303,7 @@ void loop()
       }
       break;
     case set_gpsrd_read:
+      //r = sendATCommand("AT+GPSRD=2", "OK", "ERROR", 2000);// Will also work
       r = sendATCommand("AT+GPSRD=5", "OK", "ERROR", 2000);
       if (r == 1)
       {
@@ -427,7 +429,8 @@ void loop()
         rxState = timeout_state;
       }
       //delay(3000);//with this from 0,3,6 improved to 0,2,4,6,8
-      delay(5000);//with this from  0,2,4,6,8 improved to 0,1,2,3,4,5,6,8
+      //delay(5000);//with this from  0,2,4,6,8 improved to 0,1,2,3,4,5,6,8
+      delay(5000);//
       break;
     case chk_cipstatus_again:
       r = sendATCommand("AT+CIPSTATUS", "CONNECT", "CLOSED", 2000);
@@ -440,7 +443,8 @@ void loop()
       {
         //Serial.println("Msg: Status CLOSED!");
         rxState = set_cipstart;
-        delay(5000);//with this from  0,2,4,6,8 improved to 0,1,2,3,4,5,6,8
+        //delay(5000);//with this from  0,2,4,6,8 improved to 0,1,2,3,4,5,6,8
+        delay(5000);//
       }else
       {
         //Serial.println("Msg: Status Timeout!");
