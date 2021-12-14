@@ -251,7 +251,6 @@
 #include <Adafruit_Sensor.h>
 #include <Adafruit_BME280.h>
 #include "Adafruit_BME680.h"
-
 #include <DHT.h>
 #include <Wire.h>
 //#include <time.h>
@@ -262,6 +261,7 @@
 #include <String.h>
 #include <TinyGPS++.h>
 
+///RGB COLOR CODES
 #define rgbColor 0
 #define rgColor 1
 #define rbColor 2
@@ -271,7 +271,7 @@
 #define bColor 6
 #define noColor 7
 
-
+///STATES
 #define chk_sim_cpin 1
 #define set_network 2
 #define chk_network_register 3
@@ -301,46 +301,65 @@
 #define bme_reading_error 27
 #define init_errors 28
 
+
+//uncomment the following if not using thingspeak, comment if for NGROK 
+#define THINGSPEAK 
+
+
+#ifdef THINGSPEAK
+  /// TCP HOST
+  String host = "api.thingspeak.com";
+  /// TCP Port
+  String port = "80";
+#else
+  /// TCP HOST
+  String host = "0.tcp.ngrok.io";
+  /// TCP Port
+  String port = "19731";
+#endif
+
+/// APN of the SIM
+String apn = "pinternet.interkom.de";
+/// Define the AiThinker Initialization End Detection String
+String initString = "READY";
+
+
 /// GPS Decoder for NMEA Formate
 TinyGPSPlus tiny;
 
-
-/// Define the AiThinker Initialization End Detection String
-String initString = "READY";
+/// temporary millis counter for time measurement
 unsigned long previousMillis = 0; 
+/// counter for led blinking
 int cntrLED=0;
-
+/// cntrl character ascii 26
 char cntrlChar[2];
-
-
 /// messages to be sent to TCP
 String message= "";
-/// TCP HOST
-String host = "0.tcp.ngrok.io";
-/// TCP Port
-String port = "19731";
 /// Receive from Serial States
 int rxState = -1;
-
-/// Error Indicating for AT Command Respnse
-//byte Err;
-
 /// the temporary response for AT+CIPSTATUS? Command 
 char resp;
 /// counter to count total number of transmitted TCP packets
 int cntr;
 /// counter to count total number of transmitted TCP packets
 int cntr1;
-
+/// last state
 int last;
+/// response byte of the commands
 byte r;
+/// temporary string used for reading GPS messages
 String result;
+/// temporary string used for reading GPS messages
 String msg;
 /// Location Message
 String loc;
+/// boolean flag used for reading GPS messages
 bool running = true;
+/// count the reset counter after each reset
 unsigned char resetCntr;
+/// initialization the wire I2C interface
 bool wireStatus = Wire1.begin(BME_SDA, BME_SCL);
+/// instantiate the BME680 object
 Adafruit_BME680 bme(&Wire1);
 
 /**************************************************************************/

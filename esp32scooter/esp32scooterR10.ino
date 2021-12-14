@@ -9,8 +9,6 @@
  * \date 07.09.2020
  */
 
-//uncomment the following if not using thingspeak
-#define THINGSPEAK 
 
 
 #include "main.h"
@@ -173,7 +171,7 @@ void loop()
         rxState = timeout_state;
       break;
     case check_context:
-      r = sendATCommand("AT+CGDCONT?", "pinternet.interkom.de", "OK", 20000);
+      r = sendATCommand("AT+CGDCONT?", (char*)apn.c_str(), "OK", 20000);
       if (r == 1)
       {
         Serial.println("Msg: Context Exists!");
@@ -186,7 +184,7 @@ void loop()
         rxState = timeout_state;
       break;
     case set_context:
-      r = sendATCommand("AT+CGDCONT=1,\"IP\",\"pinternet.interkom.de\"", "OK", "ERROR", 20000);
+      r = sendATCommand((char*)("AT+CGDCONT=1,\"IP\",\"" + apn +"\"").c_str(), "OK", "ERROR", 20000);
       if (r == 1)
       {
         Serial.println("Msg: Context Changed!");
@@ -233,9 +231,10 @@ void loop()
       break;
     case set_cipstart:
       #ifdef THINGSPEAK
-        r = sendATCommand("AT+CIPSTART=\"TCP\",\"api.thingspeak.com\",80", "CONNECT OK", "CONNECT FAIL", 20000);//for thinkspeak
+        //r = sendATCommand("AT+CIPSTART=\"TCP\",\"api.thingspeak.com\",80", "CONNECT OK", "CONNECT FAIL", 20000);//for thinkspeak
+        r = sendATCommand((char*)("AT+CIPSTART=\"TCP\",\"" + host + "\"," + port).c_str(), "CONNECT OK", "CONNECT FAIL", 20000);//for thinkspeak
       #else
-        r = sendATCommand("AT+CIPSTART=\"TCP\",\"" + host + "\"," + port, "CONNECT OK", "ERROR", 20000);//for ngrok TCP tunneling
+        r = sendATCommand((char*)("AT+CIPSTART=\"TCP\",\"" + host + "\"," + port).c_str(), "CONNECT OK", "ERROR", 20000);//for ngrok TCP tunneling
       #endif
       if (r == 1)
       {
@@ -322,7 +321,7 @@ void loop()
         r = sendATCommand("AT+CIPSEND", ">", "ERROR", 10000);
         delay(200);
       #else
-        r = sendATCommand("AT+CIPSEND=" + String(message.length()) + ",\"" + message + "\"", "OK", "ERROR", 10000);
+        r = sendATCommand((char*)("AT+CIPSEND=" + String(message.length()) + ",\"" + message + "\"").c_str(), "OK", "ERROR", 10000);
       #endif 
       if (r == 1)
       {
