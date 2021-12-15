@@ -13,6 +13,8 @@
 
 #include "main.h"
 
+// !!!IMPORTANT!!!
+// this is for test only
 #define TOTAL_RECORDS 10000//10
 
 
@@ -43,64 +45,39 @@ void setup()
   delay(1000);
   rgbSetColor(noColor);
   
-  Serial.print("Start");
+  Serial.println("SmartAQnet Scooter Sensors...");
 
   //delay(1000);
   //digitalWrite(gprsPWR, LOW);
-  delay(2000);
+  delay(3000);
   digitalWrite(gprsPWR, HIGH);
-  Serial.println("...");
+  Serial.println("Starting...");
 
-  char r1 = readATResponse( "+CREG: 2", "ERROR", 30000);
-  char r2 = readATResponse( "READY", "ERROR", 30000);
-  if ( (r1==0) and (r2 ==0))
-  {
-    Serial.println("Init Timeout!");
-    Serial.println("Check PWR and RESET of the A9G");
-    //last = init_errors;
-    //rxState = timeout_state;
-    resetModule();
-  }
-  else
-  if ( (r1==1) and (r2 ==1))
+  //r1 = readATResponse( "+CREG: 2", "ERROR", 60000); // !!!IMPORTANT!!!
+  //r1 = readATResponse( "\n", "ERROR", 60000); // !!!IMPORTANT!!!
+  r2 = readATResponse( "READY", "ERROR", 5*60000); // !!!IMPORTANT!!!
+
+  //if ( (r1==1) and (r2 ==1))
+  if ( (r2 ==1))
   {
     Serial.println("Init Ready Done!");
-    rxState = chk_sim_cpin;
+    a9gPowerOnCheck();
+    rxState = config_sensors;
   }
   else
   {
     Serial.println("Init Error!");
     Serial.println("Check PWR and RESET of the A9G or SIM Serivices");
+    
+    rgbSetColor(rColor);
     last = init_errors;
-    rxState = error_state;
-  }
-  a9gPowerOnCheck();
+    rxState = try_init_again;
+    Serial.println("Reseting A9G again...");
 
-  sds.begin(&SDS_SERIAL, recv_from_sds, trans_to_sds);  // initialize SDS011 sensor
-
-  bmeAddress = BME_ADDR;
-
-  if (!bme.begin(bmeAddress, true)) 
-  {
-    Serial.println("Could not find a valid BME680 sensor, check wiring!");
-    last = bme_setting_error;
-    rxState = error_state;
-    //while (1);
+    sendATCommand("AT+RST=1", "OK", "ERROR", 6000);
   }
   
-  // Set up oversampling and filter initialization
-  bme.setTemperatureOversampling(BME680_OS_8X);
-  bme.setHumidityOversampling(BME680_OS_2X);
-  bme.setPressureOversampling(BME680_OS_4X);
-  bme.setIIRFilterSize(BME680_FILTER_SIZE_3);
-  bme.setGasHeater(320, 150); // 320*C for 150 ms
-  
-  //rxState = chk_sim_cpin;
-  
-  delay(1000);
-  rgbSetColor(bColor);
-  delay(1000);
-  rgbSetColor(gColor);
+
 
 }
 
@@ -115,6 +92,50 @@ void loop()
 {
   switch(rxState)
   {
+    case config_sensors:
+      rxState = chk_sim_cpin;
+      sds.begin(&SDS_SERIAL, recv_from_sds, trans_to_sds);  // initialize SDS011 sensor
+    
+      bmeAddress = BME_ADDR;
+    
+      if (!bme.begin(bmeAddress, true)) 
+      {
+        Serial.println("Could not find a valid BME680 sensor, check wiring!");
+        last = bme_setting_error;
+        rxState = error_state;
+        //while (1);
+      }
+      // Set up oversampling and filter initialization
+      bme.setTemperatureOversampling(BME680_OS_8X);
+      bme.setHumidityOversampling(BME680_OS_2X);
+      bme.setPressureOversampling(BME680_OS_4X);
+      bme.setIIRFilterSize(BME680_FILTER_SIZE_3);
+      bme.setGasHeater(320, 150); // 320*C for 150 ms
+      //LEDS
+      delay(1000);
+      rgbSetColor(bColor);
+      delay(1000);
+      rgbSetColor(gColor);
+      break;
+    case try_init_again:
+      r1 = sendATCommand("AT+RST=1", "OK", "ERROR", 6000); // !!!IMPORTANT!!!
+      r2 = readATResponse( "READY", "ERROR", 5*60000); // !!!IMPORTANT!!!
+    
+      if ( (r1==1) and (r2 ==1))
+      {
+        Serial.println("Init Ready Done!");
+        rxState = chk_sim_cpin;
+      }
+      else
+      {
+        Serial.println("Init Error!");
+        Serial.println("Check PWR and RESET of the A9G or SIM Serivices");
+        rgbSetColor(rColor);
+        last = init_errors;
+        rxState = error_state;
+      }
+      //a9gPowerOnCheck();
+      break;
     case chk_sim_cpin:
       r = sendATCommand("AT+CPIN?", "READY", "SIM", 2000);
       if (r == 1)
@@ -138,7 +159,8 @@ void loop()
         rxState = timeout_state;
       break;
     case chk_network_register:
-      r = sendATCommand("AT+CREG?", "+CREG: 1,1", "+CREG: 0,5", 2000);
+      //r = sendATCommand("AT+CREG?", "+CREG: 1,1", "+CREG: 0,5", 2000); // !!!IMPORTANT!!!
+      r = sendATCommand("AT+CREG?", "+CREG: 1", "+CREG: 0", 2000); // !!!IMPORTANT!!!
       if (r == 1)
       {
         Serial.println("Msg: Network Registered!");
@@ -160,10 +182,19 @@ void loop()
         rxState = timeout_state;
       break;
     case attach_ps:
-      r = sendATCommand("AT+CGATT=1", "OK", "ERROR", 20000);
+      r = sendATCommand("AT+CGATT=1", "OK", "ERROR", 60000);
       if (r == 1)
       {
         Serial.println("Msg: PS Attached!");
+        rxState = check_context;
+      }else
+        rxState = attach_ps_again;
+      break;
+    case attach_ps_again:
+      r = sendATCommand("AT+CGATT=1", "OK", "NO RESPONSE!", 90000);      
+      if (r == 1)
+      {
+        Serial.println("Msg: PS2 Attached!");
         rxState = check_context;
       }else if (r == 2)
         rxState = error_state;
@@ -231,7 +262,6 @@ void loop()
       break;
     case set_cipstart:
       #ifdef THINGSPEAK
-        //r = sendATCommand("AT+CIPSTART=\"TCP\",\"api.thingspeak.com\",80", "CONNECT OK", "CONNECT FAIL", 20000);//for thinkspeak
         r = sendATCommand((char*)("AT+CIPSTART=\"TCP\",\"" + host + "\"," + port).c_str(), "CONNECT OK", "CONNECT FAIL", 20000);//for thinkspeak
       #else
         r = sendATCommand((char*)("AT+CIPSTART=\"TCP\",\"" + host + "\"," + port).c_str(), "CONNECT OK", "ERROR", 20000);//for ngrok TCP tunneling
@@ -428,6 +458,7 @@ void loop()
       //if (resetCntr == 8) resetCntr = 0;
       loopSerial();
       break;
+
   }
   last = rxState;
 }

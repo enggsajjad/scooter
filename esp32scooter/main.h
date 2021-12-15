@@ -198,7 +198,7 @@
 #define hw_date "2020-01-17T12:00:00.000Z"
 
 /// Debugging, uncomment to switch servers to release version, enable sending to madavi and luftdaten.info, and supress some debug output
-//#define RELEASE 
+//#define RELEASE // !!!IMPORTANT!!!
 
 // Setting the servers and debugging control using the RELEASE
 #ifndef RELEASE
@@ -300,28 +300,30 @@
 #define bme_setting_error 26
 #define bme_reading_error 27
 #define init_errors 28
-
+#define try_init_again 29
+#define config_sensors 30
+#define attach_ps_again 31
 
 //uncomment the following if not using thingspeak, comment if for NGROK 
-#define THINGSPEAK 
+#define THINGSPEAK  // !!!IMPORTANT!!!
 
 
 #ifdef THINGSPEAK
   /// TCP HOST
-  String host = "api.thingspeak.com";
+  String host = "api.thingspeak.com"; // !!!IMPORTANT!!!
   /// TCP Port
-  String port = "80";
+  String port = "80"; // !!!IMPORTANT!!!
 #else
   /// TCP HOST
-  String host = "0.tcp.ngrok.io";
+  String host = "0.tcp.ngrok.io"; // !!!IMPORTANT!!!
   /// TCP Port
-  String port = "19731";
+  String port = "19731"; // !!!IMPORTANT!!!
 #endif
 
 /// APN of the SIM
-String apn = "pinternet.interkom.de";
+String apn = "pinternet.interkom.de"; // !!!IMPORTANT!!!
 /// Define the AiThinker Initialization End Detection String
-String initString = "READY";
+String initString = "READY"; // !!!IMPORTANT!!!
 
 
 /// GPS Decoder for NMEA Formate
@@ -346,7 +348,7 @@ int cntr1;
 /// last state
 int last;
 /// response byte of the commands
-byte r;
+byte r,r1,r2;
 /// temporary string used for reading GPS messages
 String result;
 /// temporary string used for reading GPS messages
@@ -550,7 +552,7 @@ void gpsReadMessages(void)
       switch(cntr)
       {
         case 0:
-          if (result.indexOf("$GNGGA") > 0) 
+          if (result.indexOf("$GNGGA") > 0)  // !!!IMPORTANT!!!
           {
             cntr = 1;
             msg = result.substring(result.indexOf("$GNGGA"));
@@ -627,6 +629,9 @@ void showError(void)
     case attach_ps:
       Serial.println("Msg: PS Attach Error!");
       break;
+    case attach_ps_again:
+      Serial.println("Msg: PS2 Attach Error!");
+      break;
     case check_context:
       break;
     case set_context:
@@ -688,6 +693,9 @@ void showTimeout(void)
       break;
     case attach_ps:
       Serial.println("Msg: PS Attach Timeout!");
+      break;
+    case attach_ps_again:
+      Serial.println("Msg: PS2 Attach Timeout!");
       break;
     case check_context:
       Serial.println("Msg: Context Set Timeout!");
