@@ -1,0 +1,123 @@
+éñónkz©ÒºÿÉñã¥<¡ë&kI
+jPÒ…qqA´ÿStart...
+Resp:
+
++CREG: 2
+----
+Resp:
+^STN: 37
+
+----
+Init Error!
+Check PWR and RESET of the A9G or SIM Serivices
+Resp:
+
+----
+Resp:
+AT
+
+OK
+----
+Could not find a valid BME680 sensor, check wiring!
+Msg: Could not find a valid BME680 sensor, check wiring!
+
+*****Error No.0
+Resp:
+AT+CREG=1
+
+OK
+----
+Msg: Netwoek Set!
+Resp:
+AT+CREG?
+
++CREG: 1,3
+
+OK
+
+----
+
++CREG: 2
+
+
++CREG: 3
+
+
++CREG: 3
+
+ÉñónkZ‰ÒÉñã…<¡ë&kIaiyÐ¡x´¡ô¡”¡¢úStart...
+Resp:
+
++CREG: 2
+----
+ÉñónkZ‰ÒÙaó€<!{¦ëIaéù@¡x4!ô!”¡"úStart...
+Resp:
+
++CREG: 2
+----
+Resp:
+^STN: 37
+
++CREG: 2
+
+
+----
+Init Error!
+Check PWR and RESET of the A9G or SIM Serivices
+Resp:
+
+----
+Resp:
+AT
+
+OK
+----
+Could not find a valid BME680 sensor, check wiring!
+Msg: Could not find a valid BME680 sensor, check wiring!
+
+*****Error No.0
+Resp:
+AT+CREG=1
+
+OK
+----
+Msg: Netwoek Set!
+Resp:
+AT+CREG?
+
++CREG: 1,2
+
+OK
+
++CREG: 3
+
+
+----
+AT
+
+OK
+AT+RST=1
+
+OK
+Init...
+
++CREG: 2
+
+^STN: 37
+
++CREG: 2
+
+
++CREG: 3
+
+
++CREG: 2
+
+
++CREG: 5
+
+A9/A9G
+V02.02.20190915R
+Ai_Thinker_Co._Ltd.
+READY
++CTZV:21/12/15,14:59:42,+01

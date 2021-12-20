@@ -1,0 +1,348 @@
+ÉñónkZ‰ÒÉñã…¼¡ë&kIaéyP!x´¡ô¡”¡¢ú
+SmartAQnet Scooter Sensors!
+Initializing A9G...
+Resp:
+
++CREG: 2
+
+^STN: 37
++CTZV:21/12/17,15:07:51,+01
+
++CREG: 1
+
+A9/A9G
+V02.02.20190915R
+Ai_Thinker_Co._Ltd.
+READY
+----
+Init Ready Done!
+Resp:
+
+----
+Resp:
+AT
+
+OK
+----
+Msg: Could not find a valid BME680 sensor, check wiring!
+
+*****Error No.0
+Resp:
+AT+CREG=1
+
+OK
+----
+Msg: Netwoek Set!
+Resp:
+AT+CREG?
+
++CREG: 1
+----
+Msg: Network Registered!
+Resp:
+AT+GPS=1
+
+OK
+----
+Msg: GPS Set!
+Resp:
+AT+CGATT=1
+
++CGATT:1
+
+OK
+----
+Msg: PS Attached!
+Resp:
+AT+CGDCONT?
+
+OK
+----
+Msg: Context Set!
+Resp:
+AT+CGDCONT=1,"IP","pinternet.interkom.de"
+
+OK
+----
+Msg: Context Changed!
+Resp:
+AT+CGACT=1,1
+
+OK
+----
+Msg: Context Selected!
+Resp:
+AT+CGACT?
+
++CGACT: 1, 1
+----
+Msg: Context is Correct!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:IP INITIAL
+----
+Msg: Status INITIAL!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",11984
+CONNECT OK
+----
+Msg: Connected!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,000032.264,4900.5061,N,00825.4025,E,0,0,,102.1,M,47.9,M,,*57
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000032.264,V,4900.5061,N,00825.4025,E,0.000,0.00,060180,,,N*55
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=148,"{ Id: 'A1', pm25: 20.00, pm10: 34.00, temp: 4.00, hum: 16.00, atm: 0.00 , loc: $GNGGA,000032.264,4900.5061,N,00825.4025,E,0,0,,102.1,M,47.9,M,,*57 }"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CREG=1
+
+OK
+----
+Msg: Netwoek Set!
+Resp:
+AT+CREG?
+
++CREG: 1
+----
+Msg: Network Registered!
+Resp:
+AT+GPS=1
+
+OK
+----
+Msg: GPS Set!
+Resp:
+AT+CGATT=1
+
++CGATT:1
+
+OK
+----
+Msg: PS Attached!
+Resp:
+AT+CGDCONT?
+
++CGDCONT:1,"IP","pinternet.interkom.de
+----
+Msg: Context Exists!
+Resp:
+AT+CGACT=1,1
+
+OK
+----
+Msg: Context Selected!
+Resp:
+AT+CGACT?
+
++CGACT: 1, 1
+----
+Msg: Context is Correct!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT OK 
+
+OK
+
+----
+Msg: Status Timeout!
+
+*****Error No.1
+Resp:
+AT+CREG=1
+
+OK
+----
+Msg: Netwoek Set!
+Resp:
+AT+CREG?
+
++CREG: 1
+----
+Msg: Network Registered!
+Resp:
+AT+GPS=1
+
+OK
+----
+Msg: GPS Set!
+Resp:
+AT+CGATT=1
+
++CGATT:1
+
+OK
+----
+Msg: PS Attached!
+Resp:
+AT+CGDCONT?
+
++CGDCONT:1,"IP","pinternet.interkom.de
+----
+Msg: Context Exists!
+Resp:
+AT+CGACT=1,1
+
+OK
+----
+Msg: Context Selected!
+Resp:
+AT+CGACT?
+
++CGACT: 1, 1
+----
+Msg: Context is Correct!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT OK 
+
+OK
+
+----
+Msg: Status Timeout!
+
+*****Error No.2
+Resp:
+AT+CREG=1
+
+OK
+----
+Msg: Netwoek Set!
+Resp:
+AT+CREG?
+
++CREG: 1
+----
+Msg: Network Registered!
+Resp:
+AT+GPS=1
+
+OK
+----
+Msg: GPS Set!
+Resp:
+AT+CGATT=1
+
++CGATT:1
+
+OK
+----
+Msg: PS Attached!
+Resp:
+AT+CGDCONT?
+
++CGDCONT:1,"IP","pinternet.interkom.de
+----
+Msg: Context Exists!
+Resp:
+AT+CGACT=1,1
+
+OK
+----
+Msg: Context Selected!
+Resp:
+AT+CGACT?
+
++CGACT: 1, 1
+----
+Msg: Context is Correct!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT OK 
+
+OK
+
+----
+Msg: Status Timeout!
+
+*****Error No.3
+Resp:
+AT+CREG=1
+
+OK
+----
+Msg: Netwoek Set!
+Resp:
+AT+CREG?
+
++CREG: 1
+----
+Msg: Network Registered!
+Resp:
+AT+GPS=1
+
+OK
+----
+Msg: GPS Set!
+Resp:
+AT+CGATT=1
+
++CGATT:1
+
+OK
+----
+Msg: PS Attached!
+Resp:
+AT+CGDCONT?
+
++CGDCONT:1,"IP","pinternet.interkom.de
+----
+Msg: Context Exists!
+Resp:
+AT+CGACT=1,1
+
+OK
+----
+Msg: Context Selected!
+Resp:
+AT+CGACT?
+
++CGACT: 1, 1
+----
+Msg: Context is Correct!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT OK 
+
+OK
+
+----
+Msg: Status Timeout!
+
+*****Error No.4

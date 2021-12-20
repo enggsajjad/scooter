@@ -1,0 +1,65 @@
+éÑó˜Ê<œñ2Éñã…<¡ë&kIaiyÐ¡x´¡ô¡”¡¢úStart...
+Resp:
+
+----
+Éñó¸êZ‰ÒÉñã…<¡ë&kIaiyÐ¡x´¡ô!”¡¢úStart...
+Resp:
+
++CREG: 2
+----
+Resp:
+^STN: 37
+
+----
+Init Error!
+Check PWR and RESET of the A9G or SIM Serivices
+Reseting A9G again...
+Resp:
+
+----
+Resp:
+
+----
+Resp:
+^STN: 37
+^STN: 37
++CIEV: service,  0
++CIEV: roam, 0
+
++CREG: 2
+
++CIEV: service,  0
++CIEV: roam, 0
+
++CREG: 2
+
++CIEV: service,  1
++CIEV: roam, 0
+
++CREG: 1
+
+
+----
+Init Error!
+Check PWR and RESET of the A9G or SIM Serivices
+
+*****Error No.0
+Resp:
+
+----
+AT+RST=1
+
+OK
+Init...
+
++CREG: 2
+
+^STN: 37
++CTZV:21/12/15,17:13:11,+01
+
++CREG: 1
+
+A9/A9G
+V02.02.20190915R
+Ai_Thinker_Co._Ltd.
+READY

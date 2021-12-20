@@ -1,0 +1,614 @@
+ÉñónkZ‰ÒÉñã…<¡ë&kIaiyÐ¡x´¡ô¡”¡¢úSmartAQnet Scooter Sensors...
+Starting...
+Resp:
+^STN: 37
++CTZV:21/12/15,21:01:19,+01
+
++CREG: 1
+
+A9/A9G
+V02.02.20190915R
+Ai_Thinker_Co._Ltd.
+READY
+----
+Init Ready Done!
+Resp:
+
+----
+Resp:
+AT
+
+OK
+----
+Could not find a valid BME680 sensor, check wiring!
+
+*****Error No.0
+Resp:
+AT+CREG=1
+
+OK
+----
+Msg: Netwoek Set!
+Resp:
+AT+CREG?
+
++CREG: 1
+----
+Msg: Network Registered!
+Resp:
+AT+GPS=1
+
+OK
+----
+Msg: GPS Set!
+Resp:
+AT+CGATT=1
+
++CGATT:1
+
+OK
+----
+Msg: PS Attached!
+Resp:
+AT+CGDCONT?
+
+OK
+----
+Msg: Context Set!
+Resp:
+AT+CGDCONT=1,"IP","pinternet.interkom.de"
+
+OK
+----
+Msg: Context Changed!
+Resp:
+AT+CGACT=1,1
+
++CME ERROR
+----
+
+*****Error No.1
+Resp:
+AT+CREG=1
+
+OK
+----
+Msg: Netwoek Set!
+Resp:
+AT+CREG?
+
++CREG: 1
+----
+Msg: Network Registered!
+Resp:
+AT+GPS=1
+
+OK
+----
+Msg: GPS Set!
+Resp:
+AT+CGATT=1
+
++CGATT:1
+
+OK
+----
+Msg: PS Attached!
+Resp:
+AT+CGDCONT?
+
++CGDCONT:1,"IP","pinternet.interkom.de
+----
+Msg: Context Exists!
+Resp:
+AT+CGACT=1,1
+
++CME ERROR
+----
+
+*****Error No.2
+Resp:
+AT+CREG=1
+
+OK
+----
+Msg: Netwoek Set!
+Resp:
+AT+CREG?
+
++CREG: 1
+----
+Msg: Network Registered!
+Resp:
+AT+GPS=1
+
+OK
+----
+Msg: GPS Set!
+Resp:
+AT+CGATT=1
+
++CGATT:1
+
+OK
+----
+Msg: PS Attached!
+Resp:
+AT+CGDCONT?
+
++CGDCONT:1,"IP","pinternet.interkom.de
+----
+Msg: Context Exists!
+Resp:
+AT+CGACT=1,1
+
+OK
+----
+Msg: Context Selected!
+Resp:
+AT+CGACT?
+
++CGACT: 1, 1
+----
+Msg: Context is Correct!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:IP INITIAL
+----
+Msg: Status INITIAL!
+Resp:
+AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+----
+Msg: Connected!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,210152.082,4900.1524,N,00825.7290,E,0,1,,149.2,M,47.9,M,,*5B
+$GPGSA,A,1,05,,,,,,,,,,,,,,*1B
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,26,61,295,,18,58,166,,29,49,064,27,31,42,219,*7C
+$GPGSV,3,2,11,25,24,126,,05,22,067,20,16,22,301,,20,13,039,*75
+$GPGSV,3,3,11,04,06,309,,09,02,342,,27,02,258,*47
+$BDGSV,1,1,00*68
+$GNRMC,210152.082,V,4900.1524,N,00825.7290,E,1.521,246.60,151221,,,N*5E
+$GNVTG,246.60,T,,M,1.521,N,2.818,K,N*2E
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND
+
+>
+----
+Msg: Send Started!
+Resp:
+GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=2.00&field2=10.00&field3=0.00&field4=24.00&field5=32.00&field6=$GNGGA,210152.082,4900.1524,N,00825.7290,E,0,1,,149.2,M,47.9,M,,*5B
+
+----
+Resp:
+
+OK
+
+
+
++CIPRCV,1:1
+CLOSED
+----
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CLOSED
+----
+Resp:
+AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+----
+Msg: Connected!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,210212.082,4900.4599,N,00826.2989,E,0,2,,146.1,M,47.9,M,,*55
+$GPGSA,A,1,05,25,,,,,,,,,,,,,*1C
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,26,61,295,,18,58,166,,29,48,064,30,31,42,219,*7B
+$GPGSV,3,2,11,25,24,126,20,05,22,067,21,16,22,301,,20,13,039,*76
+$GPGSV,3,3,11,04,06,309,,09,02,342,,27,02,258,*47
+$BDGSV,1,1,00*68
+$GNRMC,210212.082,V,4900.4599,N,00826.2989,E,1.210,276.44,151221,,,N*5F
+$GNVTG,276.44,T,,M,1.210,N,2.242,K,N*2B
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND
+
+>
+----
+Msg: Send Started!
+ÉñsnkZ‰ÒÉñã€¼¡{&kÙaiyÐ¡x´1d!!"úSmartAQnet Scooter Sensors...
+Starting...
+Resp:
+
+----
+
+Stack smashing protect failure!
+
+abort() was called at PC 0x400e87c4 on core 1
+
+ELF file SHA256: 0000000000000000
+
+Backtrace: 0x40085ae8:0x3ffb1dd0 0x40085d5d:0x3ffb1df0 0x400e87c4:0x3ffb1e10 0x400d1415:0x3ffb1e30 0x400d1918:0x3ffb1f80 0x400d7062:0x00000000
+
+Rebooting...
+I’†ï‚Š„UBBBW<ƒ!Ê!¦
+AtÕSmartAQnet Scooter Sensors...
+Starting...
+ÉñónkZ‰ÒÉñã<¡ë&ëIaiyÐ¡x´¡ô¡”!¢úSmartAQnet Scooter Sensors...
+Starting...
+ÉñónkZ‰ÒÉñã…<¡ë&kIaiyÐ¡x´¡ô¡”¡¢úSmartAQnet Scooter Sensors...
+Starting...
+Resp:
+
++CREG: 2
+
+^STN: 37
++CTZV:21/12/15,21:12:07,+01
+
++CREG: 1
+
+A9/A9G
+V02.02.20190915R
+Ai_Thinker_Co._Ltd.
+READY
+----
+Init Ready Done!
+Resp:
+
+----
+Resp:
+AT
+
+OK
+----
+Could not find a valid BME680 sensor, check wiring!
+
+*****Error No.0
+Resp:
+AT+CREG=1
+
+OK
+----
+Msg: Netwoek Set!
+Resp:
+AT+CREG?
+
++CREG: 1
+----
+Msg: Network Registered!
+Resp:
+AT+GPS=1
+
+OK
+----
+Msg: GPS Set!
+Resp:
+AT+CGATT=1
+
++CGATT:1
+
+OK
+----
+Msg: PS Attached!
+Resp:
+AT+CGDCONT?
+
+OK
+----
+Msg: Context Set!
+Resp:
+AT+CGDCONT=1,"IP","pinternet.interkom.de"
+
+OK
+----
+Msg: Context Changed!
+Resp:
+AT+CGACT=1,1
+
+OK
+----
+Msg: Context Selected!
+Resp:
+AT+CGACT?
+
++CGACT: 1, 1
+----
+Msg: Context is Correct!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:IP INITIAL
+----
+Msg: Status INITIAL!
+Resp:
+AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+----
+Msg: Connected!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,211228.190,4900.5200,N,00825.4710,E,0,0,,150.4,M,47.9,M,,*52
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,12,26,65,291,,18,63,162,,29,44,067,32,31,37,216,*74
+$GPGSV,3,2,12,16,27,302,,05,22,062,,25,20,129,,20,11,035,*72
+$GPGSV,3,3,12,27,05,261,,23,04,151,,04,04,305,,09,02,338,*7A
+$BDGSV,1,1,00*68
+$GNRMC,211228.190,V,4900.5200,N,00825.4710,E,0.000,0.00,151221,,,N*59
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND
+
+>
+----
+Msg: Send Started!
+Resp:
+GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=9.00&field2=11.00&field3=0.00&field4=22.00&field5=30.00&field6=$GNGGA,211228.190,4900.5200,N,00825.4710,E,0,0,,150.4,M,47.9,M,,*52
+
+----
+Resp:
+
+OK
+
++CIPRCV,1:2
+
+
+CLOSED
+----
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CLOSED
+----
+Resp:
+AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+----
+Msg: Connected!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,211248.190,4900.5200,N,00825.4710,E,0,0,,150.4,M,47.9,M,,*54
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,12,26,66,291,,18,63,162,,29,44,067,33,31,37,215,*75
+$GPGSV,3,2,12,16,27,302,,05,22,062,,25,19,129,,20,11,035,*78
+$GPGSV,3,3,12,27,06,261,,23,04,151,,04,04,305,,09,02,338,*79
+$BDGSV,1,1,00*68
+$GNRMC,211248.190,V,4900.5200,N,00825.4710,E,0.000,0.00,151221,,,N*5F
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND
+
+>
+----
+Msg: Send Started!
+Resp:
+GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=3.00&field2=11.00&field3=1.00&field4=23.00&field5=30.00&field6=$GNGGA,211248.190,4900.5200,N,00825.4710,E,0,0,,150.4,M,47.9,M,,*54
+
+----
+Resp:
+
+OK
+
+
+
++CIPRCV,1:3
+CLOSED
+----
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CLOSED
+----
+ÙasîrÂ@‰ñÉñónkZ‰ÒÉñã€…<¡ë&kIaiyÐ¡x´¡ô¡”¡¢úSmartAQnet Scooter Sensors...
+Starting...
+Resp:
+
++CREG: 2
+
+^STN: 37
++CTZV:21/12/15,21:14:49,+01
+
++CREG: 1
+
+A9/A9G
+V02.02.20190915R
+Ai_Thinker_Co._Ltd.
+READY
+----
+Init Ready Done!
+Resp:
+
+----
+Resp:
+AT
+
+OK
+----
+Could not find a valid BME680 sensor, check wiring!
+
+*****Error No.0
+Resp:
+AT+CREG=1
+
+OK
+----
+Msg: Netwoek Set!
+Resp:
+AT+CREG?
+
++CREG: 1
+----
+Msg: Network Registered!
+Resp:
+AT+GPS=1
+
+OK
+----
+Msg: GPS Set!
+Resp:
+AT+CGATT=1
+
++CGATT:1
+
+OK
+----
+Msg: PS Attached!
+Resp:
+AT+CGDCONT?
+
+OK
+----
+Msg: Context Set!
+Resp:
+AT+CGDCONT=1,"IP","pinternet.interkom.de"
+
+OK
+----
+Msg: Context Changed!
+Resp:
+AT+CGACT=1,1
+
+OK
+----
+Msg: Context Selected!
+Resp:
+AT+CGACT?
+
++CGACT: 1, 1
+----
+Msg: Context is Correct!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:IP INITIAL
+----
+Msg: Status INITIAL!
+Resp:
+AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+----
+Msg: Connected!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,211510.087,4900.4964,N,00825.4084,E,0,2,,147.8,M,47.9,M,,*53
+$GPGSA,A,1,05,20,,,,,,,,,,,,,*19
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,12,26,67,290,,18,64,160,,29,43,068,33,31,36,215,*79
+$GPGSV,3,2,12,16,28,302,,05,22,061,21,25,19,129,,20,11,034,15*72
+$GPGSV,3,3,12,27,06,261,,23,05,151,,04,04,304,,09,02,337,*76
+$BDGSV,1,1,00*68
+$GNRMC,211510.087,V,4900.4964,N,00825.4084,E,0.258,219.56,151221,,,N*56
+$GNVTG,219.56,T,,M,0.258,N,0.478,K,N*21
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND
+
+>
+----
+Msg: Send Started!
+Resp:
+GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=7.00&field2=14.00&field3=0.00&field4=21.00&field5=31.00&field6=$GNGGA,211510.087,4900.4964,N,00825.4084,E,0,2,,147.8,M,47.9,M,,*53
+
+----
+Resp:
+
+OK
+
+
+
++CIPRCV,1:4
+CLOSED
+----
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CLOSED
+----
+ÉñónrÂ@‰ñ

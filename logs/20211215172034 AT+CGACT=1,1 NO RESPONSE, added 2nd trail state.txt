@@ -1,0 +1,93 @@
+™!qîëJBÙ!s¬ëJˆ‘&&¦SY‘éQRÊ12úStart...
+Resp:
+
++CREG: 2
+----
+Resp:
+^STN: 37
++CTZV:21/12/15,16:13:39,+01
+
++CREG: 1
+
+A9/A9G
+V02.02.20190915R
+Ai_Thinker_Co._Ltd.
+READY
+----
+Init Ready Done!
+Resp:
+
+----
+Resp:
+AT
+
+OK
+----
+Could not find a valid BME680 sensor, check wiring!
+
+*****Error No.0
+Resp:
+AT+CREG=1
+
+OK
+----
+Msg: Netwoek Set!
+Resp:
+AT+CREG?
+
++CREG: 1,1
+----
+Msg: Network Registered!
+Resp:
+AT+GPS=1
+
+OK
+----
+Msg: GPS Set!
+Resp:
+AT+CGATT=1
+
++CGATT:1
+
+OK
+----
+Msg: PS Attached!
+Resp:
+AT+CGDCONT?
+
+OK
+----
+Msg: Context Set!
+Resp:
+AT+CGDCONT=1,"IP","pinternet.interkom.de"
+
+OK
+----
+Msg: Context Changed!
+Resp:
+AT+CGACT=1,1
+
+----
+
+COMMAND NO RESPONSE!
+
+
+then manuallay onwards
+AT+CREG?
+
++CREG: 1,5
+
+OK
+AT+CGATT=1
+
++CGATT:1
+
+OK
+AT+CGDCONT?
+
++CGDCONT:1,"IP","pinternet.interkom.de","10.115.24.162",0,0
+
+OK
+AT+CGACT=1,1
+
+OK

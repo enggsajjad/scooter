@@ -1,0 +1,2301 @@
+/"r1s?wÑë/"vºr·v·Üc££££oc™»#‘Ö‘£#ÿStart
+Init...
+
++CIEV: "Charging",100%
+
+
++CREG: 2
+
+^STN: 37
++CIEV: "Complete the Charge",100%
+
++CTZV:21/12/11,01:35:16,+01
+
++CREG: 1
+
+A9/A9G
+V02.02.20190915R
+Ai_Thinker_Co._Ltd.
+READY
+*****A9/A9G Module READY.
+AT
+
+OK
+
+AT
+
+OK
+
+*****A9/A9G Module AT working.
+Cmd: AT+GPSRD=0
+Res: @1006ms AT+GPSRD=0
+
+OK
+Cmd: AT+GPS=1
+Res: @1019ms AT+GPS=1
+
+OK
+Cmd: AT+CREG?
+Res: @1013ms AT+CREG?
+
++CREG: 1,1
+
+OK
+Cmd: AT+CGACT?
+Res: @1011ms AT+CGACT?
+
++CGACT: 0,0
+
+OK
+Cmd: AT+CGATT=1
+Res: @1011ms AT+CGATT=1
+
++CGATT:1
+
+OK
+Cmd: AT+CGDCONT?
+Res: @1006ms AT+CGDCONT?
+
+OK
+Cmd: AT+CGDCONT=1,"IP","pinternet.interkom.de"
+Res: @1026ms AT+CGDCONT=1,"IP","pinternet.interkom.de"
+
+OK
+Cmd: AT+CGACT=1,1
+Res: @1004ms AT+CGACT=1,1
+Res: @2441ms 
+OK
+Cmd: AT+CGACT?
+Res: @1013ms AT+CGACT?
+
++CGACT: 1, 1
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1009ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:IP INITIAL 
+
+OK
+Start: 34 End: 44 Res: IP INITIAL
+Status: INITIAL
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1945ms AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1006ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,000054.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*5E
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000054.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*59
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1793ms 
+OK
+
+
+
++CIPRCV,3:178
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1015ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1897ms AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1006ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,000115.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*5A
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000115.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*5D
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1774ms 
+OK
+
+
+
++CIPRCV,3:179
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1010ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1014ms AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @2237ms CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1005ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,000136.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*5B
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000136.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*5C
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1750ms 
+OK
+
++CIPRCV,3:180
+
+
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1010ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1664ms AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1005ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,000156.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*5D
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000156.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*5A
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1783ms 
+OK
+
+
+
++CIPRCV,3:181
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1012ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1968ms AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1005ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,000217.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*5B
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000217.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*5C
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1790ms 
+OK
+
+
+
++CIPRCV,3:182
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1014ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1673ms AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1006ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,000237.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*59
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000237.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*5E
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1793ms 
+OK
+
+
+
++CIPRCV,3:183
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1012ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1998ms AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1005ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,000258.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*50
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000258.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*57
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1750ms 
+OK
+
+
+
++CIPRCV,3:184
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1012ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1010ms AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @2024ms CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1005ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,000319.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*54
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000319.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*53
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1769ms 
+OK
+
+
+
++CIPRCV,3:185
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1010ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1645ms AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1006ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,000339.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*56
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000339.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*51
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1805ms 
+OK
+
+
+
++CIPRCV,3:186
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1010ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1676ms AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1006ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,000359.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*50
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000359.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*57
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1911ms 
+OK
+
+
+
++CIPRCV,3:187
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1012ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1010ms AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @3444ms CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1005ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,000421.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*58
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000421.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*5F
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1789ms 
+OK
+
+
+
++CIPRCV,3:188
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1016ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1635ms AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1005ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,000441.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*5E
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000441.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*59
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1788ms 
+OK
+
++CIPRCV,3:189
+
+
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1010ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1667ms AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1005ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,000501.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*5B
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000501.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*5C
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1769ms 
+OK
+
+
+
++CIPRCV,3:190
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1013ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1008ms AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @2022ms CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1005ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,000522.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*5A
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000522.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*5D
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1769ms 
+OK
+
++CIPRCV,3:191
+
+
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1015ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1701ms AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1006ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,000542.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*5C
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000542.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*5B
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1750ms 
+OK
+
+
+
++CIPRCV,3:192
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1011ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1663ms AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1005ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,000602.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*5B
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000602.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*5C
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1911ms 
+OK
+
+
+
++CIPRCV,3:193
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1016ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1998ms AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1005ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,000623.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*58
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000623.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*5F
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1007ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1822ms 
+OK
+
+
+
++CIPRCV,3:194
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1010ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1672ms AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1006ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,000643.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*5E
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000643.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*59
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @2094ms 
+OK
+
+
+
++CIPRCV,3:195
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1012ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1697ms AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1005ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,000704.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*5C
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000704.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*5B
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1795ms 
+OK
+
+
+
++CIPRCV,3:196
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1012ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1008ms AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @2037ms CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1005ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,000725.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*5F
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000725.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*58
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1770ms 
+OK
+
+
+
++CIPRCV,3:197
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1015ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1702ms AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1006ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,000745.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*59
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000745.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*5E
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1791ms 
+OK
+
+
+
++CIPRCV,3:198
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1015ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1678ms AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1005ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,000805.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*52
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000805.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*55
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1791ms 
+OK
+
+
+
++CIPRCV,3:199
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1010ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1009ms AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @2037ms CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1006ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,000826.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*53
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000826.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*54
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1789ms 
+OK
+
++CIPRCV,3:200
+
+
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1011ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1645ms AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1004ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,000846.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*55
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000846.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*52
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1795ms 
+OK
+
+
+
++CIPRCV,3:201
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1010ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1681ms AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1005ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,000906.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*50
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000906.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*57
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1793ms 
+OK
+
+
+
++CIPRCV,3:202
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1015ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1009ms AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @2017ms CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1005ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,000927.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*53
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000927.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*54
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1750ms 
+OK
+
++CIPRCV,3:203
+
+
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1010ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1679ms AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1006ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,000947.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*55
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000947.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*52
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1789ms 
+OK
+
+
+
++CIPRCV,3:204
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1011ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1010ms AT+CIPSTART="TCP","api.thingspeak.com",80
+
+*****Error No.0
+Cmd: AT+GPSRD=0
+Res: @1006ms AT+GPSRD=0
+
+OK
+Cmd: AT+GPS=1
+Res: @1005ms AT+GPS=1
+
+OK
+Cmd: AT+CREG?
+Res: @1006ms AT+CREG?
+
++CREG: 1,5
+
+OK
+Cmd: AT+CGACT?
+Res: @1012ms AT+CGACT?
+
++CGACT: 1, 1
+
+OK
+Cmd: AT+CGATT=1
+Res: @1010ms AT+CGATT=1
+
++CGATT:1
+
+OK
+Cmd: AT+CGDCONT?
+Res: @1012ms AT+CGDCONT?
+
++CGDCONT:1,"IP","pinternet.interkom.de","10.133.14.133",0,0
+
+OK
+Cmd: AT+CGACT=1,1
+Res: @1008ms AT+CGACT=1,1
+
+OK
+Cmd: AT+CGACT?
+Res: @1007ms AT+CGACT?
+
++CGACT: 1, 1
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1009ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:IP PROCESSING 
+
+OK
+Start: 34 End: 47 Res: IP PROCESSING
+Status: PROCESSING
+Cmd: AT+GPSRD=5
+Res: @1006ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,001042.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*58
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,001042.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*5F
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1006ms AT+CIPSEND
+
++CME ERROR: 53
+
+Cmd: 
+
+Res: @1003ms 
+
+
+*****Error No.1
+Cmd: AT+GPSRD=0
+Res: @1006ms AT+GPSRD=0
+
+OK
+Cmd: AT+GPS=1
+Res: @1005ms AT+GPS=1
+
+OK
+Cmd: AT+CREG?
+Res: @1006ms AT+CREG?
+
++CREG: 1,5
+
+OK
+Cmd: AT+CGACT?
+Res: @1010ms AT+CGACT?
+
++CGACT: 1, 1
+
+OK
+Cmd: AT+CGATT=1
+Res: @1007ms AT+CGATT=1
+
++CGATT:1
+
+OK
+Cmd: AT+CGDCONT?
+Res: @1012ms AT+CGDCONT?
+
++CGDCONT:1,"IP","pinternet.interkom.de","10.133.14.133",0,0
+
+OK
+Cmd: AT+CGACT=1,1
+Res: @1008ms AT+CGACT=1,1
+
+OK
+Cmd: AT+CGACT?
+Res: @1007ms AT+CGACT?
+
++CGACT: 1, 1
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1008ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1893ms AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1005ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,001157.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*5D
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,001157.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*5A
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1002ms Res: @2091ms 
+OK
+
+
+
++CIPRCV,3:205
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1011ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1009ms AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @2235ms CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1006ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,001218.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*55
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,001218.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*52
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1002ms Res: @2631ms 
+OK
+
+
+
++CIPRCV,3:206
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1010ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1922ms AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1006ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,001239.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*56
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,001239.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*51
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1791ms 
+OK
+
+
+
++CIPRCV,3:207
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1010ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1009ms AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @2779ms CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1004ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,001300.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*5D
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,001300.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*5A
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1002ms Res: @2613ms 
+OK
+
+
+
++CIPRCV,3:208
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1011ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1010ms AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @2340ms CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1005ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,001322.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*5D
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,001322.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*5A
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1002ms Res: @2891ms 
+OK
+
+
+
++CIPRCV,3:209
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1012ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1900ms AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1006ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,001344.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*5D
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,001344.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*5A
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1002ms Res: @3195ms 
+OK
+
+
+
++CIPRCV,3:210
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1014ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1975ms AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1005ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,001406.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*5C
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,001406.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*5B
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @2152ms 
+OK
+
+
+
++CIPRCV,3:211
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1010ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1996ms AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1006ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,001427.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*5F
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,001427.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*58
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @2052ms 
+OK
+
+
+
++CIPRCV,3:212
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1013ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1976ms AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1005ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,001448.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*56
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,001448.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*51
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1912ms 
+OK
+
+
+
++CIPRCV,3:213
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1010ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1008ms AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @2221ms CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1005ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,001509.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*52
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,001509.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*55
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1007ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1002ms 
+*****Error No.2
+Cmd: AT+GPSRD=0
+Res: @3611ms 
+OK
+
+
+AT+GPSRD=0
+
+OK
+
++CIPRCV,3:214
+CLOSED
+
+OK
+Cmd: AT+GPS=1
+Res: @1005ms AT+GPS=1
+
+OK
+Cmd: AT+CREG?
+Res: @1008ms AT+CREG?
+
++CREG: 1,5
+
+OK
+Cmd: AT+CGACT?
+Res: @1006ms AT+CGACT?
+
++CGACT: 1, 1
+
+OK
+Cmd: AT+CGATT=1
+Res: @1009ms AT+CGATT=1
+
++CGATT:1
+
+OK
+Cmd: AT+CGDCONT?
+Res: @1012ms AT+CGDCONT?
+
++CGDCONT:1,"IP","pinternet.interkom.de","10.133.14.133",0,0
+
+OK
+Cmd: AT+CGACT=1,1
+Res: @1008ms AT+CGACT=1,1
+
+OK
+Cmd: AT+CGACT?
+Res: @1008ms AT+CGACT?
+
++CGACT: 1, 1
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1008ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1008ms AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @2567ms CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1004ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,001608.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*50
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,001608.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*57
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @2070ms 
+OK
+
+
+
++CIPRCV,3:215
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1010ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1010ms AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @3162ms CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1006ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,001630.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*5B
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,001630.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*5C
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1003ms Res: @2376ms 
+OK
+
+
+
++CIPRCV,3:216
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1012ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1010ms AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @11454ms CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1006ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,001701.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*58
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,001701.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*5F
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1005ms Res: @2349ms 
+OK
+
+
+
++CIPRCV,3:217
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1017ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1009ms AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @4857ms CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1005ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,001725.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*5E
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,001725.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*59
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1002ms Res: @4287ms 
+OK
+
+
+
++CIPRCV,3:218
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1012ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1676ms AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1006ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,001748.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*55
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,001748.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*52
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1807ms 
+OK
+
+
+
++CIPRCV,3:219
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1012ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1704ms AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1005ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,001808.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*5E
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,001808.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*59
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1002ms Res: @2626ms 
+OK
+
+
+
++CIPRCV,3:220
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1010ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1010ms AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @8047ms STATE:IP PROCESSING
+
+CONNECT FAIL
+
+*****Error No.3
+Cmd: AT+GPSRD=0
+Res: @1006ms AT+GPSRD=0
+
+OK
+Cmd: AT+GPS=1
+Res: @1005ms AT+GPS=1
+
+OK
+Cmd: AT+CREG?
+Res: @1006ms AT+CREG?
+
++CREG: 1,5
+
+OK
+Cmd: AT+CGACT?
+Res: @1007ms AT+CGACT?
+
++CGACT: 1, 1
+
+OK
+Cmd: AT+CGATT=1
+Res: @1009ms AT+CGATT=1
+
++CGATT:1
+
+OK
+Cmd: AT+CGDCONT?
+Res: @1011ms AT+CGDCONT?
+
++CGDCONT:1,"IP","pinternet.interkom.de","10.133.14.133",0,0
+
+OK
+Cmd: AT+CGACT=1,1
+Res: @1008ms AT+CGACT=1,1
+
+OK
+Cmd: AT+CGACT?
+Res: @1007ms AT+CGACT?
+
++CGACT: 1, 1
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1008ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1009ms AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @2563ms CONNECT OK
+
+OK
+Cmd: AT+GPSRD=5
+Res: @1006ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,001907.263,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*50
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,001907.263,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*57
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Res: @1005ms AT+CIPSEND
+
+> 
+Cmd: 
+
+Res: @1002ms Res: @2994ms 
+OK
+
+
+
++CIPRCV,3:221
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Status @1014ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @1009ms AT+CIPSTART="TCP","api.thingspeak.com",80
+Res: @8050ms STATE:IP PROCESSING
+
+CONNECT FAIL
+
+*****Error No.4

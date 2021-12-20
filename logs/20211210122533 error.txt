@@ -1,0 +1,148 @@
+Init...
+
++CIEV: "Charging",100%
+
+
++CREG: 2
+
+
+
+^STN: 37
+
++CIEV: "Complete the Charge",100%
+
+
+A9/A9G Module READY.
+AT
+
+OK
+
+AT
+
+OK
+
+A9/A9G Module AT working.
+Cmd: AT+GPSRD=0
+Get @1006ms AT+GPSRD=0
+
+OK
+Cmd: AT+GPS=1
+Get @1018ms AT+GPS=1
+
+OK
+Cmd: AT+CREG?
+Get @1014ms AT+CREG?
+
++CREG: 1,3
+
+OK
+Cmd: AT+CGACT?
+Get @1011ms AT+CGACT?
+
++CGACT: 0,0
+
+OK
+Cmd: AT+CGATT=1
+Get @1007ms AT+CGATT=1
+Error No.48
+Cmd: AT+GPSRD=0
+Error No.49
+?‘ˆBŒ‰êª?Ñ˜É¾ÿm?	§‰*¿#$‘+óÿStart
+Init...
+
++CIEV: "Charging",100%
+
+
+
++CREG: 2
+
+
+^STN: 37
+
++CIEV: "Complete the Charge",100%
+
+
+A9/A9G Module READY.
+AT
+
+OK
+
+AT
+
+OK
+
+A9/A9G Module AT working.
+Cmd: AT+GPSRD=0
+Get @1006ms AT+GPSRD=0
+
+OK
+Cmd: AT+GPS=1
+Get @1018ms AT+GPS=1
+
+OK
+Cmd: AT+CREG?
+Get @1017ms AT+CREG?
+
++CREG: 1,3
+
+OK
+Cmd: AT+CGACT?
+Get @1009ms AT+CGACT?
+
++CGACT: 0,0
+
+OK
+Cmd: AT+CGATT=1
+Get @1009ms AT+CGATT=1
+Error No.48
+Cmd: AT+GPSRD=0
+Error No.49
+/2"5soW7‰·/"b¾2gV+‘Ès³³³óc™¿‘*™³32øStart
+Init...
+
++CIEV: "Charging",100%
+
+
++CREG: 2
+
+
+
+^STN: 37
+
++CIEV: "Complete the Charge",100%
+
+
+A9/A9G Module READY.
+AT
+
+OK
+
+AT
+
+OK
+
+A9/A9G Module AT working.
+Cmd: AT+GPSRD=0
+Get @1006ms AT+GPSRD=0
+
+OK
+Cmd: AT+GPS=1
+Get @1017ms AT+GPS=1
+
+OK
+Cmd: AT+CREG?
+Get @1015ms AT+CREG?
+
++CREG: 1,3
+
+OK
+Cmd: AT+CGACT?
+Get @1011ms AT+CGACT?
+
++CGACT: 0,0
+
+OK
+Cmd: AT+CGATT=1
+Get @1007ms AT+CGATT=1
+Error No.48
+Cmd: AT+GPSRD=0

@@ -1,0 +1,248 @@
+ÉÑó˜Ê<œñÉñãÉnqqi•qqqÐ¡x´¡ô¡”¡¢ú
+SmartAQnet Scooter Sensors!
+Initializing A9G...
+
+【2021-01-18 18:01:59 525】Res
+【2021-01-18 18:01:59 535】p:
+
+
+【2021-01-18 18:01:59 547】+CREG: 2
+
+
+【2021-01-18 18:01:59 559】^STN: 37
++C
+【2021-01-18 18:01:59 578】TZV:21/12/18,17:01
+【2021-01-18 18:01:59 589】:58,+01
+
++
+【2021-01-18 18:01:59 606】CREG: 1
+
+A9/A
+【2021-01-18 18:01:59 620】9G
+V02.02.2
+【2021-01-18 18:01:59 640】0190915R
+Ai_Thinker_
+【2021-01-18 18:01:59 653】Co._Ltd.
+RE
+【2021-01-18 18:01:59 663】ADY
+----
+I
+【2021-01-18 18:01:59 676】nit Ready Do
+【2021-01-18 18:01:59 688】ne!
+Resp:
+
+----
+Resp:
+AT
+
+OK
+----
+Msg: Could not find a valid BME680 sensor, check wiring!
+
+*****Error No.0
+Resp:
+AT+CREG=1
+
+OK
+----
+Msg: Netwoek Set!
+Resp:
+AT+CREG?
+
++CREG: 1
+----
+Msg: Network Registered!
+Resp:
+AT+GPS=1
+
+OK
+----
+Msg: GPS Set!
+Resp:
+AT+CGATT=1
+
++CGATT:1
+
+OK
+----
+Msg: PS Attached!
+Resp:
+AT+CGDCONT?
+
+OK
+----
+Msg: Context Set!
+Resp:
+AT+CGDCONT=1,"IP","pinternet.interkom.de"
+
+OK
+----
+Msg: Context Changed!
+Resp:
+AT+CGACT=1,1
+
+OK
+----
+Msg: Context Selected!
+Resp:
+AT+CGACT?
+
++CGACT: 1, 1
+----
+Msg: Context is Correct!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:IP INITIAL
+----
+Msg: Status INITIAL!
+Resp:
+AT+CIPSTART="TCP","2.tcp.ngrok.io",16185
+CONNECT OK
+----
+Msg: Connected!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,170219.094,4900.5489,N,00825.5612,E,0,3,,311.5,M,47.9,M,,*51
+$GPGSA,A,1,02,24,19,,,,,,,,,,,,*12
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,12,81,026,15,25,56,270,,24,48,139,21,32,38,290,*72
+$GPGSV,3,2,10,02,24,114,31,06,23,066,16,29,22,199,,19,16,041,16*7C
+$GPGSV,3,3,10,31,04,304,,11,,,28*43
+$BDGSV,1,1,00*68
+$GNRMC,170219.094,V,4900.5489,N,00825.5612,E,1.182,311.97,181221,,,N*55
+$GNVTG,311.97,T,,M,1.182,N,2.191,K,N*20
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=101,"'A1',22.00,31.00,7.00,15.00,0.00,$GNGGA,170219.094,4900.5489,N,00825.5612,E,0,3,,311.5,M,47.9,M,,*51
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","2.tcp.ngrok.io",16185
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,170230.000,4900.5372,N,00825.4908,E,0,4,,227.4,M,47.9,M,,*53
+$GPGSA,A,1,02,24,19,06,,,,,,,,,,,*14
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,12,81,026,16,25,56,270,,24,48,139,18,32,38,290,*7B
+$GPGSV,3,2,10,37,32,162,,02,24,114,31,06,23,066,17,29,22,199,*70
+$GPGSV,3,3,10,19,15,041,16,31,04,304,*77
+$BDGSV,1,1,00*68
+$GNRMC,170230.000,V,4900.5372,N,00825.4908,E,8.426,284.77,181221,,,N*54
+$GNVTG,284.77,T,,M,8.426,N,15.613,K,N*1A
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=101,"'A1',23.00,33.00,6.00,14.00,1.00,$GNGGA,170230.000,4900.5372,N,00825.4908,E,0,4,,227.4,M,47.9,M,,*53
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","2.tcp.ngrok.io",16185
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,170241.000,4900.5349,N,00825.4537,E,1,4,3.37,197.4,M,47.9,M,,*4D
+$GPGSA,A,3,02,24,19,06,,,,,,,,,3.52,3.37,0.99*0B
+$BDGSA,A,3,,,,,,,,,,,,,3.52,3.37,0.99*10
+$GPGSV,3,1,10,12,81,026,14,25,56,270,,24,48,139,16,32,38,290,*77
+$GPGSV,3,2,10,33,29,210,,02,24,114,29,06,23,066,17,29,22,199,*71
+$GPGSV,3,3,10,19,15,041,15,31,04,304,*74
+$BDGSV,1,1,00*68
+$GNRMC,170241.000,A,4900.5349,N,00825.4537,E,7.914,288.68,181221,,,A*43
+$GNVTG,288.68,T,,M,7.914,N,14.665,K,A*14
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=105,"'A1',21.00,33.00,8.00,14.00,2.00,$GNGGA,170241.000,4900.5349,N,00825.4537,E,1,4,3.37,197.4,M,47.9,M,,*4D
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","2.tcp.ngrok.io",16185
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd

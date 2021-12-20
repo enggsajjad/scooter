@@ -1,0 +1,280 @@
+from the Terminal manually
+
+
+
+gprsPWR....
+Init...
+
++CREG: 2
+
+^STN: 37
+
++CREG: 2
+
++CTZV:21/12/13,02:11:52,+01
+
++CREG: 1
+
+A9/A9G
+V02.02.20190915R
+Ai_Thinker_Co._Ltd.
+READY
+AT+GPS=1
+
+OK
+AT+CREG?
+
++CREG: 1,1
+
+OK
+AT+CGACT?
+
++CGACT: 0,0
+
+OK
+AT+CGATT=1
+
++CGATT:1
+
+OK
+AT+CGDCONT?
+
+OK
+AT+CGDCONT=1,"IP","pinternet.interkom.de"
+
+OK
+AT+CGACT=1,1
+
+OK
+AT+CGACT?
+
++CGACT: 1, 1
+
+OK
+AT+CIPSTATUS?
++CIPSTATUS:
+STATE:IP INITIAL 
+
+OK
+AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+AT+CIPSEND
+
+> GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=23&field2=24&field3=25&field4=26&field5=27&field6=0
+
+OK
+
++CIPRCV,1:8
+CLOSED
+
+OK
+AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+AT+CIPSTART="TCP","api.thingspeak.com",80
+STATE:IP PROCESSING
+
+CONNECT FAIL
+AT+RST=1
+
+OK
+Init...
+
++CREG: 2
+
+^STN: 37
++CTZV:21/12/13,02:13:47,+01
+
++CREG: 1
+
+A9/A9G
+V02.02.20190915R
+Ai_Thinker_Co._Ltd.
+READY
+AT+GPS=1
+
+OK
+AT+CGATT=1
+
++CGATT:1
+
+OK
+AT+CGDCONT?
+
+OK
+AT+CGDCONT=1,"IP","pinternet.interkom.de"
+
+OK
+AT+CGACT=1,1
+
+OK
+AT+CGACT?
+
++CGACT: 1, 1
+
+OK
+AT+CGACT?
+
++CGACT: 1, 1
+
+OK
+AT+CIPSTATUS?
++CIPSTATUS:
+STATE:IP INITIAL 
+
+OK
+AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+AT+CIPSEND
+
+> GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=23&field2=24&field3=25&field4=26&field5=27&field6=1
+
+OK
+
++CIPRCV,1:9
+CLOSED
+
+OK
+AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+AT+CIPSEND
+
+> GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=23&field2=24&field3=25&field4=26&field5=27&field6=2
+
+OK
+
++CIPRCV,2:10
+CLOSED
+
+OK
+AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+AT+CIPSEND
+
+> GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=23&field2=24&field3=25&field4=26&field5=27&field6=2
+
+OK
+
++CIPRCV,2:11
+CLOSED
+
+OK
+AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+AT+CIPSEND
+
+> GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=23&field2=24&field3=25&field4=26&field5=27&field6=3
+
+OK
+
++CIPRCV,2:12
+CLOSED
+
+OK
+AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+AT+CIPSEND
+
+> GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=23&field2=24&field3=25&field4=26&field5=27&field6=4
+
+OK
+
++CIPRCV,2:13
+CLOSED
+
+OK
+AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+AT+CIPSEND
+
+> GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=23&field2=24&field3=25&field4=26&field5=27&field6=5
+
+OK
+
++CIPRCV,2:14
+CLOSED
+
+OK
+AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+AT+CIPSEND
+
+> GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=23&field2=24&field3=25&field4=26&field5=27&field6=6
+
+OK
+
++CIPRCV,2:15
+CLOSED
+
+OK
+AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+AT+CIPSTART="TCP","api.thingspeak.com",80
+STATE:IP PROCESSING
+
+CONNECT FAIL
+AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+AT+CIPSEND
+
+> GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=23&field2=24&field3=25&field4=26&field5=27&field6=7
+
+OK
+
++CIPRCV,2:16
+CLOSED
+
+OK

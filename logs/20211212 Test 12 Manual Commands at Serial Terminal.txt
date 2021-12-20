@@ -1,0 +1,119 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+flash read err, 1000
+ets_main.c 371 
+ets Jun  8 2016 00:22:57
+
+rst:0x10 (RTCWDT_RTC_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:10124
+load:0x40080400,len:5856
+entry 0x400806a8
+Hello Loop Testing....
+gprsPWR....
+
++CREG: 2
+
+^STN: 37
++CTZV:21/12/12,21:20:19,+01
+
++CREG: 1
+
+A9/A9G
+V02.02.20190915R
+Ai_Thinker_Co._Ltd.
+READY
+AT+CREG?
+
++CREG: 1,1
+
+OK
+AT+CREG=1
+
+OK
+AT+GPS=1
+
+OK
+AT+GPSRD=10
+
+OK
++GPSRD:$GNGGA,212121.000,4900.5275,N,00825.4552,E,1,4,5.84,147.1,M,47.9,M,,*44
+$GPGSA,A,3,29,05,25,20,,,,,,,,,5.91,5.84,0.94*00
+$BDGSA,A,3,,,,,,,,,,,,,5.91,5.84,0.94*1A
+$GPGSV,3,1,12,26,64,293,,18,61,164,,29,45,066,30,31,39,217,*7E
+$GPGSV,3,2,12,16,25,302,,05,22,064,24,25,21,128,21,20,12,036,28*79
+$GPGSV,3,3,12,04,05,307,,27,04,260,,23,03,152,15,09,02,339,*78
+$BDGSV,1,1,00*68
+$GNRMC,212121.000,A,4900.5275,N,00825.4552,E,0.466,75.97,121221,,,A*79
+$GNVTG,75.97,T,,M,0.466,N,0.863,K,A*16
+AT+GPSRD=0
+
+OK
+AT+CGACT?
+
++CGACT: 0,0
+
+OK
+AT+CGATT=1
+
++CGATT:1
+
+OK
+AT+CGDCONT?
+
+OK
+AT+CGDCONT=1,"IP","pinternet.interkom.de"
+
+OK
+AT+CGDCONT?
+
++CGDCONT:1,"IP","pinternet.interkom.de","0.0.0.0",0,0
+
+OK
+AT+CGACT=1,1
+
+OK
+AT+CGACT?
+
++CGACT: 1, 1
+
+OK
+AT+CIPSTATUS?
++CIPSTATUS:
+STATE:IP INITIAL 
+
+OK
+AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CONNECT OK 
+
+OK
+AT+CIPSEND
+
+> GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=23&field2=24&field3=25&field4=26&field5=27&field6=3
+
+OK
+
++CIPRCV,1:7
+CLOSED
+
+OK
+AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+AT+CPIN?
+
++CPIN:READY
+
+OK

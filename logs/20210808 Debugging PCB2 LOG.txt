@@ -1,0 +1,142 @@
+===============================
+Before SIM and Antennas
+===============================
+Hello Loop Testing....
+Init...
+
+NO SIM CARD
++CIEV: "Charging",96%
+
+
++CREG: 3
+===============================
+After SIM and Antennas
+===============================
+Hello Loop Testing....
+Init...
+
++CIEV: "Charging",96%
+
+
++CREG: 2
+
+^STN: 37
++CTZV:21/08/07,23:24:45,+02
+
++CREG: 1
+
+A9/A9G
+V02.02.20190915R
+Ai_Thinker_Co._Ltd.
+READY
+========================
+Comminicating AT Command
+========================
+Hello Loop Testing....
+Init...
+
+NO SIM CARD
++CIEV: "Charging",96%
+
+
++CREG: 3
+
+Hello Loop Testing....
+Init...
+
++CIEV: "Charging",96%
+
+
++CREG: 2
+
+^STN: 37
++CTZV:21/08/07,23:24:45,+02
+
++CREG: 1
+
+A9/A9G
+V02.02.20190915R
+Ai_Thinker_Co._Ltd.
+READY
+AT
+
+OK
+AT+GPS=1
+
+OK
+AT+CGATT=1
+
++CGATT:1
+
+OK
+AT+CGACT=1,1
+
+OK
+AT+CGACT?
+
++CGACT: 1, 1
+
+OK
+AT+GPSRD=10
+
+OK
+===============================
+After Reset
+===============================
+
+AT+RST=1
+
+OK
+Init...
+
++CIEV: "Charging",97%
+
+
++CREG: 2
+
+^STN: 37
++CTZV:21/08/07,23:48:28,+02
+
++CREG: 1
+
+A9/A9G
+V02.02.20190915R
+Ai_Thinker_Co._Ltd.
+READY
+AT+GPS=1
+
+OK
+AT+CREG?
+
++CREG: 1,1
+
+OK
+AT+CGACT?
+
++CGACT: 0,0
+
+OK
+AT+CGATT=1
+
++CGATT:1
+
+OK
+AT+CGDCONT?
+
+OK
+AT+CGDCONT=1,"IP","pinternet.interkom.de"
+
+OK
+AT+CGACT=1,1
+
+OK
+AT+GPSRD=10
+
+OK
++GPSRD:$GNGGA,000207.264,4900.7856,N,00825.4653,E,0,0,,102.1,M,47.9,M,,*5A
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000207.264,V,4900.7856,N,00825.4653,E,0.000,0.00,060180,,,N*58
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C

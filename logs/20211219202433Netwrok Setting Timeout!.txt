@@ -1,0 +1,52 @@
+
+【2021-07-19 20:07:38 365】Ùq
+【2021-07-19 20:07:38 376】sîéJR
+【2021-07-19 20:07:38 735】Ùa
+【2021-07-19 20:07:38 748】ó€¼#;¦ë™
+【2021-07-19 20:07:38 762】aééP!¨d3d!D3
+【2021-07-19 20:07:38 778】2ú
+SmartAQnet Scooter Sensors!
+Initializing A9G...
+ÙasîëJBÙa±€¾!{¦ëÙáùéB!è$1d!12ú
+SmartAQnet Scooter Sensors!
+Initializing A9G...
+Resp:
+
+----
+Msg: Init Error!, Try again!
+Msg: Check PWR and RESET of the A9G or SIM Serivices
+Reseting A9G again...
+Resp:
+
+----
+Resp:
+
+----
+Msg: Init2 Error!
+Msg: Check PWR and RESET of the A9G or SIM Serivices
+
+*****Error No.0
+Resp:
+
+----
+Msg: Netwrok Setting Timeout!
+
+*****Error No.1
+Resp:
+
+----
+Msg: Netwrok Setting Timeout!
+
+*****Error No.2
+Resp:
+
+----
+Msg: Netwrok Setting Timeout!
+
+*****Error No.3
+Resp:
+
+----
+Msg: Netwrok Setting Timeout!
+
+*****Error No.4

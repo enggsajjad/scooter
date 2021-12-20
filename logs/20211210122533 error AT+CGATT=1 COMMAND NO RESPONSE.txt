@@ -1,0 +1,493 @@
+?"b5s?7‰·/2rºr'b³Ès³³³³c™¿3‘Ò‘ó3ÿdãÿ^STN: 37
++CIEV: "Complete the Charge",100%
+
+AT+RST=1
+
+OK
+Init...
+
++CIEV: "Charging",100%
+
+
++CREG: 2
+
+^STN: 37
++CIEV: "Complete the Charge",100%
+
+AT+CREG?
+
++CREG: 1,3
+
+OK
+AT+CGACT?
+
++CGACT: 0,0
+
+OK
+AT+CGATT=1
+
+COMMAND NO RESPONSE!
+AT+RST=1
+
+OK
+Init...
+
++CIEV: "Charging",100%
+
+
++CREG: 2
+
+^STN: 37
++CIEV: "Complete the Charge",100%
+
+AT+CPIN
+
++CME ERROR: 4
+AT+CPIN
+
++CME ERROR: 4
+AT+CPIN?
+
++CPIN:READY
+
+OK
+AT+CSQ
+
++CSQ: 5,99
+
+OK
+AT+RST=1
+
+OK
+Init...
+
++CIEV: "Charging",100%
+
+
++CREG: 2
+
+^STN: 37
++CIEV: "Complete the Charge",100%
+
+AT+CREG?
+
++CREG: 1,3
+
+OK
+AT+CREG=1
+
+OK
+AT+CREG?
+
++CREG: 1,3
+
+OK
+AT+RST=1
+
+OK
+Init...
+
++CIEV: "Charging",100%
+
+
++CREG: 2
+
+^STN: 37
++CIEV: "Complete the Charge",100%
+
+AT+CGATT=1
+
+COMMAND NO RESPONSE!
+AT+CGATT=0
+
++CGATT:0
+
+OK
+AT+CGATT=1
+
+COMMAND NO RESPONSE!
+AT+GPRSMODE?
+
++CME ERROR: 58
+AT+GPRSMODE?
+
++CME ERROR: 58
+
++CME ERROR: 50
+AT+RST=1
+
+OK
+Init...
+
++CIEV: "Charging",100%
+
+
++CREG: 2
+
+^STN: 37
++CIEV: "Complete the Charge",100%
+
+AT+CREG?
+
++CREG: 1,3
+
+OK
+AT+CGREG?
+
++CGREG: 0,0
+
+OK
+AT+CGACT?
+
++CGACT: 0,0
+
+OK
+AT+CGACT=1,1
+
++CME ERROR: 50
+AT+CGATT? 
+
++CGATT:0
+
+OK
+AT+COPS?
+
++COPS: 2
+
+OK
+AT#SERVINFO
+
++CME ERROR: 58
+AT+SERVINFO
+
++CME ERROR: 58
+AT+COPS=0
+
+COMMAND NO RESPONSE!
+AT+CGATT?
+
++CGATT:0
+
+OK
+AT+CREG?
+
++CREG: 1,3
+
+OK
+AT+CREG=1
+
+OK
+AT+RST=1
+
+OK
+Init...
+
++CIEV: "Charging",100%
+
+
++CREG: 2
+
+^STN: 37
++CIEV: "Complete the Charge",100%
+
+AT
+
+OK
+ATDT015908105322
+
++CME ERROR: 500
+ATDT#015908105322
+
++CME ERROR: 500
+ATDT 015908105322
+
++CME ERROR: 58
+AT+CFUN?
+
++CFUN: 1
+
+OK
+AT+CGATT=1
+
+COMMAND NO RESPONSE!
+AT+CEER
+
++CEER: 255
+
+OK
+AT+CEER
+
++CEER: 255
+
+OK
+
++CME ERROR: 50
+at+cgreg=1
+
+OK
+AT+CGATT=1
+
++CGATT:1
+
+OK
+AT+RST=1
+
+OK
+Init...
+
++CIEV: "Charging",100%
+
+
++CREG: 2
+
+^STN: 37
++CIEV: "Complete the Charge",100%
+
+AT+CGATT=1
+
+COMMAND NO RESPONSE!
+at+cgreg=1
+
+OK
+AT+CGATT=1
+
++CGATT:1
+
+OK
+AT+CGDCONT=1,"IP","pinternet.interkom.de"
+
+OK
+AT+CGACT=1,1
+
++CME ERROR: 148
+AT+CREG?
+
++CREG: 1,3
+
+OK
+AT+CREG=1
+
+OK
+AT+CGREG=1
+
+OK
+AT+CGACT=1,1
+
++CME ERROR: 148
+AT+CGATT=1
+
++CGATT:1
+
+OK
+AT+CGACT=1,1
+
++CME ERROR: 148
+
++CME ERROR: 50
+
++CGREG: 3
+
+NO SIM CARD
+AT+RST=1
+
+OK
+Init...
+
++CIEV: "Charging",100%
+
+
++CREG: 2
+
+^STN: 37
++CIEV: "Complete the Charge",100%
+
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+flash read err, 1000
+ets_main.c 371 
+ets Jun  8 2016 00:22:57
+
+rst:0x10 (RTCWDT_RTC_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0018,len:4
+load:0x3fff001c,len:1044
+load:0x40078000,len:10124
+load:0x40080400,len:5856
+entry 0x400806a8
+Hello Loop Testing....
+gprsPWR....
+
+0
+
+1
+Init...
+
++CIEV: "Charging",100%
+
+
++CREG: 2
+
+^STN: 37
++CIEV: "Complete the Charge",100%
+
+AT
+
+OK
+AT+CGATT=1
+
+COMMAND NO RESPONSE!
+ATD
+
++CME ERROR: 58
+ATDT
+
++CME ERROR: 500
+AT+COPS? 
+
++COPS: 2
+
+OK
+AT+COPS=0
+
++CME ERROR: 50
+AT+COPS=2
+
++CME ERROR: 50
+AT+COPS=0
+
++CME ERROR: 50
+AT
+
+OK
+AT+CREG?
+
++CREG: 1,3
+
+OK
+AT+CREG=1
+
+OK
+AT+COPS=2
+
++CME ERROR: 50
+AT+COPS=0
+
++CME ERROR: 50
+AT+COPS?
+
++CME ERROR: 50
+AT+COPS?
+
++CME ERROR: 50
+AT+COPS?
+
++CME ERROR: 50
+AT+CGACT?
+
++CGACT: 0,0
+
+OK
+AT+CGATT?
+
++CGATT:0
+
+OK
+AT+CGATT=1
+
++CGATT:1
+
+OK
+AT+CGDCONT?
+
+OK
+AT+CGDCONT=1,"IP","pinternet.interkom.de"
+
+OK
+AT+CGACT=1,1
+
+COMMAND NO RESPONSE!
+AT+RST=1
+
+OK
+Init...
+
++CIEV: "Charging",100%
+
+
++CREG: 2
+
+^STN: 37
++CIEV: "Complete the Charge",100%
+
+AT+CREG?
+
++CREG: 1,3
+
+OK
+AT+CREG=1
+
+OK
+AT+CGREG=1
+
+OK
+AT+CGACT?
+
++CGACT: 0,0
+
+OK
+AT+CGATT=1
+
+COMMAND NO RESPONSE!
+AT+COPS=0
+
+COMMAND NO RESPONSE!
+AT
+
+OK
+AT+RST=1
+
+OK
+
++CME ERROR: 50
+Init...
+
++CIEV: "Charging",100%
+
+
++CREG: 2
+
+^STN: 37
++CIEV: "Complete the Charge",100%
+
++CTZV:21/12/10,15:40:20,+01
+
++CREG: 1
+
+A9/A9G
+V02.02.20190915R
+Ai_Thinker_Co._Ltd.
+READY
+AT+RST=1
+
+OK
+Init...
+
++CIEV: "Charging",100%
+
+
++CREG: 2
+
+^STN: 37
++CIEV: "Complete the Charge",100%
+
++CTZV:21/12/10,15:41:20,+01
+
++CREG: 1
+
+A9/A9G
+V02.02.20190915R
+Ai_Thinker_Co._Ltd.
+READY

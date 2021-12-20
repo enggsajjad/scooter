@@ -1,0 +1,53 @@
+AT+RST=1
+
+OK
+Init...
+
++CIEV: "Charging",100%
+
+
++CREG: 2
+
+^STN: 37
++CTZV:21/12/20,15:07:27,+01
+
++CREG: 1
+
+A9/A9G
+V02.02.20190915R
+Ai_Thinker_Co._Ltd.
+READY
++CIEV: "Complete the Charge",100%
+
+AT+CGATT=1
+
++CGATT:1
+
+OK
+AT+CGDCONT?
+
+OK
+AT+CGDCONT=1,"IP","pinternet.interkom.de"
+
+OK
+AT+CGACT=1,1
+
+OK
+AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+AT+CIPSEND
+
+> GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=23&field2=24&field3=25&field4=26&field5=27&field6=7
+
+OK
+
++CIPRCV,3:929
+CLOSED
+
+OK
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x3 (DOWNLOAD_BOOT(UART0/UART1/SDIO_REI_REO_V2))
+waiting for download

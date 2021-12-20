@@ -1,0 +1,8215 @@
+Éñó¸êz©ÒºÿÉñã…<¡ë&kI
+jPÒOhnqyAyÿ
+SmartAQnet Scooter Sensors!
+Initializing A9G...
+
+【2021-10-18 15:10:15 047】Res
+【2021-10-18 15:10:15 066】p:
+
++CREG: 2
+【2021-10-18 15:10:15 082】
+
+^STN: 37
++C
+【2021-10-18 15:10:15 171】TZV:21/12/18,14:10:13,+01
+
++CREG: 1
+
+A9/A9G
+V02.02.20190915R
+Ai_Thinker_Co._Lt
+【2021-10-18 15:10:15 192】d.
+READY
+----
+Init
+【2021-10-18 15:10:15 210】 Ready Done!
+Resp:
+
+----
+Resp:
+AT
+
++CME ERROR
+----
+Msg: Could not find a valid BME680 sensor, check wiring!
+
+*****Error No.0
+Resp:
+AT+CREG=1
+
+OK
+----
+Msg: Netwoek Set!
+Resp:
+AT+CREG?
+
++CREG: 1
+----
+Msg: Network Registered!
+Resp:
+AT+GPS=1
+
+OK
+----
+Msg: GPS Set!
+Resp:
+AT+CGATT=1
+
++CGATT:1
+
+OK
+----
+Msg: PS Attached!
+Resp:
+AT+CGDCONT?
+
+OK
+----
+Msg: Context Set!
+Resp:
+AT+CGDCONT=1,"IP","pinternet.interkom.de"
+
+OK
+----
+Msg: Context Changed!
+Resp:
+AT+CGACT=1,1
+
+OK
+----
+Msg: Context Selected!
+Resp:
+AT+CGACT?
+
++CGACT: 1, 1
+----
+Msg: Context is Correct!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:IP INITIAL
+----
+Msg: Status INITIAL!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+CONNECT OK
+----
+Msg: Connected!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141034.105,4900.5179,N,00825.3316,E,0,3,,135.8,M,47.9,M,,*53
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,66,202,,24,52,284,,13,48,145,17,17,34,086,23*76
+$GPGSV,3,2,11,14,30,053,20,19,29,117,30,23,29,284,,10,18,318,*7B
+$GPGSV,3,3,11,12,17,218,,30,02,090,,21,01,015,*49
+$BDGSV,1,1,00*68
+$GNRMC,141034.105,V,4900.5179,N,00825.3316,E,0.864,315.27,181221,,,N*51
+$GNVTG,315.27,T,,M,0.864,N,1.602,K,N*21
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=101,"'A1',20.00,32.00,4.00,18.00,0.00,$GNGGA,141034.105,4900.5179,N,00825.3316,E,0,3,,135.8,M,47.9,M,,*53
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141045.105,4900.5246,N,00825.3590,E,0,3,,113.2,M,47.9,M,,*5C
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,66,202,,24,52,284,,13,48,145,16,17,34,085,23*74
+$GPGSV,3,2,11,14,30,053,20,19,30,117,31,23,29,284,,10,18,318,*72
+$GPGSV,3,3,11,12,17,218,,30,02,090,,21,01,015,*49
+$BDGSV,1,1,00*68
+$GNRMC,141045.105,V,4900.5246,N,00825.3590,E,2.861,303.45,181221,,,N*54
+$GNVTG,303.45,T,,M,2.861,N,5.302,K,N*24
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=101,"'A1',21.00,31.00,4.00,14.00,1.00,$GNGGA,141045.105,4900.5246,N,00825.3590,E,0,3,,113.2,M,47.9,M,,*5C
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141056.105,4900.5273,N,00825.3955,E,0,3,,93.2,M,47.9,M,,*64
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,66,202,,24,52,284,,13,48,145,17,17,34,085,22*74
+$GPGSV,3,2,11,14,30,053,20,19,30,117,30,23,29,284,,10,18,318,*73
+$GPGSV,3,3,11,12,17,218,,30,01,091,,21,01,015,*4B
+$BDGSV,1,1,00*68
+$GNRMC,141056.105,V,4900.5273,N,00825.3955,E,1.532,298.59,181221,,,N*53
+$GNVTG,298.59,T,,M,1.532,N,2.838,K,N*27
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=100,"'A1',20.00,30.00,3.00,17.00,2.00,$GNGGA,141056.105,4900.5273,N,00825.3955,E,0,3,,93.2,M,47.9,M,,*64
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141107.105,4900.5264,N,00825.4089,E,0,3,,82.8,M,47.9,M,,*62
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,66,202,,24,52,284,,13,48,145,17,17,34,085,23*75
+$GPGSV,3,2,11,14,30,053,21,19,30,117,29,23,29,284,,10,18,318,*7A
+$GPGSV,3,3,11,12,17,218,,30,01,091,,21,01,015,*4B
+$BDGSV,1,1,00*68
+$GNRMC,141107.105,V,4900.5264,N,00825.4089,E,1.151,275.80,181221,,,N*59
+$GNVTG,275.80,T,,M,1.151,N,2.132,K,N*22
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=100,"'A1',20.00,33.00,2.00,19.00,3.00,$GNGGA,141107.105,4900.5264,N,00825.4089,E,0,3,,82.8,M,47.9,M,,*62
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141118.105,4900.5223,N,00825.3999,E,0,3,,90.1,M,47.9,M,,*6A
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,66,202,,24,52,284,,13,48,145,15,17,34,085,22*76
+$GPGSV,3,2,11,14,30,053,20,19,30,117,29,23,29,284,,10,18,318,*7B
+$GPGSV,3,3,11,12,17,218,,30,01,091,,21,01,015,*4B
+$BDGSV,1,1,00*68
+$GNRMC,141118.105,V,4900.5223,N,00825.3999,E,2.377,294.32,181221,,,N*58
+$GNVTG,294.32,T,,M,2.377,N,4.404,K,N*27
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=100,"'A1',22.00,34.00,3.00,16.00,4.00,$GNGGA,141118.105,4900.5223,N,00825.3999,E,0,3,,90.1,M,47.9,M,,*6A
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141129.105,4900.5230,N,00825.4094,E,0,3,,82.6,M,47.9,M,,*6D
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,66,202,,24,52,284,,13,48,145,12,17,34,085,21*72
+$GPGSV,3,2,11,14,30,053,19,19,30,117,29,23,29,284,,10,18,318,*71
+$GPGSV,3,3,11,12,17,218,,30,01,091,,21,01,015,*4B
+$BDGSV,1,1,00*68
+$GNRMC,141129.105,V,4900.5230,N,00825.4094,E,1.937,306.39,181221,,,N*57
+$GNVTG,306.39,T,,M,1.937,N,3.589,K,N*28
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=100,"'A1',20.00,34.00,6.00,14.00,5.00,$GNGGA,141129.105,4900.5230,N,00825.4094,E,0,3,,82.6,M,47.9,M,,*6D
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141140.105,4900.5226,N,00825.4272,E,0,3,,77.0,M,47.9,M,,*63
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,66,202,,24,52,284,,13,48,145,12,17,34,085,22*71
+$GPGSV,3,2,11,14,30,053,20,19,30,117,30,23,29,284,,10,18,318,*73
+$GPGSV,3,3,11,12,17,218,,30,01,091,,21,01,015,*4B
+$BDGSV,1,1,00*68
+$GNRMC,141140.105,V,4900.5226,N,00825.4272,E,0.858,273.70,181221,,,N*52
+$GNVTG,273.70,T,,M,0.858,N,1.590,K,N*25
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=100,"'A1',23.00,31.00,8.00,14.00,6.00,$GNGGA,141140.105,4900.5226,N,00825.4272,E,0,3,,77.0,M,47.9,M,,*63
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141151.105,4900.5220,N,00825.4135,E,0,3,,62.2,M,47.9,M,,*63
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,66,202,,24,52,284,,13,48,145,,17,34,085,24*74
+$GPGSV,3,2,11,14,30,053,20,19,30,117,32,23,29,284,,10,18,318,*71
+$GPGSV,3,3,11,12,18,218,,30,01,091,,21,01,015,*44
+$BDGSV,1,1,00*68
+$GNRMC,141151.105,V,4900.5220,N,00825.4135,E,2.823,298.52,181221,,,N*5F
+$GNVTG,298.52,T,,M,2.823,N,5.230,K,N*27
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=100,"'A1',24.00,30.00,4.00,15.00,7.00,$GNGGA,141151.105,4900.5220,N,00825.4135,E,0,3,,62.2,M,47.9,M,,*63
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141202.105,4900.5227,N,00825.4217,E,0,3,,43.9,M,47.9,M,,*6A
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,66,201,,24,53,284,,13,48,145,,17,35,085,23*70
+$GPGSV,3,2,11,14,30,053,20,19,30,117,31,23,29,283,,10,18,318,*75
+$GPGSV,3,3,11,12,18,218,,30,01,091,,21,01,015,*44
+$BDGSV,1,1,00*68
+$GNRMC,141202.105,V,4900.5227,N,00825.4217,E,0.282,98.04,181221,,,N*6C
+$GNVTG,98.04,T,,M,0.282,N,0.522,K,N*14
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=100,"'A1',24.00,33.00,2.00,11.00,8.00,$GNGGA,141202.105,4900.5227,N,00825.4217,E,0,3,,43.9,M,47.9,M,,*6A
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141213.105,4900.5214,N,00825.4135,E,0,3,,48.5,M,47.9,M,,*6E
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,66,201,,24,53,284,,13,48,145,,17,35,085,23*70
+$GPGSV,3,2,11,14,30,053,19,19,30,117,31,23,29,283,,10,18,318,*7F
+$GPGSV,3,3,11,12,18,218,,30,01,091,,21,01,015,*44
+$BDGSV,1,1,00*68
+$GNRMC,141213.105,V,4900.5214,N,00825.4135,E,0.587,285.07,181221,,,N*50
+$GNVTG,285.07,T,,M,0.587,N,1.088,K,N*2F
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=100,"'A1',24.00,33.00,2.00,13.00,9.00,$GNGGA,141213.105,4900.5214,N,00825.4135,E,0,3,,48.5,M,47.9,M,,*6E
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141224.105,4900.5209,N,00825.3955,E,0,3,,48.1,M,47.9,M,,*6B
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,66,201,,24,53,284,,13,48,145,,17,35,085,23*70
+$GPGSV,3,2,11,14,30,053,19,19,30,117,30,23,29,283,,10,18,318,*7E
+$GPGSV,3,3,11,12,18,218,,30,01,091,,21,01,015,*44
+$BDGSV,1,1,00*68
+$GNRMC,141224.105,V,4900.5209,N,00825.3955,E,1.450,289.49,181221,,,N*5D
+$GNVTG,289.49,T,,M,1.450,N,2.687,K,N*29
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=101,"'A1',20.00,30.00,8.00,12.00,10.00,$GNGGA,141224.105,4900.5209,N,00825.3955,E,0,3,,48.1,M,47.9,M,,*6B
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141235.105,4900.5171,N,00825.3908,E,0,3,,56.7,M,47.9,M,,*66
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,66,201,,24,53,284,,13,48,145,,17,35,085,22*71
+$GPGSV,3,2,11,14,30,053,18,19,30,117,27,23,29,283,,10,18,318,*79
+$GPGSV,3,3,11,12,18,218,,30,01,091,,21,01,015,*44
+$BDGSV,1,1,00*68
+$GNRMC,141235.105,V,4900.5171,N,00825.3908,E,1.228,284.98,181221,,,N*51
+$GNVTG,284.98,T,,M,1.228,N,2.276,K,N*2B
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=101,"'A1',20.00,33.00,6.00,19.00,11.00,$GNGGA,141235.105,4900.5171,N,00825.3908,E,0,3,,56.7,M,47.9,M,,*66
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141246.105,4900.5163,N,00825.3903,E,0,3,,59.4,M,47.9,M,,*66
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,66,201,,24,53,284,,13,48,145,,17,35,085,21*72
+$GPGSV,3,2,11,14,30,053,19,19,30,117,27,23,29,283,,10,18,318,*78
+$GPGSV,3,3,11,12,18,218,,30,01,091,,21,01,015,*44
+$BDGSV,1,1,00*68
+$GNRMC,141246.105,V,4900.5163,N,00825.3903,E,0.879,267.71,181221,,,N*58
+$GNVTG,267.71,T,,M,0.879,N,1.629,K,N*23
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=101,"'A1',24.00,34.00,7.00,11.00,12.00,$GNGGA,141246.105,4900.5163,N,00825.3903,E,0,3,,59.4,M,47.9,M,,*66
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141257.105,4900.5175,N,00825.4055,E,0,3,,49.4,M,47.9,M,,*6D
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,66,201,,24,53,284,,13,48,145,,17,35,085,22*71
+$GPGSV,3,2,11,14,30,053,19,19,30,117,29,23,29,283,,10,18,318,*76
+$GPGSV,3,3,11,12,18,218,,30,01,091,,21,01,015,*44
+$BDGSV,1,1,00*68
+$GNRMC,141257.105,V,4900.5175,N,00825.4055,E,1.189,302.35,181221,,,N*57
+$GNVTG,302.35,T,,M,1.189,N,2.203,K,N*29
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=101,"'A1',20.00,32.00,7.00,12.00,13.00,$GNGGA,141257.105,4900.5175,N,00825.4055,E,0,3,,49.4,M,47.9,M,,*6D
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141308.105,4900.5186,N,00825.3987,E,0,3,,46.2,M,47.9,M,,*62
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,66,201,,24,53,284,,13,47,145,,17,35,085,21*7D
+$GPGSV,3,2,11,19,30,117,28,14,29,053,18,23,29,283,,12,19,218,*7C
+$GPGSV,3,3,11,10,18,317,,30,01,091,,21,01,015,*48
+$BDGSV,1,1,00*68
+$GNRMC,141308.105,V,4900.5186,N,00825.3987,E,1.619,294.45,181221,,,N*56
+$GNVTG,294.45,T,,M,1.619,N,3.000,K,N*2E
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=101,"'A1',24.00,34.00,5.00,14.00,14.00,$GNGGA,141308.105,4900.5186,N,00825.3987,E,0,3,,46.2,M,47.9,M,,*62
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141319.105,4900.5178,N,00825.3935,E,0,3,,40.0,M,47.9,M,,*6E
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,65,200,,24,54,285,,13,47,145,,17,35,084,23*7A
+$GPGSV,3,2,11,19,30,116,30,14,29,053,21,23,29,282,,12,19,218,*7F
+$GPGSV,3,3,11,10,18,317,,30,01,091,,21,01,014,*49
+$BDGSV,1,1,00*68
+$GNRMC,141319.105,V,4900.5178,N,00825.3935,E,0.968,269.39,181221,,,N*5F
+$GNVTG,269.39,T,,M,0.968,N,1.793,K,N*20
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=101,"'A1',21.00,32.00,5.00,18.00,15.00,$GNGGA,141319.105,4900.5178,N,00825.3935,E,0,3,,40.0,M,47.9,M,,*6E
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141330.105,4900.5193,N,00825.4059,E,0,3,,34.5,M,47.9,M,,*62
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,15,65,200,,24,54,285,,13,47,145,14,17,35,084,20*7D
+$GPGSV,3,2,10,19,30,116,28,14,29,053,19,23,29,282,,12,19,218,*7C
+$GPGSV,3,3,10,10,18,317,,21,01,014,*72
+$BDGSV,1,1,00*68
+$GNRMC,141330.105,V,4900.5193,N,00825.4059,E,1.330,308.53,181221,,,N*59
+$GNVTG,308.53,T,,M,1.330,N,2.464,K,N*24
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=101,"'A1',20.00,32.00,3.00,11.00,16.00,$GNGGA,141330.105,4900.5193,N,00825.4059,E,0,3,,34.5,M,47.9,M,,*62
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141341.105,4900.5194,N,00825.4098,E,0,3,,29.2,M,47.9,M,,*65
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,15,65,200,,24,54,285,,13,47,145,13,17,35,084,22*78
+$GPGSV,3,2,10,19,30,116,32,14,29,053,23,23,29,282,,12,19,218,*7E
+$GPGSV,3,3,10,10,18,317,,21,01,014,*72
+$BDGSV,1,1,00*68
+$GNRMC,141341.105,V,4900.5194,N,00825.4098,E,0.999,284.59,181221,,,N*52
+$GNVTG,284.59,T,,M,0.999,N,1.851,K,N*2A
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=101,"'A1',22.00,30.00,7.00,19.00,17.00,$GNGGA,141341.105,4900.5194,N,00825.4098,E,0,3,,29.2,M,47.9,M,,*65
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141352.105,4900.5199,N,00825.4119,E,0,3,,27.6,M,47.9,M,,*68
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,15,65,200,,24,54,285,,13,47,145,16,17,35,084,21*7E
+$GPGSV,3,2,10,19,30,116,32,14,29,053,22,23,29,282,,12,19,218,*7F
+$GPGSV,3,3,10,10,18,317,,21,01,014,*72
+$BDGSV,1,1,00*68
+$GNRMC,141352.105,V,4900.5199,N,00825.4119,E,1.016,285.44,181221,,,N*57
+$GNVTG,285.44,T,,M,1.016,N,1.883,K,N*27
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=101,"'A1',24.00,33.00,3.00,11.00,18.00,$GNGGA,141352.105,4900.5199,N,00825.4119,E,0,3,,27.6,M,47.9,M,,*68
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141403.105,4900.5222,N,00825.4399,E,0,3,,5.2,M,47.9,M,,*56
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,15,65,200,,24,54,285,,13,47,145,18,17,35,084,23*72
+$GPGSV,3,2,10,19,30,116,33,14,29,053,23,23,29,282,,12,19,218,*7F
+$GPGSV,3,3,10,10,18,317,,21,01,014,*72
+$BDGSV,1,1,00*68
+$GNRMC,141403.105,V,4900.5222,N,00825.4399,E,0.304,153.74,181221,,,N*57
+$GNVTG,153.74,T,,M,0.304,N,0.563,K,N*2F
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=100,"'A1',24.00,30.00,6.00,19.00,19.00,$GNGGA,141403.105,4900.5222,N,00825.4399,E,0,3,,5.2,M,47.9,M,,*56
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141414.105,4900.5199,N,00825.4211,E,0,3,,20.8,M,47.9,M,,*6F
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,15,65,200,,24,54,285,,13,47,145,19,17,35,084,23*73
+$GPGSV,3,2,10,19,30,116,34,14,29,053,22,23,29,282,,12,19,218,*79
+$GPGSV,3,3,10,10,18,317,,21,01,014,*72
+$BDGSV,1,1,00*68
+$GNRMC,141414.105,V,4900.5199,N,00825.4211,E,1.420,289.99,181221,,,N*54
+$GNVTG,289.99,T,,M,1.420,N,2.631,K,N*2E
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=101,"'A1',24.00,33.00,8.00,10.00,20.00,$GNGGA,141414.105,4900.5199,N,00825.4211,E,0,3,,20.8,M,47.9,M,,*6F
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141425.105,4900.5214,N,00825.4272,E,0,3,,11.8,M,47.9,M,,*6C
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,15,65,200,,24,54,285,,13,47,145,17,17,35,084,23*7D
+$GPGSV,3,2,10,19,30,116,33,14,29,053,23,23,29,282,,10,19,317,*73
+$GPGSV,3,3,10,12,19,218,,21,01,014,*7F
+$BDGSV,1,1,00*68
+$GNRMC,141425.105,V,4900.5214,N,00825.4272,E,2.035,317.06,181221,,,N*56
+$GNVTG,317.06,T,,M,2.035,N,3.772,K,N*2A
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=101,"'A1',23.00,33.00,2.00,17.00,21.00,$GNGGA,141425.105,4900.5214,N,00825.4272,E,0,3,,11.8,M,47.9,M,,*6C
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141436.105,4900.5219,N,00825.4208,E,0,3,,17.7,M,47.9,M,,*67
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,15,65,199,,24,54,285,,13,47,145,12,17,35,083,23*7C
+$GPGSV,3,2,10,19,31,116,31,14,29,053,23,23,29,282,,10,19,317,*70
+$GPGSV,3,3,10,12,19,218,,21,01,014,*7F
+$BDGSV,1,1,00*68
+$GNRMC,141436.105,V,4900.5219,N,00825.4208,E,0.715,292.02,181221,,,N*5B
+$GNVTG,292.02,T,,M,0.715,N,1.325,K,N*21
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=101,"'A1',24.00,31.00,7.00,19.00,22.00,$GNGGA,141436.105,4900.5219,N,00825.4208,E,0,3,,17.7,M,47.9,M,,*67
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141447.105,4900.5183,N,00825.4144,E,0,3,,34.5,M,47.9,M,,*69
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,15,65,199,,24,54,285,,13,47,145,15,17,35,083,23*7B
+$GPGSV,3,2,10,19,31,116,32,14,29,053,24,23,29,282,,10,19,317,*74
+$GPGSV,3,3,10,12,19,218,,21,01,014,*7F
+$BDGSV,1,1,00*68
+$GNRMC,141447.105,V,4900.5183,N,00825.4144,E,0.897,305.70,181221,,,N*59
+$GNVTG,305.70,T,,M,0.897,N,1.663,K,N*29
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=101,"'A1',24.00,31.00,7.00,15.00,23.00,$GNGGA,141447.105,4900.5183,N,00825.4144,E,0,3,,34.5,M,47.9,M,,*69
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141458.105,4900.5190,N,00825.4211,E,0,3,,42.2,M,47.9,M,,*60
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,15,65,199,,24,54,285,,13,47,145,18,17,35,083,22*77
+$GPGSV,3,2,10,19,31,116,32,14,29,053,23,23,29,282,,10,19,317,*73
+$GPGSV,3,3,10,12,19,218,,21,01,014,*7F
+$BDGSV,1,1,00*68
+$GNRMC,141458.105,V,4900.5190,N,00825.4211,E,0.676,296.75,181221,,,N*59
+$GNVTG,296.75,T,,M,0.676,N,1.252,K,N*20
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=101,"'A1',21.00,30.00,5.00,15.00,24.00,$GNGGA,141458.105,4900.5190,N,00825.4211,E,0,3,,42.2,M,47.9,M,,*60
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141509.105,4900.5172,N,00825.4168,E,0,3,,70.9,M,47.9,M,,*6E
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,15,65,199,,24,54,285,,13,47,145,19,17,35,083,22*76
+$GPGSV,3,2,10,19,31,116,30,14,29,053,23,23,29,282,,10,19,317,*71
+$GPGSV,3,3,10,12,19,218,,21,01,014,*7F
+$BDGSV,1,1,00*68
+$GNRMC,141509.105,V,4900.5172,N,00825.4168,E,0.553,287.10,181221,,,N*5A
+$GNVTG,287.10,T,,M,0.553,N,1.025,K,N*25
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=101,"'A1',21.00,30.00,3.00,17.00,25.00,$GNGGA,141509.105,4900.5172,N,00825.4168,E,0,3,,70.9,M,47.9,M,,*6E
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141520.105,4900.5174,N,00825.4254,E,0,3,,65.5,M,47.9,M,,*67
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,15,65,199,,24,54,285,,13,47,145,17,17,35,083,22*78
+$GPGSV,3,2,10,19,31,116,31,14,29,053,21,23,29,282,,10,19,317,*72
+$GPGSV,3,3,10,12,19,218,,21,01,014,*7F
+$BDGSV,1,1,00*68
+$GNRMC,141520.105,V,4900.5174,N,00825.4254,E,0.531,317.42,181221,,,N*50
+$GNVTG,317.42,T,,M,0.531,N,0.984,K,N*2D
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=101,"'A1',23.00,30.00,5.00,17.00,26.00,$GNGGA,141520.105,4900.5174,N,00825.4254,E,0,3,,65.5,M,47.9,M,,*67
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141531.105,4900.5191,N,00825.4238,E,0,3,,52.5,M,47.9,M,,*62
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,15,65,199,,24,54,285,,13,47,145,16,17,35,083,20*7B
+$GPGSV,3,2,10,19,31,116,31,14,29,053,21,23,29,282,,10,19,317,*72
+$GPGSV,3,3,10,12,19,218,,21,01,014,*7F
+$BDGSV,1,1,00*68
+$GNRMC,141531.105,V,4900.5191,N,00825.4238,E,1.214,314.57,181221,,,N*57
+$GNVTG,314.57,T,,M,1.214,N,2.250,K,N*2B
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=101,"'A1',21.00,33.00,3.00,12.00,27.00,$GNGGA,141531.105,4900.5191,N,00825.4238,E,0,3,,52.5,M,47.9,M,,*62
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141542.105,4900.5209,N,00825.4247,E,0,3,,47.0,M,47.9,M,,*6D
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,15,65,199,,24,54,285,,13,46,146,15,17,35,083,22*78
+$GPGSV,3,2,10,19,31,116,31,23,29,282,,14,28,053,19,12,20,218,*7E
+$GPGSV,3,3,10,10,19,316,,21,01,014,*72
+$BDGSV,1,1,00*68
+$GNRMC,141542.105,V,4900.5209,N,00825.4247,E,0.619,274.67,181221,,,N*55
+$GNVTG,274.67,T,,M,0.619,N,1.147,K,N*21
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=101,"'A1',22.00,33.00,5.00,18.00,28.00,$GNGGA,141542.105,4900.5209,N,00825.4247,E,0,3,,47.0,M,47.9,M,,*6D
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141553.105,4900.5202,N,00825.4185,E,0,3,,54.4,M,47.9,M,,*6D
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,15,64,198,,24,55,285,,13,46,146,15,17,35,083,22*79
+$GPGSV,3,2,10,19,31,115,32,23,29,281,,14,28,053,20,12,20,218,*77
+$GPGSV,3,3,10,10,19,316,,21,01,013,*75
+$BDGSV,1,1,00*68
+$GNRMC,141553.105,V,4900.5202,N,00825.4185,E,1.802,304.95,181221,,,N*5D
+$GNVTG,304.95,T,,M,1.802,N,3.339,K,N*26
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=101,"'A1',21.00,33.00,7.00,14.00,29.00,$GNGGA,141553.105,4900.5202,N,00825.4185,E,0,3,,54.4,M,47.9,M,,*6D
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141604.105,4900.5212,N,00825.4307,E,0,3,,50.2,M,47.9,M,,*67
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,15,64,198,,24,55,285,,13,46,146,14,17,35,083,21*7B
+$GPGSV,3,2,10,19,31,115,30,23,29,281,,14,28,053,20,12,20,218,*75
+$GPGSV,3,3,10,10,19,316,,21,01,013,*75
+$BDGSV,1,1,00*68
+$GNRMC,141604.105,V,4900.5212,N,00825.4307,E,1.413,308.70,181221,,,N*5E
+$GNVTG,308.70,T,,M,1.413,N,2.618,K,N*2A
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=101,"'A1',21.00,32.00,9.00,12.00,30.00,$GNGGA,141604.105,4900.5212,N,00825.4307,E,0,3,,50.2,M,47.9,M,,*67
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141615.105,4900.5206,N,00825.3916,E,0,3,,92.9,M,47.9,M,,*6A
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,15,64,198,,24,55,285,,13,46,146,15,17,35,083,20*7B
+$GPGSV,3,2,10,19,31,115,28,23,29,281,,14,28,053,18,12,20,218,*77
+$GPGSV,3,3,10,10,19,316,,21,01,013,*75
+$BDGSV,1,1,00*68
+$GNRMC,141615.105,V,4900.5206,N,00825.3916,E,1.581,292.42,181221,,,N*5F
+$GNVTG,292.42,T,,M,1.581,N,2.930,K,N*26
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=101,"'A1',24.00,33.00,9.00,13.00,31.00,$GNGGA,141615.105,4900.5206,N,00825.3916,E,0,3,,92.9,M,47.9,M,,*6A
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141626.105,4900.5181,N,00825.3643,E,0,3,,108.6,M,47.9,M,,*54
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,15,64,198,,24,55,285,,13,46,146,14,17,35,083,21*7B
+$GPGSV,3,2,10,19,31,115,29,23,29,281,,14,28,053,20,12,20,218,*7D
+$GPGSV,3,3,10,10,19,316,,21,01,013,*75
+$BDGSV,1,1,00*68
+$GNRMC,141626.105,V,4900.5181,N,00825.3643,E,0.906,292.49,181221,,,N*55
+$GNVTG,292.49,T,,M,0.906,N,1.679,K,N*2E
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',23.00,30.00,7.00,13.00,32.00,$GNGGA,141626.105,4900.5181,N,00825.3643,E,0,3,,108.6,M,47.9,M,,*54
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141637.105,4900.5192,N,00825.3368,E,0,3,,110.6,M,47.9,M,,*53
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,15,64,198,,24,55,285,,13,46,146,13,17,35,083,19*77
+$GPGSV,3,2,10,19,31,115,26,23,29,281,,14,28,053,18,12,20,218,*79
+$GPGSV,3,3,10,10,19,316,,21,01,013,*75
+$BDGSV,1,1,00*68
+$GNRMC,141637.105,V,4900.5192,N,00825.3368,E,1.169,291.70,181221,,,N*52
+$GNVTG,291.70,T,,M,1.169,N,2.166,K,N*2D
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',23.00,34.00,2.00,17.00,33.00,$GNGGA,141637.105,4900.5192,N,00825.3368,E,0,3,,110.6,M,47.9,M,,*53
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141648.105,4900.5210,N,00825.3191,E,0,3,,105.0,M,47.9,M,,*54
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,15,64,198,,24,55,285,,13,46,146,,17,35,083,21*7E
+$GPGSV,3,2,10,19,31,115,26,23,29,281,,14,28,053,18,12,20,218,*79
+$GPGSV,3,3,10,10,19,316,,21,01,013,*75
+$BDGSV,1,1,00*68
+$GNRMC,141648.105,V,4900.5210,N,00825.3191,E,1.439,288.63,181221,,,N*5D
+$GNVTG,288.63,T,,M,1.439,N,2.667,K,N*21
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',23.00,32.00,5.00,11.00,34.00,$GNGGA,141648.105,4900.5210,N,00825.3191,E,0,3,,105.0,M,47.9,M,,*54
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141659.105,4900.5216,N,00825.3149,E,0,3,,100.4,M,47.9,M,,*56
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,15,64,198,,24,55,285,,13,45,146,,17,35,083,21*7D
+$GPGSV,3,2,10,19,31,115,28,23,29,281,,14,28,053,18,12,20,219,*76
+$GPGSV,3,3,10,10,19,316,,21,01,013,*75
+$BDGSV,1,1,00*68
+$GNRMC,141659.105,V,4900.5216,N,00825.3149,E,0.703,306.86,181221,,,N*59
+$GNVTG,306.86,T,,M,0.703,N,1.302,K,N*23
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',20.00,34.00,9.00,16.00,35.00,$GNGGA,141659.105,4900.5216,N,00825.3149,E,0,3,,100.4,M,47.9,M,,*56
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141710.105,4900.5179,N,00825.3047,E,0,3,,106.6,M,47.9,M,,*5B
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,15,63,197,,24,55,286,,13,45,146,,17,35,082,20*76
+$GPGSV,3,2,10,19,32,115,26,23,29,280,,14,28,053,17,12,20,219,*75
+$GPGSV,3,3,10,10,19,316,,21,01,013,*75
+$BDGSV,1,1,00*68
+$GNRMC,141710.105,V,4900.5179,N,00825.3047,E,1.449,289.51,181221,,,N*50
+$GNVTG,289.51,T,,M,1.449,N,2.685,K,N*2A
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',23.00,34.00,7.00,17.00,36.00,$GNGGA,141710.105,4900.5179,N,00825.3047,E,0,3,,106.6,M,47.9,M,,*5B
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141721.105,4900.5140,N,00825.3197,E,0,3,,107.5,M,47.9,M,,*5D
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,15,63,197,,24,55,286,,13,45,146,,17,35,082,19*7C
+$GPGSV,3,2,10,19,32,115,27,23,29,280,,14,28,053,17,12,20,219,*74
+$GPGSV,3,3,10,10,19,316,,21,01,013,*75
+$BDGSV,1,1,00*68
+$GNRMC,141721.105,V,4900.5140,N,00825.3197,E,0.903,302.10,181221,,,N*51
+$GNVTG,302.10,T,,M,0.903,N,1.674,K,N*22
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',21.00,30.00,6.00,19.00,37.00,$GNGGA,141721.105,4900.5140,N,00825.3197,E,0,3,,107.5,M,47.9,M,,*5D
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141732.105,4900.5164,N,00825.3287,E,0,3,,109.9,M,47.9,M,,*59
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,15,63,197,,24,55,286,,13,45,146,,17,35,082,18*7D
+$GPGSV,3,2,10,19,32,115,27,23,29,280,,14,28,053,17,12,20,219,*74
+$GPGSV,3,3,10,10,19,316,,21,01,013,*75
+$BDGSV,1,1,00*68
+$GNRMC,141732.105,V,4900.5164,N,00825.3287,E,0.881,299.84,181221,,,N*52
+$GNVTG,299.84,T,,M,0.881,N,1.632,K,N*25
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',24.00,34.00,3.00,11.00,38.00,$GNGGA,141732.105,4900.5164,N,00825.3287,E,0,3,,109.9,M,47.9,M,,*59
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141743.105,4900.5173,N,00825.3425,E,0,3,,104.6,M,47.9,M,,*55
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,15,63,197,,24,55,286,,13,45,146,16,17,35,082,19*7B
+$GPGSV,3,2,10,19,32,115,27,23,29,280,,14,28,053,17,12,20,219,*74
+$GPGSV,3,3,10,10,19,316,,21,01,013,*75
+$BDGSV,1,1,00*68
+$GNRMC,141743.105,V,4900.5173,N,00825.3425,E,0.790,305.80,181221,,,N*53
+$GNVTG,305.80,T,,M,0.790,N,1.464,K,N*2B
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',22.00,32.00,4.00,10.00,39.00,$GNGGA,141743.105,4900.5173,N,00825.3425,E,0,3,,104.6,M,47.9,M,,*55
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141754.105,4900.5214,N,00825.3476,E,0,3,,103.3,M,47.9,M,,*55
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,15,63,197,,24,55,286,,13,45,146,15,17,35,082,19*78
+$GPGSV,3,2,10,19,32,115,27,23,29,280,,14,28,053,18,12,20,219,*7B
+$GPGSV,3,3,10,10,19,316,,21,01,013,*75
+$BDGSV,1,1,00*68
+$GNRMC,141754.105,V,4900.5214,N,00825.3476,E,0.643,275.23,181221,,,N*51
+$GNVTG,275.23,T,,M,0.643,N,1.192,K,N*27
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',20.00,31.00,7.00,12.00,40.00,$GNGGA,141754.105,4900.5214,N,00825.3476,E,0,3,,103.3,M,47.9,M,,*55
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141805.105,4900.5183,N,00825.3496,E,0,3,,108.4,M,47.9,M,,*51
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,63,197,,24,55,286,,13,45,146,12,17,35,082,20*74
+$GPGSV,3,2,11,19,32,115,28,23,29,280,,14,28,053,18,12,20,219,*75
+$GPGSV,3,3,11,10,19,316,,01,01,037,,21,01,013,*40
+$BDGSV,1,1,00*68
+$GNRMC,141805.105,V,4900.5183,N,00825.3496,E,0.805,271.26,181221,,,N*54
+$GNVTG,271.26,T,,M,0.805,N,1.491,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',22.00,30.00,3.00,17.00,41.00,$GNGGA,141805.105,4900.5183,N,00825.3496,E,0,3,,108.4,M,47.9,M,,*51
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141816.105,4900.5155,N,00825.3321,E,0,3,,111.0,M,47.9,M,,*5F
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,63,197,,24,55,286,,13,45,146,,17,35,082,24*73
+$GPGSV,3,2,11,19,32,115,30,23,29,280,,14,27,053,20,12,21,219,*79
+$GPGSV,3,3,11,10,19,315,,01,01,037,,21,01,013,*43
+$BDGSV,1,1,00*68
+$GNRMC,141816.105,V,4900.5155,N,00825.3321,E,1.071,292.27,181221,,,N*50
+$GNVTG,292.27,T,,M,1.071,N,1.984,K,N*23
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',24.00,31.00,7.00,16.00,42.00,$GNGGA,141816.105,4900.5155,N,00825.3321,E,0,3,,111.0,M,47.9,M,,*5F
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141827.105,4900.5160,N,00825.3403,E,0,3,,111.3,M,47.9,M,,*5F
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,63,197,,24,56,286,,13,45,146,,17,35,081,22*75
+$GPGSV,3,2,11,19,32,114,28,23,29,280,,14,27,053,19,12,21,219,*7B
+$GPGSV,3,3,11,10,19,315,,01,01,037,,21,01,012,*42
+$BDGSV,1,1,00*68
+$GNRMC,141827.105,V,4900.5160,N,00825.3403,E,1.295,305.79,181221,,,N*5F
+$GNVTG,305.79,T,,M,1.295,N,2.399,K,N*2A
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',22.00,32.00,8.00,11.00,43.00,$GNGGA,141827.105,4900.5160,N,00825.3403,E,0,3,,111.3,M,47.9,M,,*5F
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141838.105,4900.5139,N,00825.3376,E,0,3,,121.8,M,47.9,M,,*50
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,63,197,,24,56,286,,13,45,146,,17,35,081,22*75
+$GPGSV,3,2,11,19,32,114,28,23,29,280,,14,27,053,18,12,21,219,*7A
+$GPGSV,3,3,11,10,19,315,,01,01,037,,21,01,012,*42
+$BDGSV,1,1,00*68
+$GNRMC,141838.105,V,4900.5139,N,00825.3376,E,1.180,306.17,181221,,,N*54
+$GNVTG,306.17,T,,M,1.180,N,2.186,K,N*2A
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',20.00,31.00,6.00,18.00,44.00,$GNGGA,141838.105,4900.5139,N,00825.3376,E,0,3,,121.8,M,47.9,M,,*50
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141849.105,4900.5140,N,00825.3170,E,0,3,,134.0,M,47.9,M,,*50
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,63,197,,24,56,286,,13,45,146,,17,35,081,22*75
+$GPGSV,3,2,11,19,32,114,27,23,29,280,,14,27,053,17,12,21,219,*7A
+$GPGSV,3,3,11,10,19,315,,01,01,037,,21,01,012,*42
+$BDGSV,1,1,00*68
+$GNRMC,141849.105,V,4900.5140,N,00825.3170,E,1.621,302.39,181221,,,N*5C
+$GNVTG,302.39,T,,M,1.621,N,3.003,K,N*23
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',21.00,33.00,5.00,19.00,45.00,$GNGGA,141849.105,4900.5140,N,00825.3170,E,0,3,,134.0,M,47.9,M,,*50
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141900.105,4900.5154,N,00825.3108,E,0,3,,138.2,M,47.9,M,,*58
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,63,197,,24,56,286,,13,45,146,,17,35,081,21*76
+$GPGSV,3,2,11,19,32,114,26,23,29,280,,14,27,053,17,12,21,219,*7B
+$GPGSV,3,3,11,10,19,315,,01,01,037,,21,01,012,*42
+$BDGSV,1,1,00*68
+$GNRMC,141900.105,V,4900.5154,N,00825.3108,E,1.733,309.64,181221,,,N*5B
+$GNVTG,309.64,T,,M,1.733,N,3.212,K,N*20
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',24.00,34.00,9.00,15.00,46.00,$GNGGA,141900.105,4900.5154,N,00825.3108,E,0,3,,138.2,M,47.9,M,,*58
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141911.105,4900.5123,N,00825.3353,E,0,3,,137.3,M,47.9,M,,*5A
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,63,197,,24,56,286,,13,45,146,,17,35,081,21*76
+$GPGSV,3,2,11,19,32,114,27,23,29,280,,14,27,053,18,12,21,219,*75
+$GPGSV,3,3,11,10,19,315,,01,01,037,,21,01,012,*42
+$BDGSV,1,1,00*68
+$GNRMC,141911.105,V,4900.5123,N,00825.3353,E,0.504,327.85,181221,,,N*53
+$GNVTG,327.85,T,,M,0.504,N,0.934,K,N*28
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',20.00,30.00,2.00,11.00,47.00,$GNGGA,141911.105,4900.5123,N,00825.3353,E,0,3,,137.3,M,47.9,M,,*5A
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141922.105,4900.5172,N,00825.3548,E,0,3,,127.5,M,47.9,M,,*55
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,63,197,,24,56,286,,13,45,146,,17,35,081,22*75
+$GPGSV,3,2,11,19,32,114,28,23,29,280,,14,27,053,17,12,21,219,*75
+$GPGSV,3,3,11,10,19,315,,01,01,037,,21,01,012,*42
+$BDGSV,1,1,00*68
+$GNRMC,141922.105,V,4900.5172,N,00825.3548,E,1.587,312.43,181221,,,N*5D
+$GNVTG,312.43,T,,M,1.587,N,2.942,K,N*2D
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',23.00,30.00,5.00,15.00,48.00,$GNGGA,141922.105,4900.5172,N,00825.3548,E,0,3,,127.5,M,47.9,M,,*55
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141933.105,4900.5152,N,00825.3739,E,0,3,,128.3,M,47.9,M,,*5A
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,63,197,,24,56,286,,13,44,146,,17,35,081,21*77
+$GPGSV,3,2,11,19,32,114,28,23,29,280,,14,27,053,16,12,21,219,*74
+$GPGSV,3,3,11,10,19,315,,01,01,037,,21,01,012,*42
+$BDGSV,1,1,00*68
+$GNRMC,141933.105,V,4900.5152,N,00825.3739,E,0.066,313.96,181221,,,N*59
+$GNVTG,313.96,T,,M,0.066,N,0.121,K,N*20
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',21.00,32.00,7.00,17.00,49.00,$GNGGA,141933.105,4900.5152,N,00825.3739,E,0,3,,128.3,M,47.9,M,,*5A
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141944.105,4900.5141,N,00825.4282,E,0,3,,133.3,M,47.9,M,,*50
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,62,196,,24,56,287,,13,44,146,,17,35,081,19*7D
+$GPGSV,3,2,11,19,32,114,28,23,28,279,,14,27,053,16,12,21,219,*73
+$GPGSV,3,3,11,10,19,315,,01,01,037,,21,01,012,*42
+$BDGSV,1,1,00*68
+$GNRMC,141944.105,V,4900.5141,N,00825.4282,E,0.377,2.18,181221,,,N*5F
+$GNVTG,2.18,T,,M,0.377,N,0.699,K,N*22
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',20.00,32.00,6.00,15.00,50.00,$GNGGA,141944.105,4900.5141,N,00825.4282,E,0,3,,133.3,M,47.9,M,,*50
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,141955.105,4900.5194,N,00825.4276,E,0,3,,139.7,M,47.9,M,,*5D
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,62,196,,24,56,287,,13,44,146,,17,35,081,18*7C
+$GPGSV,3,2,11,19,32,114,27,23,28,279,,14,27,053,15,12,21,219,*7F
+$GPGSV,3,3,11,10,19,315,,01,01,037,,21,01,012,*42
+$BDGSV,1,1,00*68
+$GNRMC,141955.105,V,4900.5194,N,00825.4276,E,1.720,309.84,181221,,,N*56
+$GNVTG,309.84,T,,M,1.720,N,3.187,K,N*23
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',21.00,34.00,5.00,17.00,51.00,$GNGGA,141955.105,4900.5194,N,00825.4276,E,0,3,,139.7,M,47.9,M,,*5D
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142006.105,4900.5182,N,00825.3845,E,0,3,,143.1,M,47.9,M,,*50
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,62,196,,24,56,287,,13,44,146,,17,35,081,18*7C
+$GPGSV,3,2,11,19,32,114,27,23,28,279,,14,27,053,15,12,21,219,*7F
+$GPGSV,3,3,11,10,19,315,,01,01,037,,21,01,012,*42
+$BDGSV,1,1,00*68
+$GNRMC,142006.105,V,4900.5182,N,00825.3845,E,1.131,296.23,181221,,,N*5C
+$GNVTG,296.23,T,,M,1.131,N,2.095,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',20.00,34.00,2.00,13.00,52.00,$GNGGA,142006.105,4900.5182,N,00825.3845,E,0,3,,143.1,M,47.9,M,,*50
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142017.105,4900.5123,N,00825.3561,E,0,3,,150.3,M,47.9,M,,*50
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,62,196,,24,56,287,,13,44,146,,17,35,081,18*7C
+$GPGSV,3,2,11,19,32,114,27,23,28,279,,14,27,053,15,12,21,219,*7F
+$GPGSV,3,3,11,10,19,315,,01,01,037,,21,01,012,*42
+$BDGSV,1,1,00*68
+$GNRMC,142017.105,V,4900.5123,N,00825.3561,E,0.822,295.75,181221,,,N*56
+$GNVTG,295.75,T,,M,0.822,N,1.523,K,N*2D
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',24.00,34.00,4.00,12.00,53.00,$GNGGA,142017.105,4900.5123,N,00825.3561,E,0,3,,150.3,M,47.9,M,,*50
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142028.105,4900.5164,N,00825.3413,E,0,3,,147.7,M,47.9,M,,*59
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,62,196,,24,56,287,,13,44,146,,17,35,081,18*7C
+$GPGSV,3,2,11,19,32,114,27,23,28,279,,14,27,053,13,12,21,219,*79
+$GPGSV,3,3,11,10,19,315,,01,01,037,,21,01,012,*42
+$BDGSV,1,1,00*68
+$GNRMC,142028.105,V,4900.5164,N,00825.3413,E,1.767,321.68,181221,,,N*50
+$GNVTG,321.68,T,,M,1.767,N,3.274,K,N*27
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',21.00,32.00,3.00,14.00,54.00,$GNGGA,142028.105,4900.5164,N,00825.3413,E,0,3,,147.7,M,47.9,M,,*59
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142039.105,4900.5194,N,00825.2957,E,0,2,,130.6,M,47.9,M,,*5A
+$GPGSA,A,1,19,17,,,,,,,,,,,,,*10
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,62,196,,24,56,287,,13,44,146,17,17,35,081,20*71
+$GPGSV,3,2,11,19,32,114,30,23,28,279,,14,27,053,,12,21,219,*7D
+$GPGSV,3,3,11,10,19,315,,01,01,036,,21,01,012,*43
+$BDGSV,1,1,00*68
+$GNRMC,142039.105,V,4900.5194,N,00825.2957,E,1.507,274.05,181221,,,N*5D
+$GNVTG,274.05,T,,M,1.507,N,2.792,K,N*25
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',24.00,31.00,2.00,18.00,55.00,$GNGGA,142039.105,4900.5194,N,00825.2957,E,0,2,,130.6,M,47.9,M,,*5A
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142050.105,4900.5184,N,00825.3079,E,0,2,,111.3,M,47.9,M,,*56
+$GPGSA,A,1,19,17,,,,,,,,,,,,,*10
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,62,196,,24,56,287,,13,43,146,18,17,35,081,20*79
+$GPGSV,3,2,11,19,32,114,29,23,28,279,,14,26,053,,12,22,219,*77
+$GPGSV,3,3,11,10,20,314,,01,01,036,,21,01,012,*48
+$BDGSV,1,1,00*68
+$GNRMC,142050.105,V,4900.5184,N,00825.3079,E,0.516,278.09,181221,,,N*56
+$GNVTG,278.09,T,,M,0.516,N,0.955,K,N*23
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',24.00,31.00,8.00,11.00,56.00,$GNGGA,142050.105,4900.5184,N,00825.3079,E,0,2,,111.3,M,47.9,M,,*56
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142101.105,4900.5225,N,00825.3305,E,0,2,,95.4,M,47.9,M,,*69
+$GPGSA,A,1,19,17,,,,,,,,,,,,,*10
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,62,195,,24,57,287,,13,43,146,17,17,36,080,19*7C
+$GPGSV,3,2,11,19,33,113,30,23,28,278,,14,26,053,,12,22,219,*78
+$GPGSV,3,3,11,10,20,314,,01,01,036,,21,01,012,*48
+$BDGSV,1,1,00*68
+$GNRMC,142101.105,V,4900.5225,N,00825.3305,E,1.709,306.12,181221,,,N*5C
+$GNVTG,306.12,T,,M,1.709,N,3.166,K,N*27
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=101,"'A1',20.00,30.00,4.00,18.00,57.00,$GNGGA,142101.105,4900.5225,N,00825.3305,E,0,2,,95.4,M,47.9,M,,*69
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142112.105,4900.5203,N,00825.3169,E,0,0,,106.8,M,47.9,M,,*52
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,62,195,,24,57,287,,13,43,146,14,17,36,080,18*7E
+$GPGSV,3,2,11,19,33,113,30,23,28,278,,14,26,053,,12,22,219,*78
+$GPGSV,3,3,11,10,20,314,,01,01,036,,21,01,012,*48
+$BDGSV,1,1,00*68
+$GNRMC,142112.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*5B
+$GNVTG,0.00,T,,M,0.000,N,0.001,K,N*2D
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',21.00,33.00,7.00,10.00,58.00,$GNGGA,142112.105,4900.5203,N,00825.3169,E,0,0,,106.8,M,47.9,M,,*52
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142123.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5D
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,62,195,,24,57,287,,13,43,146,13,17,36,080,18*79
+$GPGSV,3,2,11,19,33,113,29,23,28,278,,14,26,053,,12,22,219,*70
+$GPGSV,3,3,11,10,20,314,,01,01,036,,21,01,012,*48
+$BDGSV,1,1,00*68
+$GNRMC,142123.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*59
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',22.00,33.00,3.00,12.00,59.00,$GNGGA,142123.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5D
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142134.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5B
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,62,195,,24,57,287,,13,43,146,,17,36,080,18*7B
+$GPGSV,3,2,11,19,33,113,29,23,28,278,,14,26,053,,12,22,219,*70
+$GPGSV,3,3,11,10,20,314,,01,01,036,,21,01,012,*48
+$BDGSV,1,1,00*68
+$GNRMC,142134.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*5F
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',22.00,34.00,7.00,11.00,60.00,$GNGGA,142134.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5B
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142145.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5D
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,62,195,,24,57,287,,13,43,146,,17,36,080,18*7B
+$GPGSV,3,2,11,19,33,113,29,23,28,278,,14,26,053,,12,22,219,*70
+$GPGSV,3,3,11,10,20,314,,01,01,036,,21,01,012,*48
+$BDGSV,1,1,00*68
+$GNRMC,142145.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*59
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',20.00,30.00,7.00,13.00,61.00,$GNGGA,142145.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5D
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142156.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5F
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,62,195,,24,57,287,,13,43,146,,17,36,080,19*7A
+$GPGSV,3,2,11,19,33,113,30,23,28,278,,14,26,053,,12,22,219,*78
+$GPGSV,3,3,11,10,20,314,,01,01,036,,21,01,012,*48
+$BDGSV,1,1,00*68
+$GNRMC,142156.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*5B
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',20.00,30.00,4.00,10.00,62.00,$GNGGA,142156.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5F
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142207.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*58
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,62,195,,24,57,287,,13,43,147,,17,36,080,20*71
+$GPGSV,3,2,11,19,33,113,28,23,28,278,,14,26,053,,12,22,220,*7B
+$GPGSV,3,3,11,10,20,314,,01,01,036,,21,01,012,*48
+$BDGSV,1,1,00*68
+$GNRMC,142207.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*5C
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',21.00,33.00,3.00,19.00,63.00,$GNGGA,142207.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*58
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142218.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*56
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,61,195,,24,57,287,,13,43,147,,17,36,079,21*75
+$GPGSV,3,2,11,19,33,113,29,23,28,278,,14,26,053,,12,22,220,*7A
+$GPGSV,3,3,11,10,20,314,,01,01,036,,21,01,011,*4B
+$BDGSV,1,1,00*68
+$GNRMC,142218.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*52
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',22.00,33.00,7.00,16.00,64.00,$GNGGA,142218.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*56
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142229.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*54
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,61,195,,24,57,287,,13,43,147,,17,36,079,23*77
+$GPGSV,3,2,11,19,33,113,30,23,28,278,,14,26,053,,12,22,220,*72
+$GPGSV,3,3,11,10,20,314,,01,01,036,,21,01,011,*4B
+$BDGSV,1,1,00*68
+$GNRMC,142229.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*50
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',22.00,33.00,7.00,13.00,65.00,$GNGGA,142229.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*54
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142240.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5B
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,61,195,,24,57,287,,13,43,147,,17,36,079,23*77
+$GPGSV,3,2,11,19,33,113,31,23,28,278,,14,26,053,,12,22,220,*73
+$GPGSV,3,3,11,10,20,314,,01,01,036,,21,01,011,*4B
+$BDGSV,1,1,00*68
+$GNRMC,142240.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*5F
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',20.00,30.00,6.00,10.00,66.00,$GNGGA,142240.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5B
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142251.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5B
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,61,195,,24,57,287,,13,43,147,,17,36,079,23*77
+$GPGSV,3,2,11,19,33,113,31,23,28,278,,14,26,053,,12,22,220,*73
+$GPGSV,3,3,11,10,20,314,,01,01,036,,21,01,011,*4B
+$BDGSV,1,1,00*68
+$GNRMC,142251.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*5F
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',21.00,34.00,3.00,11.00,67.00,$GNGGA,142251.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5B
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142302.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5C
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,61,195,,24,57,287,,13,43,147,,17,36,079,24*70
+$GPGSV,3,2,11,19,33,113,31,23,28,278,,14,26,053,,12,22,220,*73
+$GPGSV,3,3,11,10,20,314,,01,01,036,,21,01,011,*4B
+$BDGSV,1,1,00*68
+$GNRMC,142302.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*58
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',24.00,32.00,7.00,13.00,68.00,$GNGGA,142302.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5C
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142313.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5C
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,61,195,,24,57,287,,13,43,147,,17,36,079,21*75
+$GPGSV,3,2,11,19,33,113,28,23,28,278,,14,26,053,,12,22,220,*7B
+$GPGSV,3,3,11,10,20,314,,01,01,035,,21,01,011,*48
+$BDGSV,1,1,00*68
+$GNRMC,142313.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*58
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',24.00,32.00,2.00,18.00,69.00,$GNGGA,142313.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5C
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142324.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*58
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,61,195,,24,57,287,,13,42,147,,17,36,079,21*74
+$GPGSV,3,2,11,19,33,113,28,23,28,278,,14,25,053,,12,23,220,*79
+$GPGSV,3,3,11,10,20,313,,01,01,035,,21,01,011,*4F
+$BDGSV,1,1,00*68
+$GNRMC,142324.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*5C
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',23.00,31.00,6.00,19.00,70.00,$GNGGA,142324.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*58
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142335.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*58
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,61,194,,24,58,288,,13,42,147,,17,36,079,22*76
+$GPGSV,3,2,11,19,34,112,28,23,28,277,,14,25,053,,12,23,220,*70
+$GPGSV,3,3,11,10,20,313,,01,01,035,,21,01,011,*4F
+$BDGSV,1,1,00*68
+$GNRMC,142335.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*5C
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',24.00,30.00,8.00,10.00,71.00,$GNGGA,142335.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*58
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142346.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5C
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,61,194,,24,58,288,,13,42,147,,17,36,079,21*75
+$GPGSV,3,2,11,19,34,112,26,23,28,277,,14,25,053,,12,23,220,*7E
+$GPGSV,3,3,11,10,20,313,,01,01,035,,21,01,011,*4F
+$BDGSV,1,1,00*68
+$GNRMC,142346.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*58
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',24.00,31.00,9.00,18.00,72.00,$GNGGA,142346.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5C
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142357.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5C
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,61,194,,24,58,288,,13,42,147,,17,36,079,22*76
+$GPGSV,3,2,11,19,34,112,28,23,28,277,,14,25,053,,12,23,220,*70
+$GPGSV,3,3,11,10,20,313,,01,01,035,,21,01,011,*4F
+$BDGSV,1,1,00*68
+$GNRMC,142357.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*58
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',22.00,33.00,4.00,13.00,73.00,$GNGGA,142357.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5C
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142408.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*51
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,61,194,,24,58,288,,13,42,147,,17,36,079,20*74
+$GPGSV,3,2,11,19,34,112,29,23,28,277,,14,25,053,,12,23,220,*71
+$GPGSV,3,3,11,10,20,313,,01,01,035,,21,01,011,*4F
+$BDGSV,1,1,00*68
+$GNRMC,142408.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*55
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',22.00,31.00,4.00,16.00,74.00,$GNGGA,142408.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*51
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142419.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*51
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,61,194,,24,58,288,,13,42,147,,17,36,079,22*76
+$GPGSV,3,2,11,19,34,112,28,23,28,277,,14,25,053,,12,23,220,*70
+$GPGSV,3,3,11,10,20,313,,01,01,035,,21,01,011,*4F
+$BDGSV,1,1,00*68
+$GNRMC,142419.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*55
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',22.00,30.00,8.00,15.00,75.00,$GNGGA,142419.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*51
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142430.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5A
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,61,194,,24,58,288,,13,42,147,,17,36,079,20*74
+$GPGSV,3,2,11,19,34,112,29,23,28,277,,14,25,053,,12,23,220,*71
+$GPGSV,3,3,11,10,20,313,,01,02,035,,21,01,011,*4C
+$BDGSV,1,1,00*68
+$GNRMC,142430.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*5E
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',23.00,33.00,6.00,11.00,76.00,$GNGGA,142430.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5A
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142441.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5C
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,61,194,,24,58,288,,13,42,147,,17,36,079,19*7E
+$GPGSV,3,2,11,19,34,112,29,23,28,277,,14,25,053,,12,23,220,*71
+$GPGSV,3,3,11,10,20,313,,01,02,035,,21,01,011,*4C
+$BDGSV,1,1,00*68
+$GNRMC,142441.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*58
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',22.00,34.00,2.00,14.00,77.00,$GNGGA,142441.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5C
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142452.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5E
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,60,193,,24,59,288,,13,42,147,,17,36,078,19*78
+$GPGSV,3,2,11,19,34,111,28,23,28,277,,14,25,053,,12,23,220,*73
+$GPGSV,3,3,11,10,20,313,,01,02,035,,21,01,010,*4D
+$BDGSV,1,1,00*68
+$GNRMC,142452.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*5A
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',22.00,32.00,9.00,10.00,78.00,$GNGGA,142452.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5E
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142503.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5B
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,60,193,,24,59,288,,13,42,147,,17,36,078,20*72
+$GPGSV,3,2,11,19,34,111,29,23,28,277,,14,25,053,,12,23,220,*72
+$GPGSV,3,3,11,10,20,313,,01,02,035,,21,01,010,*4D
+$BDGSV,1,1,00*68
+$GNRMC,142503.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*5F
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',21.00,30.00,9.00,19.00,79.00,$GNGGA,142503.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5B
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142514.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5D
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,60,193,,24,59,288,,13,42,147,,17,36,078,18*79
+$GPGSV,3,2,11,19,34,111,30,23,28,277,,14,25,053,,12,23,220,*7A
+$GPGSV,3,3,11,10,20,313,,01,02,035,,21,01,010,*4D
+$BDGSV,1,1,00*68
+$GNRMC,142514.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*59
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',24.00,34.00,4.00,10.00,80.00,$GNGGA,142514.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5D
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142525.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5F
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,60,193,,24,59,288,,13,42,147,,17,36,078,20*72
+$GPGSV,3,2,11,19,34,111,29,23,28,277,,14,25,053,,12,23,220,*72
+$GPGSV,3,3,11,10,20,313,,01,02,035,,21,01,010,*4D
+$BDGSV,1,1,00*68
+$GNRMC,142525.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*5B
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',24.00,31.00,2.00,15.00,81.00,$GNGGA,142525.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5F
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142536.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5D
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,60,193,,24,59,288,,13,42,147,,17,36,078,22*70
+$GPGSV,3,2,11,19,34,111,29,23,28,277,,14,25,053,,12,23,220,*72
+$GPGSV,3,3,11,10,20,313,,01,02,035,,21,01,010,*4D
+$BDGSV,1,1,00*68
+$GNRMC,142536.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*59
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',24.00,31.00,7.00,13.00,82.00,$GNGGA,142536.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5D
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142547.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5B
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,60,193,,24,59,288,,13,42,147,,17,36,078,21*73
+$GPGSV,3,2,11,19,34,111,29,23,28,277,,14,25,053,,12,23,220,*72
+$GPGSV,3,3,11,10,20,313,,01,02,034,,21,01,010,*4C
+$BDGSV,1,1,00*68
+$GNRMC,142547.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*5F
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',21.00,34.00,2.00,14.00,83.00,$GNGGA,142547.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5B
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142558.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*55
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,60,193,,24,59,288,,13,41,147,,17,36,078,21*70
+$GPGSV,3,2,11,19,34,111,28,23,28,277,,14,24,053,,12,24,220,*75
+$GPGSV,3,3,11,10,20,312,,01,02,034,,21,01,010,*4D
+$BDGSV,1,1,00*68
+$GNRMC,142558.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*51
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',24.00,32.00,7.00,19.00,84.00,$GNGGA,142558.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*55
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142609.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*52
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,60,193,,24,59,288,,13,41,147,,17,36,077,22*7C
+$GPGSV,3,2,11,19,34,111,28,23,28,276,,14,24,053,,12,24,220,*74
+$GPGSV,3,3,11,10,20,312,,01,02,034,,21,01,010,*4D
+$BDGSV,1,1,00*68
+$GNRMC,142609.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*56
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',22.00,30.00,7.00,18.00,85.00,$GNGGA,142609.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*52
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142620.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*59
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,60,193,,24,59,288,,13,41,147,,17,36,077,22*7C
+$GPGSV,3,2,11,19,34,111,27,23,28,276,,14,24,053,,12,24,220,*7B
+$GPGSV,3,3,11,10,20,312,,01,02,034,,21,01,010,*4D
+$BDGSV,1,1,00*68
+$GNRMC,142620.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*5D
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',21.00,30.00,2.00,17.00,86.00,$GNGGA,142620.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*59
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142631.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*59
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,60,193,,24,59,288,,13,41,147,,17,36,077,21*7F
+$GPGSV,3,2,11,19,34,111,27,23,28,276,,14,24,053,,12,24,220,*7B
+$GPGSV,3,3,11,10,20,312,,01,02,034,,21,01,010,*4D
+$BDGSV,1,1,00*68
+$GNRMC,142631.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*5D
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',23.00,34.00,9.00,11.00,87.00,$GNGGA,142631.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*59
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142642.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5D
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,60,193,,24,59,288,,13,41,147,,17,36,077,23*7D
+$GPGSV,3,2,11,19,34,111,28,23,28,276,,14,24,053,,12,24,220,*74
+$GPGSV,3,3,11,10,20,312,,01,02,034,,21,01,010,*4D
+$BDGSV,1,1,00*68
+$GNRMC,142642.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*59
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',21.00,32.00,3.00,17.00,88.00,$GNGGA,142642.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5D
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142653.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5D
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,60,193,,24,59,288,,13,41,147,,17,36,077,24*7A
+$GPGSV,3,2,11,19,34,111,28,23,28,276,,14,24,053,,12,24,220,*74
+$GPGSV,3,3,11,10,20,312,,01,02,034,,21,01,010,*4D
+$BDGSV,1,1,00*68
+$GNRMC,142653.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*59
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',24.00,34.00,3.00,17.00,89.00,$GNGGA,142653.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5D
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142704.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5E
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,60,193,,24,59,288,,13,41,147,,17,36,077,24*7A
+$GPGSV,3,2,11,19,34,111,30,23,28,276,,14,24,053,,12,24,220,*7D
+$GPGSV,3,3,11,10,20,312,,01,02,034,,21,01,010,*4D
+$BDGSV,1,1,00*68
+$GNRMC,142704.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*5A
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',21.00,32.00,6.00,16.00,90.00,$GNGGA,142704.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5E
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142715.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5E
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,15,60,193,,24,59,288,,13,40,147,,17,36,077,24*7B
+$GPGSV,3,2,11,19,34,111,29,23,28,276,,12,25,220,,14,24,053,*74
+$GPGSV,3,3,11,10,20,312,,01,02,034,,21,01,010,*4D
+$BDGSV,1,1,00*68
+$GNRMC,142715.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*5A
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',24.00,31.00,3.00,13.00,91.00,$GNGGA,142715.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5E
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142726.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5E
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,60,289,,15,59,192,,13,40,147,,17,36,076,24*7A
+$GPGSV,3,2,11,19,35,110,29,23,27,275,,12,25,220,,14,24,053,*78
+$GPGSV,3,3,11,10,20,312,,01,02,034,,21,01,009,*45
+$BDGSV,1,1,00*68
+$GNRMC,142726.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*5A
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',20.00,34.00,8.00,15.00,92.00,$GNGGA,142726.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5E
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142737.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5E
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,60,289,,15,59,192,,13,40,147,,17,36,076,24*7A
+$GPGSV,3,2,11,19,35,110,29,23,27,275,,12,25,220,,14,24,053,*78
+$GPGSV,3,3,11,10,20,312,,01,02,034,,21,01,009,*45
+$BDGSV,1,1,00*68
+$GNRMC,142737.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*5A
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',20.00,31.00,3.00,17.00,93.00,$GNGGA,142737.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5E
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142748.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*56
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,60,289,,15,59,192,,13,40,147,,17,36,076,25*7B
+$GPGSV,3,2,11,19,35,110,28,23,27,275,,12,25,220,,14,24,053,*79
+$GPGSV,3,3,11,10,20,312,,01,02,034,,21,01,009,*45
+$BDGSV,1,1,00*68
+$GNRMC,142748.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*52
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',23.00,30.00,8.00,10.00,94.00,$GNGGA,142748.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*56
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142759.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*56
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,60,289,,15,59,192,,13,40,147,,17,36,076,24*7A
+$GPGSV,3,2,11,19,35,110,25,23,27,275,,12,25,220,,14,24,053,*74
+$GPGSV,3,3,11,10,20,312,,01,02,034,,21,01,009,*45
+$BDGSV,1,1,00*68
+$GNRMC,142759.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*52
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',21.00,30.00,7.00,17.00,95.00,$GNGGA,142759.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*56
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142810.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*54
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,60,289,,15,59,192,,13,40,147,,17,36,076,24*7A
+$GPGSV,3,2,11,19,35,110,25,23,27,275,,12,25,220,,14,24,053,*74
+$GPGSV,3,3,11,10,20,312,,01,02,034,,21,01,009,*45
+$BDGSV,1,1,00*68
+$GNRMC,142810.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*50
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',23.00,34.00,9.00,11.00,96.00,$GNGGA,142810.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*54
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142821.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*56
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,60,289,,15,59,192,,13,40,147,,17,36,076,23*7D
+$GPGSV,3,2,11,19,35,110,25,23,27,275,,12,25,220,,14,24,053,*74
+$GPGSV,3,3,11,10,20,312,,01,02,033,,21,01,009,*42
+$BDGSV,1,1,00*68
+$GNRMC,142821.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*52
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',23.00,32.00,3.00,19.00,97.00,$GNGGA,142821.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*56
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142832.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*54
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,60,289,,15,59,192,,13,40,148,,17,36,076,23*72
+$GPGSV,3,2,11,19,35,110,24,23,27,275,,12,25,221,,14,23,053,*73
+$GPGSV,3,3,11,10,20,311,,01,02,033,,21,01,009,*41
+$BDGSV,1,1,00*68
+$GNRMC,142832.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*50
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',24.00,34.00,9.00,15.00,98.00,$GNGGA,142832.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*54
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142843.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*52
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,60,289,,15,58,192,,13,40,148,,17,36,076,24*74
+$GPGSV,3,2,11,19,35,110,25,23,27,275,,12,25,221,,14,23,053,*72
+$GPGSV,3,3,11,10,20,311,,01,02,033,,21,01,009,*41
+$BDGSV,1,1,00*68
+$GNRMC,142843.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*56
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',24.00,30.00,3.00,12.00,99.00,$GNGGA,142843.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*52
+"
+
++CIPRCV,43:127.0.0.1:56203 said SSH-2.0-ssh2js1.4.0
+
+
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142855.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*55
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,60,289,,15,58,192,,13,40,148,,17,36,076,25*75
+$GPGSV,3,2,11,19,35,110,24,23,27,275,,12,25,221,,14,23,053,*73
+$GPGSV,3,3,11,10,20,311,,01,02,033,,21,01,009,*41
+$BDGSV,1,1,00*68
+$GNRMC,142855.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*51
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',21.00,30.00,2.00,12.00,100.00,$GNGGA,142855.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*55
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142906.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*52
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,60,289,,15,58,192,,13,40,148,,17,36,076,23*73
+$GPGSV,3,2,11,19,35,110,24,23,27,275,,12,25,221,,14,23,053,*73
+$GPGSV,3,3,11,10,20,311,,01,02,033,,21,01,009,*41
+$BDGSV,1,1,00*68
+$GNRMC,142906.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*56
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',23.00,30.00,5.00,13.00,101.00,$GNGGA,142906.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*52
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142917.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*52
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,60,289,,15,58,192,,13,40,148,,17,36,076,22*72
+$GPGSV,3,2,11,19,35,110,23,23,27,275,,12,25,221,,14,23,053,*74
+$GPGSV,3,3,11,10,20,311,,01,02,033,,21,01,009,*41
+$BDGSV,1,1,00*68
+$GNRMC,142917.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*56
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',22.00,32.00,5.00,17.00,102.00,$GNGGA,142917.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*52
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142928.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5E
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,60,289,,15,58,192,,13,40,148,,17,36,076,23*73
+$GPGSV,3,2,11,19,35,110,24,23,27,275,,12,25,221,,14,23,053,*73
+$GPGSV,3,3,11,10,20,311,,01,02,033,,21,01,009,*41
+$BDGSV,1,1,00*68
+$GNRMC,142928.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*5A
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',21.00,30.00,9.00,19.00,103.00,$GNGGA,142928.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5E
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142939.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5E
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,60,289,,15,58,192,,13,40,148,,17,36,076,21*71
+$GPGSV,3,2,11,19,35,110,24,23,27,275,,12,25,221,,14,23,053,*73
+$GPGSV,3,3,11,10,20,311,,01,02,033,,21,01,009,*41
+$BDGSV,1,1,00*68
+$GNRMC,142939.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*5A
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',24.00,32.00,6.00,19.00,104.00,$GNGGA,142939.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5E
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,142950.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*51
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,60,289,,15,58,191,,13,39,148,,17,36,076,22*7F
+$GPGSV,3,2,11,19,35,110,26,23,27,275,,12,26,221,,14,23,053,*72
+$GPGSV,3,3,11,10,20,311,,01,02,033,,21,01,009,*41
+$BDGSV,1,1,00*68
+$GNRMC,142950.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*55
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',24.00,30.00,9.00,10.00,105.00,$GNGGA,142950.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*51
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143001.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5D
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,61,290,,15,58,191,,13,39,148,,17,36,075,22*75
+$GPGSV,3,2,11,19,35,109,25,23,27,274,,12,26,221,,14,23,053,*78
+$GPGSV,3,3,11,10,20,311,,01,02,033,,21,01,008,*40
+$BDGSV,1,1,00*68
+$GNRMC,143001.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*59
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',20.00,33.00,4.00,15.00,106.00,$GNGGA,143001.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5D
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143012.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5F
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,61,290,,15,58,191,,13,39,148,,17,36,075,21*76
+$GPGSV,3,2,11,19,35,109,24,23,27,274,,12,26,221,,14,23,053,*79
+$GPGSV,3,3,11,10,20,311,,01,02,033,,21,01,008,*40
+$BDGSV,1,1,00*68
+$GNRMC,143012.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*5B
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',20.00,31.00,9.00,18.00,107.00,$GNGGA,143012.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5F
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143023.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5D
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,61,290,,15,58,191,,13,39,148,,17,36,075,21*76
+$GPGSV,3,2,11,19,35,109,23,23,27,274,,12,26,221,,14,23,053,*7E
+$GPGSV,3,3,11,10,20,311,,01,02,033,,21,01,008,*40
+$BDGSV,1,1,00*68
+$GNRMC,143023.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*59
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',20.00,31.00,4.00,10.00,108.00,$GNGGA,143023.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5D
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143034.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5B
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,61,290,,15,58,191,,13,39,148,,17,36,075,21*76
+$GPGSV,3,2,11,19,35,109,20,23,27,274,,12,26,221,,14,23,053,*7D
+$GPGSV,3,3,11,10,20,311,,01,02,033,,21,01,008,*40
+$BDGSV,1,1,00*68
+$GNRMC,143034.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*5F
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',20.00,33.00,7.00,15.00,109.00,$GNGGA,143034.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5B
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143045.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5D
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,61,290,,15,58,191,,13,39,148,,17,36,075,22*75
+$GPGSV,3,2,11,19,35,109,18,23,27,274,,12,26,221,,14,23,053,*76
+$GPGSV,3,3,11,10,20,311,,01,02,033,,21,01,008,*40
+$BDGSV,1,1,00*68
+$GNRMC,143045.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*59
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',23.00,32.00,8.00,14.00,110.00,$GNGGA,143045.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5D
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143056.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5F
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,61,290,,15,58,191,,13,39,148,,17,36,075,22*75
+$GPGSV,3,2,11,19,35,109,19,23,27,274,,12,26,221,,14,23,053,*77
+$GPGSV,3,3,11,10,20,311,,01,02,032,,21,01,008,*41
+$BDGSV,1,1,00*68
+$GNRMC,143056.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*5B
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',24.00,30.00,2.00,14.00,111.00,$GNGGA,143056.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5F
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143107.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5A
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,61,290,,15,57,191,,13,39,148,,17,36,075,22*7A
+$GPGSV,3,2,11,19,35,109,19,23,27,274,,12,26,221,,14,22,053,*76
+$GPGSV,3,3,11,10,21,310,,01,02,032,,21,01,008,*41
+$BDGSV,1,1,00*68
+$GNRMC,143107.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*5E
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',23.00,32.00,5.00,11.00,112.00,$GNGGA,143107.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5A
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143118.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*54
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,61,290,,15,57,191,,13,39,148,,19,36,108,20*7D
+$GPGSV,3,2,11,17,36,074,22,23,27,274,,12,26,221,,14,22,053,*78
+$GPGSV,3,3,11,10,21,310,,01,02,032,,21,01,008,*41
+$BDGSV,1,1,00*68
+$GNRMC,143118.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*50
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',23.00,30.00,9.00,15.00,113.00,$GNGGA,143118.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*54
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143129.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*56
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,61,290,,15,57,191,,13,39,148,,19,36,108,22*7F
+$GPGSV,3,2,11,17,36,074,23,23,27,274,,12,26,221,,14,22,053,*79
+$GPGSV,3,3,11,10,21,310,,01,02,032,,21,01,008,*41
+$BDGSV,1,1,00*68
+$GNRMC,143129.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*52
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',21.00,32.00,6.00,19.00,114.00,$GNGGA,143129.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*56
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143140.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*59
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,61,290,,15,57,191,,13,39,148,,19,36,108,20*7D
+$GPGSV,3,2,11,17,36,074,22,23,27,274,,12,26,221,,14,22,053,*78
+$GPGSV,3,3,11,10,21,310,,01,02,032,,21,01,008,*41
+$BDGSV,1,1,00*68
+$GNRMC,143140.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*5D
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',23.00,31.00,6.00,12.00,115.00,$GNGGA,143140.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*59
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143151.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*59
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,61,290,,15,57,191,,13,39,148,,19,36,108,19*77
+$GPGSV,3,2,11,17,36,074,23,23,27,274,,12,26,221,,14,22,053,*79
+$GPGSV,3,3,11,10,21,310,,01,02,032,,21,01,008,*41
+$BDGSV,1,1,00*68
+$GNRMC,143151.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*5D
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',21.00,30.00,9.00,16.00,116.00,$GNGGA,143151.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*59
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143202.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5C
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,61,290,,15,57,191,,13,39,148,,19,36,108,19*77
+$GPGSV,3,2,11,17,36,074,24,23,27,274,,12,26,221,,14,22,053,*7E
+$GPGSV,3,3,11,10,21,310,,01,02,032,,21,01,008,*41
+$BDGSV,1,1,00*68
+$GNRMC,143202.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*58
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',20.00,32.00,2.00,14.00,117.00,$GNGGA,143202.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5C
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143213.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5C
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,61,290,,15,57,191,,13,39,148,,19,36,108,19*77
+$GPGSV,3,2,11,17,36,074,24,23,27,274,,12,26,221,,14,22,053,17*78
+$GPGSV,3,3,11,10,21,310,,01,03,032,,21,01,008,*40
+$BDGSV,1,1,00*68
+$GNRMC,143213.105,V,4900.5203,N,00825.3169,E,0.000,0.00,181221,,,N*58
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',24.00,34.00,4.00,16.00,118.00,$GNGGA,143213.105,4900.5203,N,00825.3169,E,0,0,,102.1,M,47.9,M,,*5C
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143224.105,4900.5218,N,00825.4217,E,0,3,,102.4,M,47.9,M,,*59
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,61,290,,15,57,190,,13,38,148,,19,36,108,19*77
+$GPGSV,3,2,11,17,36,074,24,23,27,274,,12,27,221,,14,22,053,18*76
+$GPGSV,3,3,11,10,21,310,,01,03,032,,21,01,008,*40
+$BDGSV,1,1,00*68
+$GNRMC,143224.105,V,4900.5218,N,00825.4217,E,0.005,72.73,181221,,,N*6F
+$GNVTG,72.73,T,,M,0.005,N,0.009,K,N*11
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',23.00,33.00,6.00,19.00,119.00,$GNGGA,143224.105,4900.5218,N,00825.4217,E,0,3,,102.4,M,47.9,M,,*59
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143235.105,4900.5192,N,00825.3772,E,0,3,,104.7,M,47.9,M,,*5C
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,62,290,,15,57,190,,13,38,148,,19,36,108,17*7A
+$GPGSV,3,2,11,17,36,074,24,12,27,221,,23,26,273,,14,22,053,18*70
+$GPGSV,3,3,11,10,21,310,,01,03,032,,21,01,008,*40
+$BDGSV,1,1,00*68
+$GNRMC,143235.105,V,4900.5192,N,00825.3772,E,0.016,190.97,181221,,,N*5A
+$GNVTG,190.97,T,,M,0.016,N,0.030,K,N*2E
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',21.00,32.00,4.00,17.00,120.00,$GNGGA,143235.105,4900.5192,N,00825.3772,E,0,3,,104.7,M,47.9,M,,*5C
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143246.105,4900.5196,N,00825.5001,E,0,3,,102.1,M,47.9,M,,*59
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,62,290,,15,57,190,,13,38,148,,19,36,108,17*7A
+$GPGSV,3,2,11,17,36,074,25,12,27,221,,23,26,273,,14,22,053,18*71
+$GPGSV,3,3,11,10,21,310,,01,03,032,,21,01,008,*40
+$BDGSV,1,1,00*68
+$GNRMC,143246.105,V,4900.5196,N,00825.5001,E,0.091,182.37,181221,,,N*59
+$GNVTG,182.37,T,,M,0.091,N,0.169,K,N*25
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',23.00,30.00,8.00,17.00,121.00,$GNGGA,143246.105,4900.5196,N,00825.5001,E,0,3,,102.1,M,47.9,M,,*59
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143257.105,4900.5098,N,00825.1455,E,0,3,,101.7,M,47.9,M,,*52
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,62,290,,15,57,190,,13,38,148,,19,36,108,16*7B
+$GPGSV,3,2,11,17,36,074,25,12,27,221,,23,26,273,,14,22,053,18*71
+$GPGSV,3,3,11,10,21,310,,01,03,032,,21,01,008,*40
+$BDGSV,1,1,00*68
+$GNRMC,143257.105,V,4900.5098,N,00825.1455,E,0.108,184.76,181221,,,N*55
+$GNVTG,184.76,T,,M,0.108,N,0.200,K,N*2B
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',23.00,30.00,8.00,14.00,122.00,$GNGGA,143257.105,4900.5098,N,00825.1455,E,0,3,,101.7,M,47.9,M,,*52
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143308.105,4900.5085,N,00825.2111,E,0,3,,102.9,M,47.9,M,,*5E
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,62,290,,15,57,190,,13,38,148,,19,36,108,16*7B
+$GPGSV,3,2,11,17,36,074,26,12,27,221,,23,26,273,,14,22,053,19*73
+$GPGSV,3,3,11,10,21,310,,01,03,032,,21,01,008,*40
+$BDGSV,1,1,00*68
+$GNRMC,143308.105,V,4900.5085,N,00825.2111,E,0.042,193.11,181221,,,N*5C
+$GNVTG,193.11,T,,M,0.042,N,0.077,K,N*21
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',24.00,34.00,4.00,14.00,123.00,$GNGGA,143308.105,4900.5085,N,00825.2111,E,0,3,,102.9,M,47.9,M,,*5E
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143319.105,4900.5107,N,00825.0912,E,0,3,,103.5,M,47.9,M,,*51
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,62,290,,15,57,190,,13,38,148,,19,36,108,16*7B
+$GPGSV,3,2,11,17,36,074,26,12,27,221,,23,26,273,,14,22,053,19*73
+$GPGSV,3,3,11,10,21,310,,01,03,032,,21,01,008,*40
+$BDGSV,1,1,00*68
+$GNRMC,143319.105,V,4900.5107,N,00825.0912,E,0.079,181.98,181221,,,N*54
+$GNVTG,181.98,T,,M,0.079,N,0.146,K,N*28
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',20.00,30.00,9.00,13.00,124.00,$GNGGA,143319.105,4900.5107,N,00825.0912,E,0,3,,103.5,M,47.9,M,,*51
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143330.105,4900.5176,N,00825.3720,E,0,3,,103.2,M,47.9,M,,*57
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,62,290,,15,57,190,,13,38,148,,19,36,108,16*7B
+$GPGSV,3,2,11,17,36,074,24,12,27,221,,23,26,273,,14,22,053,18*70
+$GPGSV,3,3,11,10,21,310,,01,03,031,,21,01,008,*43
+$BDGSV,1,1,00*68
+$GNRMC,143330.105,V,4900.5176,N,00825.3720,E,0.035,187.22,181221,,,N*5A
+$GNVTG,187.22,T,,M,0.035,N,0.065,K,N*27
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',20.00,31.00,6.00,12.00,125.00,$GNGGA,143330.105,4900.5176,N,00825.3720,E,0,3,,103.2,M,47.9,M,,*57
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143341.105,4900.5254,N,00825.5467,E,0,3,,103.0,M,47.9,M,,*56
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,62,290,,15,56,190,,13,37,149,,19,36,108,16*74
+$GPGSV,3,2,11,17,36,074,25,12,27,222,,23,26,273,,14,21,053,19*70
+$GPGSV,3,3,11,10,21,309,,01,03,031,,21,01,008,*4B
+$BDGSV,1,1,00*68
+$GNRMC,143341.105,V,4900.5254,N,00825.5467,E,0.116,178.18,181221,,,N*50
+$GNVTG,178.18,T,,M,0.116,N,0.214,K,N*2A
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',22.00,32.00,9.00,11.00,126.00,$GNGGA,143341.105,4900.5254,N,00825.5467,E,0,3,,103.0,M,47.9,M,,*56
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143352.105,4900.5285,N,00825.3765,E,0,3,,110.8,M,47.9,M,,*55
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,63,291,,15,56,190,,19,37,107,15,13,37,149,*79
+$GPGSV,3,2,11,17,36,073,26,12,27,222,,23,26,272,,14,21,053,19*75
+$GPGSV,3,3,11,10,21,309,,01,03,031,,21,01,007,*44
+$BDGSV,1,1,00*68
+$GNRMC,143352.105,V,4900.5285,N,00825.3765,E,0.086,184.87,181221,,,N*54
+$GNVTG,184.87,T,,M,0.086,N,0.159,K,N*2D
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',24.00,31.00,7.00,13.00,127.00,$GNGGA,143352.105,4900.5285,N,00825.3765,E,0,3,,110.8,M,47.9,M,,*55
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143403.105,4900.5233,N,00825.4815,E,0,3,,102.2,M,47.9,M,,*5D
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,63,291,,15,56,190,,19,37,107,14,13,37,149,*78
+$GPGSV,3,2,11,17,36,073,24,12,27,222,,23,26,272,,14,21,053,18*76
+$GPGSV,3,3,11,10,21,309,,01,03,031,,21,01,007,*44
+$BDGSV,1,1,00*68
+$GNRMC,143403.105,V,4900.5233,N,00825.4815,E,0.070,183.68,181221,,,N*5A
+$GNVTG,183.68,T,,M,0.070,N,0.129,K,N*25
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',21.00,34.00,8.00,10.00,128.00,$GNGGA,143403.105,4900.5233,N,00825.4815,E,0,3,,102.2,M,47.9,M,,*5D
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143414.105,4900.5239,N,00825.2576,E,0,3,,97.2,M,47.9,M,,*62
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,63,291,,15,56,190,,19,37,107,14,13,37,149,*78
+$GPGSV,3,2,11,17,36,073,25,12,27,222,,23,26,272,,14,21,053,18*77
+$GPGSV,3,3,11,10,21,309,,01,03,031,,21,01,007,*44
+$BDGSV,1,1,00*68
+$GNRMC,143414.105,V,4900.5239,N,00825.2576,E,0.105,181.51,181221,,,N*53
+$GNVTG,181.51,T,,M,0.105,N,0.194,K,N*28
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',23.00,34.00,8.00,15.00,129.00,$GNGGA,143414.105,4900.5239,N,00825.2576,E,0,3,,97.2,M,47.9,M,,*62
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143425.105,4900.5312,N,00825.2445,E,0,3,,103.1,M,47.9,M,,*56
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,63,291,,15,56,190,,19,37,107,17,13,37,149,*7B
+$GPGSV,3,2,11,17,36,073,26,12,27,222,,23,26,272,,14,21,053,19*75
+$GPGSV,3,3,11,10,21,309,,01,03,031,,21,01,007,*44
+$BDGSV,1,1,00*68
+$GNRMC,143425.105,V,4900.5312,N,00825.2445,E,0.068,179.30,181221,,,N*52
+$GNVTG,179.30,T,,M,0.068,N,0.125,K,N*28
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',20.00,30.00,2.00,13.00,130.00,$GNGGA,143425.105,4900.5312,N,00825.2445,E,0,3,,103.1,M,47.9,M,,*56
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143436.105,4900.5313,N,00825.4756,E,0,3,,101.7,M,47.9,M,,*56
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,63,291,,15,56,190,,19,37,107,18,13,37,149,*74
+$GPGSV,3,2,11,17,36,073,24,12,27,222,,23,26,272,,14,21,053,19*77
+$GPGSV,3,3,11,10,21,309,,01,03,031,,21,01,007,*44
+$BDGSV,1,1,00*68
+$GNRMC,143436.105,V,4900.5313,N,00825.4756,E,0.047,178.71,181221,,,N*5F
+$GNVTG,178.71,T,,M,0.047,N,0.087,K,N*28
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',20.00,34.00,6.00,13.00,131.00,$GNGGA,143436.105,4900.5313,N,00825.4756,E,0,3,,101.7,M,47.9,M,,*56
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143447.105,4900.5204,N,00825.3424,E,0,3,,102.3,M,47.9,M,,*51
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,63,291,,15,56,190,,19,37,107,18,13,37,149,*74
+$GPGSV,3,2,11,17,36,073,23,12,27,222,,23,26,272,,14,21,053,20*7A
+$GPGSV,3,3,11,10,21,309,,01,03,031,,21,01,007,*44
+$BDGSV,1,1,00*68
+$GNRMC,143447.105,V,4900.5204,N,00825.3424,E,0.074,177.13,181221,,,N*54
+$GNVTG,177.13,T,,M,0.074,N,0.136,K,N*28
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',22.00,31.00,6.00,16.00,132.00,$GNGGA,143447.105,4900.5204,N,00825.3424,E,0,3,,102.3,M,47.9,M,,*51
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143458.105,4900.5287,N,00825.9798,E,0,3,,104.2,M,47.9,M,,*5D
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,63,291,,15,56,190,,19,37,107,17,13,37,149,*7B
+$GPGSV,3,2,11,17,36,073,22,12,28,222,,23,26,272,,10,21,308,*7F
+$GPGSV,3,3,11,14,20,053,20,01,03,031,,21,01,007,*4F
+$BDGSV,1,1,00*68
+$GNRMC,143458.105,V,4900.5287,N,00825.9798,E,0.087,177.86,181221,,,N*5F
+$GNVTG,177.86,T,,M,0.087,N,0.161,K,N*2A
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',22.00,34.00,3.00,12.00,133.00,$GNGGA,143458.105,4900.5287,N,00825.9798,E,0,3,,104.2,M,47.9,M,,*5D
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143509.105,4900.5142,N,00825.7690,E,0,3,,97.4,M,47.9,M,,*68
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,63,291,,15,56,190,,19,37,107,16,13,37,149,*7A
+$GPGSV,3,2,11,17,36,072,21,12,28,222,,23,26,272,,10,21,308,*7D
+$GPGSV,3,3,11,14,20,053,20,01,03,031,,21,01,007,*4F
+$BDGSV,1,1,00*68
+$GNRMC,143509.105,V,4900.5142,N,00825.7690,E,0.097,181.44,181221,,,N*51
+$GNVTG,181.44,T,,M,0.097,N,0.180,K,N*23
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',20.00,33.00,9.00,19.00,134.00,$GNGGA,143509.105,4900.5142,N,00825.7690,E,0,3,,97.4,M,47.9,M,,*68
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143520.105,4900.5157,N,00825.7094,E,0,3,,108.5,M,47.9,M,,*53
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,63,291,,15,56,190,,19,37,107,16,13,37,149,*7A
+$GPGSV,3,2,11,17,36,072,19,12,28,222,,23,26,272,,10,21,308,*76
+$GPGSV,3,3,11,14,20,053,19,01,03,031,,21,01,007,*45
+$BDGSV,1,1,00*68
+$GNRMC,143520.105,V,4900.5157,N,00825.7094,E,0.128,179.34,181221,,,N*59
+$GNVTG,179.34,T,,M,0.128,N,0.238,K,N*26
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',21.00,32.00,9.00,15.00,135.00,$GNGGA,143520.105,4900.5157,N,00825.7094,E,0,3,,108.5,M,47.9,M,,*53
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143531.105,4900.5167,N,00825.6478,E,0,3,,101.7,M,47.9,M,,*5C
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,63,291,,15,56,190,,19,37,107,17,13,37,149,*7B
+$GPGSV,3,2,11,17,36,072,20,12,28,222,,23,26,272,,10,21,308,*7C
+$GPGSV,3,3,11,14,20,053,19,01,03,031,,21,01,007,*45
+$BDGSV,1,1,00*68
+$GNRMC,143531.105,V,4900.5167,N,00825.6478,E,0.116,179.83,181221,,,N*5C
+$GNVTG,179.83,T,,M,0.116,N,0.214,K,N*29
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',20.00,33.00,9.00,16.00,136.00,$GNGGA,143531.105,4900.5167,N,00825.6478,E,0,3,,101.7,M,47.9,M,,*5C
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143542.105,4900.5165,N,00824.9594,E,0,3,,102.1,M,47.9,M,,*52
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,63,291,,15,56,190,,19,37,107,19,13,37,149,*75
+$GPGSV,3,2,11,17,36,072,18,12,28,222,,23,26,272,,10,21,308,*77
+$GPGSV,3,3,11,14,20,053,17,01,03,031,,21,01,007,*4B
+$BDGSV,1,1,00*68
+$GNRMC,143542.105,V,4900.5165,N,00824.9594,E,0.030,358.91,181221,,,N*50
+$GNVTG,358.91,T,,M,0.030,N,0.055,K,N*29
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',23.00,32.00,9.00,18.00,137.00,$GNGGA,143542.105,4900.5165,N,00824.9594,E,0,3,,102.1,M,47.9,M,,*52
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143553.105,4900.5181,N,00825.3961,E,0,3,,102.6,M,47.9,M,,*52
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,63,291,,15,56,190,,19,37,107,22,13,37,149,*7D
+$GPGSV,3,2,11,17,36,072,20,12,28,222,,23,26,272,,10,21,308,*7C
+$GPGSV,3,3,11,14,20,053,19,01,03,031,,21,01,007,*45
+$BDGSV,1,1,00*68
+$GNRMC,143553.105,V,4900.5181,N,00825.3961,E,0.099,180.26,181221,,,N*5F
+$GNVTG,180.26,T,,M,0.099,N,0.184,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',24.00,34.00,6.00,12.00,138.00,$GNGGA,143553.105,4900.5181,N,00825.3961,E,0,3,,102.6,M,47.9,M,,*52
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143604.105,4900.5313,N,00826.2523,E,0,3,,108.8,M,47.9,M,,*56
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,63,291,,15,56,190,,19,37,107,17,13,37,149,*7B
+$GPGSV,3,2,11,17,36,072,17,12,28,222,,23,26,272,,10,21,308,*78
+$GPGSV,3,3,11,14,20,053,19,01,03,030,,21,01,007,*44
+$BDGSV,1,1,00*68
+$GNRMC,143604.105,V,4900.5313,N,00826.2523,E,0.124,178.44,181221,,,N*5B
+$GNVTG,178.44,T,,M,0.124,N,0.230,K,N*24
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',23.00,33.00,9.00,17.00,139.00,$GNGGA,143604.105,4900.5313,N,00826.2523,E,0,3,,108.8,M,47.9,M,,*56
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143615.105,4900.5203,N,00826.0724,E,0,3,,88.9,M,47.9,M,,*69
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,63,291,,15,55,189,,19,37,107,17,17,36,072,15*78
+$GPGSV,3,2,11,13,36,149,,12,29,222,,23,26,272,,10,21,308,*72
+$GPGSV,3,3,11,14,20,053,19,01,03,030,,21,01,007,*44
+$BDGSV,1,1,00*68
+$GNRMC,143615.105,V,4900.5203,N,00826.0724,E,0.090,178.16,181221,,,N*55
+$GNVTG,178.16,T,,M,0.090,N,0.168,K,N*23
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',22.00,32.00,7.00,19.00,140.00,$GNGGA,143615.105,4900.5203,N,00826.0724,E,0,3,,88.9,M,47.9,M,,*69
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143626.105,4900.5171,N,00826.3800,E,0,3,,99.7,M,47.9,M,,*6B
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,64,291,,15,55,189,,19,37,106,16,17,36,072,16*7C
+$GPGSV,3,2,11,13,36,149,,12,29,222,,23,26,271,,10,21,308,*71
+$GPGSV,3,3,11,14,20,053,21,01,03,030,,21,01,006,*4E
+$BDGSV,1,1,00*68
+$GNRMC,143626.105,V,4900.5171,N,00826.3800,E,0.008,170.64,181221,,,N*55
+$GNVTG,170.64,T,,M,0.008,N,0.015,K,N*24
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',22.00,32.00,4.00,14.00,141.00,$GNGGA,143626.105,4900.5171,N,00826.3800,E,0,3,,99.7,M,47.9,M,,*6B
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143637.105,4900.5353,N,00827.1479,E,0,3,,97.1,M,47.9,M,,*60
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,64,291,,15,55,189,,19,37,106,15,17,36,072,16*7F
+$GPGSV,3,2,11,13,36,149,,12,29,222,,23,26,271,,10,21,308,*71
+$GPGSV,3,3,11,14,20,053,20,01,03,030,,21,01,006,*4F
+$BDGSV,1,1,00*68
+$GNRMC,143637.105,V,4900.5353,N,00827.1479,E,0.071,179.06,181221,,,N*55
+$GNVTG,179.06,T,,M,0.071,N,0.131,K,N*20
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',20.00,34.00,5.00,16.00,142.00,$GNGGA,143637.105,4900.5353,N,00827.1479,E,0,3,,97.1,M,47.9,M,,*60
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143648.105,4900.5226,N,00826.9360,E,0,3,,116.6,M,47.9,M,,*52
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,64,291,,15,55,189,,19,37,106,21,17,36,072,18*76
+$GPGSV,3,2,11,13,36,149,,12,29,222,,23,26,271,,10,21,308,*71
+$GPGSV,3,3,11,14,20,053,22,01,03,030,,21,01,006,*4D
+$BDGSV,1,1,00*68
+$GNRMC,143648.105,V,4900.5226,N,00826.9360,E,0.088,180.50,181221,,,N*5B
+$GNVTG,180.50,T,,M,0.088,N,0.163,K,N*24
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',23.00,33.00,6.00,19.00,143.00,$GNGGA,143648.105,4900.5226,N,00826.9360,E,0,3,,116.6,M,47.9,M,,*52
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143659.105,4900.5181,N,00826.3121,E,0,3,,94.0,M,47.9,M,,*6C
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,64,291,,15,55,189,,19,37,106,21,17,36,072,18*76
+$GPGSV,3,2,11,13,36,149,,12,29,222,,23,26,271,,10,21,308,*71
+$GPGSV,3,3,11,14,20,053,22,01,03,030,,21,01,006,*4D
+$BDGSV,1,1,00*68
+$GNRMC,143659.105,V,4900.5181,N,00826.3121,E,0.174,179.45,181221,,,N*58
+$GNVTG,179.45,T,,M,0.174,N,0.323,K,N*22
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',21.00,34.00,7.00,15.00,144.00,$GNGGA,143659.105,4900.5181,N,00826.3121,E,0,3,,94.0,M,47.9,M,,*6C
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143710.105,4900.5258,N,00826.6701,E,0,3,,120.2,M,47.9,M,,*5A
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,64,291,,15,55,189,,19,37,106,18,17,36,072,17*73
+$GPGSV,3,2,11,13,36,149,,12,29,222,,23,26,271,,10,21,308,*71
+$GPGSV,3,3,11,14,20,053,21,01,03,030,,21,01,006,*4E
+$BDGSV,1,1,00*68
+$GNRMC,143710.105,V,4900.5258,N,00826.6701,E,0.034,359.22,181221,,,N*56
+$GNVTG,359.22,T,,M,0.034,N,0.063,K,N*21
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',21.00,34.00,8.00,16.00,145.00,$GNGGA,143710.105,4900.5258,N,00826.6701,E,0,3,,120.2,M,47.9,M,,*5A
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143721.105,4900.5568,N,00829.3783,E,0,3,,150.3,M,47.9,M,,*5A
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,64,291,,15,55,189,,19,37,106,18,17,36,072,17*73
+$GPGSV,3,2,11,13,36,149,,12,29,222,,23,26,271,,10,21,308,*71
+$GPGSV,3,3,11,14,20,053,22,01,03,030,,21,01,006,*4D
+$BDGSV,1,1,00*68
+$GNRMC,143721.105,V,4900.5568,N,00829.3783,E,0.083,179.90,181221,,,N*55
+$GNVTG,179.90,T,,M,0.083,N,0.153,K,N*26
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',20.00,31.00,8.00,10.00,146.00,$GNGGA,143721.105,4900.5568,N,00829.3783,E,0,3,,150.3,M,47.9,M,,*5A
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143732.105,4900.5307,N,00828.0560,E,0,3,,90.6,M,47.9,M,,*62
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,64,291,,15,54,189,,19,37,106,17,17,36,072,16*7C
+$GPGSV,3,2,11,13,36,149,,12,29,223,,23,26,271,,10,21,307,*7F
+$GPGSV,3,3,11,14,19,054,21,01,03,030,,21,01,006,*43
+$BDGSV,1,1,00*68
+$GNRMC,143732.105,V,4900.5307,N,00828.0560,E,0.152,179.28,181221,,,N*5B
+$GNVTG,179.28,T,,M,0.152,N,0.281,K,N*24
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',23.00,30.00,8.00,16.00,147.00,$GNGGA,143732.105,4900.5307,N,00828.0560,E,0,3,,90.6,M,47.9,M,,*62
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143743.105,4900.5401,N,00829.1675,E,0,3,,117.5,M,47.9,M,,*5F
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,64,292,,15,54,189,,19,38,105,17,17,36,071,16*70
+$GPGSV,3,2,11,13,36,149,,12,29,223,,23,25,271,,10,21,307,*7C
+$GPGSV,3,3,11,14,19,054,21,01,03,030,,21,01,006,*43
+$BDGSV,1,1,00*68
+$GNRMC,143743.105,V,4900.5401,N,00829.1675,E,0.152,179.66,181221,,,N*51
+$GNVTG,179.66,T,,M,0.152,N,0.281,K,N*2E
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',21.00,34.00,5.00,11.00,148.00,$GNGGA,143743.105,4900.5401,N,00829.1675,E,0,3,,117.5,M,47.9,M,,*5F
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143754.105,4900.5457,N,00830.5703,E,0,3,,116.0,M,47.9,M,,*52
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,64,292,,15,54,189,,19,38,105,17,17,36,071,16*70
+$GPGSV,3,2,11,13,36,149,,12,29,223,,23,25,271,,10,21,307,*7C
+$GPGSV,3,3,11,14,19,054,20,01,03,030,,21,01,006,*42
+$BDGSV,1,1,00*68
+$GNRMC,143754.105,V,4900.5457,N,00830.5703,E,0.153,179.85,181221,,,N*54
+$GNVTG,179.85,T,,M,0.153,N,0.284,K,N*27
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',22.00,32.00,7.00,13.00,149.00,$GNGGA,143754.105,4900.5457,N,00830.5703,E,0,3,,116.0,M,47.9,M,,*52
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143805.105,4900.5614,N,00831.1381,E,0,3,,175.3,M,47.9,M,,*51
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,64,292,,15,54,189,,19,38,105,17,17,36,071,16*70
+$GPGSV,3,2,11,13,36,149,,12,29,223,,23,25,271,,10,21,307,*7C
+$GPGSV,3,3,11,14,19,054,20,01,03,030,,21,01,006,*42
+$BDGSV,1,1,00*68
+$GNRMC,143805.105,V,4900.5614,N,00831.1381,E,0.168,179.85,181221,,,N*59
+$GNVTG,179.85,T,,M,0.168,N,0.311,K,N*22
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',20.00,33.00,5.00,11.00,150.00,$GNGGA,143805.105,4900.5614,N,00831.1381,E,0,3,,175.3,M,47.9,M,,*51
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143816.105,4900.5605,N,00832.9617,E,0,3,,127.3,M,48.0,M,,*53
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,64,292,,15,54,189,,19,38,105,19,17,36,071,16*7E
+$GPGSV,3,2,11,13,36,149,,12,29,223,,23,25,271,,10,21,307,*7C
+$GPGSV,3,3,11,14,19,054,20,01,03,030,,21,01,006,*42
+$BDGSV,1,1,00*68
+$GNRMC,143816.105,V,4900.5605,N,00832.9617,E,0.148,359.60,181221,,,N*53
+$GNVTG,359.60,T,,M,0.148,N,0.275,K,N*28
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',22.00,32.00,2.00,16.00,151.00,$GNGGA,143816.105,4900.5605,N,00832.9617,E,0,3,,127.3,M,48.0,M,,*53
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143827.105,4900.5642,N,00834.9264,E,0,3,,156.2,M,48.0,M,,*53
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,64,292,,15,54,189,,19,38,105,19,17,36,071,16*7E
+$GPGSV,3,2,11,13,36,149,,12,29,223,,23,25,271,,10,21,307,*7C
+$GPGSV,3,3,11,14,19,054,20,01,03,030,,21,01,006,*42
+$BDGSV,1,1,00*68
+$GNRMC,143827.105,V,4900.5642,N,00834.9264,E,0.060,180.34,181221,,,N*58
+$GNVTG,180.34,T,,M,0.060,N,0.110,K,N*24
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',21.00,34.00,7.00,15.00,152.00,$GNGGA,143827.105,4900.5642,N,00834.9264,E,0,3,,156.2,M,48.0,M,,*53
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143838.105,4900.5720,N,00835.2957,E,0,3,,229.9,M,48.0,M,,*59
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,64,292,,15,54,189,,19,38,105,17,17,36,071,16*70
+$GPGSV,3,2,11,13,36,149,,12,29,223,,23,25,271,,10,21,307,*7C
+$GPGSV,3,3,11,14,19,054,21,01,03,029,,21,01,006,*4B
+$BDGSV,1,1,00*68
+$GNRMC,143838.105,V,4900.5720,N,00835.2957,E,0.172,179.99,181221,,,N*51
+$GNVTG,179.99,T,,M,0.172,N,0.319,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',22.00,30.00,9.00,18.00,153.00,$GNGGA,143838.105,4900.5720,N,00835.2957,E,0,3,,229.9,M,48.0,M,,*59
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143849.105,4900.5727,N,00835.0864,E,0,3,,241.0,M,48.0,M,,*5C
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,64,292,,15,54,189,,19,38,105,17,17,36,071,15*73
+$GPGSV,3,2,11,13,35,150,,12,30,223,,23,25,271,,10,21,307,*7F
+$GPGSV,3,3,11,14,19,054,21,01,03,029,,21,01,006,*4B
+$BDGSV,1,1,00*68
+$GNRMC,143849.105,V,4900.5727,N,00835.0864,E,0.209,180.07,181221,,,N*5D
+$GNVTG,180.07,T,,M,0.209,N,0.388,K,N*2A
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',23.00,30.00,5.00,12.00,154.00,$GNGGA,143849.105,4900.5727,N,00835.0864,E,0,3,,241.0,M,48.0,M,,*5C
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143900.105,4900.5447,N,00833.6759,E,0,3,,186.3,M,48.0,M,,*5F
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,65,292,,15,54,189,,19,38,105,16,17,36,070,15*72
+$GPGSV,3,2,11,13,35,150,,12,30,223,,23,25,270,,10,21,307,*7E
+$GPGSV,3,3,11,14,19,054,21,01,03,029,,21,01,005,*48
+$BDGSV,1,1,00*68
+$GNRMC,143900.105,V,4900.5447,N,00833.6759,E,0.211,180.03,181221,,,N*58
+$GNVTG,180.03,T,,M,0.211,N,0.391,K,N*2F
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',20.00,30.00,3.00,14.00,155.00,$GNGGA,143900.105,4900.5447,N,00833.6759,E,0,3,,186.3,M,48.0,M,,*5F
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143911.105,4900.5370,N,00831.2256,E,0,3,,193.3,M,47.9,M,,*52
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,65,292,,15,54,189,,19,38,105,14,17,36,070,14*71
+$GPGSV,3,2,11,13,35,150,,12,30,223,,23,25,270,,10,21,307,*7E
+$GPGSV,3,3,11,14,19,054,20,01,03,029,,21,01,005,*49
+$BDGSV,1,1,00*68
+$GNRMC,143911.105,V,4900.5370,N,00831.2256,E,0.240,180.20,181221,,,N*52
+$GNVTG,180.20,T,,M,0.240,N,0.445,K,N*24
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',21.00,32.00,4.00,13.00,156.00,$GNGGA,143911.105,4900.5370,N,00831.2256,E,0,3,,193.3,M,47.9,M,,*52
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143922.105,4900.5390,N,00828.3107,E,0,3,,161.7,M,47.9,M,,*5B
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,65,292,,15,54,189,,19,38,105,17,17,36,070,13*75
+$GPGSV,3,2,11,13,35,150,,12,30,223,,23,25,270,,10,21,307,*7E
+$GPGSV,3,3,11,14,19,054,21,01,03,029,,21,01,005,*48
+$BDGSV,1,1,00*68
+$GNRMC,143922.105,V,4900.5390,N,00828.3107,E,0.181,179.73,181221,,,N*5C
+$GNVTG,179.73,T,,M,0.181,N,0.335,K,N*2A
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',24.00,32.00,8.00,12.00,157.00,$GNGGA,143922.105,4900.5390,N,00828.3107,E,0,3,,161.7,M,47.9,M,,*5B
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143933.105,4900.5184,N,00827.6341,E,0,3,,118.2,M,47.9,M,,*5D
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,65,292,,15,54,189,,19,38,105,18,17,36,070,13*7A
+$GPGSV,3,2,11,13,35,150,,12,30,223,,23,25,270,,10,21,307,*7E
+$GPGSV,3,3,11,14,19,054,21,01,03,029,,21,01,005,*48
+$BDGSV,1,1,00*68
+$GNRMC,143933.105,V,4900.5184,N,00827.6341,E,0.088,179.84,181221,,,N*51
+$GNVTG,179.84,T,,M,0.088,N,0.162,K,N*2A
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',22.00,33.00,5.00,14.00,158.00,$GNGGA,143933.105,4900.5184,N,00827.6341,E,0,3,,118.2,M,47.9,M,,*5D
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143944.105,4900.5161,N,00825.9899,E,0,3,,126.1,M,47.9,M,,*5B
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,65,292,,15,54,189,,19,38,105,17,17,36,070,13*75
+$GPGSV,3,2,11,13,35,150,,12,30,223,,23,25,270,,10,21,307,*7E
+$GPGSV,3,3,11,14,19,054,22,01,03,029,,21,01,005,*4B
+$BDGSV,1,1,00*68
+$GNRMC,143944.105,V,4900.5161,N,00825.9899,E,0.161,180.24,181221,,,N*53
+$GNVTG,180.24,T,,M,0.161,N,0.298,K,N*26
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',20.00,32.00,5.00,15.00,159.00,$GNGGA,143944.105,4900.5161,N,00825.9899,E,0,3,,126.1,M,47.9,M,,*5B
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,143955.105,4900.5068,N,00825.3077,E,0,3,,113.9,M,47.9,M,,*5F
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,65,292,,15,54,189,,19,38,105,16,17,36,070,13*74
+$GPGSV,3,2,11,13,35,150,,12,30,223,,23,25,270,,10,21,307,*7E
+$GPGSV,3,3,11,14,19,054,21,01,03,029,,21,01,005,*48
+$BDGSV,1,1,00*68
+$GNRMC,143955.105,V,4900.5068,N,00825.3077,E,0.064,180.98,181221,,,N*5A
+$GNVTG,180.98,T,,M,0.064,N,0.119,K,N*2F
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',24.00,32.00,3.00,16.00,160.00,$GNGGA,143955.105,4900.5068,N,00825.3077,E,0,3,,113.9,M,47.9,M,,*5F
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,144006.105,4900.4977,N,00825.0437,E,0,3,,80.4,M,47.9,M,,*64
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,24,65,292,,15,53,188,,19,38,105,15,17,36,070,14*76
+$GPGSV,3,2,11,13,34,149,,12,30,223,,23,25,270,,10,21,306,*76
+$GPGSV,3,3,11,14,18,054,22,01,03,029,,21,01,005,*4A
+$BDGSV,1,1,00*68
+$GNRMC,144006.105,V,4900.4977,N,00825.0437,E,0.123,180.16,181221,,,N*53
+$GNVTG,180.16,T,,M,0.123,N,0.229,K,N*2B
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',21.00,34.00,9.00,17.00,161.00,$GNGGA,144006.105,4900.4977,N,00825.0437,E,0,3,,80.4,M,47.9,M,,*64
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,144017.105,4900.5164,N,00827.3757,E,0,3,,108.2,M,47.9,M,,*5C
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,24,65,293,,15,53,188,,19,38,104,15,17,36,070,15*76
+$GPGSV,3,2,10,13,34,149,,12,30,223,,23,25,269,,10,21,306,*7F
+$GPGSV,3,3,10,14,18,054,23,01,03,029,*7D
+$BDGSV,1,1,00*68
+$GNRMC,144017.105,V,4900.5164,N,00827.3757,E,0.218,180.48,181221,,,N*5C
+$GNVTG,180.48,T,,M,0.218,N,0.403,K,N*25
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',23.00,33.00,2.00,13.00,162.00,$GNGGA,144017.105,4900.5164,N,00827.3757,E,0,3,,108.2,M,47.9,M,,*5C
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,144028.105,4900.4979,N,00827.6004,E,0,3,,93.6,M,47.9,M,,*66
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,24,65,293,,15,53,188,,19,38,104,15,17,36,070,15*76
+$GPGSV,3,2,10,13,34,149,,12,30,223,,23,25,269,,10,21,306,*7F
+$GPGSV,3,3,10,14,18,054,22,01,03,029,*7C
+$BDGSV,1,1,00*68
+$GNRMC,144028.105,V,4900.4979,N,00827.6004,E,0.154,180.96,181221,,,N*59
+$GNVTG,180.96,T,,M,0.154,N,0.286,K,N*26
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',21.00,31.00,2.00,11.00,163.00,$GNGGA,144028.105,4900.4979,N,00827.6004,E,0,3,,93.6,M,47.9,M,,*66
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,144039.105,4900.4933,N,00827.9580,E,0,3,,107.4,M,47.9,M,,*50
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,24,65,293,,15,53,188,,19,38,104,16,17,36,070,13*73
+$GPGSV,3,2,10,13,34,149,,12,30,223,,23,25,269,,10,21,306,*7F
+$GPGSV,3,3,10,14,18,054,23,01,03,029,*7D
+$BDGSV,1,1,00*68
+$GNRMC,144039.105,V,4900.4933,N,00827.9580,E,0.242,180.63,181221,,,N*5F
+$GNVTG,180.63,T,,M,0.242,N,0.448,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',22.00,30.00,4.00,19.00,164.00,$GNGGA,144039.105,4900.4933,N,00827.9580,E,0,3,,107.4,M,47.9,M,,*50
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,144050.105,4900.5075,N,00826.8147,E,0,3,,107.4,M,47.9,M,,*5A
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,24,65,293,,15,53,188,,19,38,104,17,17,36,070,14*75
+$GPGSV,3,2,10,13,34,149,,12,30,223,,23,25,269,,10,21,306,*7F
+$GPGSV,3,3,10,14,18,054,22,01,03,029,*7C
+$BDGSV,1,1,00*68
+$GNRMC,144050.105,V,4900.5075,N,00826.8147,E,0.202,181.41,181221,,,N*50
+$GNVTG,181.41,T,,M,0.202,N,0.375,K,N*20
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',23.00,32.00,3.00,10.00,165.00,$GNGGA,144050.105,4900.5075,N,00826.8147,E,0,3,,107.4,M,47.9,M,,*5A
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,144101.105,4900.5271,N,00824.7707,E,0,3,,110.2,M,47.9,M,,*56
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,24,65,293,,15,53,188,,19,38,104,20,17,36,070,16*73
+$GPGSV,3,2,10,13,34,149,,12,30,223,,23,25,269,,10,21,306,*7F
+$GPGSV,3,3,10,14,18,054,22,01,03,029,*7C
+$BDGSV,1,1,00*68
+$GNRMC,144101.105,V,4900.5271,N,00824.7707,E,0.195,0.41,181221,,,N*59
+$GNVTG,0.41,T,,M,0.195,N,0.361,K,N*20
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',24.00,33.00,5.00,10.00,166.00,$GNGGA,144101.105,4900.5271,N,00824.7707,E,0,3,,110.2,M,47.9,M,,*56
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,144112.105,4900.5184,N,00827.1174,E,0,3,,93.8,M,47.9,M,,*6A
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,24,65,293,,15,53,188,,19,38,104,20,17,36,070,16*73
+$GPGSV,3,2,10,13,34,149,,12,30,223,,23,25,269,,10,21,306,*7F
+$GPGSV,3,3,10,14,18,054,22,01,03,028,*7D
+$BDGSV,1,1,00*68
+$GNRMC,144112.105,V,4900.5184,N,00827.1174,E,0.077,181.38,181221,,,N*5E
+$GNVTG,181.38,T,,M,0.077,N,0.143,K,N*29
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',21.00,33.00,4.00,15.00,167.00,$GNGGA,144112.105,4900.5184,N,00827.1174,E,0,3,,93.8,M,47.9,M,,*6A
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,144123.105,4900.5291,N,00825.4311,E,0,3,,113.0,M,47.9,M,,*58
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,24,65,293,,15,53,188,,19,38,104,19,17,36,070,18*77
+$GPGSV,3,2,10,13,34,150,,12,31,223,,23,25,269,,10,21,306,*76
+$GPGSV,3,3,10,14,18,054,22,01,03,028,*7D
+$BDGSV,1,1,00*68
+$GNRMC,144123.105,V,4900.5291,N,00825.4311,E,0.008,355.43,181221,,,N*52
+$GNVTG,355.43,T,,M,0.008,N,0.016,K,N*27
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',22.00,31.00,5.00,15.00,168.00,$GNGGA,144123.105,4900.5291,N,00825.4311,E,0,3,,113.0,M,47.9,M,,*58
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,144134.105,4900.5265,N,00824.9069,E,0,3,,101.6,M,47.9,M,,*50
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,24,66,293,,15,53,188,,19,38,103,19,17,36,069,18*7B
+$GPGSV,3,2,10,13,34,150,,12,31,223,,23,25,269,,10,21,306,*76
+$GPGSV,3,3,10,14,18,054,21,01,03,028,*7E
+$BDGSV,1,1,00*68
+$GNRMC,144134.105,V,4900.5265,N,00824.9069,E,0.016,359.01,181221,,,N*5A
+$GNVTG,359.01,T,,M,0.016,N,0.030,K,N*26
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',20.00,34.00,7.00,18.00,169.00,$GNGGA,144134.105,4900.5265,N,00824.9069,E,0,3,,101.6,M,47.9,M,,*50
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,144145.105,4900.5305,N,00825.4034,E,0,3,,128.1,M,47.9,M,,*59
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,24,66,293,,15,53,188,,19,38,103,19,17,36,069,19*7A
+$GPGSV,3,2,10,13,34,150,,12,31,223,,23,25,269,,10,21,306,*76
+$GPGSV,3,3,10,14,18,054,23,01,03,028,*7C
+$BDGSV,1,1,00*68
+$GNRMC,144145.105,V,4900.5305,N,00825.4034,E,0.024,359.93,181221,,,N*55
+$GNVTG,359.93,T,,M,0.024,N,0.044,K,N*2F
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',22.00,31.00,5.00,16.00,170.00,$GNGGA,144145.105,4900.5305,N,00825.4034,E,0,3,,128.1,M,47.9,M,,*59
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,144156.105,4900.5287,N,00824.6523,E,0,3,,94.8,M,47.9,M,,*6F
+$GPGSA,A,1,19,17,14,,,,,,,,,,,,*15
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,24,66,293,,15,53,188,,19,38,103,16,17,36,069,19*75
+$GPGSV,3,2,10,13,34,150,,12,31,223,,23,25,269,,10,21,306,*76
+$GPGSV,3,3,10,14,18,054,23,01,03,028,*7C
+$BDGSV,1,1,00*68
+$GNRMC,144156.105,V,4900.5287,N,00824.6523,E,0.073,179.72,181221,,,N*51
+$GNVTG,179.72,T,,M,0.073,N,0.135,K,N*25
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=102,"'A1',24.00,33.00,9.00,10.00,171.00,$GNGGA,144156.105,4900.5287,N,00824.6523,E,0,3,,94.8,M,47.9,M,,*6F
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,144207.105,4900.5166,N,00825.5591,E,0,0,,102.1,M,47.9,M,,*5B
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,24,66,293,,15,53,188,,19,38,103,,17,36,069,19*72
+$GPGSV,3,2,10,13,34,150,,12,31,223,,23,25,269,,10,21,306,*76
+$GPGSV,3,3,10,14,18,054,25,01,03,028,*7A
+$BDGSV,1,1,00*68
+$GNRMC,144207.105,V,4900.5166,N,00825.5591,E,0.000,0.00,181221,,,N*5F
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',22.00,30.00,3.00,16.00,172.00,$GNGGA,144207.105,4900.5166,N,00825.5591,E,0,0,,102.1,M,47.9,M,,*5B
+"
+
+OK
+----
+Msg: Send Started!
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT
+----
+Msg: Status CONNECT!
+Resp:
+AT+CIPSTART="TCP","0.tcp.ngrok.io",16656
+ALREAY CONNECT
+----
+Msg: Already Connection!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,144218.105,4900.5166,N,00825.5591,E,0,0,,102.1,M,47.9,M,,*55
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,10,24,66,293,,15,53,188,,19,38,103,,17,36,069,19*72
+$GPGSV,3,2,10,13,34,150,,12,31,223,,23,25,269,,10,21,306,*76
+$GPGSV,3,3,10,14,18,054,26,01,03,028,*79
+$BDGSV,1,1,00*68
+$GNRMC,144218.105,V,4900.5166,N,00825.5591,E,0.000,0.00,181221,,,N*51
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Msg: Failed to perform reading!
+Resp:
+AT+CIPSEND=103,"'A1',20.00,33.00,9.00,15.00,173.00,$GNGGA,144218.105,4900.5166,N,00825.5591,E,0,0,,102.1,M,47.9,M,,*55
+"
+
+----
+Msg: Send Start Timeout!
+
+*****Error No.1
+Resp:
+
+COMMAND NO RESPONSE!
+
+----
+Msg: Netwrok Setting Timeout!
+
+*****Error No.2
+Resp:
+AT+CREG=1
+
+OK
+----
+Msg: Netwoek Set!
+Resp:
+AT+CREG?
+
++CREG: 1
+----
+Msg: Network Registered!
+Resp:
+AT+GPS=1
+
+OK
+----
+Msg: GPS Set!
+Resp:
+AT+CGATT=1
+
++CGATT:1
+
+OK
+----
+Msg: PS Attached!
+Resp:
+AT+CGDCONT?
+
++CGDCONT:1,"IP","pinternet.interkom.de
+----
+Msg: Context Exists!
+Resp:
+AT+CGACT=1,1
+
+OK
+----
+Msg: Context Selected!
+Resp:
+AT+CGACT?
+
++CGACT: 1, 1
+----
+Msg: Context is Correct!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT OK 
+
+OK
+
+----
+Msg: Status Timeout!
+
+*****Error No.3
+Resp:
+AT+CREG=1
+
+OK
+----
+Msg: Netwoek Set!
+Resp:
+AT+CREG?
+
++CREG: 1
+----
+Msg: Network Registered!
+Resp:
+AT+GPS=1
+
+OK
+----
+Msg: GPS Set!
+Resp:
+AT+CGATT=1
+
++CGATT:1
+
+OK
+----
+Msg: PS Attached!
+Resp:
+AT+CGDCONT?
+
++CGDCONT:1,"IP","pinternet.interkom.de
+----
+Msg: Context Exists!
+Resp:
+AT+CGACT=1,1
+
+OK
+----
+Msg: Context Selected!
+Resp:
+AT+CGACT?
+
++CGACT: 1, 1
+----
+Msg: Context is Correct!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CONNECT OK 
+
+OK
+
+----
+Msg: Status Timeout!
+
+*****Error No.4
+CLOSED
+
+OK

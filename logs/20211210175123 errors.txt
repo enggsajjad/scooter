@@ -1,0 +1,120 @@
+«2"e#?wÁë+"r:ò7b·Ès££££c™¿#‘Ò‘³#ÿStart
+Init...
+
++CIEV: "Charging",100%
+
+
++CREG: 2
+
+^STN: 37
++CIEV: "Complete the Charge",100%
+
++CTZV:21/12/10,16:48:37,+01
+
++CREG: 1
+
+A9/A9G
+V02.02.20190915R
+Ai_Thinker_Co._Ltd.
+READY
+A9/A9G Module READY.
+AT
+
+OK
+
+AT
+
+OK
+
+A9/A9G Module AT working.
+Cmd: AT+GPSRD=0
+Res @1006ms AT+GPSRD=0
+
+OK
+Cmd: AT+GPS=1
+Res @1018ms AT+GPS=1
+
+OK
+Cmd: AT+CREG?
+Res @1014ms AT+CREG?
+
++CREG: 1,1
+
+OK
+Cmd: AT+CGACT?
+Res @1011ms AT+CGACT?
+
++CGACT: 0,0
+
+OK
+Cmd: AT+CGATT=1
+Res @1011ms AT+CGATT=1
+
++CGATT:1
+
+OK
+Cmd: AT+CGDCONT?
+Res @1006ms AT+CGDCONT?
+
+OK
+Cmd: AT+CGDCONT=1,"IP","pinternet.interkom.de"
+Res @1026ms AT+CGDCONT=1,"IP","pinternet.interkom.de"
+
+OK
+Cmd: AT+CGACT=1,1
+Res @1004ms AT+CGACT=1,1
+
+Error No.0
+Cmd: AT+GPSRD=0
+
+Error No.1
+Cmd: AT+GPSRD=0
+Res @5015ms 
+COMMAND NO RESPONSE!
+
+Error No.2
+Cmd: AT+GPSRD=0
+Res @1011ms AT+GPSRD=0
+
+OK
+AT+GPSRD=0
+
+OK
+AT+GPSRD=0
+
+OK
+Cmd: AT+GPS=1
+Res @1005ms AT+GPS=1
+
+OK
+Cmd: AT+CREG?
+Res @1006ms AT+CREG?
+
++CREG: 1,5
+
+OK
+Cmd: AT+CGACT?
+Res @1007ms AT+CGACT?
+
++CGACT: 0,0
+
+OK
+Cmd: AT+CGATT=1
+Res @1007ms AT+CGATT=1
+
++CGATT:1
+
+OK
+Cmd: AT+CGDCONT?
+Res @1011ms AT+CGDCONT?
+
++CGDCONT:1,"IP","pinternet.interkom.de","0.0.0.0",0,0
+
+OK
+Cmd: AT+CGACT=1,1
+Res @1005ms AT+CGACT=1,1
+
+Error No.3
+Cmd: AT+GPSRD=0
+
+Error No.4

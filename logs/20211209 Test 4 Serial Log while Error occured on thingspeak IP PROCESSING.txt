@@ -1,0 +1,237 @@
+
+^STN: 37
+
++CTZV:21/12/09,17:34:43,+01
++CIEV: "Complete the Charge",100%
+
+
+A9/A9G Module READY.
+AT
+
+OK
+
++CREG: 1
+
+
+A9/A9G
+V02.02.20190915R
+Ai_Thinker_Co._Ltd.
+READY
+AT
+
+OK
+
+A9/A9G Module AT working.
+Cmd: AT+GPSRD=0
+Get @1007ms AT+GPSRD=0
+
+OK
+Cmd: AT+GPS=1
+Get @1018ms AT+GPS=1
+
+OK
+Cmd: AT+CREG?
+Get @1014ms AT+CREG?
+
++CREG: 1,1
+
+OK
+Cmd: AT+CGACT?
+Get @1012ms AT+CGACT?
+
++CGACT: 0,0
+
+OK
+Cmd: AT+CGATT=1
+Get @1010ms AT+CGATT=1
+
++CGATT:1
+
+OK
+Cmd: AT+CGDCONT?
+Get @1007ms AT+CGDCONT?
+
+OK
+Cmd: AT+CGDCONT=1,"IP","pinternet.interkom.de"
+Get @1025ms AT+CGDCONT=1,"IP","pinternet.interkom.de"
+
+OK
+Cmd: AT+CGACT=1,1
+Get @1679ms AT+CGACT=1,1
+
+OK
+Cmd: AT+CGACT?
+Get @1010ms AT+CGACT?
+
++CGACT: 1, 1
+
+OK
+Cmd: AT+CIPSTATUS?
+Get @1011ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:IP INITIAL 
+
+OK
+Start: 34 End: 44 Res: IP INITIAL
+Status: INITIAL
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Get @1967ms AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+Cmd: AT+CIPSTATUS?
+Get @1008ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CONNECT OK 
+
+OK
+Start: 34 End: 44 Res: CONNECT OK
+Status: CONNECT
+Cmd: AT+GPSRD=5
+Get @1009ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,000045.264,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*59
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000045.264,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*5E
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Get @1005ms AT+CIPSEND
+
+> Cmd: 
+
+Get @1786ms 
+OK
+
+
+
++CIPRCV,1:1
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Get @1008ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Get @1947ms AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+
+OK
+Cmd: AT+CIPSTATUS?
+Get @1008ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CONNECT OK 
+
+OK
+Start: 34 End: 44 Res: CONNECT OK
+Status: CONNECT
+Cmd: AT+GPSRD=5
+Get @1008ms AT+GPSRD=5
+
+OK
+Getting data from GPS using AT Cmd
+-----------
+$GNGGA,000108.264,4900.5200,N,00825.4584,E,0,0,,145.7,M,47.9,M,,*51
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000108.264,V,4900.5200,N,00825.4584,E,0.000,0.00,060180,,,N*56
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+-----------
+Getting data from GPS using AT done
+Cmd: AT+GPSRD=0
+Getting data from Sensors
+Cmd: AT+CIPSEND
+Get @1005ms AT+CIPSEND
+
+> Cmd: 
+
+Get @1826ms 
+OK
+
+
+
++CIPRCV,1:2
+CLOSED
+
+OK
+Cmd: AT+CIPSTATUS?
+Get @1008ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+Start: 34 End: 40 Res: CLOSED
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Get @1009ms AT+CIPSTART="TCP","api.thingspeak.com",80
+Error No.
+Cmd: AT+GPSRD=0
+Get @1006ms AT+GPSRD=0
+
+OK
+Cmd: AT+GPS=1
+Get @1007ms AT+GPS=1
+
+OK
+Cmd: AT+CREG?
+Get @1006ms AT+CREG?
+
++CREG: 1,5
+
+OK
+Cmd: AT+CGACT?
+Get @1010ms AT+CGACT?
+
++CGACT: 1, 1
+
+OK
+Cmd: AT+CGATT=1
+Get @1012ms AT+CGATT=1
+
++CGATT:1
+
+OK
+Cmd: AT+CGDCONT?
+Get @1012ms AT+CGDCONT?
+
++CGDCONT:1,"IP","pinternet.interkom.de","10.119.64.206",0,0
+
+OK
+Cmd: AT+CGACT=1,1
+Get @1008ms AT+CGACT=1,1
+
+OK
+Cmd: AT+CGACT?
+Get @1011ms AT+CGACT?
+
++CGACT: 1, 1
+
+OK
+Cmd: AT+CIPSTATUS?
+Get @1009ms AT+CIPSTATUS?
++CIPSTATUS:
+STATE:IP PROCESSING 
+
+OK
+Start: 34 End: 47 Res: IP PROCESSING
+Status: CLOSE
+Cmd: AT+CIPSTART="TCP","api.thingspeak.com",80
+Get @1011ms AT+CIPSTART="TCP","api.thingspeak.com",80
+ALREAY CONNECT
+Error No.

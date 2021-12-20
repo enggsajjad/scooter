@@ -1,0 +1,71 @@
+
+Hello Loop Testing....
+Init...
+
++CIEV: "Charging",98%
+
+
++CREG: 2
+
+A9/A9G
+V02.02.20190915R
+Ai_Thinker_Co._Ltd.
+READY
++CIEV: service,  1
++CIEV: roam, 0
+
++CREG: 1
+
+AT
+
+OK
+^STN: 38
+AT+GPS=1
+
+OK
+AT+CREG?
+
++CREG: 1,1
+
+OK
+AT+CGACT?
+
++CGACT: 0,0
+
+OK
+AT+CGATT=1
+
++CGATT:1
+
+OK
+AT+CGDCONT=?
+
++CGDCONT: (1..7), (IP,IPV6,PPP),(0..3),(0..4)
+
+OK
+AT+CGDCONT?
+
+OK
+AT+CGDCONT=1,"IP","pinternet.interkom.de"
+
+OK
+AT+CGDCONT?
+
++CGDCONT:1,"IP","pinternet.interkom.de","0.0.0.0",0,0
+
+OK
+AT+CGACT=1,1
+
+OK
+AT+CGACT?
+
++CGACT: 1, 1
+
+OK
+AT+CIPSTART="TCP","0.tcp.ngrok.io",19925
+CONNECT OK
+
+OK
+AT+CIPSEND=138,"{ scooterId: 'C45ZA1', pm25: 234, pm10: 110 }"
+
+COMMAND NO RESPONSE!

@@ -1,0 +1,26 @@
+data written
+CONNECTED: 127.0.0.1:65157
+DATA 127.0.0.1: 'A1',22.00,33.00,2.00,15.00,999.00,$GNGGA,045045.084,9000.0000,N,00000.0000,E,0,0,,137.0,M,13.0,M,,*5F
+
+data written
+DATA 127.0.0.1: ▬♥☺�☺�♥☺���♀FD�w��B�&♀�ηǳ���☼��♣�☼BR�
+�¶98���↓:��     �‼32��ED�↑4�F��◄�▬↑�↕▬‼�↨�/�A♣♦
+�☺;‼◄♫0.tcp.ngrok.io♂♦♥☺☻
+♀
+↔↨▲↓↑#▬↨
+events.js:353
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: read ECONNRESET
+    at TCP.onStreamRead (internal/stream_base_commons.js:209:20)
+Emitted 'error' event on Socket instance at:
+    at emitErrorNT (internal/streams/destroy.js:106:8)
+    at emitErrorCloseNT (internal/streams/destroy.js:74:3)
+    at processTicksAndRejections (internal/process/task_queues.js:82:21) {
+  errno: -4077,
+  code: 'ECONNRESET',
+  syscall: 'read'
+}
+
+D:\github\test_tcp_ngrok\tcptest6\server>
