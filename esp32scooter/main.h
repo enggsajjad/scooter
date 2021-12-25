@@ -309,8 +309,9 @@
 
 
 //uncomment the following if not using thingspeak, comment if for NGROK 
-#define THINGSPEAK  // !!!IMPORTANT!!!
-
+//#define THINGSPEAK  // !!!IMPORTANT!!!
+//uncomment the following if  using actual sensors, comment if for debugging 
+//#define REAL_SENSORS  // !!!IMPORTANT!!!
 
 #ifdef THINGSPEAK
   /// TCP HOST
@@ -319,9 +320,9 @@
   String port = "80"; // !!!IMPORTANT!!!
 #else
   /// TCP HOST
-  String host = "0.tcp.ngrok.io"; // !!!IMPORTANT!!!
+  String host = "8.tcp.ngrok.io"; // !!!IMPORTANT!!!
   /// TCP Port
-  String port = "18049"; // !!!IMPORTANT!!!
+  String port = "19482"; // !!!IMPORTANT!!!
 #endif
 
 /// APN of the SIM

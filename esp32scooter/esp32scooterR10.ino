@@ -53,8 +53,6 @@ void setup()
   digitalWrite(gprsPWR, HIGH);
   Serial.println("Initializing A9G...");
 
-  //r1 = readATResponse( "+CREG: 2", "ERROR", 60000); // !!!IMPORTANT!!!
-  //r1 = readATResponse( "\n", "ERROR", 60000); // !!!IMPORTANT!!!
   r = readATResponse( "READY", "ERROR", 5*60000); // !!!IMPORTANT!!!
 
   if ( (r ==1))
@@ -92,22 +90,24 @@ void loop()
   {
     case config_sensors:
       rxState = chk_sim_cpin;
-      sds.begin(&SDS_SERIAL, recv_from_sds, trans_to_sds);  // initialize SDS011 sensor
-    
-      bmeAddress = BME_ADDR;
-    
-      if (!bme.begin(bmeAddress, true)) 
-      {
-        Serial.println("Msg: Could not find a valid BME680 sensor, check wiring!");
-        rxState = error_state;
-        //while (1);
-      }
-      // Set up oversampling and filter initialization
-      bme.setTemperatureOversampling(BME680_OS_8X);
-      bme.setHumidityOversampling(BME680_OS_2X);
-      bme.setPressureOversampling(BME680_OS_4X);
-      bme.setIIRFilterSize(BME680_FILTER_SIZE_3);
-      bme.setGasHeater(320, 150); // 320*C for 150 ms
+      #ifdef REAL_SENSORS
+        sds.begin(&SDS_SERIAL, recv_from_sds, trans_to_sds);  // initialize SDS011 sensor
+      
+        bmeAddress = BME_ADDR;
+      
+        if (!bme.begin(bmeAddress, true)) 
+        {
+          Serial.println("Msg: Could not find a valid BME680 sensor, check wiring!");
+          rxState = error_state;
+          //while (1);
+        }
+        // Set up oversampling and filter initialization
+        bme.setTemperatureOversampling(BME680_OS_8X);
+        bme.setHumidityOversampling(BME680_OS_2X);
+        bme.setPressureOversampling(BME680_OS_4X);
+        bme.setIIRFilterSize(BME680_FILTER_SIZE_3);
+        bme.setGasHeater(320, 150); // 320*C for 150 ms
+      #endif
       //LEDS
       delay(1000);
       rgbSetColor(bColor);
@@ -313,7 +313,7 @@ void loop()
         {Serial.println("Msg: Connection2 Timeout!");rxState = error_state;}
       break;
     case set_gpsrd_read:
-      //r = sendATCommand("AT+GPSRD=2", "OK", "ERROR", 2000);// Will also work
+      //r = sendATCommand("AT+GPSRD=2", "OK", "ERROR", 2000);// Will also work but thingspeak needs more time
       r = sendATCommand("AT+GPSRD=5", "OK", "ERROR", 2000);
       if (r == 1)
       {
@@ -346,24 +346,26 @@ void loop()
       break;
     case sensor_data:
       MY_DBGln("Msg: Getting data from Sensors");
-      status_sds = sds.read(&pm25, &pm10);
-      //debugging
-      //pm25 = random(20, 25);//debugging
-      //pm10 = random(30, 35);//debugging
-      //status_sds = sds.dataQueryCmd(&pm10, &pm25 );
-      // put your main code here, to run repeatedly:
-      if (! bme.performReading()) 
-      {
-        Serial.println("Msg: Failed to perform reading!");
-        //rxState = error_state;
-      }
-      temp = bme.temperature;
-      hum = bme.humidity;
-      atm = bme.pressure / 100.0;
-      //debugging
-      //temp = random(2, 10);
-      //hum = random(10, 20);
-      //atm = cntr1;//bme.readPressure() / 100;
+      #ifdef REAL_SENSORS
+        status_sds = sds.read(&pm25, &pm10);
+        //status_sds = sds.dataQueryCmd(&pm10, &pm25 );
+        if (! bme.performReading()) 
+        {
+          Serial.println("Msg: Failed to perform reading!");
+          //rxState = error_state;
+        }
+        temp = bme.temperature;
+        hum = bme.humidity;
+        atm = bme.pressure / 100.0;
+      #else
+        //debugging
+        pm25 = random(20, 25);//debugging
+        pm10 = random(30, 35);//debugging
+        temp = random(2, 10);
+        hum = random(10, 20);
+        atm = cntr1;//bme.readPressure() / 100;
+      #endif
+      
       #ifdef THINGSPEAK
         //channel: eScooter
         message = "GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=" + String(temp) +"&field2="+String(hum) +"&field3="+String(atm) +"&field4="+String(pm25) +"&field5="+String(pm10) +"&field6="+String(loc);//for thinkspeak
@@ -371,10 +373,9 @@ void loop()
         //message = "GET https://api.thingspeak.com/update?api_key=TJ85HJBF1XTV1GH7&field1=" + String(temp) +"&field2="+String(hum) +"&field3="+String(atm) +"&field4="+String(pm25) +"&field5="+String(pm10) +"&field6="+String(loc);//for thinkspeak
       #else
         //message = "{ Id: \'A1\', pm25: " + String(pm25) + ", pm10: " + String(pm10) + ", temp: " + String(temp) + ", hum: " + String(hum) + ", atm: " + String(atm++) + " , loc: \"" + loc + "\" }\n";//for ngrok TCP tunneling
-        //message = "\'A1\'," + String(pm25) + "," + String(pm10) + "," + String(temp) + "," + String(hum) + "," + String(atm++) + ",\"" + loc + "\"\n";//for ngrok TCP tunneling for csv file
-        message = String(cntr1) + "," + String(pm25) + "," + String(pm10) + "," + String(temp) + "," + String(hum) + "," + String(atm++) + ",\"" + loc + "\"\n";//for ngrok TCP tunneling for csv file
+        //message = "\'A1\'," + String(pm25) + "," + String(pm10) + "," + String(temp) + "," + String(hum) + "," + String(atm++) + ",\'" + loc + "\'\n";//for ngrok TCP tunneling for csv file
+        message = String(cntr1) + "," + String(pm25) + "," + String(pm10) + "," + String(temp) + "," + String(hum) + "," + String(atm++) + ",\'" + loc + "\'\n";//for ngrok TCP tunneling for csv file
       #endif
-      //Serial.println("Message: "+message);
       rxState = set_cipsend;
       break;
     case set_cipsend:
