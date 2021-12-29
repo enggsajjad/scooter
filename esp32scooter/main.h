@@ -197,6 +197,16 @@
 /// Hardware.Revision 
 #define hw_date "2020-01-17T12:00:00.000Z"
 
+
+
+
+//uncomment the following if not using thingspeak, comment if for NGROK 
+#define THINGSPEAK  // !!!IMPORTANT!!!
+//uncomment the following if  using actual sensors, comment if for debugging 
+//#define REAL_SENSORS  // !!!IMPORTANT!!!
+
+
+
 /// Debugging, uncomment to switch servers to release version, enable sending to madavi and luftdaten.info, and supress some debug output
 //#define RELEASE // !!!IMPORTANT!!!
 
@@ -307,12 +317,6 @@
 #define set_cipstart2 33
 
 
-
-//uncomment the following if not using thingspeak, comment if for NGROK 
-//#define THINGSPEAK  // !!!IMPORTANT!!!
-//uncomment the following if  using actual sensors, comment if for debugging 
-//#define REAL_SENSORS  // !!!IMPORTANT!!!
-
 #ifdef THINGSPEAK
   /// TCP HOST
   String host = "api.thingspeak.com"; // !!!IMPORTANT!!!
@@ -346,10 +350,10 @@ String message= "";
 int rxState = -1;
 /// the temporary response for AT+CIPSTATUS? Command 
 char resp;
-/// counter to count total number of transmitted TCP packets
+/// counter to count total number of gps packets
 int cntr;
 /// counter to count total number of transmitted TCP packets
-int cntr1;
+int pcktCntr;
 /// last state
 //int last;
 /// response byte of the commands
@@ -363,7 +367,7 @@ String loc;
 /// boolean flag used for reading GPS messages
 bool running = true;
 /// count the reset counter after each reset
-unsigned char resetCntr;
+unsigned int resetCntr;
 /// initialization the wire I2C interface
 bool wireStatus = Wire1.begin(BME_SDA, BME_SCL);
 /// instantiate the BME680 object

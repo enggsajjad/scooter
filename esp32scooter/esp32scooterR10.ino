@@ -363,7 +363,7 @@ void loop()
         pm10 = random(30, 35);//debugging
         temp = random(2, 10);
         hum = random(10, 20);
-        atm = cntr1;//bme.readPressure() / 100;
+        atm = pcktCntr;//bme.readPressure() / 100;
       #endif
       
       #ifdef THINGSPEAK
@@ -374,7 +374,7 @@ void loop()
       #else
         //message = "{ Id: \'A1\', pm25: " + String(pm25) + ", pm10: " + String(pm10) + ", temp: " + String(temp) + ", hum: " + String(hum) + ", atm: " + String(atm++) + " , loc: \"" + loc + "\" }\n";//for ngrok TCP tunneling
         //message = "\'A1\'," + String(pm25) + "," + String(pm10) + "," + String(temp) + "," + String(hum) + "," + String(atm++) + ",\'" + loc + "\'\n";//for ngrok TCP tunneling for csv file
-        message = String(cntr1) + "," + String(pm25) + "," + String(pm10) + "," + String(temp) + "," + String(hum) + "," + String(atm++) + ",\'" + loc + "\'\n";//for ngrok TCP tunneling for csv file
+        message = String(pcktCntr) + "," + String(pm25) + "," + String(pm10) + "," + String(temp) + "," + String(hum) + "," + String(atm++) + ",\'" + loc + "\'\n";//for ngrok TCP tunneling for csv file
       #endif
       rxState = set_cipsend;
       break;
@@ -408,13 +408,13 @@ void loop()
       {
         Serial.println("Msg: Send Completed!");
         rgbSetColor(gColor);
-        cntr1++;
-        if(cntr1==TOTAL_RECORDS)
-        {
-          rxState=set_cipclose;
-          cntr1 = 0;
-        }
-        else
+        pcktCntr++;
+        //if(pcktCntr==TOTAL_RECORDS)
+        //{
+        //  rxState=set_cipclose;
+        //  pcktCntr = 0;
+        //}
+        //else
           rxState = chk_cipstatus_again;
       }else if (r == 2)
         {Serial.println("Msg: Send Complete Error!");rxState = error_state;}
@@ -474,7 +474,12 @@ void loop()
       MY_DBG("\r\n*****Error No.");
       MY_DBGln(resetCntr);
       resetCntr++;
-      if (resetCntr < 10)
+
+        delay(20000);//20s
+        digitalWrite(LED1, 1);
+        rxState=set_network;
+
+      /*if (resetCntr < 10)
       {
         delay(5000);
         digitalWrite(LED1, 1);
@@ -484,7 +489,7 @@ void loop()
       {
         resetCntr = 0;
         rxState = hang_state;
-      }
+      }*/
       break;
     case hang_state:
       loopSerial();
