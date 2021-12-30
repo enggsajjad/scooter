@@ -315,7 +315,8 @@
 #define attach_ps_again 31
 #define chk_cip_status2 32
 #define set_cipstart2 33
-
+#define reset_module 34
+#define waiting_ready 35
 
 #ifdef THINGSPEAK
   /// TCP HOST
@@ -355,7 +356,9 @@ int cntr;
 /// counter to count total number of transmitted TCP packets
 int pcktCntr;
 /// last state
-//int last;
+int last;
+/// error causing state
+int errorState;
 /// response byte of the commands
 byte r;
 /// temporary string used for reading GPS messages

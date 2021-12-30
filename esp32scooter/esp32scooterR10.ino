@@ -86,9 +86,11 @@ void setup()
 
 void loop()
 {
+  
   switch(rxState)
   {
     case config_sensors:
+      last = rxState;
       rxState = chk_sim_cpin;
       #ifdef REAL_SENSORS
         sds.begin(&SDS_SERIAL, recv_from_sds, trans_to_sds);  // initialize SDS011 sensor
@@ -115,6 +117,7 @@ void loop()
       rgbSetColor(gColor);
       break;
     case try_init_again:
+      last = rxState;
       r = readATResponse( "READY", "ERROR", 5*60000); // !!!IMPORTANT!!!
       if ((r ==1))
       {
@@ -131,6 +134,7 @@ void loop()
       //a9gPowerOnCheck();
       break;
     case chk_sim_cpin:
+      last = rxState;
       r = sendATCommand("AT+CPIN?", "READY", "SIM", 2000);
       if (r == 1)
       {
@@ -142,6 +146,7 @@ void loop()
        {Serial.println("Msg: SIM PIN Timeout!");rxState = error_state;}
       break;
     case set_network:
+      last = rxState;
       r = sendATCommand("AT+CREG=1", "OK", "ERROR", 60000);
       if (r == 1)
       {
@@ -153,6 +158,7 @@ void loop()
         {Serial.println("Msg: Netwrok Setting Timeout!");rxState = error_state;}
       break;
     case chk_network_register:
+      last = rxState;
       //r = sendATCommand("AT+CREG?", "+CREG: 1,1", "+CREG: 0,5", 2000); // !!!IMPORTANT!!!
       r = sendATCommand("AT+CREG?", "+CREG: 1", "+CREG: 0", 2000); // !!!IMPORTANT!!!
       if (r == 1)
@@ -165,6 +171,7 @@ void loop()
         {Serial.println("Msg: Netwrok Register Timeout!");rxState = error_state;}
       break;
     case set_gps:
+      last = rxState;
       r = sendATCommand("AT+GPS=1", "OK", "ERROR", 2000);
       if (r == 1)
       {
@@ -176,6 +183,7 @@ void loop()
         {Serial.println("Msg: GPS Set Timeout!");rxState = error_state;}
       break;
     case attach_ps:
+      last = rxState;
       r = sendATCommand("AT+CGATT=1", "OK", "ERROR", 60000);
       if (r == 1)
       {
@@ -185,6 +193,7 @@ void loop()
         {Serial.println("Msg: PS Attach Error or Timeout!"); rxState = attach_ps_again;}
       break;
     case attach_ps_again:
+      last = rxState;
       r = sendATCommand("AT+CGATT=1", "OK", "NO RESPONSE!", 90000);      
       if (r == 1)
       {
@@ -196,6 +205,7 @@ void loop()
         {Serial.println("Msg: PS2 Attach Timeout!");rxState = error_state;}
       break;
     case check_context:
+      last = rxState;
       r = sendATCommand("AT+CGDCONT?", (char*)apn.c_str(), "OK", 20000);
       if (r == 1)
       {
@@ -209,6 +219,7 @@ void loop()
         {Serial.println("Msg: Context Set Timeout!");rxState = error_state;}
       break;
     case set_context:
+      last = rxState;
       r = sendATCommand((char*)("AT+CGDCONT=1,\"IP\",\"" + apn +"\"").c_str(), "OK", "ERROR", 20000);
       if (r == 1)
       {
@@ -220,6 +231,7 @@ void loop()
         {Serial.println("Msg: Context Change Timeout!");rxState = error_state;}
       break;
     case select_context:
+      last = rxState;
       r = sendATCommand("AT+CGACT=1,1", "OK", "ERROR", 20000);
       if (r == 1)
       {
@@ -231,6 +243,7 @@ void loop()
         {Serial.println("Msg: Context Select Timeout!");rxState = error_state;}
       break;
     case show_context:
+      last = rxState;
       r = sendATCommand("AT+CGACT?", "+CGACT: 1, 1", "ERROR", 20000);
       if (r == 1)
       {
@@ -242,6 +255,7 @@ void loop()
         {Serial.println("Msg: Context Shown Timeout!");rxState = error_state;}
       break;
     case chk_cip_status:
+      last = rxState;
       r = sendATCommand("AT+CIPSTATUS", "INITIAL", "CLOSED", 6000);
       if (r == 1)
       {
@@ -255,6 +269,7 @@ void loop()
         {Serial.println("Msg: Status Timeout!");rxState = chk_cip_status2;}
       break;
     case chk_cip_status2:
+      last = rxState;
       r = sendATCommand("AT+CIPSTATUS", "CONNECT", "CLOSED", 6000);
       if (r == 1)
       {
@@ -268,6 +283,7 @@ void loop()
         {Serial.println("Msg: Status2 Timeout!");rxState = error_state;}
       break;
     case set_cipstart:
+      last = rxState;
       #ifdef THINGSPEAK
         r = sendATCommand((char*)("AT+CIPSTART=\"TCP\",\"" + host + "\"," + port).c_str(), "CONNECT OK", "ALREAY CONNECT", 120000);//for thinkspeak
         if ((r == 1) or (r == 2))
@@ -295,6 +311,7 @@ void loop()
       #endif
       break;
     case set_cipstart2:
+      last = rxState;
       r = sendATCommand((char*)("AT+CIPSTART=\"TCP\",\"" + host + "\"," + port).c_str(), "CONNECT OK", "CONNECT FAIL", 120000);//for thinkspeak
       if (r == 1)
       {
@@ -313,6 +330,7 @@ void loop()
         {Serial.println("Msg: Connection2 Timeout!");rxState = error_state;}
       break;
     case set_gpsrd_read:
+      last = rxState;
       //r = sendATCommand("AT+GPSRD=2", "OK", "ERROR", 2000);// Will also work but thingspeak needs more time
       r = sendATCommand("AT+GPSRD=5", "OK", "ERROR", 2000);
       if (r == 1)
@@ -325,15 +343,18 @@ void loop()
         {Serial.println("Msg: GPS Read Timeout!");rxState = error_state;}
       break;
     case read_gps_msg:
+      last = rxState;
       MY_DBGln("Msg: Getting data from GPS using AT Cmd");
       gpsReadMessages();
       break;
     case read_gps_done:
+      last = rxState;
       running = true;
       MY_DBGln("Msg: Getting data from GPS using AT done");
       rxState = set_gpsrd_off;
       break;
     case set_gpsrd_off:
+      last = rxState;
       r = sendATCommand("AT+GPSRD=0", "OK", "ERROR", 2000);
       if (r == 1)
       {
@@ -345,6 +366,7 @@ void loop()
         {Serial.println("Msg: GPS Off Timeout!");rxState = error_state;}
       break;
     case sensor_data:
+      last = rxState;
       MY_DBGln("Msg: Getting data from Sensors");
       #ifdef REAL_SENSORS
         status_sds = sds.read(&pm25, &pm10);
@@ -368,17 +390,19 @@ void loop()
       
       #ifdef THINGSPEAK
         //channel: eScooter
-        message = "GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=" + String(temp) +"&field2="+String(hum) +"&field3="+String(atm) +"&field4="+String(pm25) +"&field5="+String(pm10) +"&field6="+String(loc);//for thinkspeak
+        message = "GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=" + String(temp) +"&field2="+String(hum) +"&field3="+String(atm) +"&field4="+String(pm25) +"&field5="+String(pm10) +"&field6="+String(resetCntr) +"&field7="+String(errorState) +"&field8="+String(loc);//for thinkspeak
         //channel: eScooter2 
-        //message = "GET https://api.thingspeak.com/update?api_key=TJ85HJBF1XTV1GH7&field1=" + String(temp) +"&field2="+String(hum) +"&field3="+String(atm) +"&field4="+String(pm25) +"&field5="+String(pm10) +"&field6="+String(loc);//for thinkspeak
+        //message = "GET https://api.thingspeak.com/update?api_key=TJ85HJBF1XTV1GH7&field1=" + String(temp) +"&field2="+String(hum) +"&field3="+String(atm) +"&field4="+String(pm25) +"&field5="+String(pm10) +"&field6="+String(resetCntr) +"&field7="+String(errorState) +"&field8="+String(loc);//for thinkspeak
       #else
         //message = "{ Id: \'A1\', pm25: " + String(pm25) + ", pm10: " + String(pm10) + ", temp: " + String(temp) + ", hum: " + String(hum) + ", atm: " + String(atm++) + " , loc: \"" + loc + "\" }\n";//for ngrok TCP tunneling
         //message = "\'A1\'," + String(pm25) + "," + String(pm10) + "," + String(temp) + "," + String(hum) + "," + String(atm++) + ",\'" + loc + "\'\n";//for ngrok TCP tunneling for csv file
-        message = String(pcktCntr) + "," + String(pm25) + "," + String(pm10) + "," + String(temp) + "," + String(hum) + "," + String(atm++) + ",\'" + loc + "\'\n";//for ngrok TCP tunneling for csv file
+        message = String(pcktCntr) + "," + String(pm25) + "," + String(pm10) + "," + String(temp) + "," + String(hum) + "," + String(atm++) + "," + String(resetCntr) + "," + String(errorState) + ",\'" + loc + "\'\n";//for ngrok TCP tunneling for csv file
       #endif
       rxState = set_cipsend;
       break;
     case set_cipsend:
+      last = rxState;
+      
       #ifdef THINGSPEAK
         cntrlChar[0] = 26;
         cntrlChar[1] = '\n';
@@ -397,6 +421,8 @@ void loop()
         {Serial.println("Msg: Send Start Timeout!");rxState = error_state;}
       break;
     case set_cipsend_complete:
+      last = rxState;
+      errorState = 0;
       #ifdef THINGSPEAK
         r = sendATCommand((char*)message.c_str(), "ERROR", "ERROR", 2000);
         delay(300);
@@ -424,6 +450,7 @@ void loop()
       delay(5000);//with this from  0,2,4,6,8 improved to 0,1,2,3,4,5,6,8
       break;
     case chk_cipstatus_again:
+      last = rxState;
       r = sendATCommand("AT+CIPSTATUS", "CONNECT", "CLOSED", 6000);
       rgbSetColor(noColor);
       if (r == 1)
@@ -439,11 +466,13 @@ void loop()
       {
         //Serial.println("Msg: Status CLOSED!");
         rxState = set_cipstart;
+        //rxState = reset_module;// testing reset_module manually 
         delay(5000);//with this from  0,2,4,6,8 improved to 0,1,2,3,4,5,6,8
       }else
         {Serial.println("Msg: Status Again Timeout!");rxState = error_state;}
       break;
     case set_cipclose:
+      last = rxState;
       r = sendATCommand("AT+CIPCLOSE", "OK", "ERROR", 20000);
       if (r == 1)
       {
@@ -454,7 +483,9 @@ void loop()
       else
         {Serial.println("Msg: Connection Close Timeout!");rxState = error_state;}
       break;
+     
     case set_cipshut:
+      last = rxState;
       r = sendATCommand("AT+CIPSHUT", "OK", "ERROR", 20000);
       if (r == 1)
       {
@@ -474,11 +505,14 @@ void loop()
       MY_DBG("\r\n*****Error No.");
       MY_DBGln(resetCntr);
       resetCntr++;
-
+      errorState = last;
+      MY_DBG("\r\n*****Error State.");
+      MY_DBGln(errorState);
+      
         delay(20000);//20s
         digitalWrite(LED1, 1);
         rxState=set_network;
-
+        if ((resetCntr % 10) == 0) rxState = reset_module;
       /*if (resetCntr < 10)
       {
         delay(5000);
@@ -494,7 +528,33 @@ void loop()
     case hang_state:
       loopSerial();
       break;
-
+    case reset_module:
+      last = rxState;
+      r = sendATCommand("AT+RST=1", "OK", "ERROR", 6000);
+      if (r == 1)
+      {
+        Serial.println("Msg: Module Reset!");
+        delay(2000);
+        rxState = waiting_ready;
+      }else if (r == 2)
+        {Serial.println("Msg: Module Reset Error!");rxState = error_state;}
+      else
+        {Serial.println("Msg: Module Reset Timeout!");rxState = error_state;}
+      break;
+    case waiting_ready:
+      last = rxState;
+      r = readATResponse( "READY", "ERROR", 5*60000); // !!!IMPORTANT!!!
+      if (r == 1)
+      {
+        a9gPowerOnCheck();
+        Serial.println("Msg: Module READY!");
+        delay(2000);
+        rxState = set_network;
+      }else if (r == 2)
+        {Serial.println("Msg: Waiting READY Error!");rxState = error_state;}
+      else
+        {Serial.println("Msg: Waiting READY Timeout!");rxState = error_state;}
+      break;
   }
 }
 
