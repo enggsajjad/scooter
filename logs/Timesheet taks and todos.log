@@ -1,0 +1,230 @@
+10.12.2021
+Test7:
+AT+CGATT=1 gives COMMAND NO RESPONSE
+fixed with at+cgreg=1
+
+again
+AT+CGATT = 1
+could not solve the error, fixed when pressed power key for a time 
+fixed the init routine
+
+17:18 error timeout error
+17:33
+18:13
+18:28
+AT+CIPSTART giving error of STATE: IP PROCESSING CONNECT FAIL
+Don't know why
+bebugging alot could not figure out
+
+19:48 dont know why it is working now after i refreshed the thingspeak
+00:05 change delay at AT+CIPSEND
+00:18 changes delay at AT+SIPSTATUS errerouns with errors
+00:55 begugging STATE: IP PROCESSING, could not figure out, may be delay in the 
+02:01 delay at SIPSEND, still errors, hangstate>>>loop1 works, then found that usbSerial > Serial, after a long debugging (IMPORTANT!!!)
+02:12 putting loop in hang state
+
+
+Sat. 11.12.2021 1300-1430 coding improvements, fixing errors, debugging
+1600-1800
+0200-0300
+
+Sun 12.12.2021  coding improvements, fixing errors, debugging
+1400-1600
+2100-0400
+
+Mon 13.12.2021  coding improvements, fixing errors, debugging, SIM adjustments
+2100-0230
+
+Started 21:15 End 22:17 Total Sent Values 186 about 20sec delay(5000); x 2     AT+GPSRD=5, 
+Started 22:58 End 23:48  but missing delay(5000); to delay(4000); x 2     AT+GPSRD=2
+Start 00:43  end 01:11, no missing values, delay(5000); x 2     AT+GPSRD=5, add reset if init is failed
+Started 02:11 End : 10:57 8hr:46min= 8*3600+46*60=31,560 readings=1578 time=31560÷1578=20   (IMPORTANT, no missing values)
+PCB3 was also running for 2 days approximately
+
+rev 1o.commit variables cleaning n documentation
+AT+GPSRD = 2 >>> Gives errors of CONNECT FAIL
+Remove Error, or Timeout messages
+
+naming the some strings etc
+comments on strings/variables to be changed !!!IMPORTANT!!!
+
+
+
+14.12.2021 23:36 Testing GPS inside the black box, it is detecting the location
+
+15.12.2021 16:00 1830 Testing GPS inside and fixing problem of getting READY (takes some time at some point, added another try)
+2300-0000
+Green Big wire antenna also works
+
+if ((rxState != error_state) or (rxState != timeout_state)) last = rxState;
+
+
+20211216204345 long run to test thingspeak values, laptop was reset at about 1300, but board kept running start 2021-12-16T020613 end 2021-12-16T204315 18hr.37min = 67,020s  3346 =20.03s
+
+20211217123911 long run stopped at some point due to some error, led blinking, manuall command works 
+start: 2021-12-16T21:28:13+01:00
+end 2021-12-17T09:40:19+01:00
+values 2198 , 43,926 sec, per values 19.98s
+
+error_state and timeout_state messages shown on each state, for better debugging
+
+modifying the ngrok send message to handle csv and plot in the jupyter
+
+error:
+Stack smashing protect failure!
+abort() was called at PC 0x400e8724 on core 1
+ELF file SHA256: 0000000000000000
+reason:
+char resp[300]; to char resp[1000];
+
+error due to tcp port closed
+
+Sajjad@i80pc100 MINGW64 /d/github/test_tcp_ngrok (master)
+$ git commit -m "writing tcp data to a file, adding jupyter code for parsing tcp data and ploting it"
+
+new server js for node.js
+
+20211220 tests with pcb2 in white (sim1) and pcb3 in black (sim2)
+tests
+
+16.12.2021 18:00 20:00 random tests and debuggings
+17.12.2021 18:00 20:00 random tests and debuggings
+18.12.2021 18:00 20:00 random tests and debuggings
+19.12.2021 18:00 20:00 random tests and debuggings
+20.12.2021 18:00 20:00 random tests and debuggings
+21.12.2021 18:00 20:00 random tests and debuggings
+
+20211221164817 CIPSTATUS timeout PCB3 test in the room without covers try to add another cipstatus or increase the timeout
+20211222084114 PCB3 test in the room without covers 2021-12-22T004457+0100 start 2021-12-22T074800+0100 end 7h4m=25,440s1255=20s feeds
+20211221225840 CIPSTATUS timeout PCB3 test in the room without covers
+
+20211222224319 AT+CIPSEND timeout error, increased, add set_cipstart2
+if (resetCntr < 10)
+
+
+
+PCB3 is working for days,
+random tests with and without antenna inside, works
+temperature and sensor data needs to be processed adjusted as it is increasing with time
+
+2021-12-23T00:11:47+01:00 start 2021-12-23T09:16:11+01:00 end 32700s/1615=20s
+
+20211224155028 long test with test values PCB3 black box start 2021-12-24T154956+0100 end 2021-12-24T004259+0100 15hr7min 54420s2721=20s NO ERRORS
+
+
+22.12.2021 18:00 20:00 random tests and debuggings
+23.12.2021 18:00 20:00 random tests and debuggings
+24.12.2021 18:00 20:00 random tests and debuggings
+25.12.2021 18:00 20:00 random tests and debuggings
+
+
+20211225153459 thin g speask pcb3 start 2021-12-25T153600+0100 end 2021-12-24T234611+0100, 2850 values, 56989s 569892850=20s real values, no errors
+20211225153526 ngrok pcb2 start 20211225045745, end 20211225153526, values 3474, 38261s, 11s per value, Single Error only
+
+Sajjad@i80pc100 MINGW64 /d/github/test_tcp_ngrok (master)
+$ git commit -m "modifying tcpServer_connection_event and tcpdata_plot"
+
+Sajjad@i80pc100 MINGW64 /d/github/scooter (a9g_rev1)
+$ git commit -m "added diiferent logs, adding THINGSPEAK and REAL_SENSOR and some backup states"
+
+26.12.2021 18:00 20:00 random tests and debuggings
+
+202112271751 start 1751 Out 1753 Train 1803 Walking 1827 - 1833 Room 1850 stopped when train entered in the tunnel feeds
+
+
+Sajjad@i80pc100 MINGW64 /d/github/scooter (a9g_rev1)
+$ git commit -m "added diiferent logs, removed limits on error and reset to the initial state i.e. loop in case of AT commands errors"
+
+added cntr and state fields on thingspeak, added resetCntr and errorState into tcp messages for debugging
+
+Sajjad@i80pc100 MINGW64 /d/github/scooter (a9g_rev1)
+$ git commit -m "added cntr and state fields on thingspeak, added resetCntr and errorState into tcp messages for debugging"
+
+20211230032952 testing for error states and reset counters, gprs antenna is unplugged to have an error
+
+20211230035758  testing for error states and reset counters, gprs antenna is unplugged to have an error but could not resolve, added new states
+
+Sajjad@i80pc100 MINGW64 /d/github/scooter (a9g_rev1)
+$ git commit -m "added reset_module and waiting_ready states and if ((resetCntr % 10) == 0) rxState = reset_module"
+
+
+20211230051240 Testing reset_module reset state
+
+20211230192733 Test with long run
+
+20211230202554 Walking log after coming back from the walk and checking the errors
+
+Maduino-Zero-A9G-master vs Maduino GPRS GPS A7 
+===== RESET, PWR-KEY======
+int lowp=5;//low-power
+int poff=6;//reset
+int pon=9;//pwr-key
+
+a7
+D5 - Low-Power Mode Control of A6 (Low active)
+D6 - Power OFF Control of A7 (High active)
+D9 - Power ON Control of A7 (High active)
+
+a9g
+D5 - Low-Power Mode Control of A9G (Low active)
+D6 - Hardware reset Control of A9G (High active)
+D9 - Power ONN/OFF Control of A79G (LOW active)
+
+
+RST Module hardware RESET pin, this PIN when
+using low level <0.05V, current is 70ma,
+recommends using NMOS control; Pull
+down mean the module hardware
+shutdown, the pin during normal work
+when there is leakage, will cause the
+module is not stable, it is difficult to
+register network
+
+pinMode(PWR_KEY, OUTPUT);
+pinMode(RST_KEY, OUTPUT);
+pinMode(LOW_PWR_KEY, OUTPUT);
+//
+digitalWrite(RST_KEY, LOW);
+digitalWrite(LOW_PWR_KEY, HIGH);
+digitalWrite(PWR_KEY, HIGH);
+//
+digitalWrite(PWR_KEY, LOW);
+delay(3000);
+digitalWrite(PWR_KEY, HIGH);
+delay(5000);
+
+
+https://www.reichelt.de/de/de/mosfet-n-ch-60v-0-265a-0-31w-sot-23-bsn-20bk-nxp-p219199.html?PROVID=2788&gclid=CjwKCAiAzrWOBhBjEiwAq85QZ3yhJC71lc0K5jTJw8oDaNQr1xaJq-TqOXGdme73HEzwFhSfo642PhoCwXsQAvD_BwE&&r=1
+
+
+added preferences library to debug errors and erronous state
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>time to  be added >>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+26.12.2021 18:00 20:00 random tests and debuggings
+29.12.2021 23:00 03:00  added cntr and state fields on thingspeak, random tests and debuggings
+30.12.2021 23:00 03:00  debugging unexpected stopped errors and resets , random tests and debuggings
+
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>  TODO: >>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Testing whether data is missing for longer runs
+
+
+Summay!!!
+
+thingspeak vs NGROK
+different timeouts of AT commands
+different response 
+internet interrupts can disrupt the NGROK port communications
+thingspeak has random timeout/busy time
+timeouts or errors from NGROK or thingspeak can disrupt the communication while walking and i have no indication on Serial Terminal or LED, therefore difficult to figure out.
+covered all the errors points or timeouts
+difficult to open the tray of the box.
+might be there should be a switch/button to reset the systems or PCB
+while in the box; sometime the data is stopped sending and statemachine goes into error state, i changed to reset the statemachine to start from begining after each reset
+while uncovered, it is running without any error for hours

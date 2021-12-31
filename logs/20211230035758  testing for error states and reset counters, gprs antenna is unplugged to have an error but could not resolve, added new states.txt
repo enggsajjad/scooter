@@ -1,0 +1,1061 @@
+ÙasîëJBÙaó€¼!{¦ëÙáùé@!è$1d!12ú
+SmartAQnet Scooter Sensors!
+
+【2021-38-30 03:38:00 877】Ini
+【2021-38-30 03:38:00 891】tializing
+【2021-38-30 03:38:00 905】 A9G...
+Resp:
+^STN: 37
++CTZV:21/12/30,02:38:12,+01
+
++CREG: 1
+
+A9/A9G
+V02.02.20190915R
+Ai_Thinker_Co._Ltd.
+READY
+----
+Init Ready Done!
+Resp:
+
+----
+Resp:
+AT
+
+OK
+----
+Resp:
+AT+CPIN?
+
++CPIN:READY
+----
+Msg: SIM PIN is ready!
+Resp:
+AT+CREG=1
+
+OK
+----
+Msg: Netwoek Set!
+Resp:
+AT+CREG?
+
++CREG: 1
+----
+Msg: Network Registered!
+Resp:
+AT+GPS=1
+
+OK
+----
+Msg: GPS Set!
+Resp:
+AT+CGATT=1
+
++CGATT:1
+
+OK
+----
+Msg: PS Attached!
+Resp:
+AT+CGDCONT?
+
+OK
+----
+Msg: Context Set!
+Resp:
+AT+CGDCONT=1,"IP","pinternet.interkom.de"
+
+OK
+----
+Msg: Context Changed!
+Resp:
+AT+CGACT=1,1
+
+OK
+----
+Msg: Context Selected!
+Resp:
+AT+CGACT?
+
++CGACT: 1, 1
+----
+Msg: Context is Correct!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:IP INITIAL
+----
+Msg: Status INITIAL!
+Resp:
+AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+----
+Msg: Connected!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,000027.264,4901.1925,N,00821.9200,E,0,0,,102.1,M,47.9,M,,*53
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000027.264,V,4901.1925,N,00821.9200,E,0.000,0.00,060180,,,N*51
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Resp:
+AT+CIPSEND
+
+>
+----
+Msg: Send Started!
+Resp:
+GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=5.00&field2=16.00&field3=0.00&field4=20.00&field5=30.00&field6=0&field7=0&field8=$GNGGA,000027.264,4901.1925,N,00821.9200,E,0,0,,102.1,M,47.9,M,,*53
+
+----
+Resp:
+
+OK
+
+
+
++CIPRCV,1:1
+CLOSED
+----
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CLOSED
+----
+Resp:
+AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+----
+Msg: Connected!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,000047.264,4901.1925,N,00821.9200,E,0,0,,102.1,M,47.9,M,,*55
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000047.264,V,4901.1925,N,00821.9200,E,0.000,0.00,060180,,,N*57
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Resp:
+AT+CIPSEND
+
+>
+----
+Msg: Send Started!
+Resp:
+GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=6.00&field2=10.00&field3=1.00&field4=20.00&field5=30.00&field6=0&field7=0&field8=$GNGGA,000047.264,4901.1925,N,00821.9200,E,0,0,,102.1,M,47.9,M,,*55
+
+----
+Resp:
+
+OK
+
+
+
++CIPRCV,1:2
+CLOSED
+----
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CLOSED
+----
+Resp:
+AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+----
+Msg: Connected!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,000107.264,4901.1925,N,00821.9200,E,0,0,,102.1,M,47.9,M,,*50
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000107.264,V,4901.1925,N,00821.9200,E,0.000,0.00,060180,,,N*52
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Resp:
+AT+CIPSEND
+
+>
+----
+Msg: Send Started!
+Resp:
+GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=5.00&field2=15.00&field3=2.00&field4=21.00&field5=30.00&field6=0&field7=0&field8=$GNGGA,000107.264,4901.1925,N,00821.9200,E,0,0,,102.1,M,47.9,M,,*50
+
+----
+Resp:
+
+OK
+
+
+
++CIPRCV,1:3
+CLOSED
+----
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CLOSED
+----
+Resp:
+AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+----
+Msg: Connected!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,000127.264,4901.1925,N,00821.9200,E,0,0,,102.1,M,47.9,M,,*52
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000127.264,V,4901.1925,N,00821.9200,E,0.000,0.00,060180,,,N*50
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Resp:
+AT+CIPSEND
+
+>
+----
+Msg: Send Started!
+Resp:
+GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=9.00&field2=13.00&field3=3.00&field4=21.00&field5=33.00&field6=0&field7=0&field8=$GNGGA,000127.264,4901.1925,N,00821.9200,E,0,0,,102.1,M,47.9,M,,*52
+
+----
+Resp:
+
+OK
+
+
+
++CIPRCV,1:4
+CLOSED
+----
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CLOSED
+----
+Resp:
+AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+----
+Msg: Connected!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,000147.264,4901.1925,N,00821.9200,E,0,0,,102.1,M,47.9,M,,*54
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000147.264,V,4901.1925,N,00821.9200,E,0.000,0.00,060180,,,N*56
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Resp:
+AT+CIPSEND
+
+>
+----
+Msg: Send Started!
+Resp:
+GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=9.00&field2=12.00&field3=4.00&field4=20.00&field5=34.00&field6=0&field7=0&field8=$GNGGA,000147.264,4901.1925,N,00821.9200,E,0,0,,102.1,M,47.9,M,,*54
+
+----
+Resp:
+
+OK
+
+
+
++CIPRCV,1:5
+CLOSED
+----
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CLOSED
+----
+Resp:
+AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+----
+Msg: Connected!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,024008.092,4901.1912,N,00821.9164,E,0,1,,1292.3,M,47.9,M,,*6E
+$GPGSA,A,1,32,,,,,,,,,,,,,,*1F
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,21,77,097,,01,73,311,,22,70,247,,03,43,240,*74
+$GPGSV,3,2,11,32,38,061,27,08,31,173,,17,24,315,,14,19,282,*7D
+$GPGSV,3,3,11,27,05,159,,10,03,060,,19,01,323,*4B
+$BDGSV,1,1,00*68
+$GNRMC,024008.092,V,4901.1912,N,00821.9164,E,0.002,240.97,301221,,,N*52
+$GNVTG,240.97,T,,M,0.002,N,0.004,K,N*22
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Resp:
+AT+CIPSEND
+
+>
+----
+Msg: Send Started!
+Resp:
+GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=6.00&field2=19.00&field3=5.00&field4=24.00&field5=34.00&field6=0&field7=0&field8=$GNGGA,024008.092,4901.1912,N,00821.9164,E,0,1,,1292.3,M,47.9,M,,*6E
+
+----
+Resp:
+
+OK
+
+
+
++CIPRCV,1:6
+CLOSED
+----
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CLOSED
+----
+Resp:
+AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+----
+Msg: Connected!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,024028.092,4900.9040,N,00821.9905,E,0,1,,1293.3,M,47.9,M,,*65
+$GPGSA,A,1,32,,,,,,,,,,,,,,*1F
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,3,1,11,21,77,097,,01,73,311,,22,70,247,,03,43,240,*74
+$GPGSV,3,2,11,32,38,061,30,08,31,173,,17,24,315,17,14,19,282,*7D
+$GPGSV,3,3,11,27,05,159,,10,03,060,,19,01,323,*4B
+$BDGSV,1,1,00*68
+$GNRMC,024028.092,V,4900.9040,N,00821.9905,E,0.301,60.67,301221,,,N*67
+$GNVTG,60.67,T,,M,0.301,N,0.557,K,N*1E
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Resp:
+AT+CIPSEND
+
+>
+----
+Msg: Send Started!
+Resp:
+GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=8.00&field2=10.00&field3=6.00&field4=21.00&field5=33.00&field6=0&field7=0&field8=$GNGGA,024028.092,4900.9040,N,00821.9905,E,0,1,,1293.3,M,47.9,M,,*65
+
+----
+Resp:
+
+OK
+
+
+
++CIPRCV,1:7
+CLOSED
+----
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CLOSED
+----
+Resp:
+AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+----
+Msg: Connected!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,024048.092,9000.0000,N,00000.0000,E,0,0,,137.0,M,13.0,M,,*52
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,02,32,,,23,17,,,15*79
+$BDGSV,1,1,00*68
+$GNRMC,024048.092,V,9000.0000,N,00000.0000,E,0.000,0.00,301221,,,N*53
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Resp:
+AT+CIPSEND
+
+>
+----
+Msg: Send Started!
+Resp:
+GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=7.00&field2=19.00&field3=7.00&field4=24.00&field5=31.00&field6=0&field7=0&field8=$GNGGA,024048.092,9000.0000,N,00000.0000,E,0,0,,137.0,M,13.0,M,,*52
+
+----
+Resp:
+
+OK
+
+
+
++CIPRCV,1:8
+CLOSED
+----
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CLOSED
+----
+Resp:
+AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+----
+Msg: Connected!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,024108.094,9000.0000,N,00000.0000,E,0,0,,137.0,M,13.0,M,,*51
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,02,17,,,13,32,,,21*7D
+$BDGSV,1,1,00*68
+$GNRMC,024108.094,V,9000.0000,N,00000.0000,E,0.000,0.00,301221,,,N*50
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Resp:
+AT+CIPSEND
+
+>
+----
+Msg: Send Started!
+Resp:
+GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=7.00&field2=16.00&field3=8.00&field4=22.00&field5=33.00&field6=0&field7=0&field8=$GNGGA,024108.094,9000.0000,N,00000.0000,E,0,0,,137.0,M,13.0,M,,*51
+
+----
+Resp:
++CIEV: service,  0
++CIEV: roam, 0
+
++CREG: 2
+
+CLOSED
+----
+Msg: Send Completed!
+Resp:
+
+----
+Msg: Status Again Timeout!
+
+*****Error No.0
+
+*****Error State.19
+Resp:
+
+
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+----
+Msg: Netwoek Set!
+Resp:
+AT+CREG?
+
++CREG: 1
+----
+Msg: Network Registered!
+Resp:
+AT+GPS=1
+
+OK
+----
+Msg: GPS Set!
+Resp:
+AT+CGATT=1
+
++CGATT:1
+
+OK
+----
+Msg: PS Attached!
+Resp:
+AT+CGDCONT?
+
++CGDCONT:1,"IP","pinternet.interkom.de
+----
+Msg: Context Exists!
+Resp:
+AT+CGACT=1,1
+
+OK
+----
+Msg: Context Selected!
+Resp:
+AT+CGACT?
+
++CGACT: 1, 1
+----
+Msg: Context is Correct!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CLOSED
+----
+Msg: Status CLOSED!
+Resp:
+AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+----
+Msg: Connected!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,000021.029,9000.0000,N,00000.0000,E,0,0,,137.0,M,13.0,M,,*5B
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000021.029,V,9000.0000,N,00000.0000,E,0.000,0.00,060180,,,N*56
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Resp:
+AT+CIPSEND
+
+>
+----
+Msg: Send Started!
+Resp:
+GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=7.00&field2=16.00&field3=9.00&field4=23.00&field5=32.00&field6=1&field7=19&field8=$GNGGA,000021.029,9000.0000,N,00000.0000,E,0,0,,137.0,M,13.0,M,,*5B
+
+----
+Resp:
+
+OK
+
+
+
++CIPRCV,1:9
+CLOSED
+----
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CLOSED
+----
+Resp:
+AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+----
+Msg: Connected!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,000041.029,9000.0000,N,00000.0000,E,0,0,,137.0,M,13.0,M,,*5D
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000041.029,V,9000.0000,N,00000.0000,E,0.000,0.00,060180,,,N*50
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Resp:
+AT+CIPSEND
+
+>
+----
+Msg: Send Started!
+Resp:
+GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=6.00&field2=13.00&field3=10.00&field4=20.00&field5=31.00&field6=1&field7=0&field8=$GNGGA,000041.029,9000.0000,N,00000.0000,E,0,0,,137.0,M,13.0,M,,*5D
+
+----
+Resp:
+
+OK
+
+
+
++CIPRCV,2:10
+CLOSED
+----
+Msg: Send Completed!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CLOSED
+----
+Resp:
+AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+----
+Msg: Connected!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,000101.029,9000.0000,N,00000.0000,E,0,0,,137.0,M,13.0,M,,*58
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000101.029,V,9000.0000,N,00000.0000,E,0.000,0.00,060180,,,N*55
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Resp:
+AT+CIPSEND
+
+>
+----
+Msg: Send Started!
+Resp:
+GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=6.00&field2=19.00&field3=11.00&field4=23.00&field5=34.00&field6=1&field7=0&field8=$GNGGA,000101.029,9000.0000,N,00000.0000,E,0,0,,137.0,M,13.0,M,,*58
+
+----
+Resp:
+CLOSED
+----
+Msg: Send Completed!
+Resp:
+
+----
+Msg: Status Again Timeout!
+
+*****Error No.1
+
+*****Error State.19
+Resp:
+
+COMMAND NO RESPONSE!
+
+----
+Msg: Netwrok Setting Timeout!
+
+*****Error No.2
+
+*****Error State.2
+Resp:
+
+
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CLOSED 
+
+OK
+----
+Msg: Netwoek Set!
+Resp:
+AT+CREG?
+
++CREG: 1
+----
+Msg: Network Registered!
+Resp:
+AT+GPS=1
+
+OK
+----
+Msg: GPS Set!
+Resp:
+AT+CGATT=1
+
++CGATT:1
+
+OK
+----
+Msg: PS Attached!
+Resp:
+AT+CGDCONT?
+
++CGDCONT:1,"IP","pinternet.interkom.de
+----
+Msg: Context Exists!
+Resp:
+AT+CGACT=1,1
+
+OK
+----
+Msg: Context Selected!
+Resp:
+AT+CGACT?
+
++CGACT: 1, 1
+----
+Msg: Context is Correct!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CLOSED
+----
+Msg: Status CLOSED!
+Resp:
+AT+CIPSTART="TCP","api.thingspeak.com",80
+
++CME ERROR: 10
+
+----
+Msg: Connection Timeout!
+Resp:
+AT+CIPSTART="TCP","api.thingspeak.com",80
+
++CME ERROR: 10
+
+----
+Msg: Connection2 Timeout!
+
+*****Error No.3
+
+*****Error State.33
+Resp:
+AT+CREG=1
+
+OK
+----
+Msg: Netwoek Set!
+Resp:
+AT+CREG?
+
++CREG: 1
+----
+Msg: Network Registered!
+Resp:
+AT+GPS=1
+
+OK
+----
+Msg: GPS Set!
+Resp:
+AT+CGATT=1
+
++CGATT:1
+
+OK
+----
+Msg: PS Attached!
+Resp:
+AT+CGDCONT?
+
++CGDCONT:1,"IP","pinternet.interkom.de
+----
+Msg: Context Exists!
+Resp:
+AT+CGACT=1,1
+
+OK
+----
+Msg: Context Selected!
+Resp:
+AT+CGACT?
+
++CGACT: 1, 1
+----
+Msg: Context is Correct!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CLOSED
+----
+Msg: Status CLOSED!
+Resp:
+AT+CIPSTART="TCP","api.thingspeak.com",80
+
++CME ERROR: 10
+
+----
+Msg: Connection Timeout!
+Resp:
+AT+CIPSTART="TCP","api.thingspeak.com",80
+
++CME ERROR: 10
+
+----
+Msg: Connection2 Timeout!
+
+*****Error No.4
+
+*****Error State.33
+Resp:
+AT+CREG=1
+
+OK
+----
+Msg: Netwoek Set!
+Resp:
+AT+CREG?
+
++CREG: 1
+----
+Msg: Network Registered!
+Resp:
+AT+GPS=1
+
+OK
+----
+Msg: GPS Set!
+Resp:
+AT+CGATT=1
+
++CGATT:1
+
+OK
+----
+Msg: PS Attached!
+Resp:
+AT+CGDCONT?
+
++CGDCONT:1,"IP","pinternet.interkom.de
+----
+Msg: Context Exists!
+Resp:
+AT+CGACT=1,1
+
+OK
+----
+Msg: Context Selected!
+Resp:
+AT+CGACT?
+
++CGACT: 1, 1
+----
+Msg: Context is Correct!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CLOSED
+----
+Msg: Status CLOSED!
+Resp:
+AT+CIPSTART="TCP","api.thingspeak.com",80
+
++CME ERROR: 10
+
+----
+Msg: Connection Timeout!
+Resp:
+AT+CIPSTART="TCP","api.thingspeak.com",80
+
++CME ERROR: 10
+
+----
+Msg: Connection2 Timeout!
+
+*****Error No.5
+
+*****Error State.33
+Resp:
+AT+CREG=1
+
+OK
+----
+Msg: Netwoek Set!
+Resp:
+AT+CREG?
+
++CREG: 1
+----
+Msg: Network Registered!
+Resp:
+AT+GPS=1
+
+OK
+----
+Msg: GPS Set!
+Resp:
+AT+CGATT=1
+
++CGATT:1
+
+OK
+----
+Msg: PS Attached!
+Resp:
+AT+CGDCONT?
+
++CGDCONT:1,"IP","pinternet.interkom.de
+----
+Msg: Context Exists!
+Resp:
+AT+CGACT=1,1
+
+OK
+----
+Msg: Context Selected!
+Resp:
+AT+CGACT?
+
++CGACT: 1, 1
+----
+Msg: Context is Correct!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:CLOSED
+----
+Msg: Status CLOSED!

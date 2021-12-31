@@ -612,6 +612,7 @@ void IRAM_ATTR resetModule()
 {
   ets_printf("reboot in 5sec...\n");
   delay(5000);
+
   esp_restart();
 }
 

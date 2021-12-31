@@ -12,13 +12,20 @@
 
 
 #include "main.h"
+#include <Preferences.h>
+
+Preferences preferences;
+
 
 // !!!IMPORTANT!!!
 // this is for test only
 #define TOTAL_RECORDS 10000//10
 
 
-
+  String key ="";
+  String items = "Error_No_";
+  //int rstCntr = 0;//preferences.getUInt("rstCntr", 0);
+  unsigned int value =0;
 
 /**************************************************************************/
 /*!
@@ -40,6 +47,7 @@ void setup()
   pinMode(LED2, OUTPUT);
   pinMode(LED3, OUTPUT);
   pinMode(gprsPWR, OUTPUT);
+
   //digitalWrite(gprsPWR, HIGH);
   digitalWrite(gprsPWR, LOW);
   delay(1000);
@@ -65,16 +73,25 @@ void setup()
   {
     Serial.println("Msg: Init Error!, Try again!");
     Serial.println("Msg: Check PWR and RESET of the A9G or SIM Serivices");
-    
+
     rgbSetColor(rColor);
     rxState = try_init_again;
     Serial.println("Reseting A9G again...");
 
     sendATCommand("AT+RST=1", "OK", "ERROR", 6000);
   }
+  preferences.begin("my-app", false);
+  int counter = preferences.getUInt("resetCntr", 0);
   
-
-
+  for(int dumy=0;dumy < counter; dumy++) {
+    key = items+String(dumy);
+    Serial.print("key : "+key);
+    value = preferences.getUInt(key.c_str(), 0);
+    Serial.printf(" value: %u\n", value);
+    Serial.println();
+  }
+  preferences.end();
+  Serial.println("Reading NVS done...");
 }
 
 /**************************************************************************/
@@ -466,7 +483,7 @@ void loop()
       {
         //Serial.println("Msg: Status CLOSED!");
         rxState = set_cipstart;
-        //rxState = reset_module;// testing reset_module manually 
+        //rxState = error_state;//reset_module;// testing reset_module manually 
         delay(5000);//with this from  0,2,4,6,8 improved to 0,1,2,3,4,5,6,8
       }else
         {Serial.println("Msg: Status Again Timeout!");rxState = error_state;}
@@ -504,10 +521,22 @@ void loop()
       rgbSetColor(rColor);
       MY_DBG("\r\n*****Error No.");
       MY_DBGln(resetCntr);
-      resetCntr++;
       errorState = last;
       MY_DBG("\r\n*****Error State.");
       MY_DBGln(errorState);
+
+      
+      preferences.begin("my-app", false);
+      key = items+String(resetCntr);
+      preferences.putUInt(key.c_str(), errorState);
+      // Store the counter to the Preferences
+      preferences.putUInt("resetCntr", resetCntr);
+      // Close the Preferences
+      preferences.end();
+  
+      resetCntr++;
+      
+
       
         delay(20000);//20s
         digitalWrite(LED1, 1);
@@ -529,6 +558,7 @@ void loop()
       loopSerial();
       break;
     case reset_module:
+      //resetModule();
       last = rxState;
       r = sendATCommand("AT+RST=1", "OK", "ERROR", 6000);
       if (r == 1)
@@ -540,6 +570,7 @@ void loop()
         {Serial.println("Msg: Module Reset Error!");rxState = error_state;}
       else
         {Serial.println("Msg: Module Reset Timeout!");rxState = error_state;}
+      
       break;
     case waiting_ready:
       last = rxState;
