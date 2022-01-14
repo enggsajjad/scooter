@@ -154,6 +154,10 @@ $ git commit -m "added reset_module and waiting_ready states and if ((resetCntr 
 
 20211230202554 Walking log after coming back from the walk and checking the errors
 
+
+
+30.12.2021
+
 Maduino-Zero-A9G-master vs Maduino GPRS GPS A7 
 ===== RESET, PWR-KEY======
 int lowp=5;//low-power
@@ -196,35 +200,45 @@ delay(5000);
 
 https://www.reichelt.de/de/de/mosfet-n-ch-60v-0-265a-0-31w-sot-23-bsn-20bk-nxp-p219199.html?PROVID=2788&gclid=CjwKCAiAzrWOBhBjEiwAq85QZ3yhJC71lc0K5jTJw8oDaNQr1xaJq-TqOXGdme73HEzwFhSfo642PhoCwXsQAvD_BwE&&r=1
 
-
+30.12.2021
 added preferences library to debug errors and erronous state
 
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
->>>>>time to  be added >>>>>>>>>>
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Sajjad@i80pc100 MINGW64 /d/github/scooter (a9g_rev1)
+$ git commit -m "added preferences library to debug errors and erronous state, added timesheet files and logs"
+
 26.12.2021 18:00 20:00 random tests and debuggings
 29.12.2021 23:00 03:00  added cntr and state fields on thingspeak, random tests and debuggings
 30.12.2021 23:00 03:00  debugging unexpected stopped errors and resets , random tests and debuggings
+01.01.2022 10:30 11:00  waliking and testing, sunddenly the data sending was stopped and systems was power off when checked after returning.
+03.01.2022 16:15 17:30  debugging the damaged boards
+tested the boards in the labs, the board was OK.
+4V,1A at VOUT takes around 0.280A normally sometime take more
+4V,1A at VBAT takes around 0.286A normally sometime take more like some time it takes 0.600A, i guess this is consumming the battery allot.
+tried to mount the other board with booster board inside.
+
+06.01.2022 Charging batteries with the boards and through USB. small and big batteries. Worked around 10hrs.
+Antennas
+========
+https://www.aliexpress.com/item/1005003530560782.html
+https://www.alibaba.com/product-detail/Active-ceramic-antenna-GPS-active-antenna_60670909112.html
+
+20220107223447 Small Antenna Test works fine
 
 
 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>time to  be added to excel>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+05.01.2022 19:00 19:30 fixed the damaged board and batteries
+12.01.2022 18:00 19:00 fixing boards and testing two boards
+13.01.2022 16:00 16:30 Meeting
+13.01.2022 19:00 19:30 component selection and tests
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 >>>>>>>>>>  TODO: >>>>>>>>>>>>>>>
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 Testing whether data is missing for longer runs
-
+NMOS for reset the A9G reset pin
 
 Summay!!!
 
-thingspeak vs NGROK
-different timeouts of AT commands
-different response 
-internet interrupts can disrupt the NGROK port communications
-thingspeak has random timeout/busy time
-timeouts or errors from NGROK or thingspeak can disrupt the communication while walking and i have no indication on Serial Terminal or LED, therefore difficult to figure out.
-covered all the errors points or timeouts
-difficult to open the tray of the box.
-might be there should be a switch/button to reset the systems or PCB
-while in the box; sometime the data is stopped sending and statemachine goes into error state, i changed to reset the statemachine to start from begining after each reset
-while uncovered, it is running without any error for hours
