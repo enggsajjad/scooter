@@ -1,0 +1,434 @@
+Resp:
+
+CLOSED
+
+OK
+
+----
+Msg: Init Error!, Try again!
+Msg: Check PWR and RESET of the A9G or SIM Serivices
+Reseting A9G again...
+Resp:
+AT+RST=1
+
+OK
+----
+key : Error_No_0 value: 29
+
+key : Error_No_1 value: 2
+
+Reading NVS done...
+Resp:
+
+----
+Msg: Init2 Error!
+Msg: Check PWR and RESET of the A9G or SIM Serivices
+
+*****Error No.0
+
+*****Error State.29
+Resp:
+
+----
+Msg: Netwrok Setting Timeout!
+
+*****Error No.1
+
+*****Error State.2
+Resp:
+AT+CREG=1
+
+OK
+----
+Msg: Netwoek Set!
+Resp:
+AT+CREG?
+
++CREG: 1
+----
+Msg: Network Registered!
+Resp:
+AT+GPS=1
+
+OK
+----
+Msg: GPS Set!
+Resp:
+AT+CGATT=1
+
++CGATT:1
+
+OK
+----
+Msg: PS Attached!
+Resp:
+AT+CGDCONT?
+
+OK
+----
+Msg: Context Set!
+Resp:
+AT+CGDCONT=1,"IP","pinternet.interkom.de"
+
+OK
+----
+Msg: Context Changed!
+Resp:
+AT+CGACT=1,1
+
+OK
+----
+Msg: Context Selected!
+Resp:
+AT+CGACT?
+
++CGACT: 1, 1
+----
+Msg: Context is Correct!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:IP INITIAL
+----
+Msg: Status INITIAL!
+Resp:
+AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+----
+Msg: Connected!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,000005.263,4900.5198,N,00825.5272,E,0,0,,102.1,M,47.9,M,,*52
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000005.263,V,4900.5198,N,00825.5272,E,0.000,0.00,060180,,,N*50
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Guru Meditation Error: Core  1 panic'ed (LoadProhibited). Exception was unhandled.
+Core 1 register dump:
+PC      : 0x400d281c  PS      : 0x00060530  A0      : 0x800d20d6  A1      : 0x3ffb1ee0  
+A2      : 0x3ffc019c  A3      : 0x00000000  A4      : 0x00000000  A5      : 0x3ffc0ac4  
+A6      : 0x00000000  A7      : 0x00000001  A8      : 0x800d7024  A9      : 0x3ffb1ed0  
+A10     : 0x00000000  A11     : 0x3f400835  A12     : 0x0000012c  A13     : 0x3ffb1c30  
+A14     : 0x0000000a  A15     : 0x00000012  SAR     : 0x0000000a  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0x00000000  LBEG    : 0x400014fd  LEND    : 0x4000150d  LCOUNT  : 0xffffffff  
+
+ELF file SHA256: 0000000000000000
+
+Backtrace: 0x400d281c:0x3ffb1ee0 0x400d20d3:0x3ffb1f10 0x400d7845:0x3ffb1fb0 0x40086d6d:0x3ffb1fd0
+
+Rebooting...
+)¥
+'ˆÜ œ¼JÝý1ÕÕÝ1!y…Õ!š9!ú
+SmartAQnet Scooter Sensors!
+Initializing A9G...
+Resp:
+
+CLOSED
+
+OK
+
+----
+Msg: Init Error!, Try again!
+Msg: Check PWR and RESET of the A9G or SIM Serivices
+Reseting A9G again...
+Resp:
+AT+RST=1
+
+OK
+----
+key : Error_No_0 value: 29
+
+Reading NVS done...
+Resp:
+
+----
+Msg: Init2 Error!
+Msg: Check PWR and RESET of the A9G or SIM Serivices
+
+*****Error No.0
+
+*****Error State.29
+Resp:
+
+----
+Msg: Netwrok Setting Timeout!
+
+*****Error No.1
+
+*****Error State.2
+Resp:
+AT+CREG=1
+
+OK
+----
+Msg: Netwoek Set!
+Resp:
+AT+CREG?
+
++CREG: 1
+----
+Msg: Network Registered!
+Resp:
+AT+GPS=1
+
+OK
+----
+Msg: GPS Set!
+Resp:
+AT+CGATT=1
+
++CGATT:1
+
+OK
+----
+Msg: PS Attached!
+Resp:
+AT+CGDCONT?
+
+OK
+----
+Msg: Context Set!
+Resp:
+AT+CGDCONT=1,"IP","pinternet.interkom.de"
+
+OK
+----
+Msg: Context Changed!
+Resp:
+AT+CGACT=1,1
+
+OK
+----
+Msg: Context Selected!
+Resp:
+AT+CGACT?
+
++CGACT: 1, 1
+----
+Msg: Context is Correct!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:IP INITIAL
+----
+Msg: Status INITIAL!
+Resp:
+AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+----
+Msg: Connected!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,000005.263,4900.6093,N,00825.4755,E,0,0,,102.1,M,47.9,M,,*5A
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000005.263,V,4900.6093,N,00825.4755,E,0.000,0.00,060180,,,N*58
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Guru Meditation Error: Core  1 panic'ed (LoadProhibited). Exception was unhandled.
+Core 1 register dump:
+PC      : 0x400d281c  PS      : 0x00060530  A0      : 0x800d20d6  A1      : 0x3ffb1ee0  
+A2      : 0x3ffc019c  A3      : 0x00000000  A4      : 0x00000000  A5      : 0x3ffc0ac4  
+A6      : 0x00000000  A7      : 0x00000001  A8      : 0x800d7024  A9      : 0x3ffb1ed0  
+A10     : 0x00000000  A11     : 0x3f400835  A12     : 0x0000012c  A13     : 0x3ffb1c30  
+A14     : 0x0000000a  A15     : 0x00000012  SAR     : 0x00000018  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0x00000000  LBEG    : 0x400014fd  LEND    : 0x4000150d  LCOUNT  : 0xffffffff  
+
+ELF file SHA256: 0000000000000000
+
+Backtrace: 0x400d281c:0x3ffb1ee0 0x400d20d3:0x3ffb1f10 0x400d7845:0x3ffb1fb0 0x40086d6d:0x3ffb1fd0
+
+Rebooting...
+)¥
+ç)ç‚ç¶M9O…†„çŠ!Y¶Jý
+SmartAQnet Scooter Sensors!
+Initializing A9G...
+Resp:
+
+CLOSED
+
+OK
+
+----
+Msg: Init Error!, Try again!
+Msg: Check PWR and RESET of the A9G or SIM Serivices
+Reseting A9G again...
+Resp:
+AT+RST=1
+
+OK
+----
+key : Error_No_0 value: 29
+
+Reading NVS done...
+Resp:
+
+----
+Msg: Init2 Error!
+Msg: Check PWR and RESET of the A9G or SIM Serivices
+
+*****Error No.0
+
+*****Error State.29
+Resp:
+
+----
+Msg: Netwrok Setting Timeout!
+
+*****Error No.1
+
+*****Error State.2
+Resp:
+AT+CREG=1
+
+OK
+----
+Msg: Netwoek Set!
+Resp:
+AT+CREG?
+
++CREG: 1
+----
+Msg: Network Registered!
+Resp:
+AT+GPS=1
+
+OK
+----
+Msg: GPS Set!
+Resp:
+AT+CGATT=1
+
++CGATT:1
+
+OK
+----
+Msg: PS Attached!
+Resp:
+AT+CGDCONT?
+
+OK
+----
+Msg: Context Set!
+Resp:
+AT+CGDCONT=1,"IP","pinternet.interkom.de"
+
+OK
+----
+Msg: Context Changed!
+Resp:
+AT+CGACT=1,1
+
+OK
+----
+Msg: Context Selected!
+Resp:
+AT+CGACT?
+
++CGACT: 1, 1
+----
+Msg: Context is Correct!
+Resp:
+AT+CIPSTATUS
++CIPSTATUS:
+STATE:IP INITIAL
+----
+Msg: Status INITIAL!
+Resp:
+AT+CIPSTART="TCP","api.thingspeak.com",80
+CONNECT OK
+----
+Msg: Connected!
+Resp:
+AT+GPSRD=5
+
+OK
+----
+Msg: GPS Read Set!
+Msg: Getting data from GPS using AT Cmd
+Resp:
+$GNGGA,000005.263,4900.6093,N,00825.4755,E,0,0,,102.1,M,47.9,M,,*5A
+$GPGSA,A,1,,,,,,,,,,,,,,,*1E
+$BDGSA,A,1,,,,,,,,,,,,,,,*0F
+$GPGSV,1,1,00*79
+$BDGSV,1,1,00*68
+$GNRMC,000005.263,V,4900.6093,N,00825.4755,E,0.000,0.00,060180,,,N*58
+$GNVTG,0.00,T,,M,0.000,N,0.000,K,N*2C
+---
+Msg: Getting data from GPS using AT done
+Resp:
+AT+GPSRD=0
+
+OK
+----
+Msg: GPS Read Off!
+Msg: Getting data from Sensors
+Guru Meditation Error: Core  1 panic'ed (LoadProhibited). Exception was unhandled.
+Core 1 register dump:
+PC      : 0x400d281c  PS      : 0x00060530  A0      : 0x800d20d6  A1      : 0x3ffb1ee0  
+A2      : 0x3ffc019c  A3      : 0x00000000  A4      : 0x00000000  A5      : 0x3ffc0ac4  
+A6      : 0x00000000  A7      : 0x00000001  A8      : 0x800d7024  A9      : 0x3ffb1ed0  
+A10     : 0x00000000  A11     : 0x3f400835  A12     : 0x0000012c  A13     : 0x3ffb1c30  
+A14     : 0x0000000a  A15     : 0x00000012  SAR     : 0x00000018  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0x00000000  LBEG    : 0x400014fd  LEND    : 0x4000150d  LCOUNT  : 0xffffffff  
+
+ELF file SHA256: 0000000000000000
+
+Backtrace: 0x400d281c:0x3ffb1ee0 0x400d20d3:0x3ffb1f10 0x400d7845:0x3ffb1fb0 0x40086d6d:0x3ffb1fd0
+
+Rebooting...
+)¥
+÷ˆÜ œ¼JÝý1ÕÕÝœ¼…Í!¦Õ¥«3ÿ
+SmartAQnet Scooter Sensors!
+Initializing A9G...
+Resp:
+
+CLOSED
+
+OK
+
+----
+Msg: Init Error!, Try again!
+Msg: Check PWR and RESET of the A9G or SIM Serivices
+Reseting A9G again...
+Resp:
+AT+RST=1
+
+OK
+----
+key : Error_No_0 value: 29
+
+Reading NVS done...

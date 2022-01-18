@@ -224,8 +224,21 @@ https://www.alibaba.com/product-detail/Active-ceramic-antenna-GPS-active-antenna
 
 20220107223447 Small Antenna Test works fine
 
+12.01.2022 18:00 19:00 fixing boards and testing two boards
+13.01.2022 16:00 16:30 Meeting
+13.01.2022 19:00 19:30 component selection and tests
 
+Sajjad@i80pc100 MINGW64 /d/github/scooter (a9g_rev1)
+$ git commit -m "added timesheet files and logs" 
 
+20220114152412 uncovered running at home for hours, walk 1300 after some time gives errors
+
+20220114203047 uncover in the room, with some errors but recovered
+
+20220114235317 Walikng 2037 returned 2129 seconds 3120 values 164 OK
+
+15.01.2022 17:00 19:00  ds1820 and tests
+20220116000444 in room with ds1820 comparasion
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 >>>>>time to  be added to excel>>>>>>>>>>
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -233,6 +246,9 @@ https://www.alibaba.com/product-detail/Active-ceramic-antenna-GPS-active-antenna
 12.01.2022 18:00 19:00 fixing boards and testing two boards
 13.01.2022 16:00 16:30 Meeting
 13.01.2022 19:00 19:30 component selection and tests
+14.01.2022 20:30 21:30 walking and observing the uncovered black box
+15.01.2022 17:00 19:00  ds1820 and tests
+
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 >>>>>>>>>>  TODO: >>>>>>>>>>>>>>>
