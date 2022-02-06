@@ -239,9 +239,8 @@ $ git commit -m "added timesheet files and logs"
 
 15.01.2022 17:00 19:00  ds1820 and tests
 20220116000444 in room with ds1820 comparasion
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
->>>>>time to  be added to excel>>>>>>>>>>
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
 05.01.2022 19:00 19:30 fixed the damaged board and batteries
 12.01.2022 18:00 19:00 fixing boards and testing two boards
 13.01.2022 16:00 16:30 Meeting
@@ -249,6 +248,15 @@ $ git commit -m "added timesheet files and logs"
 14.01.2022 20:30 21:30 walking and observing the uncovered black box
 15.01.2022 17:00 19:00  ds1820 and tests
 
+Sajjad@i80pc100 MINGW64 /d/github/scooter (a9g_rev1)
+$ git commit -m "added timesheet files and logs"
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>time to  be added to excel>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+20.01.2022 14:00-14:30 meeting
+23.01.2022 23:30 01:30 checking existing mosfet to use reset A9G. did not work
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 >>>>>>>>>>  TODO: >>>>>>>>>>>>>>>

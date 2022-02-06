@@ -9,17 +9,6 @@
  */
 
 #include <SoftwareSerial.h>
-#include <OneWire.h>
-#include <DallasTemperature.h>
-
-/// Data wire is plugged into port 2 on the Arduino
-#define ONE_WIRE_BUS 5
-
-/// Setup a oneWire instance to communicate with any OneWire devices (not just Maxim/Dallas temperature ICs)
-OneWire oneWire(ONE_WIRE_BUS);
-
-/// Pass our oneWire reference to Dallas Temperature. 
-DallasTemperature sensors(&oneWire);
 
 /// DHT22 sensor communication pin
 #define DHT_PIN 21
@@ -122,8 +111,8 @@ DHT dht(DHT_PIN, DHT22);
   //#define gprsPWR  33//Module AiThinker
   #define gprsUPWR  25 //PCB2,3,4
   /// GPS RST Pin
-  //#define gprsUEN  34//Module AiThinker
-  #define gprsUEN  33 //PCB2,3,4
+  //#define gprsRST  34//Module AiThinker
+  #define gprsRST  33 //PCB2,3,4
   /// GPS PWR Pin without Button
   #define gprsPWR  26 //PCB2,3,4
   /// GPS LOW PWR Pin 

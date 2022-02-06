@@ -197,18 +197,8 @@
 /// Hardware.Revision 
 #define hw_date "2020-01-17T12:00:00.000Z"
 
-
-
-
-//uncomment the following if not using thingspeak, comment if for NGROK 
-#define THINGSPEAK  // !!!IMPORTANT!!!
-//uncomment the following if  using actual sensors, comment if for debugging 
-#define REAL_SENSORS  // !!!IMPORTANT!!!
-
-
-
 /// Debugging, uncomment to switch servers to release version, enable sending to madavi and luftdaten.info, and supress some debug output
-//#define RELEASE // !!!IMPORTANT!!!
+//#define RELEASE 
 
 // Setting the servers and debugging control using the RELEASE
 #ifndef RELEASE
@@ -261,6 +251,7 @@
 #include <Adafruit_Sensor.h>
 #include <Adafruit_BME280.h>
 #include "Adafruit_BME680.h"
+
 #include <DHT.h>
 #include <Wire.h>
 //#include <time.h>
@@ -271,7 +262,6 @@
 #include <String.h>
 #include <TinyGPS++.h>
 
-///RGB COLOR CODES
 #define rgbColor 0
 #define rgColor 1
 #define rbColor 2
@@ -281,7 +271,7 @@
 #define bColor 6
 #define noColor 7
 
-///STATES
+
 #define chk_sim_cpin 1
 #define set_network 2
 #define chk_network_register 3
@@ -304,84 +294,65 @@
 #define set_cipclose 20
 #define set_cipshut 21
 #define dummy_state 22
-//#define timeout_state 23
+#define timeout_state 23
 #define error_state 24
 #define hang_state 25
 #define bme_setting_error 26
 #define bme_reading_error 27
 #define init_errors 28
-#define try_init_again 29
-#define config_sensors 30
-#define attach_ps_again 31
-#define chk_cip_status2 32
-#define set_cipstart2 33
-#define reset_module 34
-#define waiting_ready 35
-
-#ifdef THINGSPEAK
-  /// TCP HOST
-  String host = "api.thingspeak.com"; // !!!IMPORTANT!!!
-  /// TCP Port
-  String port = "80"; // !!!IMPORTANT!!!
-#else
-  /// TCP HOST
-  String host = "8.tcp.ngrok.io"; // !!!IMPORTANT!!!
-  /// TCP Port
-  String port = "19482"; // !!!IMPORTANT!!!
-#endif
-
-/// APN of the SIM
-String apn = "pinternet.interkom.de"; // !!!IMPORTANT!!!
-/// Define the AiThinker Initialization End Detection String
-String initString = "READY"; // !!!IMPORTANT!!!
-
 
 /// GPS Decoder for NMEA Formate
 TinyGPSPlus tiny;
 
-/// temporary millis counter for time measurement
+/// OK response for AT Command
+#define OK 1
+/// Other than OK response for AT Command
+#define NOTOK 2
+/// Timeout for no response for AT Command
+#define TIMED 3
+/// Error for no response for AT Command
+#define ERR 4
+/// Define the AiThinker Initialization End Detection String
+String initString = "READY";
 unsigned long previousMillis = 0; 
-/// counter for led blinking
 int cntrLED=0;
-/// cntrl character ascii 26
-char cntrlChar[2];
+
+char aux_str[2];
+
+/// Read messages for GPRS reciever, Response for AT Commands
+String rd;
 /// messages to be sent to TCP
 String message= "";
+/// TCP HOST
+String host = "0.tcp.ngrok.io";
+/// TCP Port
+String port = "19731";
 /// Receive from Serial States
 int rxState = -1;
+/// Receive from Serial Next States
+int nState;
+/// Receive from Serial Current States
+int current;
+/// Error Indicating for AT Command Respnse
+byte Err;
+
 /// the temporary response for AT+CIPSTATUS? Command 
 char resp;
-/// counter to count total number of gps packets
+/// counter to count total number of transmitted TCP packets
 int cntr;
 /// counter to count total number of transmitted TCP packets
-int pcktCntr;
-/// last state
-int last;
-/// error causing state
-int errorState;
-/// response byte of the commands
-byte r;
-/// temporary string used for reading GPS messages
-String result;
-///ds18b20 temperature
-float tempC;
-/// Preference NVS Key
-String key ="";
-/// Prefernce NVS read error no
-String items = "Error_No_";
-/// Preference NVS values
-unsigned int value =0;
+int cntr1;
 
+int last;
+byte r;
+String result,msg;
 /// Location Message
 String loc;
-/// boolean flag used for reading GPS messages
 bool running = true;
-/// count the reset counter after each reset
-unsigned int resetCntr;
-/// initialization the wire I2C interface
-bool wireStatus = Wire1.begin(BME_SDA, BME_SCL);
-/// instantiate the BME680 object
-Adafruit_BME680 bme(&Wire1);
+const char* msg1;
+bool ModuleState=false;
+unsigned char resetCntr;
+bool led=false;
 
 /**************************************************************************/
 /*!
@@ -431,7 +402,7 @@ int8_t sendATCommand(char* cmd, char* expected_resp1, char* expected_resp2, unsi
   
   uint8_t answer=0;
   int  x=0;
-  char resp[1000];//[300];
+  char resp[300];
   unsigned long previous;
   
   memset(resp, '\0', 300);    // Initialize the string
@@ -486,7 +457,7 @@ int8_t readATResponse( char* expected_resp1, char* expected_resp2, unsigned int 
   
   uint8_t answer=0;
   int  x=0;
-  char resp[1000];//[300];
+  char resp[300];
   unsigned long previous;
   
   memset(resp, '\0', 300);    // Initialize the string
@@ -529,22 +500,6 @@ int8_t readATResponse( char* expected_resp1, char* expected_resp2, unsigned int 
 } 
 /**************************************************************************/
 /*!
-    @brief  A9G REset using MOSFET
-    @returns void
-*/
-/**************************************************************************/
-void a9gReset(void)
-{
-    digitalWrite(gprsUEN, HIGH);
-    delay(500);
-    digitalWrite(gprsUEN, LOW);
-    digitalWrite(gprsPWR, LOW);
-    delay(4000);
-    digitalWrite(gprsPWR, HIGH);
-    Serial.println("A9G Reset....");
-}
-/**************************************************************************/
-/*!
     @brief  Check the AT Response after the power up
     @returns void
 */
@@ -558,9 +513,9 @@ void a9gPowerOnCheck(void)
   if (resp == 0)
   {
     // power on pulse
-    //digitalWrite(gprsPWR,LOW);
-    //delay(3000);
-    //digitalWrite(gprsPWR,HIGH);
+    digitalWrite(gprsPWR,LOW);
+    delay(3000);
+    digitalWrite(gprsPWR,HIGH);
     
     // waits for an answer from the module
     while(resp == 0)     // Send AT every two seconds and wait for the answer
@@ -578,8 +533,7 @@ void a9gPowerOnCheck(void)
 /**************************************************************************/
 void gpsReadMessages(void)
 {
-  /// temporary string used for reading GPS messages
-  String msg;
+        
   while(running)
   {
     if ( gsmSerial.available()) {
@@ -588,7 +542,7 @@ void gpsReadMessages(void)
       switch(cntr)
       {
         case 0:
-          if (result.indexOf("$GNGGA") > 0)  // !!!IMPORTANT!!!
+          if (result.indexOf("$GNGGA") > 0) 
           {
             cntr = 1;
             msg = result.substring(result.indexOf("$GNGGA"));
@@ -636,10 +590,140 @@ void IRAM_ATTR resetModule()
 {
   ets_printf("reboot in 5sec...\n");
   delay(5000);
-
   esp_restart();
 }
 
+void showError(void)
+{
+  switch(last)
+  {
+    case init_errors:
+      Serial.println("Msg: Init Error!");
+      Serial.println("Msg: Check PWR and RESET of the A9G or SIM Serivices");
+      break;
+    case bme_setting_error:
+      Serial.println("Msg: Could not find a valid BME680 sensor, check wiring!");
+      break;
+    case chk_sim_cpin:
+      Serial.println("Msg: SIM PIN is locked!");
+      break;
+    case set_network:
+      Serial.println("Msg: Network Setting Error!");
+      break;
+    case chk_network_register:
+      Serial.println("Msg: Network Register Error!");
+      break;
+    case set_gps:
+      Serial.println("Msg: GPS Set Error!");
+      break;
+    case attach_ps:
+      Serial.println("Msg: PS Attach Error!");
+      break;
+    case check_context:
+      break;
+    case set_context:
+      Serial.println("Msg: Context Change Error!");
+      break;
+    case select_context:
+      Serial.println("Msg: Context Select Error!");
+      break;
+    case show_context:
+      Serial.println("Msg: Context Shown Error!");
+      break;
+    case chk_cip_status:
+      break;
+    case set_cipstart:
+      break;
+    case set_gpsrd_read:
+      Serial.println("Msg: GPS Read Error!");
+      break;
+    case set_gpsrd_off:
+      Serial.println("Msg: GPS Off Error!");
+      break;
+    case set_cipsend:
+      Serial.println("Msg: Send Start Error!");
+      break;
+    case set_cipsend_complete:
+      Serial.println("Msg: Send Complete Error!");
+      break;
+    case chk_cipstatus_again:
+      Serial.println("Msg: Status CLOSED!");
+      break;
+    case set_cipclose:
+      Serial.println("Msg: Connection Close Error!");
+      break;
+    case set_cipshut:
+      Serial.println("Msg: Connection Shut Error!");
+      break;
+  }
+}
+
+void showTimeout(void)
+{
+  switch(last)
+  {
+    case init_errors:
+      Serial.println("Msg: Init Timeout!");
+        Serial.println("Msg: Check PWR and RESET of the A9G");
+      break;
+    case chk_sim_cpin:
+      Serial.println("Msg: SIM PIN Timeout!");
+      break;
+    case set_network:
+      Serial.println("Msg: Netwrok Setting Timeout!");
+      break;
+    case chk_network_register:
+      Serial.println("Msg: Netwrok Register Timeout!");
+      break;
+    case set_gps:
+      Serial.println("Msg: GPS Set Timeout!");
+      break;
+    case attach_ps:
+      Serial.println("Msg: PS Attach Timeout!");
+      break;
+    case check_context:
+      Serial.println("Msg: Context Set Timeout!");
+      break;
+    case set_context:
+      Serial.println("Msg: Context Change Timeout!");
+      break;
+    case select_context:
+      Serial.println("Msg: Context Select Timeout!");
+      break;
+    case show_context:
+      Serial.println("Msg: Context Shown Timeout!");
+      break;
+    case chk_cip_status:
+      Serial.println("Msg: Status Timeout!");
+      break;
+    case set_cipstart:
+      Serial.println("Msg: Connection Timeout!");
+      break;
+    case set_gpsrd_read:
+      Serial.println("Msg: GPS Read Timeout!");
+      break;
+    case set_gpsrd_off:
+      Serial.println("Msg: GPS Off Timeout!");
+      break;
+    case set_cipsend:
+      Serial.println("Msg: Send Start Timeout!");
+      break;
+    case set_cipsend_complete:
+      Serial.println("Msg: Send Complete Timeout!");
+      break;
+    case chk_cipstatus_again:
+      Serial.println("Msg: Status Timeout!");
+      break;
+    case set_cipclose:
+      Serial.println("Msg: Connection Close Timeout!");
+      break;
+    case set_cipshut:
+      Serial.println("Msg: Connection Shut Timeout!");
+      break;
+  //  case :
+  //    break;
+  }
+}
 void displayInfo()
 {
   usbSerial.print(F("Location: ")); 
