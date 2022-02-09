@@ -18,6 +18,13 @@ A9/A9G
 V02.02.20190915R
 Ai_Thinker_Co._Ltd.
 READY
+
+
+
+
+
+
+
 gprsPWR....
 Init...
 
@@ -37,6 +44,13 @@ A9/A9G
 V02.02.20190915R
 Ai_Thinker_Co._Ltd.
 READY
+
+
+
+
+
+
+
 gprsPWR....
 Init...
 
@@ -56,5 +70,10 @@ A9/A9G
 V02.02.20190915R
 Ai_Thinker_Co._Ltd.
 READY
+
+
+
+
+
 ets Jun  8 2016 00:&&§ÓSH¨HHÍÑé0x1 (POWERON_RESET),boot:0x3 (DOWNLOAD_BOOT(UART0/UART1/SDIO_REI_REO_V2))
 waiting for download

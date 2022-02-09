@@ -19,7 +19,7 @@
 OneWire oneWire(ONE_WIRE_BUS);
 
 /// Pass our oneWire reference to Dallas Temperature. 
-DallasTemperature sensors(&oneWire);
+DallasTemperature ds1820(&oneWire);
 
 /// DHT22 sensor communication pin
 #define DHT_PIN 21

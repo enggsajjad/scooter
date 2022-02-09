@@ -251,18 +251,33 @@ $ git commit -m "added timesheet files and logs"
 Sajjad@i80pc100 MINGW64 /d/github/scooter (a9g_rev1)
 $ git commit -m "added timesheet files and logs"
 
+05.02.2022 modifying the reset pin using mosfet and testing the code and debugging etc.
 
+Sajjad@i80pc100 MINGW64 /d/github/scooter (a9g_rev1)
+$ git commit -m "modifying reset using mosfet and hardware pinds, added logs"
+
+20220206221621 testing in the room started 0213, end 2216, monitoring mosfet resets
+
+20.01.2022 14:00-14:30 meeting zhuo
+23.01.2022 23:30 01:30 checking existing mosfet to use reset A9G. did not work
+27.01.2022 14:00-14:30 meeting zhuo
+29.01.2022 10:00-18:00 MNIST digital classification, understanding the Tensorflow Pipeline, etc. MNIST on andriod app
+03.02.2022 14:00-14:30 meeting zhuo
+05.03.2022 12:00-16:00 modifying the reset pin using mosfet and testing the code and debugging etc.
+05.03.2022 16:00-20:00 working on VSC and PlateformIO, basic examples
+06.03.2022 08:00-12:00 working on VSC and PlateformIO, basic examples
+06.03.2022 1900-1930 Tests
+07.03.2022 2000-2030 TEsts/Walks
+08.03.2022 2000-2030 Tests/Walks
+09.03.2022 2000-2030 Tests/Walks
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 >>>>>time to  be added to excel>>>>>>>>>>
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-20.01.2022 14:00-14:30 meeting
-23.01.2022 23:30 01:30 checking existing mosfet to use reset A9G. did not work
+
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 >>>>>>>>>>  TODO: >>>>>>>>>>>>>>>
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-Testing whether data is missing for longer runs
-NMOS for reset the A9G reset pin
 
 Summay!!!
 

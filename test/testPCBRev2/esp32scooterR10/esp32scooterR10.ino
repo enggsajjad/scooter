@@ -131,7 +131,7 @@ void loop()
         bme.setGasHeater(320, 150); // 320*C for 150 ms
 
         // Start up the ds18b20 library
-        sensors.begin();
+        ds1820.begin();
       #endif
       //LEDS
       delay(1000);
@@ -407,9 +407,11 @@ void loop()
         atm = bme.pressure / 100.0;
 
         //ds18b20
-        sensors.requestTemperatures(); // Send the command to get temperatures
         delay(100);
-        tempC = sensors.getTempCByIndex(0);
+        ds1820.requestTemperatures(); // Send the command to get temperatures
+        //delay(100);
+        tempC = ds1820.getTempCByIndex(0);
+        //delay(100);
         // Check if reading was successful
         if(tempC != DEVICE_DISCONNECTED_C) 
         {
