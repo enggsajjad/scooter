@@ -270,10 +270,19 @@ $ git commit -m "modifying reset using mosfet and hardware pinds, added logs"
 07.03.2022 2000-2030 TEsts/Walks
 08.03.2022 2000-2030 Tests/Walks
 09.03.2022 2000-2030 Tests/Walks
+
+Sajjad@i80pc100 MINGW64 /d/github/scooter (a9g_rev1)
+$ git commit -m " added test logs"
+
+10.03.2022 2000-2030 Tests/Walks
+11.03.2022 2000-2030 Tests/Walks
+
+13.03.2022 2000-2030 Tests/Walks
+12.03.2022 1000-1600 Debugging and understanding the TFlite architecture
+
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 >>>>>time to  be added to excel>>>>>>>>>>
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 >>>>>>>>>>  TODO: >>>>>>>>>>>>>>>
