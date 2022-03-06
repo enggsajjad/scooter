@@ -131,7 +131,7 @@ void loop()
         bme.setGasHeater(320, 150); // 320*C for 150 ms
 
         // Start up the ds18b20 library
-        ds1820.begin();
+        //ds1820.begin();
       #endif
       //LEDS
       delay(1000);
@@ -407,11 +407,9 @@ void loop()
         atm = bme.pressure / 100.0;
 
         //ds18b20
-        delay(100);
+        /*delay(100);
         ds1820.requestTemperatures(); // Send the command to get temperatures
-        //delay(100);
         tempC = ds1820.getTempCByIndex(0);
-        //delay(100);
         // Check if reading was successful
         if(tempC != DEVICE_DISCONNECTED_C) 
         {
@@ -421,7 +419,7 @@ void loop()
         else
         {
           Serial.println("Error: Could not read temperature data");
-        }
+        }*/
       #else
         //debugging
         pm25 = random(20, 25);//debugging
@@ -434,9 +432,9 @@ void loop()
       MY_DBGln("Msg: 1");
       #ifdef THINGSPEAK
         //channel: eScooter
-        //message = "GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=" + String(temp) +"&field2="+String(hum) +"&field3="+String(atm) +"&field4="+String(pm25) +"&field5="+String(pm10) +"&field6="+String(resetCntr) +"&field7="+String(errorState) +"&field8="+String(loc);//for thinkspeak
+        message = "GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=" + String(temp) +"&field2="+String(hum) +"&field3="+String(atm) +"&field4="+String(pm25) +"&field5="+String(pm10) +"&field6="+String(resetCntr) +"&field7="+String(errorState) +"&field8="+String(loc);//for thinkspeak
         //same message but errorState ==> tempC
-        message = "GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=" + String(temp) +"&field2="+String(hum) +"&field3="+String(atm) +"&field4="+String(pm25) +"&field5="+String(pm10) +"&field6="+String(resetCntr) +"&field7="+String(tempC) +"&field8="+String(loc);//for thinkspeak
+        //message = "GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=" + String(temp) +"&field2="+String(hum) +"&field3="+String(atm) +"&field4="+String(pm25) +"&field5="+String(pm10) +"&field6="+String(resetCntr) +"&field7="+String(tempC) +"&field8="+String(loc);//for thinkspeak
         //channel: eScooter2 
         //message = "GET https://api.thingspeak.com/update?api_key=TJ85HJBF1XTV1GH7&field1=" + String(temp) +"&field2="+String(hum) +"&field3="+String(atm) +"&field4="+String(pm25) +"&field5="+String(pm10) +"&field6="+String(resetCntr) +"&field7="+String(errorState) +"&field8="+String(loc);//for thinkspeak
       #else
