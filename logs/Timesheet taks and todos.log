@@ -298,13 +298,45 @@ escooter_sajjad - rev7  PCB_PNR_15, PCB5, added nmosfet
 20220227-28 2000-2030 Walking and Test
 20220301-02 2000-2030 Walking and Test
 
+20220303 17:00 - 17:55 Meeting with Mr. Scholz
+20220303 14:00 - 14:17 Meeting Zhuo
+
+20220303-04 2000-2030 Walking and Test
+20220305-06 2000-2030 Walking and Test
+
+Sajjad@i80pc100 MINGW64 /d/github/scooter (a9g_rev1)
+$ git commit -m "adding new PCB revision, added info sheet to PCB schematics, added logs"
+
+2000mAH battery time @ 500mA => 4hour
+2000mAH battery operated for ~09hr16min => average current required 
+
+20220305 1200-1600 Misc. reading about Khadas, arranging scooterAQnet stuff
+20220307-07 2000-2030 Walking and Test
+20220308-09 2000-2030 Walking and Test
+20220310-11 2000-2030 Walking and Test
+20220310 1700-1740 TECO Meeting
+
+
+Thu: 20220310 2300-2100 1hr khadas quickstart
+Fri: 20220311 1700-1900 2245:0100 4.25hr setting up pc and khadas
+Sat: 20220312 1500-1900 2100:0100 8hr executing different docs
+
+20220313-14 2000-2030 Walking Cycling and Test
+
+20220317 meeting 1700-1800
+
+20220315-16 2000-2030 Walking Cycling and Test
+20220317-18 2000-2030 Walking Cycling and Test
+20220318  1500-1900 at teco, khadas different tests
+20220327  1500-1900 at teco, khadas experimenting different scripts
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 >>>>>time to  be added to excel>>>>>>>>>>
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-20220303-04 2000-2030 Walking and Test
-20220305-06 2000-2030 Walking and Test
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 >>>>>>>>>>  TODO: >>>>>>>>>>>>>>>
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
