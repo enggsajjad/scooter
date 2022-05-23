@@ -330,15 +330,119 @@ Sat: 20220312 1500-1900 2100:0100 8hr executing different docs
 20220318  1500-1900 at teco, khadas different tests
 20220327  1500-1900 at teco, khadas experimenting different scripts
 
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
->>>>>time to  be added to excel>>>>>>>>>>
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+28.03.2022  1700-1930 khadas docs n tests
+29.03.2022  1700-1930 khadas docs n tests
+30.03.2022  1700-1930 khadas docs n tests
+31.03.2022  1700-1820 meeting
+20220401-02 1900-1930 Walking Charging n Tests
+01.04.2022 1900-2100 Reads Docs and Tests
+02.04.2022 1900-2100 Reads Docs and Tests
+03.04.2022 1900-2100 Reads Docs and Tests
+04.04.2022 1900-2100 Reads Docs and Tests
+05.04.2022 1900-2100 Reads Docs and Tests
+06.04.2022 1900-2100 Reads Docs and Tests
+07.04.2022  1700-1815 meeting
+08.04.2022  1530-1610 meeting
+
+09.04.2022  2300-0800 khadas pytoch excercises
+10.04.2022  2130-0000 khadas pytoch excercises
+11.04.2022  2100-2300 khadas pytoch excercises
+12.04.2022  1700-1745 meeting
+
+20220414 1830-2015 Teco Linux Installation VPN etc 
+20220414 0630-0930 Docker on Ubuntu etc
+20220415 0130-0200 ESP SChecmatic Check for Tobi 
+20220416 0600-1100 Tests with Khadas
+20220416 2100-0100 Tests with Khadas
+20220417 0600-1100 Tests with Khadas
+20220418 0600-1100 Tests with Khadas
+20220417-18 2000-2030 Walking Cycling and Test
+
+20220422 0600-1100 Tests with Khadas,logs and docs
+
+22.04.2022  1000-1115 meeting
+20220422 2300-0345 Check the errors Quantizations
+20220423 0500-1100 Tests with Khadas, Quantizations
+
+22.04.25  0930-1000 meeting
+22.04.26  1600-1630 meeting
+20220422 0100-0700 onnx using shell scripts n debugging
+
+30.04.2022 1200-1500 Hardware Lab Teco
+
+"15.03.2022	31.05.2022	2.5	TECO-KIT	VACATIONS 8:37	Part-1"
+"15.03.2022	31.05.2022	2.5	TECO-KIT	VACATIONS 8:37	Part-2"
+
+20220501 0500-1000 different test executing scripts for lenet on yolo_v3
+20220503 1000-1600 SmartAQNet assembling new case with new PCB
+20220505 1100-1300 SmartAQNet debugging new Case, SDS not working. ground was not soldered properly
+20220503 2000-2030 Tests
+20220505 1700-1600 Meeting
+20220507 1600-2000 Assembling escooter 2nd device with case+pcb
+20220507 2000-2030 Tests/Walks
+20220508 1600-0000 different test reexecuted yolov3, lenet
 
 
->>>>>>>>>>  TODO: >>>>>>>>>>>>>>>
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+escooter:2 charge start 2000 till 23000
+running from 2300 till 0450 worked stande alone for 6hr approximate
+Charging: 1630
+Walking 21:30 - 22:35
+Worked fine
+
+
+escooter:3 charge start 2300 but cable was not plugged properly
+replugged the cable around 12:45 next day
+wait till 1630 then start without charging, stande alone
+Walking 21:30 - 22:35
+There was not data sent. THere is SIM error and code could not get the READY message.
+Also check with AT Commands
+
+
+20220509 1700-1815 Meeting
+20220509 1815-2200 Tests with khadas
+20220510 1700-1800 Meeting
+20220509 1800-2000 2200-0130 Tests with khadas and SmartAQNet
+20220511 1700-1815 Meeting
+20220511 1815-2000 Tests with khadas and SmartAQNet
+20220510 2000-2030 Walking Tests
+20220511 2000-2030 Walking Tests
+
+
+20220512 1700-1810 Meeting
+20220512-15 2000-2030 Walking Tests
+20220513 2015-2115 Meeting
+
+
+20220517 1700-1805 Meeting
+20220518 1700-1845 Meeting
+
+
+20220517 1900-2200 lenet/yolov3 minimal tests
+20220518 1900-2200 lenet/yolov3 minimal tests
+
+20220519 1500-1530 Meeting
+20220518-19 2000-2030 Walking Tests
+
+20220523 2000-2230 TECO debugging and Walking Tests
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>	time to  be added to excel		>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>  TODO: >>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+
 
 Summay!!!
-

@@ -432,11 +432,13 @@ void loop()
       MY_DBGln("Msg: 1");
       #ifdef THINGSPEAK
         //channel: eScooter
-        message = "GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=" + String(temp) +"&field2="+String(hum) +"&field3="+String(atm) +"&field4="+String(pm25) +"&field5="+String(pm10) +"&field6="+String(resetCntr) +"&field7="+String(errorState) +"&field8="+String(loc);//for thinkspeak
+        //message = "GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=" + String(temp) +"&field2="+String(hum) +"&field3="+String(atm) +"&field4="+String(pm25) +"&field5="+String(pm10) +"&field6="+String(resetCntr) +"&field7="+String(errorState) +"&field8="+String(loc);//for thinkspeak
         //same message but errorState ==> tempC
         //message = "GET https://api.thingspeak.com/update?api_key=AYKVFH212TKGNW2B&field1=" + String(temp) +"&field2="+String(hum) +"&field3="+String(atm) +"&field4="+String(pm25) +"&field5="+String(pm10) +"&field6="+String(resetCntr) +"&field7="+String(tempC) +"&field8="+String(loc);//for thinkspeak
         //channel: eScooter2 
         //message = "GET https://api.thingspeak.com/update?api_key=TJ85HJBF1XTV1GH7&field1=" + String(temp) +"&field2="+String(hum) +"&field3="+String(atm) +"&field4="+String(pm25) +"&field5="+String(pm10) +"&field6="+String(resetCntr) +"&field7="+String(errorState) +"&field8="+String(loc);//for thinkspeak
+        //channel: eScooter3 
+        message = "GET https://api.thingspeak.com/update?api_key=IG9QAWH76BUZDRU7&field1=" + String(temp) +"&field2="+String(hum) +"&field3="+String(atm) +"&field4="+String(pm25) +"&field5="+String(pm10) +"&field6="+String(resetCntr) +"&field7="+String(errorState) +"&field8="+String(loc);//for thinkspeak
       #else
         //message = "{ Id: \'A1\', pm25: " + String(pm25) + ", pm10: " + String(pm10) + ", temp: " + String(temp) + ", hum: " + String(hum) + ", atm: " + String(atm++) + " , loc: \"" + loc + "\" }\n";//for ngrok TCP tunneling
         //message = "\'A1\'," + String(pm25) + "," + String(pm10) + "," + String(temp) + "," + String(hum) + "," + String(atm++) + ",\'" + loc + "\'\n";//for ngrok TCP tunneling for csv file

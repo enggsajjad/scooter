@@ -84,7 +84,8 @@ void loop()
     digitalWrite(LED2, (i>>1)&1);
     digitalWrite(LED3, (i>>2)&1);
   }
-
+  
+  /*
   //check the reset again after 2min
   unsigned long current = millis();
   if (current - previous >= (2*60*1000) ) {
@@ -99,5 +100,5 @@ void loop()
     Serial.println("A9G Reset....");
   }
 
-
+  */
 }
